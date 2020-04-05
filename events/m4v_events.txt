@@ -20,16 +20,19 @@ country_event = { #this event will be fired at the start of the game, and will b
 	desc = moore4vets.1.d
 
 	fire_only_once = yes
+	#hidden = yes
 
 	trigger = {
 		always = yes #better way to do this?
 	}
 
-	hidden = yes
+	mean_time_to_happen = { days = 1 }
 
 	immediate = {
-		ETH = { country_event = { id = moore4vets.2 days = 196 } } #ethiopia 15/7/1936
+		ITA = { country_event = { id = moore4vets.2 days = 196 } } #ethiopia 15/7/1936
 	}
+
+	option = { name = moore4vets.1.option }
 }
 
 country_event = { #Italy annexes Ethiopia
@@ -39,7 +42,7 @@ country_event = { #Italy annexes Ethiopia
 
 	fire_only_once = yes
 	triggered_only = yes
-	hidden = yes
+	#hidden = yes
 
 	immediate = {
 		ITA = {
@@ -48,10 +51,12 @@ country_event = { #Italy annexes Ethiopia
 		}
 		hidden_effect = {
 			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 1500 producer = ITA }
-			271 = {
-				remove_core_of = ETH
-			}
+			#271 = {
+			#	remove_core_of = ETH
+			#}
 		}
 		add_threat = -0.8
 	}
+
+	option = { name = moore4vets.2.option }
 }

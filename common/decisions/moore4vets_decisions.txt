@@ -5,9 +5,9 @@ ger_annexation = {
 		cost = 5	
 		allowed = {
 			tag = GER
-			HUN = { is_ai = yes }
 		}
 		visible = {
+			HUN = { is_ai = yes }
 			date > 1939.1.1
 			country_exists = HUN
 		}
@@ -24,9 +24,9 @@ ger_annexation = {
 		cost = 5	
 		allowed = {
 			tag = GER
-			ROM = { is_ai = yes }
 		}
 		visible = {
+			ROM = { is_ai = yes }
 			date > 1939.1.1
 			country_exists = ROM
 		}
@@ -43,9 +43,9 @@ ger_annexation = {
 		cost = 5
 		allowed = {
 			tag = GER
-			BUL = { is_ai = yes }
 		}
 		visible = {
+			BUL = { is_ai = yes }
 			country_exists = BUL
 		}
 		complete_effect = {
@@ -118,23 +118,6 @@ uk_annexation = {
 			}
 		}
 	}
-
-	#annex_ireland = {
-	#	ai_will_do = { factor = 0 }
-	#	cost = 50	
-	#	visible = {
-	#		tag = ENG
-	#		IRE = { is_ai = yes }
-	#		country_exists = IRE
-	#		#date > 1939.1.1
-	#	}
-	#	fire_only_once = yes
-	#	complete_effect = {
-	#		ENG = {
-	#			annex_country = { target = IRE transfer_troops = yes }
-	#		}
-	#	}
-	#}
 
 	annex_british_raj = {
 		ai_will_do = { factor = 0 }
