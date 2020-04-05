@@ -22,20 +22,20 @@ country_event = { #this event will be fired at the start of the game, and will b
 	fire_only_once = yes
 
 	trigger = {
-		date < 1936.1.2 #better way to do this?
+		always = yes #better way to do this?
 	}
 
 	hidden = yes
 
 	immediate = {
-		country_event = { id = moore4vets.2 days = 196 } #ethiopia 15/7/1936
+		ETH = { country_event = { id = moore4vets.2 days = 196 } } #ethiopia 15/7/1936
 	}
 }
 
 country_event = { #Italy annexes Ethiopia
 	id = moore4vets.2
-	#title = moore4vets.2.t
-	#desc = moore4vets.2.d
+	title = moore4vets.2.t
+	desc = moore4vets.2.d
 
 	fire_only_once = yes
 	triggered_only = yes
