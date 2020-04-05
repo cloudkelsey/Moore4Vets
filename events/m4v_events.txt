@@ -1,0 +1,57 @@
+add_namespace = moore4vets
+add_namespace = moore4vets_news
+
+news_event = { #Italy celebrates over Ethiopia
+	id = moore4vets_news.1
+	title = moore4vets_news.1.t
+	desc = moore4vets_news.1.d
+
+	fire_only_once = yes
+	triggered_only = yes
+
+	option = {
+		name = moore4vets_news.1.option
+	}
+}
+
+country_event = { #this event will be fired at the start of the game, and will be used to trigger other events later on
+	id = moore4vets.1
+	title = moore4vets.1.t
+	desc = moore4vets.1.d
+
+	fire_only_once = yes
+
+	trigger = {
+		date < 1936.1.2 #better way to do this?
+	}
+
+	hidden = yes
+
+	immediate = {
+		country_event = { id = moore4vets.2 days = 196 } #ethiopia 15/7/1936
+	}
+}
+
+country_event = { #Italy annexes Ethiopia
+	id = moore4vets.2
+	#title = moore4vets.2.t
+	#desc = moore4vets.2.d
+
+	fire_only_once = yes
+	triggered_only = yes
+	hidden = yes
+
+	immediate = {
+		ITA = {
+			annex_country = { target = ETH transfer_troops = no }
+			news_event = { id = moore4vets_news.1 days = 1 }
+		}
+		hidden_effect = {
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 1500 producer = ITA }
+			271 = {
+				remove_core_of = ETH
+			}
+		}
+		add_threat = -0.8
+	}
+}

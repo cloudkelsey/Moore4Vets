@@ -1,0 +1,228 @@
+ger_annexation = {
+
+	annex_hungary = {
+		ai_will_do = { factor = 0 }
+		cost = 5	
+		allowed = {
+			tag = GER
+			HUN = { is_ai = yes }
+		}
+		visible = {
+			date > 1939.1.1
+			country_exists = HUN
+		}
+		complete_effect = {
+			GER = {
+				annex_country = { target = HUN transfer_troops = yes }
+				add_ideas = annex_hungary_idea
+			}
+		}
+	}
+
+	annex_romania = {
+		ai_will_do = { factor = 0 }
+		cost = 5	
+		allowed = {
+			tag = GER
+			ROM = { is_ai = yes }
+		}
+		visible = {
+			date > 1939.1.1
+			country_exists = ROM
+		}
+		complete_effect = {
+			GER = {
+				annex_country = { target = ROM transfer_troops = yes }
+				add_ideas = annex_romania_idea
+			}
+		}
+	}
+
+	annex_bulgaria = {
+		ai_will_do = { factor = 0 }
+		cost = 5
+		allowed = {
+			tag = GER
+			BUL = { is_ai = yes }
+		}
+		visible = {
+			country_exists = BUL
+		}
+		complete_effect = {
+			GER = {
+				add_state_core = 48
+				add_state_core = 211
+				add_state_core = 212
+				annex_country = { target = BUL transfer_troops = yes }
+				add_ideas = annex_bulgaria_idea
+			}
+		}
+	}
+}
+
+ast_annexation = {
+
+	annex_new_zealand = {
+		ai_will_do = { factor = 0 }
+		cost = 5
+		visible = {
+			tag = AST
+			NZL = { is_ai = yes }
+			country_exists = NZL
+			date > 1939.1.1
+		}
+
+		complete_effect = {
+			AST = {
+				annex_country = { target = NZL transfer_troops = yes }
+				add_state_core = 284 	#North Island
+				add_state_core = 723 	#South Island
+				add_state_core = 726 	#Somoa
+				# add_ideas = annex_new_zealand_idea
+			}
+		}
+	}
+}
+
+uk_annexation = {
+
+	annex_canada = {
+		ai_will_do = { factor = 0 }
+		cost = 5	
+		visible = {
+			tag = ENG
+			CAN = { is_ai = yes }
+			country_exists = CAN
+			date > 1939.1.1
+		}
+		fire_only_once = yes
+		complete_effect = {
+			ENG = {
+				add_state_core = 276
+				add_state_core = 331
+				add_state_core = 332
+				add_state_core = 464
+				add_state_core = 465
+				add_state_core = 466
+				add_state_core = 467
+				add_state_core = 468
+				add_state_core = 469
+				add_state_core = 470
+				add_state_core = 471
+				add_state_core = 472
+				add_state_core = 473
+				add_state_core = 739
+				add_state_core = 740
+				annex_country = { target = CAN transfer_troops = yes }
+				add_ideas = annex_canada_idea
+			}
+		}
+	}
+
+	#annex_ireland = {
+	#	ai_will_do = { factor = 0 }
+	#	cost = 50	
+	#	visible = {
+	#		tag = ENG
+	#		IRE = { is_ai = yes }
+	#		country_exists = IRE
+	#		#date > 1939.1.1
+	#	}
+	#	fire_only_once = yes
+	#	complete_effect = {
+	#		ENG = {
+	#			annex_country = { target = IRE transfer_troops = yes }
+	#		}
+	#	}
+	#}
+
+	annex_british_raj = {
+		ai_will_do = { factor = 0 }
+		cost = 5
+		visible = {
+			tag = ENG
+			RAJ = { is_ai = yes }
+			country_exists = RAJ
+			date > 1939.1.1
+		}
+		fire_only_once = yes
+		complete_effect = {
+			ENG = {
+				annex_country = { target = RAJ transfer_troops = yes }
+				add_ideas = annex_british_raj_idea
+			}
+		}
+	}
+
+	annex_south_africa = {
+		ai_will_do = { factor = 0 }
+		cost = 5
+		visible = {
+			tag = ENG
+			SAF = { is_ai = yes }
+			country_exists = SAF
+			date > 1939.1.1
+		}
+		fire_only_once = yes
+		complete_effect = {
+			ENG = {
+				add_state_core = 275
+				add_state_core = 541
+				add_state_core = 681
+				add_state_core = 719
+				annex_country = { target = SAF transfer_troops = yes }
+				add_ideas = annex_south_africa_idea
+			}
+		}
+	}
+
+	annex_australia = {
+		ai_will_do = { factor = 0 }
+		cost = 5
+		visible = {
+			tag = ENG
+			AST = { is_ai = yes }
+			country_exists = AST
+			date > 1939.1.1
+		}
+		fire_only_once = yes
+		complete_effect = {
+			ENG = {
+				add_state_core = 285
+				add_state_core = 517
+				add_state_core = 518
+				add_state_core = 519
+				add_state_core = 520
+				add_state_core = 521
+				add_state_core = 522
+				add_state_core = 523
+				add_state_core = 634
+				add_state_core = 674
+				add_state_core = 737
+				annex_country = { target = AST transfer_troops = yes }
+				add_ideas = annex_australia_idea
+			}
+		}
+	}
+
+	annex_new_zealand_uk = {
+		ai_will_do = { factor = 0 }
+		cost = 5
+		visible = {
+			tag = ENG
+			NZL = { is_ai = yes }
+			country_exists = NZL
+			date > 1939.1.1
+		}
+		fire_only_once = yes
+		complete_effect = {
+			ENG = {
+				add_state_core = 284
+				add_state_core = 723
+				add_state_core = 726
+				annex_country = { target = NZL transfer_troops = yes }
+				#add_ideas = annex_new_zealand_idea
+			}
+		}
+	}
+}

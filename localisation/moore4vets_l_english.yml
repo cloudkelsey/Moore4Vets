@@ -448,6 +448,13 @@
  BUL_modernize_navy_desc:0 "We have gotten our naval production back on track, now to modernize it."
  
  #Events
+ moore4vets_news.1.t:0 "Ethiopia submits"
+ moore4vets_news.1.d:0 "The cowardly Ethiopians have surrendered, and are already a part of our glorious empire."
+ moore4vets_news.1.option:0 "Very cool"
+
+ moore4vets.1.t:0 "You shouldn't be seeing this!"
+ moore4vets.1.d:0 "This event is used to make other events work on time, please ignore it"
+
  britain.100.t:0 "Denmark has been crushed by the Reich"
  britain.100.d:0 "We must seize the Danish Colonies before the Germans get their hands on them."
  britain.100.a:0 "Seize the islands."
