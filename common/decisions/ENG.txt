@@ -9235,7 +9235,7 @@ annex_canada = {
 				add_state_core = 739
 				add_state_core = 740
 				annex_country = { target = CAN transfer_troops = yes }
-				add_ideas = annex_canada_idea
+				#add_ideas = annex_canada_idea
 			}
 		}
 	}
@@ -9292,7 +9292,7 @@ annex_canada = {
 				add_state_core = 681
 				add_state_core = 719
 				annex_country = { target = SAF transfer_troops = yes }
-				add_ideas = annex_south_africa_idea
+				#add_ideas = annex_south_africa_idea
 			}
 		}
 	}
@@ -9320,7 +9320,7 @@ annex_canada = {
 				add_state_core = 634
 				add_state_core = 674
 				add_state_core = 737
-				annex_country = { target = AST transfer_troops = yes }
+				#annex_country = { target = AST transfer_troops = yes }
 				add_ideas = annex_australia_idea
 			}
 		}
@@ -9343,6 +9343,24 @@ annex_canada = {
 				add_state_core = 726
 				annex_country = { target = NZL transfer_troops = yes }
 				#add_ideas = annex_new_zealand_idea
+			}
+		}
+	}
+	
+	annex_british_malaya = {
+		ai_will_do = { factor = 0 }
+		cost = 5
+		visible = {
+			tag = ENG
+			NZL = { is_ai = yes }
+			country_exists = NZL
+			date > 1939.1.1
+		}
+		fire_only_once = yes
+		complete_effect = {
+			ENG = {
+				annex_country = { target = MAL transfer_troops = yes }
+				#add_ideas = annex_british_malaya
 			}
 		}
 	}
