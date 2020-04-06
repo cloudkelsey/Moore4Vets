@@ -2,9 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\common",
-    "\\events",
-    "\\history"
+    "\\events"
   ],
-  "SelectedNode": "\\localisation",
+  "SelectedNode": "\\events\\m4v_events.txt",
   "PreviewInSolutionExplorer": false
 }

@@ -5,9 +5,10 @@ news_event = { #Italy celebrates over Ethiopia
 	id = moore4vets_news.1
 	title = moore4vets_news.1.t
 	desc = moore4vets_news.1.d
+	picture = GFX_report_event_german_speech
 
 	fire_only_once = yes
-	triggered_only = yes
+	is_triggered_only = yes
 
 	option = {
 		name = moore4vets_news.1.option
@@ -18,18 +19,23 @@ country_event = { #this event will be fired at the start of the game, and will b
 	id = moore4vets.1
 	title = moore4vets.1.t
 	desc = moore4vets.1.d
+	picture = GFX_report_event_german_speech
 
 	fire_only_once = yes
-	#hidden = yes
+	hidden = yes
 
 	trigger = {
-		always = yes #better way to do this?
+		always = yes # should fire for GER since it's first tag iterated
 	}
 
 	mean_time_to_happen = { days = 1 }
 
 	immediate = {
-		ITA = { country_event = { id = moore4vets.2 days = 196 } } #ethiopia 15/7/1936
+		hidden_effect = {
+			# days = date to fire - 2nd Jan 1936 - 1
+			# https://www.calculatorsoup.com/calculators/time/date-difference-calculator.php
+			ITA = { country_event = { id = moore4vets.2 days = 194 } } #ethiopia 15/7/1936
+		}
 	}
 
 	option = { name = moore4vets.1.option }
@@ -39,15 +45,19 @@ country_event = { #Italy annexes Ethiopia
 	id = moore4vets.2
 	title = moore4vets.2.t
 	desc = moore4vets.2.d
+	picture = GFX_report_event_german_speech
 
 	fire_only_once = yes
-	triggered_only = yes
-	#hidden = yes
+	is_triggered_only = yes
+	hidden = yes
 
 	immediate = {
 		ITA = {
-			annex_country = { target = ETH transfer_troops = no }
-			news_event = { id = moore4vets_news.1 days = 1 }
+			if = {
+				limit = { ETH = { exists = yes } }
+				annex_country = { target = ETH transfer_troops = no }
+				news_event = { id = moore4vets_news.1 days = 1 }
+			}
 		}
 		hidden_effect = {
 			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 1500 producer = ITA }

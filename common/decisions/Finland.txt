@@ -1,0 +1,30 @@
+﻿###########################
+# Finland Events
+###########################
+
+add_namespace = finland
+
+# Soviet Ultimatum
+country_event = {
+	id = finland.1
+	title = finland.1.t
+	desc = finland.1.d
+	picture = GFX_report_event_soviet_tanks_snow
+	
+	is_triggered_only = yes
+	
+	option = { # Refuse
+		name = finland.1.b
+		ai_chance = { factor = 100 }
+		SOV = {
+			country_event = { days = 1 id = soviet.13 }
+			effect_tooltip = {
+				create_wargoal = {
+					type = take_state
+					target = FIN
+					generator = { 146 }
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,55 @@
+focus_tree = {
+	id = event_firer_focus
+	default = no
+	continuous_focus_position = { x = 50 y = 1100 }
+	
+	country = {
+		factor = 0
+		modifier = {
+			add = 100
+			tag = IRQ #Iraq, placeholder
+		}
+	}
+	
+	focus = {
+		id = event_fire_eastern_poland
+		#icon = 
+		x = 0
+		y = 0
+		cost = 1
+		available = { 
+			POL = { has_war_with = GER has_capitulated = yes }
+			# AND = {
+				# GER = {
+					# controls_state = 784
+					# controls_state = 97
+					# controls_state = 96
+					# controls_state = 95
+					# controls_state = 94
+					# controls_state = 93
+					# controls_state = 91
+					# controls_state = 89
+				# }
+			# } 
+		}
+		ai_will_do = { factor = 100 }
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+		completion_reward = { GER = { country_event = germany.14 } }
+	}
+	
+	focus = {
+		id = event_fire_compagne_armistice
+		#icon = 
+		x = 2
+		y = 0
+		cost = 1
+		available = { FRA = { has_war_with = GER surrender_progress > 0.7 } 16 = { is_controlled_by = GER } }
+		ai_will_do = { factor = 100 }
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+		completion_reward = { FRA = { country_event = france.10 } }
+	}
+}

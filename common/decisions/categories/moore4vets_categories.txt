@@ -67,3 +67,7 @@ sov_war_goals = {
 		original_tag = SOV
 	}
 }
+
+fin_white_peace = {
+	allowed = { original_tag = FIN }
+}
