@@ -1,9 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\common",
-    "\\events"
+    "\\common"
   ],
-  "SelectedNode": "\\events\\m4v_events.txt",
+  "SelectedNode": "\\common\\operations",
   "PreviewInSolutionExplorer": false
 }

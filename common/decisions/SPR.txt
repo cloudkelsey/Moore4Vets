@@ -13693,11 +13693,11 @@ political_actions = {
 		icon = generic_ignite_civil_war
 
 		allowed = {
-			tag = SPR
+			always = no
 		}
 
 		available = {
-			hidden_trigger = { always = no }
+			always = no
 		}
 
 		priority = 10
@@ -13715,24 +13715,11 @@ political_actions = {
 		}
 
 		visible = {
-			tag = SPD
-			NOT = { has_completed_focus = SPR_crush_the_revolution }
+			always = no
 		}
 
 		timeout_effect = {
-			if = {
-				limit = {
-					num_of_controlled_states > 1
-				}
-				country_event = lar_spain.9
-			}
-			else = {
-				activate_mission = SPR_anarchist_uprising_mission
-				add_days_mission_timeout = {
-					mission = SPR_anarchist_uprising_mission
-					days = -211
-				}
-			}
+
 		}
 	}
 
