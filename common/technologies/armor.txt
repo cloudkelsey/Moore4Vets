@@ -5,6 +5,9 @@ technologies = {
 		enable_equipments = {
 			gw_tank_equipment
 		}
+		enable_subunits = {
+			light_armor
+		}
 
 		on_research_complete = {
 			limit = {
@@ -83,6 +86,9 @@ technologies = {
 
 		enable_equipments = {
 			light_tank_equipment_1 
+		}
+		enable_subunits = {
+			light_armor
 		}
 
 		on_research_complete = {
@@ -164,6 +170,9 @@ technologies = {
 		enable_equipments = {
 			light_tank_destroyer_equipment_1
 		}
+		enable_subunits = {
+			light_tank_destroyer_brigade
+		}
 	
 		research_cost = 0.5
 		start_year = 1934
@@ -217,6 +226,9 @@ technologies = {
 		enable_equipments = {
 			light_tank_artillery_equipment_1
 		}
+		enable_subunits = {
+			light_sp_artillery_brigade
+		}
 	
 		research_cost = 0.5
 		start_year = 1934
@@ -246,6 +258,9 @@ technologies = {
 
 		enable_equipments = {
 			light_tank_aa_equipment_1
+		}
+		enable_subunits = {
+			light_sp_anti_air_brigade
 		}
 	
 		research_cost = 0.5
@@ -500,8 +515,7 @@ technologies = {
 			}
 			modifier = {
 				not = {
-					any_state = {
-						is_controlled_by = ROOT
+					any_controlled_state = {
 						is_coastal = yes
 					}
 				}
@@ -545,8 +559,7 @@ technologies = {
 			}
 			modifier = {
 				not = {
-					any_state = {
-						is_controlled_by = ROOT
+					any_controlled_state = {
 						is_coastal = yes
 					}
 				}
@@ -685,6 +698,10 @@ technologies = {
 		enable_equipments = {
 			medium_tank_equipment_1 
 		}
+
+		enable_subunits = {
+			medium_armor
+		}
 		
 		path = {
 			leads_to_tech = improved_medium_tank 
@@ -754,6 +771,10 @@ technologies = {
 		enable_equipments = {
 			medium_tank_destroyer_equipment_1
 		}
+
+		enable_subunits = {
+			medium_tank_destroyer_brigade
+		}
 	
 		research_cost = 0.5
 		start_year = 1939
@@ -813,6 +834,10 @@ technologies = {
 		enable_equipments = {
 			medium_tank_artillery_equipment_1
 		}
+
+		enable_subunits = {
+			medium_sp_artillery_brigade
+		}
 	
 		research_cost = 0.5
 		start_year = 1939
@@ -858,6 +883,10 @@ technologies = {
 
 		enable_equipments = {
 			medium_tank_aa_equipment_1
+		}
+
+		enable_subunits = {
+			medium_sp_anti_air_brigade
 		}
 	
 		research_cost = 0.5
@@ -1182,15 +1211,7 @@ technologies = {
 					}
 				}
 			}
-
-			modifier = {
-				factor = 0
-				OR = {
-					has_tech = modern_td
-					can_research = modern_td
-					is_researching_technology = main_battle_tank
-				}
-			}
+			
 			modifier = {
 				has_template_containing_unit = medium_tank_destroyer_brigade
 				factor = 3
@@ -1230,14 +1251,6 @@ technologies = {
 			factor = 1
 
 			modifier = {
-				factor = 0
-				OR = {
-					has_tech = modern_art
-					can_research = modern_art
-					is_researching_technology = main_battle_tank
-				}
-			}
-			modifier = {
 				has_template_containing_unit = medium_sp_artillery_brigade
 				factor = 3
 			}
@@ -1274,144 +1287,6 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 0
-
-			modifier = {
-				factor = 0
-				OR = {
-					has_tech = modern_spaa
-					can_research = modern_spaa
-					is_researching_technology = main_battle_tank
-				}
-			}
-		}
-		
-		categories = {
-			armor
-		}
-	}
-	
-	# main_battle_tank = { #E-50
-
-		# enable_equipments = {
-			# modern_tank_equipment_1
-		# }	
-		
-		# research_cost = 2.5
-		# start_year = 1945
-		
-		# folder = {
-			# name = armour_folder
-			# position = { x = 2 y = 12 }
-		# }
-		
-		# sub_technologies = {
-			# modern_td
-			# modern_art
-			# modern_spaa
-		# }
-		
-		# ai_will_do = {
-			# factor = 1
-			
-			# modifier = {
-				# factor = 2
-				# date > "1946.1.1"
-			# }
-			
-			# modifier = {
-				# factor = 2
-				# date > "1947.1.1"
-			# }
-			
-			# modifier = {
-				# factor = 2
-				# date > "1948.1.1"
-			# }
-		# }
-		
-		# categories = {
-			# armor
-			# cat_medium_armor
-		# }
-	# }
-	
-	modern_td = {
-
-		enable_equipments = {
-			modern_tank_destroyer_equipment_1
-		}
-	
-		research_cost = 0.5
-		start_year = 1945
-		
-		ai_will_do = {
-			factor = 1
-			
-			modifier = {
-				factor = 2
-				date > "1946.1.1"
-			}
-			
-			modifier = {
-				factor = 2
-				date > "1947.1.1"
-			}
-			
-			modifier = {
-				factor = 2
-				date > "1948.1.1"
-			}
-		}
-		
-		categories = {
-			armor
-		}
-	}
-	
-	modern_art = {
-
-		enable_equipments = {
-			modern_tank_artillery_equipment_1
-		}
-	
-		research_cost = 0.5
-		start_year = 1945
-		
-		ai_will_do = {
-			factor = 1
-			
-			modifier = {
-				factor = 2
-				date > "1946.1.1"
-			}
-			
-			modifier = {
-				factor = 2
-				date > "1947.1.1"
-			}
-			
-			modifier = {
-				factor = 2
-				date > "1948.1.1"
-			}
-		}
-		
-		categories = {
-			armor
-		}
-	}
-	
-	modern_spaa = {
-
-		enable_equipments = {
-			modern_tank_aa_equipment_1
-		}
-	
-		research_cost = 0.5
-		start_year = 1945
-		
-		ai_will_do = {
-			factor = 0
 		}
 		
 		categories = {
@@ -1423,6 +1298,10 @@ technologies = {
 
 		enable_equipments = {
 			heavy_tank_equipment_1 
+		}
+
+		enable_subunits = {
+			heavy_armor
 		}
 
 		on_research_complete = {
@@ -1516,6 +1395,10 @@ technologies = {
 		enable_equipments = {
 			heavy_tank_destroyer_equipment_1
 		}
+
+		enable_subunits = {
+			heavy_tank_destroyer_brigade
+		}
 	
 		research_cost = 0.5
 		start_year = 1934
@@ -1542,6 +1425,10 @@ technologies = {
 
 		enable_equipments = {
 			heavy_tank_artillery_equipment_1
+		}
+
+		enable_subunits = {
+			heavy_sp_artillery_brigade
 		}
 	
 		research_cost = 0.5
@@ -1570,6 +1457,9 @@ technologies = {
 
 		enable_equipments = {
 			heavy_tank_aa_equipment_1
+		}
+		enable_subunits = {
+			heavy_sp_anti_air_brigade
 		}
 	
 		research_cost = 0.5
@@ -1810,15 +1700,6 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 0
-
-			modifier = {
-				factor = 0
-				OR = {
-					has_tech = modern_td
-					can_research = modern_td
-					is_researching_technology = main_battle_tank
-				}
-			}
 		}
 		
 		categories = {
@@ -1837,15 +1718,6 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 0
-
-			modifier = {
-				factor = 0
-				OR = {
-					has_tech = modern_art
-					can_research = modern_art
-					is_researching_technology = main_battle_tank
-				}
-			}
 		}
 		
 		categories = {
@@ -1864,15 +1736,6 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 0
-
-			modifier = {
-				factor = 0
-				OR = {
-					has_tech = modern_spaa
-					can_research = modern_spaa
-					is_researching_technology = main_battle_tank
-				}
-			}
 		}
 		
 		categories = {
@@ -1884,6 +1747,10 @@ technologies = {
 
 		enable_equipments = {
 			super_heavy_tank_equipment_1
+		}
+
+		enable_subunits = {
+			super_heavy_armor
 		}
 	
 		research_cost = 2.5
@@ -1914,6 +1781,10 @@ technologies = {
 		enable_equipments = {
 			super_heavy_tank_destroyer_equipment_1
 		}
+
+		enable_subunits = {
+			super_heavy_tank_destroyer_brigade
+		}
 	
 		research_cost = 0.5
 		start_year = 1943
@@ -1932,6 +1803,10 @@ technologies = {
 		enable_equipments = {
 			super_heavy_tank_artillery_equipment_1
 		}
+
+		enable_subunits = {
+			super_heavy_sp_artillery_brigade
+		}
 	
 		research_cost = 0.5
 		start_year = 1943
@@ -1949,6 +1824,9 @@ technologies = {
 
 		enable_equipments = {
 			super_heavy_tank_aa_equipment_1
+		}
+		enable_subunits = {
+			super_heavy_sp_anti_air_brigade
 		}
 	
 		research_cost = 0.5

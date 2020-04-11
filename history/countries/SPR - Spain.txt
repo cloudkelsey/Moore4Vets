@@ -326,10 +326,11 @@ if = {
 	limit = {
 		NOT = { has_dlc = "La Resistance" }
 	}
+
 	create_country_leader = {
-		name = "Manuel Azaña"
-		desc = "POLITICS_MANUEL_AZANA_DESC"
-		picture = "Portrait_Spain_Manuel_Azana.dds"
+		name = "Niceto Alcalá-Zamora"
+		desc = "POLITICS_NICETO_ALCALA_ZAMORA_DESC"
+		picture = "GFX_portrait_SPR_niceto_alcala_zamora"
 		expire = "1965.1.1"
 		ideology = conservatism
 		traits = {
@@ -374,14 +375,15 @@ if = {
 	limit = {
 		has_dlc = "La Resistance"
 	}
+
 	create_country_leader = {
-		name = "Manuel Azaña"
-		desc = "POLITICS_MANUEL_AZANA_DESC"
-		picture = "Portrait_Spain_Manuel_Azana.dds"
+		name = "Niceto Alcalá-Zamora"
+		desc = "POLITICS_NICETO_ALCALA_ZAMORA_DESC"
+		picture = "GFX_portrait_SPR_niceto_alcala_zamora"
 		expire = "1965.1.1"
 		ideology = conservatism
 		traits = {
-			figurehead_president
+			indecisive
 		}
 	}
 	
@@ -428,7 +430,7 @@ if = {
 	create_field_marshal = {
 		name = "José Asensio Torrado"
 		id = 1101
-		gfx = "GFX_portrait_SPR_jose_asensio_torrado"
+		portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds"
 		traits = { organisational_leader defensive_doctrine }
 		skill = 2
 	    attack_skill = 1
@@ -464,6 +466,18 @@ if = {
 		defense_skill = 2
 		planning_skill = 2
 		logistics_skill = 1
+	}
+
+	create_corps_commander = {
+		name = "José Asensio Torrado"
+		id = 1101
+		gfx = "GFX_portrait_SPR_jose_asensio_torrado"
+		traits = { career_officer infantry_leader }
+		skill = 2
+	    attack_skill = 1
+	    defense_skill = 3
+	    planning_skill = 2
+	    logistics_skill = 1
 	}
 	
 	# Republican leaders - Stalinist Communist

@@ -1,0 +1,73 @@
+uk_annexation = {
+	icon = GFX_idea_eng_the_sun_never_sets
+	allowed = {
+		original_tag = ENG
+	}
+}
+
+ast_annexation = {
+	icon = GFX_focus_attack_australia
+	allowed = {
+		original_tag = AST
+	}
+}
+
+ger_annexation = {
+	icon = GFX_focus_chi_mission_to_germany
+	allowed = {
+		original_tag = GER
+	}
+}
+
+spr_resource= {
+	icon = GFX_focus_usa_reestablish_the_gold_standard
+	allowed = {
+		original_tag = SPR
+	}
+}
+
+jap_annexation = {
+	icon = GFX_focus_jap_strike_south
+	allowed = {
+		original_tag = JAP
+	}
+}
+
+usa_annexation = {
+	icon = GFX_focus_usa_recruit_the_free_corps
+	allowed = {
+		original_tag = USA
+	}
+}
+
+ger_war_goals = {
+	icon = GFX_decision_category_usa_intervention_mandate
+	allowed = {
+		original_tag = GER
+	}
+}
+
+ita_war_goals = {
+	icon = GFX_decision_category_usa_intervention_mandate
+	allowed = {
+		original_tag = ITA
+	}
+}
+
+eng_war_goals = {
+	icon = GFX_decision_category_usa_intervention_mandate
+	allowed = {
+		original_tag = ENG
+	}
+}
+
+sov_war_goals = {
+	icon = GFX_decision_category_usa_intervention_mandate
+	allowed = {
+		original_tag = SOV
+	}
+}
+
+fin_white_peace = {
+	allowed = { original_tag = FIN }
+}

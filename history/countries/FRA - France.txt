@@ -4,14 +4,16 @@ oob = "FRA_1936"
 if = {
 	limit = { has_dlc = "Man the Guns" }
 		set_naval_oob = "FRA_1936_naval_mtg"
+		set_war_support = 0.1
 	else = {
 		set_naval_oob = "FRA_1936_naval_legacy"
+		set_war_support = 0.15
 	}
 }
 
 set_research_slots = 3
 set_stability = 0.5
-set_war_support = 0.1
+
 
 # Starting tech
 set_technology = {
@@ -242,10 +244,6 @@ add_ideas = {
 	FRA_inefficient_economy_2
 }
 
-#give_guarantee = CZE
-#give_guarantee = YUG
-#give_guarantee = ROM
-
 #Order matters here Daladier will start as leaders because added last
 create_country_leader = {
 	name = "Édouard Daladier"
@@ -253,6 +251,17 @@ create_country_leader = {
 	picture = "Portrait_France_Edouard_Daladier.dds"
 	expire = "1965.1.1"
 	ideology = socialism
+	traits = {
+		stout_defender
+	}
+}
+
+create_country_leader = {
+	name = "Pierre Laval"
+	desc = "POLITICS_ÉDOUARD_DALADIER_DESC"
+	picture = GFX_portrait_fra_pierre_laval
+	expire = "1965.1.1"
+	ideology = liberalism
 	traits = {
 		stout_defender
 	}
