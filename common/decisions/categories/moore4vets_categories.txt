@@ -71,3 +71,7 @@ sov_war_goals = {
 fin_white_peace = {
 	allowed = { original_tag = FIN }
 }
+
+event_firing = {
+	allowed = { always = yes }
+}

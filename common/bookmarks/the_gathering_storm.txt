@@ -6,22 +6,7 @@ bookmarks = {
 		picture = "GFX_select_date_1936"
 		default_country = "GER"
 		default = yes
-		
-		"FRA"={
-			history = "FRA_GATHERING_STORM_DESC"
-			ideology = democratic
-			available = { NOT = { has_dlc = "La Resistance" } }
-			ideas = {
-				FRA_victors_of_wwi
-				FRA_disjointed_government
-				FRA_protected_by_the_maginot_line
-			}
-			focuses = {
-				FRA_form_the_popular_front
-				FRA_revive_the_national_bloc
-				FRA_france_leads
-			}
-		}
+
 		"FRA"={
 			history = "FRA_GATHERING_STORM_DESC"
 			ideology = democratic
@@ -66,21 +51,6 @@ bookmarks = {
 				ENG_organize_the_blackshirts
 			}
 		}
-		"ENG"={
-			history = "ENG_GATHERING_STORM_DESC"
-			ideology = democratic
-			available = { NOT = { has_dlc = "Man the Guns" } }
-			ideas = {
-				stiff_upper_lip
-				ENG_the_war_to_end_all_wars
-				george_v
-			}
-			focuses = {
-				tizard_mission_focus
-				ENG_war_with_germany
-				ENG_war_with_italy
-			}
-		}
 		"GER"={
 			history = "GER_GATHERING_STORM_DESC"
 			ideology = fascism
@@ -94,21 +64,6 @@ bookmarks = {
 				GER_anschluss
 				GER_danzig_or_war
 				GER_revive_the_kaiserreich
-			}
-		}
-		"GER"={
-			history = "GER_GATHERING_STORM_DESC"
-			ideology = fascism
-			available = { NOT = { has_dlc = "Waking the Tiger" } }
-			ideas = {
-				sour_loser
-				general_staff
-				GER_mefo_bills_1
-			}
-			focuses = {
-				GER_anschluss
-				GER_danzig_or_war
-				GER_ussr_war_goal
 			}
 		}
 		"ITA"={
@@ -158,19 +113,19 @@ bookmarks = {
 
 
 		# minors from DLC ####
-		# "POL"={
-			# minor = yes
-			# history = "POL_GATHERING_STORM_DESC"
-			# ideology = neutrality
-			# ideas = {
+		"POL"={
+			minor = yes
+			history = "POL_GATHERING_STORM_DESC"
+			ideology = neutrality
+			ideas = {
 				
-			# }
-			# focuses = {
-				# POL_the_baltic_alliance
-				# POL_draw_closer_to_britain
-				# POL_seek_accommodation_with_germany
-			# }
-		# }
+			}
+			focuses = {
+				POL_the_baltic_alliance
+				POL_draw_closer_to_britain
+				POL_seek_accommodation_with_germany
+			}
+		}
 		"CAN"={
 			minor = yes
 			history = "CAN_GATHERING_STORM_DESC"
@@ -239,20 +194,20 @@ bookmarks = {
 				RAJ_the_smiling_buddha
 			}
 		}
-		# "CZE"={
-			# minor = yes
-			# history = "CZE_GATHERING_STORM_DESC"
-			# ideology = democratic
-			# ideas = {
-				# CZE_skoda_works
-				# CZE_divided_nation
-			# }
-			# focuses = {
-				# CZE_sudeten_1
-				# CZE_industrial_legacy
-				# CZE_military_research_institute
-			# }
-		# }
+		"CZE"={
+			minor = yes
+			history = "CZE_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+				CZE_skoda_works
+				CZE_divided_nation
+			}
+			focuses = {
+				CZE_sudeten_1
+				CZE_industrial_legacy
+				CZE_military_research_institute
+			}
+		}
 
 		"HUN"={
 			minor = yes
@@ -283,21 +238,21 @@ bookmarks = {
 			}
 		}
 		
-		# "YUG"={
-			# minor = yes
-			# history = "YUG_GATHERING_STORM_DESC"
-			# ideology = neutrality
-			# ideas = {
-				# anti_german_military
-				# YUG_idea_croatian_opposition
-				# YUG_idea_serbian_general_staff
-			# }
-			# focuses = {
-				# YUG_western_focus
-				# YUG_abolish_the_monarchy
-				# YUG_establish_the_banovina_of_croatia
-			# }
-		# }
+		"YUG"={
+			minor = yes
+			history = "YUG_GATHERING_STORM_DESC"
+			ideology = neutrality
+			ideas = {
+				anti_german_military
+				YUG_idea_croatian_opposition
+				YUG_idea_serbian_general_staff
+			}
+			focuses = {
+				YUG_western_focus
+				YUG_abolish_the_monarchy
+				YUG_establish_the_banovina_of_croatia
+			}
+		}
 		"CHI"={
 			minor = yes
 			history = "CHI_GATHERING_STORM_DESC"
@@ -431,21 +386,21 @@ bookmarks = {
 			}
 		}
 
-		# "HOL"={
-			# minor = yes
-			# history = "NETHERLANDS_GATHERING_STORM_DESC"
-			# ideology = democratic
-			# ideas = {
-				# HOL_wilhelmina
-				# HOL_shell_shocked_spectator_5
-				# HOL_de_crisisjaren_5
-			# }
-			# focuses = {
-				# HOL_continue_the_war_in_batavia
-				# HOL_liberation
-				# HOL_prepare_the_inundation_lines
-			# }
-		# }
+		"HOL"={
+			minor = yes
+			history = "NETHERLANDS_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+				HOL_wilhelmina
+				HOL_shell_shocked_spectator_5
+				HOL_de_crisisjaren_5
+			}
+			focuses = {
+				HOL_continue_the_war_in_batavia
+				HOL_liberation
+				HOL_prepare_the_inundation_lines
+			}
+		}
 
 		"SPR"={
 			minor = yes
@@ -462,21 +417,6 @@ bookmarks = {
 				SPR_anarchism_knows_no_borders
 			}
 		}
-
-		# "POR"={
-			# minor = yes
-			# history = "PORTUGAL_GATHERING_STORM_DESC"
-			# ideology = democratic
-			# ideas = {
-				# POR_unstable_republic
-				# POR_unreliable_army
-			# }
-			# focuses = {
-				# POR_estado_novo
-				# POR_workers_of_iberia_unite
-				# POR_luso_tropicalism
-			# }
-		# }
 		
 		effect = {
 			randomize_weather = 22345 # <- Obligatory in every bookmark !

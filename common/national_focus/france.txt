@@ -2518,14 +2518,6 @@
 		completion_reward = {
 			set_rule = { can_create_factions = yes }
 			create_faction = FRA_communist_faction
-			create_operative_leader = {
-				name = "Jacques Duclos"
-				GFX = GFX_portrait_jacques_duclos
-				traits = { operative_infiltrator operative_natural_orator }
-				bypass_recruitment = no
-				available_to_spy_master = yes
-				nationalities = { FRA }
-			}
 		}
 	}
 	focus = {

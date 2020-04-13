@@ -1840,10 +1840,6 @@ early_ship_hull_carrier = {
 		
 		ai_will_do = {
 			factor = 1
-			modifier = {
-				has_tech = advanced_ship_hull_cruiser
-				factor = 5
-			}
 		}
 		
 		categories = {

@@ -1096,7 +1096,6 @@ naval_submarine = {
 		allowed_modules = {
 			ship_torpedo_sub
 			sub_ship_engine
-			ship_mine_layer_sub
 			ship_sub_snorkel
 			ship_radar
 		}
@@ -1126,7 +1125,6 @@ naval_submarine = {
 		allowed_modules = {
 			ship_torpedo_sub
 			sub_ship_engine
-			ship_mine_layer_sub
 			ship_sub_snorkel
 			ship_radar
 		}
@@ -1159,7 +1157,6 @@ naval_submarine = {
 			ship_sub_snorkel
 			ship_torpedo_sub
 			sub_ship_engine
-			ship_mine_layer_sub
 			ship_radar
 		}
 	}

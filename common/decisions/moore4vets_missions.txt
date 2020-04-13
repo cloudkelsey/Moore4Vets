@@ -1,0 +1,63 @@
+event_firing = {
+	give_eastern_poland = {
+		allowed = { tag = GER }
+		available = { POL = { has_war_with = GER has_capitulated = yes } }
+		fire_only_once = yes
+		days_mission_timeout = 9999
+		complete_effect = { country_event = germany.14 }
+	}
+	
+	compagne_armistice = {
+		allowed = { tag = FRA }
+		available = { has_war_with = GER surrender_progress > 0.7 16 = { is_controlled_by = GER } }
+		fire_only_once = yes
+		days_mission_timeout = 9999
+		complete_effect = { country_event = france.10 }
+	}
+	
+	panay_incident = {
+		allowed = { tag = JAP }
+		available = { 
+			has_war_with = CHI
+			OR = {
+				AND = { #JAP has made headway in the north
+					608 = { is_controlled_by = JAP } #Beijing
+					614 = { is_controlled_by = JAP } #Hebei
+					597 = { is_controlled_by = JAP } #Shandong
+					598 = { is_controlled_by = JAP } #Jiangsu
+					}
+				OR = { #JAP has captured key coastal states in the south
+					597 = { is_controlled_by = JAP } #Shanghai
+					592 = { is_controlled_by = JAP } #Guangzhou
+				}
+			}
+		}
+		fire_only_once = yes
+		days_mission_timeout = 9999
+		complete_effect = { country_event = panay_incident.1 }
+	}
+	
+	get_rid_of_chamberlain = {
+		allowed = { tag = ENG }
+		available = { has_war = yes POL = { has_capitulated = yes } }
+		fire_only_once = yes
+		days_mission_timeout = 9999
+		complete_effect = { country_event = britain.9 }
+	}
+	
+	give_shadow_scheme_factories = {
+		allowed = { tag = ENG }
+		available = { has_completed_focus = shadow_scheme_focus has_war = yes }
+		fire_only_once = yes
+		days_mission_timeout = 9999
+		complete_effect = { country_event = britain.24 }
+	}
+	
+	remove_usa_faction_idea = {
+		allowed = { tag = USA }
+		available = { OR = { has_war_with = JAP OR = { always = no } } }
+		fire_only_once = yes
+		days_mission_timeout = 9999
+		complete_effect = { remove_ideas = { usa_no_faction_joining } country_event = moore4vets_news.2 }
+	}
+}

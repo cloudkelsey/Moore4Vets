@@ -15,6 +15,19 @@ news_event = { #Italy celebrates over Ethiopia
 	}
 }
 
+news_event = {
+	id = moore4vets_news.2
+	title = moore4vets_news.2.t
+	desc = moore4vets_news.2.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = moore4vets_news.2.option
+	}
+}
+
 country_event = { #this event will be fired at the start of the game, and will be used to trigger other events later on
 	id = moore4vets.1
 	title = moore4vets.1.t
@@ -34,7 +47,16 @@ country_event = { #this event will be fired at the start of the game, and will b
 		hidden_effect = {
 			# days = date to fire - 2nd Jan 1936 - 1
 			# https://www.calculatorsoup.com/calculators/time/date-difference-calculator.php
-			ITA = { country_event = { id = moore4vets.2 days = 194 } } #ethiopia 15/7/1936
+			
+																		# these dates may be 1-2 days off, test if you care
+			ITA = { country_event = { id = moore4vets.2 days = 194 } } 	# ethiopia 15/7/1936
+			ENG = {
+				country_event = { id = britain.16 days = 18 } 			# king dies 19/1/1936
+				country_event = { id = mtg_britain.1 days = 150 } 		# abdication crisis 1/6/1936
+				country_event = { id = britain.17 days = 333 } 			# king abdicates 1/12/1936
+				country_event = { id = britain.22 days = 511 } 			# stanley baldwin retires 28/5/1937
+			}
+			USA = { add_timed_idea = { idea = usa_no_faction_joining days = 2165 } }
 		}
 	}
 
@@ -56,7 +78,7 @@ country_event = { #Italy annexes Ethiopia
 			if = {
 				limit = { ETH = { exists = yes } }
 				annex_country = { target = ETH transfer_troops = no }
-				news_event = { id = moore4vets_news.1 days = 1 }
+				news_event = moore4vets_news.1
 			}
 		}
 		hidden_effect = {
@@ -69,15 +91,4 @@ country_event = { #Italy annexes Ethiopia
 	}
 
 	option = { name = moore4vets.2.option }
-}
-
-country_event = { # Rule 1 of USA rules, removes timed idea to stop from joining factions if A) Japan is at war or B) A British port is not controlled by UK
-	id = moore4vets.3
-	title = moore4vets.3.t
-	desc = moore4vets.3.d
-	
-	fire_only_once = yes
-	is_triggered_only = yes
-	
-	
 }
