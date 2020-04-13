@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\common"
   ],
-  "SelectedNode": "\\.gitattributes",
+  "SelectedNode": "\\common\\defines",
   "PreviewInSolutionExplorer": false
 }
