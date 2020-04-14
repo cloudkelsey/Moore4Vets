@@ -5862,36 +5862,6 @@ focus_tree = {
 	}
 
 	focus = {
-		id = USA_unrestricted_submarine_warfare
-		icon = GFX_goal_generic_wolf_pack
-		x = 3
-		y = 2
-		prerequisite = { focus = USA_fleet_submarines }
-		relative_position_id = USA_bureau_of_ships
-		cost = 10
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-
-		}
-		
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-			add_ideas = USA_unrestricted_submarine_warfare
-		}
-	}
-
-	focus = {
 		id = USA_fund_the_navy
 		icon = GFX_goal_generic_construct_naval_dockyard
 		x = 7
