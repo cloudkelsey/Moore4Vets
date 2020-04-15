@@ -2217,10 +2217,7 @@
 			x = 0
 			y = 0
 		}
-		prerequisite = {
-			focus = FRA_reform_the_labour_laws
-			focus = FRA_protect_the_rights_of_man
-		}
+		prerequisite = { focus = FRA_reform_the_labour_laws }
 		relative_position_id = FRA_reform_the_labour_laws
 		cost = 10
 
@@ -2342,7 +2339,6 @@
 		prerequisite = {
 			focus = FRA_review_foreign_policy
 		}
-		mutually_exclusive = { focus = FRA_confirm_eastern_commitments }
 		relative_position_id = FRA_review_foreign_policy
 		cost = 10
 
