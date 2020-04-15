@@ -7,10 +7,11 @@ state={
 	state_category = enclave
 	resources={
 		rubber=1 # was: 1
+		aluminium=64 # was: 112  (From British Guyana)
 	}
 	history={
-		#owner = POR
-		#add_core_of = GNB
+		owner = ENG
+		add_core_of = GNB
 		victory_points = {
 			12891 1
 		}

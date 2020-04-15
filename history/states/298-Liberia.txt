@@ -7,13 +7,14 @@ state=
 	state_category = rural
 	resources={
 		rubber=6 # was: 7
+		aluminium=60 # was: 104 (From Suriname)
 	}	
 	
 
 	history= {
-		#owner = LIB
+		owner = FRA
 		buildings = {
-			infrastructure = 2
+			infrastructure = 3
 			arms_factory = 1
 			industrial_complex = 1
 			7959 = {
@@ -23,7 +24,7 @@ state=
 		victory_points = {
 			7959 3
 		}
-		#add_core_of = LIB
+		add_core_of = LIB
 	}
 	provinces={
 		7959 8006
