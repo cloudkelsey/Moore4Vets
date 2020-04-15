@@ -92,3 +92,111 @@ country_event = { #Italy annexes Ethiopia
 
 	option = { name = moore4vets.2.option }
 }
+
+country_event = { #1936 CIV Trade Adjust
+	id = moore4vets.4
+	title = moore4vets.4.t
+	desc = moore4vets.4.d
+	#picture = GFX_report_event_german_speech
+
+	fire_only_once = yes
+	is_triggered_only = no
+	hidden = yes
+	
+		trigger = {
+		date > 1936.1.2
+	}
+
+	immediate = {
+		USA = {
+			add_offsite_building = { type = industrial_complex level = 27 }
+			}
+		SOV =  {
+			add_offsite_building = { type = industrial_complex level = 9 }
+			}
+		}
+		ENG = {
+			add_offsite_building = { type = industrial_complex level = 2 }
+			}
+		FRA = {
+			add_offsite_building = { type = industrial_complex level = 3 }
+			}	
+		}
+		
+country_event = { #1937 CIV Trade Adjust
+	id = moore4vets.5
+	title = moore4vets.5.t
+	desc = moore4vets.5.d
+	#picture = GFX_report_event_german_speech
+
+	fire_only_once = yes
+	is_triggered_only = no
+	hidden = yes
+
+	trigger = {
+		date > 1937.1.2
+	}
+	
+	immediate = {
+		USA = {
+			add_offsite_building = { type = industrial_complex level = 3 }
+			}
+		SOV =  {
+			add_offsite_building = { type = industrial_complex level = 2 }
+			}
+		}
+		FRA = {
+			add_offsite_building = { type = industrial_complex level = 1 }
+			}	
+		}		
+		
+country_event = { #1938 CIV Trade Adjust
+	id = moore4vets.6
+	title = moore4vets.6.t
+	desc = moore4vets.6.d
+	#picture = GFX_report_event_german_speech
+
+	fire_only_once = yes
+	is_triggered_only = no
+	hidden = yes
+
+		trigger = {
+		date > 1938.1.2
+	}
+	
+	immediate = {
+		USA = {
+			add_offsite_building = { type = industrial_complex level = 14 }
+			}
+		SOV =  {
+			add_offsite_building = { type = industrial_complex level = 8 }
+			}
+		}	
+		}
+
+country_event = { #1939 CIV Trade Adjust
+	id = moore4vets.7
+	title = moore4vets.7.t
+	desc = moore4vets.7.d
+	#picture = GFX_report_event_german_speech
+
+	fire_only_once = yes
+	is_triggered_only = no
+	hidden = yes
+
+	trigger = {
+		date > 1939.1.2
+	}
+	
+	immediate = {
+		USA = {
+			add_offsite_building = { type = industrial_complex level = 12 }
+			}
+		SOV =  {
+			add_offsite_building = { type = industrial_complex level = 10 }
+			}
+		}
+		ENG = {
+			add_offsite_building = { type = industrial_complex level = 6 }
+			}	
+		}	
