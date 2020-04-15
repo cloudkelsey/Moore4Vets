@@ -1365,39 +1365,39 @@ focus_tree = {
 		}
 	}
 
-	focus = {
-		id = ENG_anti_non_contact_committee
-		prerequisite = { focus = naval_rearmament_focus }
-		icon = GFX_goal_generic_occupy_states_coastal
-		x = 2
-		y = 1
-		relative_position_id = naval_rearmament_focus
-		cost = 5
-		ai_will_do = {
-			factor = 1
-		}
+	# focus = {
+		# id = ENG_anti_non_contact_committee
+		# prerequisite = { focus = naval_rearmament_focus }
+		# icon = GFX_goal_generic_occupy_states_coastal
+		# x = 2
+		# y = 1
+		# relative_position_id = naval_rearmament_focus
+		# cost = 5
+		# ai_will_do = {
+			# factor = 1
+		# }
 
-		allow_branch = {
-			has_dlc = "Man the Guns"
-		}
+		# allow_branch = {
+			# has_dlc = "Man the Guns"
+		# }
 
-		available_if_capitulated = yes
-		search_filters = {FOCUS_FILTER_RESEARCH}
-		completion_reward = {
-			add_tech_bonus = {
-				name = ENG_anti_non_contact_committee
-				bonus = 1.0
-				uses = 1
-				category = naval_minelaying
-			}
-			add_tech_bonus = {
-				name = ENG_anti_non_contact_committee
-				bonus = 1.0
-				uses = 2
-				category = naval_minesweeping
-			}
-		}
-	}
+		# available_if_capitulated = yes
+		# search_filters = {FOCUS_FILTER_RESEARCH}
+		# completion_reward = {
+			# add_tech_bonus = {
+				# name = ENG_anti_non_contact_committee
+				# bonus = 1.0
+				# uses = 1
+				# category = naval_minelaying
+			# }
+			# add_tech_bonus = {
+				# name = ENG_anti_non_contact_committee
+				# bonus = 1.0
+				# uses = 2
+				# category = naval_minesweeping
+			# }
+		# }
+	# }
 
 	focus = {
 		id = ENG_secure_the_imperial_shipping_routes
