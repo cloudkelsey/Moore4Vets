@@ -1656,11 +1656,6 @@ focus_tree = {
 		icon = GFX_goal_generic_scientific_exchange
 		prerequisite = { focus = GER_army_innovation }
 		available = {
-			NOT = { has_completed_focus = GER_anti_soviet_pact }
-			OR = {
-				NOT = { has_completed_focus = GER_bulwark_against_bolshevism }
-				NOT = { has_completed_focus = GER_the_great_red_menace }
-			}
 		}
 		#cancel = { 
 		#	OR = {
@@ -1672,8 +1667,6 @@ focus_tree = {
 			OR = {
 				has_war_with = SOV
 				NOT = { country_exists = SOV }
-				has_completed_focus = GER_bulwark_against_bolshevism
-				has_completed_focus = GER_the_great_red_menace
 			}
 		}
 
@@ -1832,7 +1825,6 @@ focus_tree = {
 		id = GER_mol_rib_pact
 		icon = GFX_goal_molotov_ribbentrop_pact
 		prerequisite = { focus = GER_soviet_treaty }
-		mutually_exclusive = { focus = GER_anti_soviet_pact }
 		available = {
 			is_puppet = no
 			has_government = fascism
@@ -1841,8 +1833,6 @@ focus_tree = {
 				NOT = { has_war_with = GER }
 				country_exists = SOV
 			}
-			NOT = { has_completed_focus = GER_bulwark_against_bolshevism }
-			NOT = { has_completed_focus = GER_the_great_red_menace }
 		}
 		cancel = {
 			OR = {
@@ -1959,7 +1949,6 @@ focus_tree = {
 	focus = {
 		id = GER_rhineland
 		icon = GFX_goal_generic_military_sphere
-		mutually_exclusive = { focus = GER_oppose_hitler }
 		x = 25
 		y = 0
 		cost = 10
@@ -2775,7 +2764,7 @@ focus_tree = {
 	focus = {
 		id = GER_around_maginot
 		icon = GFX_goal_generic_attack_allies
-		prerequisite = { focus = GER_danzig_or_war focus = GER_poland_friend}
+		prerequisite = { focus = GER_danzig_or_war }
 		
 		available = {
 			OR = {
@@ -3054,7 +3043,6 @@ focus_tree = {
 						ENG = {
 							is_subject = yes
 						}
-						ENG = { has_completed_focus = ENG_a_change_in_course }
 						has_war_with = ENG
 						has_war_with = FRA
 						AND = {
@@ -3108,7 +3096,6 @@ focus_tree = {
 				limit = {
 					ENG = { exists = yes }
 					ENG = { is_subject = no }
-					NOT = { ENG = { has_completed_focus = ENG_a_change_in_course } }
 					NOT = { has_war_with = ENG }
 					NOT = { has_war_with = FRA }
 					CZE = { is_subject = no }
@@ -3311,7 +3298,7 @@ focus_tree = {
 	focus = {
 		id = GER_second_vienna_award
 		icon = GFX_goal_generic_cavalry
-		prerequisite = { focus = GER_czech_friend focus = GER_end_of_czechoslovakia }
+		prerequisite = { focus = GER_end_of_czechoslovakia }
 		x = 0
 		y = 1
 		relative_position_id = GER_end_of_czechoslovakia

@@ -949,16 +949,8 @@
 		id = JAP_purge_the_kodoha_faction
 		icon = GFX_goal_generic_major_war
 		# mutually_exclusive = { focus = JAP_the_unthinkable_option focus = JAP_support_the_kodoha_faction focus = JAP_strengthen_civilian_government }
-		x = 8
+		x = 0
 		y = 0
-		relative_position_id = JAP_the_unthinkable_option
-		offset = {
-			x = -8
-			y = 0
-			trigger = {
-				NOT = { has_dlc = "Waking the Tiger" }
-			}
-		}
 
 		cost = 10
 
@@ -2083,7 +2075,7 @@
 	focus = {
 		id = JAP_national_mobilization_law
 		icon = GFX_goal_generic_axis_build_infantry
-		prerequisite = { focus = JAP_guide_the_zaibatsus focus = JAP_challenge_the_zaibatsus }
+		prerequisite = { focus = JAP_guide_the_zaibatsus }
 		x = 2
 		y = 1
 		relative_position_id = JAP_guide_the_zaibatsus
@@ -2269,10 +2261,10 @@
 	focus = {
 		id = JAP_national_defense_state
 		icon = GFX_goal_generic_political_pressure
-		prerequisite = { focus = JAP_nationalize_war_industry focus = JAP_imperial_arsenals }
+		prerequisite = { focus = JAP_nationalize_war_industry }
 		x = 2
 		y = 1
-		relative_position_id = JAP_nationalize_war_industry focus
+		relative_position_id = JAP_nationalize_war_industry
 
 		cost = 10
 
