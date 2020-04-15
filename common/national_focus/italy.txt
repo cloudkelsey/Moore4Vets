@@ -974,7 +974,7 @@
 		icon = GFX_goal_generic_build_navy
 		x = 6
 		y = 0
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 5
 		}
@@ -1111,7 +1111,7 @@
 		x = 1
 		y = 1
 		relative_position_id = ITA_mare_nostrum
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 1
 		}
@@ -1136,7 +1136,7 @@
 		x = 3
 		y = 1
 		relative_position_id = ITA_mare_nostrum
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 1
 		}
@@ -1240,7 +1240,7 @@
 		x = 1
 		y = 2
 		relative_position_id = ITA_carrier_effort
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 1
 		}
@@ -1272,7 +1272,7 @@
 		x = 0
 		y = 1
 		relative_position_id = ITA_atlantic_fleet
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 1
 		}
@@ -1366,7 +1366,7 @@
 		icon = GFX_goal_generic_navy_cruiser
 		x = 11
 		y = 0
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 1
 		}
@@ -1400,7 +1400,7 @@
 		x = 1
 		y = 1
 		relative_position_id = ITA_light_ship_effort
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 1
 		}
@@ -1436,7 +1436,7 @@
 		x = -1
 		y = 2
 		relative_position_id = ITA_light_ship_effort
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 1
 		}
@@ -1475,7 +1475,7 @@
 		x = -1
 		y = 3
 		relative_position_id = ITA_submarine_effort
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 1
 		}
