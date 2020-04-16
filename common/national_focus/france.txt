@@ -2495,7 +2495,7 @@
 		icon = GFX_goal_generic_construct_naval_dockyard
 		x = 37
 		y = 0
-		cost = 10
+		cost = 5
 		offset = {
 			x = -16
 			y = 0
@@ -2551,7 +2551,7 @@
 		x = -3
 		y = 1
 		relative_position_id = FRA_naval_rearmament
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -2614,7 +2614,7 @@
 		x = 0
 		y = 1
 		relative_position_id = FRA_colonial_naval_bases
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_INDUSTRY }
@@ -2663,7 +2663,7 @@
 		x = 0
 		y = 1
 		relative_position_id = FRA_naval_rearmament
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_INDUSTRY }
@@ -2691,7 +2691,7 @@
 		x = -1
 		y = 1
 		relative_position_id = FRA_the_old_school
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -2714,7 +2714,7 @@
 		x = 1
 		y = 1
 		relative_position_id = FRA_the_old_school
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -2758,7 +2758,7 @@
 		x = 0
 		y = 2
 		relative_position_id = FRA_capital_ship_focus
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = no
 
@@ -2818,7 +2818,7 @@
 		x = 0
 		y = 2
 		relative_position_id = FRA_carrier_focus
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = no
 
@@ -2877,7 +2877,7 @@
 		x = 4
 		y = 1
 		relative_position_id = FRA_naval_rearmament
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_INDUSTRY }
@@ -2893,7 +2893,7 @@
 		x = -1
 		y = 1
 		relative_position_id = FRA_the_young_school
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -2915,7 +2915,7 @@
 		x = 1
 		y = 1
 		relative_position_id = FRA_the_young_school
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -2937,7 +2937,7 @@
 		x = 0
 		y = 2
 		relative_position_id = FRA_surface_combat
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -2965,7 +2965,7 @@
 		x = 3
 		y = 1
 		relative_position_id = FRA_rush_the_richelieus
-		cost = 10
+		cost = 5
 		search_filters = { FOCUS_FILTER_RESEARCH }
 		available_if_capitulated = yes
 
