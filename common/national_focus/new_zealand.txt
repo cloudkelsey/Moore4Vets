@@ -23,7 +23,7 @@
 		x = 8
 		y = 0
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 2
@@ -66,7 +66,7 @@
 		y = 1
 		relative_position_id = NZL_transfer_the_new_zealand_division
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 25
@@ -104,7 +104,7 @@
 		y = 2
 		relative_position_id = NZL_transfer_the_new_zealand_division
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 25
@@ -175,7 +175,7 @@
 		y = 2
 		relative_position_id = NZL_transfer_the_new_zealand_division
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 25
@@ -248,7 +248,7 @@
 		y = 3
 		relative_position_id = NZL_transfer_the_new_zealand_division
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 20
@@ -287,7 +287,7 @@
 		y = 3
 		relative_position_id = NZL_transfer_the_new_zealand_division
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 2
@@ -325,7 +325,7 @@
 		y = 4
 		relative_position_id = NZL_transfer_the_new_zealand_division
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 25
@@ -363,7 +363,7 @@
 		y = 4
 		relative_position_id = NZL_transfer_the_new_zealand_division
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 25
