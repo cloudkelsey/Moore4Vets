@@ -3111,7 +3111,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = HUN_secret_rearmament
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 50
@@ -3150,7 +3150,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = HUN_naval_warfare
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 50
@@ -3188,7 +3188,7 @@ focus_tree = {
 		y = 3
 		relative_position_id = HUN_naval_warfare
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 50
@@ -3229,7 +3229,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = HUN_naval_warfare
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 50
@@ -3268,7 +3268,7 @@ focus_tree = {
 		y = 3
 		relative_position_id = HUN_naval_warfare
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 50
@@ -3306,7 +3306,7 @@ focus_tree = {
 		y = 4
 		relative_position_id = HUN_naval_warfare
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 50
@@ -3345,7 +3345,7 @@ focus_tree = {
 		y = 3
 		relative_position_id = HUN_naval_warfare
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 50
@@ -3384,7 +3384,7 @@ focus_tree = {
 		y = 4
 		relative_position_id = HUN_naval_warfare
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 50
