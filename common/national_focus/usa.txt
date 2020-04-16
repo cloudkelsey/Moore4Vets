@@ -1325,7 +1325,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = USA_war_plan_black
-		cost = 10
+		cost = 5
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -1426,7 +1426,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = USA_intervention_in_asia
-		cost = 10
+		cost = 5
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -2365,7 +2365,7 @@ focus_tree = {
 		y = 1
 		prerequisite = { focus = USA_two_ocean_navy_act }
 		relative_position_id = USA_two_ocean_navy_act
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -2395,7 +2395,7 @@ focus_tree = {
 		x = -3
 		y = 2
 		relative_position_id = USA_two_ocean_navy_act
-		cost = 10
+		cost = 5
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -2412,7 +2412,7 @@ focus_tree = {
 		icon = GFX_goal_generic_build_navy
 		x = 2
 		y = 1
-		cost = 10
+		cost = 5
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -2434,7 +2434,7 @@ focus_tree = {
 		x = -3
 		y = 1
 		relative_position_id = USA_bureau_of_ships
-		cost = 10
+		cost = 5
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -2459,7 +2459,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = USA_battleship_primacy
-		cost = 10
+		cost = 5
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -2484,7 +2484,7 @@ focus_tree = {
 		y = 2
 		prerequisite = { focus = USA_advanced_mahanian_doctrine }
 		relative_position_id = USA_battleship_primacy
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -2539,7 +2539,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = USA_bureau_of_ships
-		cost = 10
+		cost = 5
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -2626,7 +2626,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = USA_bureau_of_ships
-		cost = 10
+		cost = 5
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -2646,7 +2646,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = USA_escort_effort
-		cost = 10
+		cost = 5
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -2671,7 +2671,7 @@ focus_tree = {
 		y = 1
 		prerequisite = { focus = USA_bureau_of_ships }
 		relative_position_id = USA_bureau_of_ships
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -2712,7 +2712,7 @@ focus_tree = {
 		x = 7
 		y = 1
 		relative_position_id = USA_two_ocean_navy_act
-		cost = 10
+		cost = 5
 		prerequisite = { focus = USA_two_ocean_navy_act }
 		ai_will_do = {
 			factor = 1
@@ -2764,7 +2764,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = USA_expand_the_USMC
-		cost = 10
+		cost = 5
 		#ai_will_do = {
 		#	factor = 1
 		#}
