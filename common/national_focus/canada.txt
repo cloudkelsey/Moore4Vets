@@ -2345,7 +2345,7 @@
 	focus = {
 		id = CAN_strengthen_the_commonwealth_ties
 		icon = GFX_goal_tfv_strengthen_commonwealth_ties
-		x = 21
+		x = 20
 		y = 0
 
 		cost = 10
@@ -2773,7 +2773,7 @@
 	focus = {
 		id = CAN_rcaf_station_borden
 		icon = GFX_goal_generic_build_airforce
-		x = 35
+		x = 24
 		y = 0
 
 		cost = 10
@@ -3281,10 +3281,10 @@
 	focus = {
 		id = CAN_halifax_shipyards
 		icon = GFX_goal_generic_construct_naval_dockyard
-		x = 39
+		x = 28
 		y = 0
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 9
@@ -3349,7 +3349,7 @@
 		y = 1
 		relative_position_id = CAN_halifax_shipyards
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 25
@@ -3387,7 +3387,7 @@
 		y = 2
 		relative_position_id = CAN_halifax_shipyards
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 25
@@ -3425,7 +3425,7 @@
 		y = 2
 		relative_position_id = CAN_halifax_shipyards
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 25
@@ -3464,7 +3464,7 @@
 		y = 3
 		relative_position_id = CAN_halifax_shipyards
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 25
@@ -3507,7 +3507,7 @@
 		y = 3
 		relative_position_id = CAN_halifax_shipyards
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 25
@@ -3545,7 +3545,7 @@
 		y = 4
 		relative_position_id = CAN_halifax_shipyards
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 25
@@ -3598,7 +3598,7 @@
 		y = 4
 		relative_position_id = CAN_halifax_shipyards
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 25
@@ -3630,7 +3630,7 @@
 		y = 5
 		relative_position_id = CAN_halifax_shipyards
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 25
