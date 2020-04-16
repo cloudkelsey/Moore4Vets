@@ -456,7 +456,6 @@
 		id = MAN_obedience
 		icon = GFX_focus_CZE_german_puppet
 		prerequisite = { focus = MAN_army_modernization }
-		mutually_exclusive = { focus = MAN_assertiveness }
 		x = -2
 		y = 4
 		relative_position_id = MAN_army_modernization

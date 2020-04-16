@@ -330,66 +330,12 @@ focus_tree = {
 			}
 		}
 	}
-
-	focus = {
-		id = USA_scientist_haven
-		icon = GFX_focus_research
-		prerequisite = { focus = USA_arsenal_of_democracy }
-		x = -3
-		y = 2
-		relative_position_id = USA_arsenal_of_democracy
-		cost = 10
-		#ai_will_do = {
-		#	factor = 1
-		#}
-
-		available_if_capitulated = yes
-		available = {
-			has_government = democratic
-		}
-		search_filters = {FOCUS_FILTER_RESEARCH}
-		completion_reward = {
-			add_research_slot = 1
-		}
-	}
-	focus = {
-		id = USA_manhattan_project
-		icon = GFX_focus_wonderweapons
-		prerequisite = { focus = USA_scientist_haven }
-		
-		x = 0
-		y = 1
-		relative_position_id = USA_scientist_haven
-		cost = 10
-		#ai_will_do = {
-		#	factor = 1
-		#}
-
-		available_if_capitulated = yes
-
-		search_filters = {FOCUS_FILTER_RESEARCH}
-		completion_reward = {
-			add_tech_bonus = {
-				name = USA_manhattan_project
-				bonus = 1.0
-				uses = 1
-				category = nuclear
-			}
-			add_tech_bonus = {
-				name = USA_manhattan_project
-				bonus = 1.0
-				uses = 1
-				category = nuclear
-			}
-		}
-	}
 	focus = {
 		id = USA_neutrality_act
 		icon = GFX_goal_generic_neutrality_focus
 		x = 2
 		y = 1
 		prerequisite = { focus = USA_continue_the_new_deal }
-		mutually_exclusive = { focus = USA_limited_intervention }
 		relative_position_id = USA_continue_the_new_deal
 		cost = 10
 
@@ -492,15 +438,6 @@ focus_tree = {
 				}
 			}
 			if = {
-				limit = {
-					has_completed_focus = USA_limited_intervention
-				}
-				swap_ideas = {
-					remove_idea = USA_limited_intervention
-					add_idea = USA_lend_lease_act_li
-				}
-			}
-			else_if = {
 				limit = { has_completed_focus = USA_neutrality_act }
 				swap_ideas = {
 					remove_idea = USA_neutrality_act
@@ -734,8 +671,6 @@ focus_tree = {
 			show_ideas_tooltip = USA_general_motors
 		}
 	}
-	
-
 	focus = {
 		id = USA_military_construction
 		icon = GFX_goal_generic_build_tank
@@ -963,6 +898,59 @@ focus_tree = {
 					set_state_flag = USA_military_construction_3Inf
 				}
 			}			
+		}
+	}
+
+	focus = {
+		id = USA_scientist_haven
+		icon = GFX_focus_research
+		prerequisite = { focus = USA_arsenal_of_democracy }
+		x = -3
+		y = 2
+		relative_position_id = USA_arsenal_of_democracy
+		cost = 10
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+		available = {
+			has_government = democratic
+		}
+		search_filters = {FOCUS_FILTER_RESEARCH}
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	focus = {
+		id = USA_manhattan_project
+		icon = GFX_focus_wonderweapons
+		prerequisite = { focus = USA_scientist_haven }
+		
+		x = 0
+		y = 1
+		relative_position_id = USA_scientist_haven
+		cost = 10
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+		search_filters = {FOCUS_FILTER_RESEARCH}
+		completion_reward = {
+			add_tech_bonus = {
+				name = USA_manhattan_project
+				bonus = 1.0
+				uses = 1
+				category = nuclear
+			}
+			add_tech_bonus = {
+				name = USA_manhattan_project
+				bonus = 1.0
+				uses = 1
+				category = nuclear
+			}
 		}
 	}
 

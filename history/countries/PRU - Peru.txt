@@ -1,0 +1,21 @@
+﻿capital = 303
+
+oob = "PRU_1936"
+if = {
+	limit = { has_dlc = "Man the Guns" }
+		set_naval_oob = "PRU_1936_naval_mtg"
+	else = {
+		set_naval_oob = "PRU_1936_naval_legacy"
+	}
+}
+
+create_country_leader = {
+	name = "Óscar Benavides"
+	desc = "POLITICS_OSCAR_BENAVIDES_DESC"
+	picture = "GFX_Portrait_peru_oscar_benavides"
+	expire = "1965.1.1"
+	ideology = fascism_ideology
+	traits = {
+		#
+	}
+}

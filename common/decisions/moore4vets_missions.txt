@@ -7,6 +7,13 @@ event_firing = {
 		complete_effect = { country_event = germany.14 }
 	}
 	
+	mefo_bills_payments_thing = {
+		allowed = { tag = GER }
+		available = { has_country_flag = mefo_bills_removed_through_war has_war = no }
+		days_mission_timeout = 9999
+		complete_effect = { country_event = wtt_germany.62 }
+	}
+	
 	compagne_armistice = {
 		allowed = { tag = FRA }
 		available = { has_war_with = GER surrender_progress > 0.7 16 = { is_controlled_by = GER } }

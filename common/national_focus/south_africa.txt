@@ -1816,7 +1816,7 @@
 		x = 18
 		y = 0		
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -1888,7 +1888,7 @@
 		y = 1
 		relative_position_id = SAF_seaward_defence_force
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 0.8
@@ -1926,7 +1926,7 @@
 		y = 1
 		relative_position_id = SAF_seaward_defence_force
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 0.2
@@ -1967,7 +1967,7 @@
 		y = 2
 		relative_position_id = SAF_seaward_defence_force
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -2053,7 +2053,7 @@
 		y = 3
 		relative_position_id = SAF_seaward_defence_force
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -2091,7 +2091,7 @@
 		y = 3
 		relative_position_id = SAF_seaward_defence_force
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -2134,7 +2134,7 @@
 		y = 4
 		relative_position_id = SAF_seaward_defence_force
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -2179,7 +2179,7 @@
 		y = 4
 		relative_position_id = SAF_seaward_defence_force
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
