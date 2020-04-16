@@ -1341,7 +1341,7 @@
 		x = 11
 		y = 0
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -1410,7 +1410,7 @@
 		y = 1
 		relative_position_id = AST_cockatoo_island_shipyards
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -1449,7 +1449,7 @@
 		y = 1
 		relative_position_id = AST_cockatoo_island_shipyards
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -1486,7 +1486,7 @@
 		y = 2
 		relative_position_id = AST_cockatoo_island_shipyards
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -1524,7 +1524,7 @@
 		y = 2
 		relative_position_id = AST_cockatoo_island_shipyards
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -1594,7 +1594,7 @@
 		y = 4
 		relative_position_id = AST_cockatoo_island_shipyards
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -1633,7 +1633,7 @@
 		y = 4
 		relative_position_id = AST_cockatoo_island_shipyards
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1

@@ -2945,7 +2945,7 @@ shared_focus = {
 	mutually_exclusive = { focus = CHI_collaboration_with_the_japanese }
 	relative_position_id = CHI_british_cooperation
 
-	cost = 10
+	cost = 5
 
 	ai_will_do = {
 		factor = 1
@@ -3132,7 +3132,7 @@ shared_focus = {
 	y = 3
 	relative_position_id = CHI_mission_to_the_us
 
-	cost = 10
+	cost = 5
 
 	ai_will_do = {
 		factor = 1
@@ -3168,7 +3168,7 @@ shared_focus = {
 	y = 2
 	relative_position_id = CHI_light_cruiser_project
 
-	cost = 10
+	cost = 5
 
 	ai_will_do = {
 		factor = 1
@@ -3204,7 +3204,7 @@ shared_focus = {
 	y = 1
 	relative_position_id = CHI_heavy_cruiser_project
 
-	cost = 10
+	cost = 5
 
 	ai_will_do = {
 		factor = 1
@@ -3283,7 +3283,7 @@ shared_focus = {
 	y = 1
 	relative_position_id = CHI_mission_to_the_us
 
-	cost = 10
+	cost = 5
 
 	ai_will_do = {
 		factor = 1
@@ -3345,7 +3345,7 @@ shared_focus = {
 	y = 1
 	relative_position_id = CHI_investment_into_shipbuilding
 
-	cost = 10
+	cost = 5
 
 	ai_will_do = {
 		factor = 1
@@ -3425,7 +3425,7 @@ shared_focus = {
 	y = 0
 	relative_position_id = CHI_mission_to_the_us
 
-	cost = 10
+	cost = 5
 
 	ai_will_do = {
 		factor = 1
@@ -3487,7 +3487,7 @@ shared_focus = {
 	y = 3
 	relative_position_id = CHI_collaboration_with_the_japanese
 
-	cost = 10
+	cost = 5
 
 	ai_will_do = {
 		factor = 1
