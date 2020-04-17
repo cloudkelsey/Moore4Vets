@@ -1,0 +1,14 @@
+on_actions = {
+		
+		on_startup = {
+		effect = {
+			#Mexican oil concessions
+			if = {
+				SIA = {
+					give_resource_rights = { receiver = JAP state = 289 }
+					
+				}
+			}
+		}
+	}
+}
