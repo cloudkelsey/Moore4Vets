@@ -210,6 +210,28 @@ uk_annexation = {
 	}
 }
 
+jap_annexation = {
+	JAP_annex_siam= {	
+		ai_will_do = { factor = 0 }
+		cost = 5
+		visible = {
+			date > 1939.1.1
+			tag = JAP
+			SIA = { is_ai = yes }
+			country_exists = SIA
+			is_in_faction_with = SIA
+		}
+		fire_only_once = yes
+		complete_effect = {
+			JAP = {
+				add_state_core = 289
+				add_state_core = 724
+				annex_country = { target = SIA transfer_troops = yes }
+			}
+		}
+	}
+}
+
 fin_white_peace = {
 	force_white_peace = {
 		ai_will_do = { factor = 100 }
