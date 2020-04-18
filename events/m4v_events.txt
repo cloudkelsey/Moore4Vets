@@ -28,15 +28,6 @@ news_event = {
 	}
 }
 
-news_event = { # Debug news event to let me know when civs get added
-	id = moore4vets_news.3
-	title = "Civs have been added"
-	desc = ""
-	is_triggered_only = yes
-	major = yes
-	option = {}
-}
-
 country_event = { #this event will be fired at the start of the game, and will be used to trigger other events later on
 	id = moore4vets.1
 	title = moore4vets.1.t
@@ -118,8 +109,8 @@ country_event = { # Civ trade adjustments
 	desc = moore4vets.4.d
 
 	is_triggered_only = yes
-	#hidden = yes # commented out while debugging (MAKE SURE OPTIONS WORK WITH HIDDEN EVENTS)
-	#timeout_days = 1 # commented out while debugging
+	hidden = yes
+	timeout_days = 1
 	
 	# I miss case statements
 	option = {
@@ -128,7 +119,6 @@ country_event = { # Civ trade adjustments
 		SOV = { add_offsite_building = { type = industrial_complex level = 4 } }
 		ENG = { add_offsite_building = { type = industrial_complex level = 1 } }
 		FRA = { add_offsite_building = { type = industrial_complex level = 1 } }
-		news_event = moore4vets_news.3
 	}
 	option = {
 		trigger = { AND = { date > 1936.5.1 date < 1936.7.1 } } # 1/6/1936
@@ -136,27 +126,23 @@ country_event = { # Civ trade adjustments
 		SOV = { add_offsite_building = { type = industrial_complex level = 5 } }
 		ENG = { add_offsite_building = { type = industrial_complex level = 1 } }
 		FRA = { add_offsite_building = { type = industrial_complex level = 2 } }
-		news_event = moore4vets_news.3
 	}
 	option = {
 		trigger = { AND = { date > 1936.11.1 date < 1937.2.1 } } # 1/1/1937
 		USA = { add_offsite_building = { type = industrial_complex level = 3 } }
 		SOV = { add_offsite_building = { type = industrial_complex level = 2 } }
 		FRA = { add_offsite_building = { type = industrial_complex level = 1 } }
-		news_event = moore4vets_news.3
 	}
 	option = {
 		trigger = { OR = { AND = { date > 1937.11.1 date < 1938.2.1 } AND = { date > 1938.5.1 date < 1938.7.1 } } } # 1/1/1938 OR 1/6/1938 
 		USA = { add_offsite_building = { type = industrial_complex level = 7 } }
 		SOV = { add_offsite_building = { type = industrial_complex level = 4 } }
-		news_event = moore4vets_news.3
 	}
 	option = {
 		trigger = { OR = { AND = { date > 1938.11.1 date < 1939.2.1 } AND = { date > 1939.5.1 date < 1939.7.1 } } } # 1/1/1939 OR 1/6/1939 
 		USA = { add_offsite_building = { type = industrial_complex level = 6 } }
 		SOV = { add_offsite_building = { type = industrial_complex level = 5 } }
 		ENG = { add_offsite_building = { type = industrial_complex level = 3 } }
-		news_event = moore4vets_news.3
 	}
 	option = { trigger = { date > 1939.7.1 } }
 }
