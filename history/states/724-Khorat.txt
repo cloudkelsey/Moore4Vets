@@ -19,6 +19,7 @@ state={
 			7236 1 
 		}
 		add_core_of = SIA
+		add_core_of = JAP
 	}
 	
 	provinces={
