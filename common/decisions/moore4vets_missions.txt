@@ -8,7 +8,7 @@ event_firing = {
 		complete_effect = { country_event = germany.14 }
 	}
 	
-	mefo_bills_payments_thing = {
+	mefo_bills_payments_anti_meme = {
 		allowed = { tag = GER }
 		available = { has_country_flag = mefo_bills_removed_through_war has_war = no }
 		visible = { always = no }
