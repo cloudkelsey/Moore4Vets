@@ -1,77 +1,85 @@
 event_firing = {
 	give_eastern_poland = {
-		allowed = { tag = GER }
 		available = { POL = { has_war_with = GER has_capitulated = yes } }
-		visible = { always = no }
 		fire_only_once = yes
 		days_mission_timeout = 9999
-		complete_effect = { country_event = germany.14 }
+		complete_effect = { GER = { country_event = germany.14 } }
 	}
 	
 	mefo_bills_payments_anti_meme = {
-		allowed = { tag = GER }
-		available = { has_country_flag = mefo_bills_removed_through_war has_war = no }
-		visible = { always = no }
+		available = { GER = { has_country_flag = mefo_bills_removed_through_war has_war = no } }
 		days_mission_timeout = 9999
-		complete_effect = { country_event = wtt_germany.62 }
+		complete_effect = { GER = { country_event = wtt_germany.62 } }
 	}
 	
 	compagne_armistice = {
-		allowed = { tag = FRA }
-		available = { has_war_with = GER surrender_progress > 0.7 16 = { is_controlled_by = GER } }
-		visible = { always = no }
+		available = { FRA = { has_war_with = GER surrender_progress > 0.7 } 16 = { is_controlled_by = GER } }
 		fire_only_once = yes
 		days_mission_timeout = 9999
-		complete_effect = { country_event = france.10 }
+		complete_effect = { FRA = { country_event = france.10 } }
 	}
 	
 	panay_incident = {
-		allowed = { tag = JAP }
-		available = { 
-			has_war_with = CHI
-			OR = {
-				AND = { #JAP has made headway in the north
-					608 = { is_controlled_by = JAP } #Beijing
-					614 = { is_controlled_by = JAP } #Hebei
-					597 = { is_controlled_by = JAP } #Shandong
-					598 = { is_controlled_by = JAP } #Jiangsu
+		available = {
+			JAP = {
+				has_war_with = CHI
+				OR = {
+					AND = { #JAP has made headway in the north
+						608 = { is_controlled_by = JAP } #Beijing
+						614 = { is_controlled_by = JAP } #Hebei
+						597 = { is_controlled_by = JAP } #Shandong
+						598 = { is_controlled_by = JAP } #Jiangsu
+						}
+					OR = { #JAP has captured key coastal states in the south
+						597 = { is_controlled_by = JAP } #Shanghai
+						592 = { is_controlled_by = JAP } #Guangzhou
 					}
-				OR = { #JAP has captured key coastal states in the south
-					597 = { is_controlled_by = JAP } #Shanghai
-					592 = { is_controlled_by = JAP } #Guangzhou
 				}
 			}
 		}
-		visible = { always = no }
 		fire_only_once = yes
 		days_mission_timeout = 9999
-		complete_effect = { country_event = panay_incident.1 }
+		complete_effect = { JAP = { country_event = panay_incident.1 } }
 	}
 	
 	get_rid_of_chamberlain = {
-		allowed = { tag = ENG }
-		available = { has_war = yes POL = { has_capitulated = yes } }
-		visible = { always = no }
+		available = { ENG = { has_war = yes } POL = { has_capitulated = yes } }
 		fire_only_once = yes
 		days_mission_timeout = 9999
-		complete_effect = { country_event = britain.9 }
+		complete_effect = { ENG = { country_event = britain.9 } }
 	}
 	
 	give_shadow_scheme_factories = {
-		allowed = { tag = ENG }
-		available = { has_completed_focus = shadow_scheme_focus has_war = yes }
-		visible = { always = no }
+		available = { ENG = { has_completed_focus = shadow_scheme_focus has_war = yes } }
 		fire_only_once = yes
 		days_mission_timeout = 9999
-		complete_effect = { country_event = britain.24 }
+		complete_effect = { ENG = { country_event = britain.24 } }
 	}
 	
 	remove_usa_faction_idea = {
-		allowed = { tag = USA }
-		available = { OR = { has_war_with = JAP OR = { always = no } } }
-		visible = { always = no }
+		available = { 
+			USA = {
+				OR = {
+					has_war_with = JAP
+					OR = {
+						# ROEBUCK: Problem: is_controlled_by, is_fully_controlled_by etc. can only accept states as their argument so checking port provinces is impossible (?)
+						127 = { NOT = { is_fully_controlled_by = ENG } } # triggers even if province taken isn't port
+						123 = { NOT = { is_fully_controlled_by = ENG } }
+						122 = { NOT = { is_fully_controlled_by = ENG } }
+						132 = { NOT = { is_fully_controlled_by = ENG } }
+						133 = { NOT = { is_fully_controlled_by = ENG } }
+						120 = { NOT = { is_fully_controlled_by = ENG } }
+						121 = { NOT = { is_fully_controlled_by = ENG } }
+						131 = { NOT = { is_fully_controlled_by = ENG } }
+						130 = { NOT = { is_fully_controlled_by = ENG } }
+						125 = { NOT = { is_fully_controlled_by = ENG } }
+						126 = { NOT = { is_fully_controlled_by = ENG } }
+					} 
+				}
+			} 
+		}
 		fire_only_once = yes
 		days_mission_timeout = 9999
-		complete_effect = { remove_ideas = { usa_no_faction_joining } country_event = moore4vets_news.2 }
+		complete_effect = { USA = { remove_ideas = { usa_no_faction_joining } country_event = moore4vets_news.2 } }
 	}
 }
