@@ -1320,54 +1320,52 @@
 		}
 	}
 
-	focus = {
-		id = JAP_bypass_the_philippines
-		icon = GFX_goal_generic_position_armies
-		prerequisite = { focus = JAP_non_aggression_pact_with_the_soviet_union }
-		mutually_exclusive = { focus = JAP_secure_the_philippines }
-		x = -1
-		y = 1
-		relative_position_id = JAP_non_aggression_pact_with_the_soviet_union
+	# focus = {
+		# id = JAP_bypass_the_philippines
+		# icon = GFX_goal_generic_position_armies
+		# prerequisite = { focus = JAP_non_aggression_pact_with_the_soviet_union }
+		# mutually_exclusive = { focus = JAP_secure_the_philippines }
+		# x = -1
+		# y = 1
+		# relative_position_id = JAP_non_aggression_pact_with_the_soviet_union
 
-		cost = 10
+		# cost = 10
 
-		ai_will_do = {
-			factor = 3
-		}
+		# ai_will_do = {
+			# factor = 3
+		# }
 
-		available = {
+		# available = {
 
-		}
+		# }
 
-		bypass = {
+		# bypass = {
 
-		}
+		# }
 
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
+		# cancel_if_invalid = yes
+		# continue_if_invalid = no
+		# available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_RESEARCH }
-		completion_reward = {
-			add_tech_bonus = {
-				name = JAP_bypass_the_philippines
-				bonus = 1.0
-				uses = 1
-				category = tp_tech
-			}
-		}
-	}
+		# search_filters = { FOCUS_FILTER_RESEARCH }
+		# completion_reward = {
+			# add_tech_bonus = {
+				# name = JAP_bypass_the_philippines
+				# bonus = 1.0
+				# uses = 1
+				# category = tp_tech
+			# }
+		# }
+	# }
 
 	focus = {
 		id = JAP_secure_the_philippines
 		icon = GFX_goal_generic_occupy_states_ongoing_war
 		prerequisite = { focus = JAP_non_aggression_pact_with_the_soviet_union }
 		mutually_exclusive = { focus = JAP_bypass_the_philippines }
-		x = 1
+		x = 0
 		y = 1
 		relative_position_id = JAP_non_aggression_pact_with_the_soviet_union
-
-		will_lead_to_war_with = PHI
 
 		cost = 10
 
@@ -1375,7 +1373,7 @@
 			factor = 1
 			modifier = {
 				factor = 10
-				"PHI" = {
+				"USA" = {
 					has_war = yes
 					NOT = { has_war_with = JAP }
 				}
@@ -1399,28 +1397,34 @@
 
 		bypass = {
 			OR = {
-				has_war_with = PHI
-				has_wargoal_against = PHI
+				has_war_with = USA
+				has_wargoal_against = USA
 			}
 		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		will_lead_to_war_with = PHI
+		will_lead_to_war_with = USA
 
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
 			create_wargoal = {
-				target = "PHI"
-				type = puppet_wargoal_focus
+				target = "USA"
+				type = take_state_focus
 				expire = 0
 				expire = 0
 			}
 			add_ai_strategy = {
 				type = conquer
-				id = "PHI"
+				id = "USA"
 				value = 200
+			}
+			add_tech_bonus = {
+				name = JAP_bypass_the_philippines
+				bonus = 1.0
+				uses = 1
+				category = tp_tech
 			}
 		}
 	}
@@ -1428,10 +1432,10 @@
 	focus = {
 		id = JAP_strike_on_the_southern_resource_area
 		icon = GFX_focus_jap_strike_south
-		prerequisite = { focus = JAP_secure_the_philippines focus = JAP_bypass_the_philippines }
-		x = 1
+		prerequisite = { focus = JAP_secure_the_philippines }
+		x = 0
 		y = 1
-		relative_position_id = JAP_bypass_the_philippines
+		relative_position_id = JAP_secure_the_philippines
 
 		will_lead_to_war_with = ENG
 		will_lead_to_war_with = MAL
