@@ -2,6 +2,7 @@ event_firing = {
 	give_eastern_poland = {
 		allowed = { tag = GER }
 		available = { POL = { has_war_with = GER has_capitulated = yes } }
+		visible = { always = no }
 		fire_only_once = yes
 		days_mission_timeout = 9999
 		complete_effect = { country_event = germany.14 }
@@ -10,6 +11,7 @@ event_firing = {
 	mefo_bills_payments_thing = {
 		allowed = { tag = GER }
 		available = { has_country_flag = mefo_bills_removed_through_war has_war = no }
+		visible = { always = no }
 		days_mission_timeout = 9999
 		complete_effect = { country_event = wtt_germany.62 }
 	}
@@ -17,6 +19,7 @@ event_firing = {
 	compagne_armistice = {
 		allowed = { tag = FRA }
 		available = { has_war_with = GER surrender_progress > 0.7 16 = { is_controlled_by = GER } }
+		visible = { always = no }
 		fire_only_once = yes
 		days_mission_timeout = 9999
 		complete_effect = { country_event = france.10 }
@@ -39,6 +42,7 @@ event_firing = {
 				}
 			}
 		}
+		visible = { always = no }
 		fire_only_once = yes
 		days_mission_timeout = 9999
 		complete_effect = { country_event = panay_incident.1 }
@@ -47,6 +51,7 @@ event_firing = {
 	get_rid_of_chamberlain = {
 		allowed = { tag = ENG }
 		available = { has_war = yes POL = { has_capitulated = yes } }
+		visible = { always = no }
 		fire_only_once = yes
 		days_mission_timeout = 9999
 		complete_effect = { country_event = britain.9 }
@@ -55,6 +60,7 @@ event_firing = {
 	give_shadow_scheme_factories = {
 		allowed = { tag = ENG }
 		available = { has_completed_focus = shadow_scheme_focus has_war = yes }
+		visible = { always = no }
 		fire_only_once = yes
 		days_mission_timeout = 9999
 		complete_effect = { country_event = britain.24 }
@@ -63,6 +69,7 @@ event_firing = {
 	remove_usa_faction_idea = {
 		allowed = { tag = USA }
 		available = { OR = { has_war_with = JAP OR = { always = no } } }
+		visible = { always = no }
 		fire_only_once = yes
 		days_mission_timeout = 9999
 		complete_effect = { remove_ideas = { usa_no_faction_joining } country_event = moore4vets_news.2 }
