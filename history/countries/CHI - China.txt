@@ -42,6 +42,7 @@ if = {
 
 add_ideas = {
 	german_advisors
+	papertiger
 }
 
 if = {

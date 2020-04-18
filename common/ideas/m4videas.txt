@@ -30,6 +30,25 @@ ideas = {
 			}
 		}
 		
+		papertiger = {
+
+			picture = generic_spy_intel
+
+			allowed = {
+				is_ai = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				surrender_limit = -0.1
+			}
+		}
+		
 		usa_no_faction_joining = {
 			allowed = { tag = USA }
 			removal_cost = -1
