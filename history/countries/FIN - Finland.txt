@@ -12,8 +12,15 @@ if = {
 set_research_slots = 3
 
 add_ideas = {
-	limited_conscription
+	extensive_conscription
 }
+
+add_manpower = 100000
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 52500
+					producer = FIN
+				}
 
 set_technology = {
 	infantry_weapons = 1
