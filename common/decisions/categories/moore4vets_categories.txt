@@ -73,5 +73,6 @@ fin_white_peace = {
 }
 
 event_firing = {
-	allowed = { always = yes }
+	allowed = { OR = { tag = GER tag = FRA tag = JAP tag = ENG tag = USA } }
+	visible = { always = no }
 }

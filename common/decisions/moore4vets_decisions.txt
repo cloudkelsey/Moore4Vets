@@ -237,7 +237,7 @@ fin_white_peace = {
 		ai_will_do = { factor = 100 }
 		cost = 0
 		allowed = { tag = FIN }
-		visible = { has_war_with = SOV OR = { surrender_progress > 0.8 date > 1941.1.1 } }
+		available = { has_war_with = SOV OR = { surrender_progress > 0.8 date > 1941.1.1 } }
 		fire_only_once = yes
 		complete_effect = { SOV = { white_peace = { tag = FIN message = FIN_agree_peace  } transfer_state = 146 transfer_state = 147 transfer_state = 722 }  }
 	}
