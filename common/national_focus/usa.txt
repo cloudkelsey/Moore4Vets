@@ -139,7 +139,7 @@ focus_tree = {
 		}
 
 		available = {
-			date > 1938.4.30
+			date > 1938.5.1
 			congress_medium_support_trigger = yes
 			has_government = democratic
 			not = { has_country_flag = USA_great_depression_cooldown }
@@ -344,7 +344,7 @@ focus_tree = {
 		}
 
 		available = {
-			date > 1938.1.31
+			date > 1938.2.1
 			congress_low_support_trigger = yes
 			democratic > 0.95
 			NOT = { has_idea_with_trait = fascist_demagogue }
