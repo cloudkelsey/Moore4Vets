@@ -1894,7 +1894,7 @@ focus_tree = {
 			}
 		} 
 		icon = GFX_goal_generic_construct_military
-		x = 0
+		x = 2
 		y = 1
 		relative_position_id = uk_service_focus
 		cost = 10
@@ -1943,7 +1943,7 @@ focus_tree = {
 			118 = { is_owned_and_controlled_by = ENG }
 		} 
 		icon = GFX_goal_generic_construct_military
-		x = 1
+		x = 0
 		y = 1
 		relative_position_id = uk_mediterranean_focus
 		cost = 10
@@ -2074,7 +2074,7 @@ focus_tree = {
 		id = uk_protect_suez
 		prerequisite = { focus = uk_mediterranean_focus }
 		icon = GFX_goal_generic_defence
-		x = 0
+		x = -1
 		y = 2
 		relative_position_id = uk_mediterranean_focus
 		cost = 10
@@ -2427,7 +2427,7 @@ focus_tree = {
 			116 = { is_owned_and_controlled_by = ENG }
 		}		
 		icon = GFX_goal_generic_construct_military
-		x = 2
+		x = 1
 		y = 2
 		relative_position_id = uk_mediterranean_focus
 		cost = 10
@@ -4675,7 +4675,7 @@ focus_tree = {
 		id = uk_colonial_focus 
 		prerequisite = { focus = uk_service_focus }
 		icon = GFX_focus_research2
-		x = 0
+		x = 4
 		y = 1
 		relative_position_id = uk_service_focus
 		cost = 10
@@ -4689,7 +4689,7 @@ focus_tree = {
 
 	focus = {
 		id = uk_asia_focus 
-		prerequisite = { focus = uk_colonial_focus }
+		prerequisite = { focus = uk_service_focus }
 		
 		available = {
 			336 = {
@@ -4711,9 +4711,9 @@ focus_tree = {
 		}
 
 		icon = GFX_goal_generic_construct_civilian
-		x = -4
+		x = -3
 		y = 1
-		relative_position_id = uk_colonial_focus
+		relative_position_id = uk_service_focus
 		cost = 10
 
 		available_if_capitulated = yes
@@ -6516,8 +6516,8 @@ focus_tree = {
 
 		icon = GFX_goal_generic_national_unity
 
-		x = 5
-		y = 2
+		x = 1
+		y = 1
 		relative_position_id = uk_colonial_focus
 		cost = 10
 		ai_will_do = {
