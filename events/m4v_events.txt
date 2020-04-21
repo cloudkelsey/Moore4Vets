@@ -46,7 +46,7 @@ country_event = { #this event will be fired at the start of the game, and will b
 	immediate = {
 		hidden_effect = {
 			# days = date to fire - 2nd Jan 1936 - 1
-			# https://www.calculatorsoup.com/calculators/time/date-difference-calculator.php
+			# https://www.calculatorsoup.com/calculators/time/date-difference-calculator.php	
 			
 																		# these dates may be 1-2 days off, test if you care
 			ITA = { country_event = { id = moore4vets.2 days = 194 } } 	# ethiopia 15/7/1936
@@ -56,6 +56,7 @@ country_event = { #this event will be fired at the start of the game, and will b
 				country_event = { id = britain.17 days = 333 } 			# king abdicates 1/12/1936
 				country_event = { id = britain.22 days = 511 } 			# stanley baldwin retires 28/5/1937
 			}
+			
 			USA = { add_timed_idea = { idea = usa_no_faction_joining days = 2165 } }
 
 			# civ adjustment event calls
@@ -67,6 +68,7 @@ country_event = { #this event will be fired at the start of the game, and will b
 			country_event = { id = moore4vets.3 days = 880 } # 1/6/1938
 			country_event = { id = moore4vets.3 days = 1094 } # 1/1/1939
 			country_event = { id = moore4vets.3 days = 1245 } # 1/6/1939
+			country_event = { id = moore4vets.3 days = 1459 } # 1/1/1940
 		}
 	}
 
@@ -105,8 +107,8 @@ country_event = { #Italy annexes Ethiopia
 
 country_event = { # Civ trade adjustments
 	id = moore4vets.3
-	title = moore4vets.4.t
-	desc = moore4vets.4.d
+	title = moore4vets.3.t
+	desc = moore4vets.3.d
 
 	is_triggered_only = yes
 	hidden = yes
@@ -114,16 +116,14 @@ country_event = { # Civ trade adjustments
 	
 	# I miss case statements
 	option = {
-		trigger = { date < 1936.1.3 } # 1/6/1936
+		trigger = { date < 1936.1.3 } # 2/1/1936
 		USA = { add_offsite_building = { type = industrial_complex level = 13 } }
-		SOV = { add_offsite_building = { type = industrial_complex level = 4 } }
 		ENG = { add_offsite_building = { type = industrial_complex level = 1 } }
 		FRA = { add_offsite_building = { type = industrial_complex level = 1 } }
 	}
 	option = {
 		trigger = { AND = { date > 1936.5.1 date < 1936.7.1 } } # 1/6/1936
 		USA = { add_offsite_building = { type = industrial_complex level = 14 } }
-		SOV = { add_offsite_building = { type = industrial_complex level = 5 } }
 		ENG = { add_offsite_building = { type = industrial_complex level = 1 } }
 		FRA = { add_offsite_building = { type = industrial_complex level = 2 } }
 	}
@@ -144,5 +144,48 @@ country_event = { # Civ trade adjustments
 		SOV = { add_offsite_building = { type = industrial_complex level = 5 } }
 		ENG = { add_offsite_building = { type = industrial_complex level = 3 } }
 	}
-	option = { trigger = { date > 1939.7.1 } }
+	option = {
+		trigger = { date > 1939.11.1 date < 1940.2.1 } # 1/1/1940
+		SOV = { add_offsite_building = { type = industrial_complex level = 9 } }
+	}
+	option = { trigger = { date > 1940.2.1 } }
+}
+
+country_event = {
+	id = moore4vets.4
+	title = moore4vets.4.t
+	desc = moore4vets.4.d
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		every_owned_state = {
+			limit = { is_on_continent = europe }
+			add_core_of = SPR
+		}
+		# 171 = { add_core_of = SPR }
+		# 790 = { add_core_of = SPR }
+		# 174 = { add_core_of = SPR }
+		# 792 = { add_core_of = SPR }
+		# 176 = { add_core_of = SPR }
+		# 172 = { add_core_of = SPR }
+		# 166 = { add_core_of = SPR }
+		# 794 = { add_core_of = SPR }
+		# 165 = { add_core_of = SPR }
+		# 167 = { add_core_of = SPR }
+		# 793 = { add_core_of = SPR }
+		# 41 = { add_core_of = SPR }
+		# 788 = { add_core_of = SPR }
+		# 170 = { add_core_of = SPR }
+		# 169 = { add_core_of = SPR }
+		# 173 = { add_core_of = SPR }
+		# 789 = { add_core_of = SPR }
+		# 168 = { add_core_of = SPR }
+		# 175 = { add_core_of = SPR }
+	}
+	
+	option = {
+		name = moore4vets.4.option
+		custom_effect_tooltip = moore4vets.4.display
+	}
 }

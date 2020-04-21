@@ -1,3 +1,5 @@
+NDefines.NDiplomacy.GUARANTEE_COST = 999
+
 NDefines.NCountry.EVENT_PROCESS_OFFSET = 100
 NDefines.NCountry.SPECIAL_FORCES_CAP_MIN = 56
 
@@ -10,7 +12,14 @@ NDefines.NMilitary.BASE_DIVISION_BRIGADE_GROUP_COST = 0
 NDefines.NMilitary.BASE_DIVISION_BRIGADE_CHANGE_COST = 0
 NDefines.NMilitary.BASE_DIVISION_SUPPORT_SLOT_COST = 0
 
+-- ROEBUCK: These two defines are default, leaving them here so if we want to nerf AA further they're easy to change
+NDefines.NMilitary.ANTI_AIR_TARGETTING_TO_CHANCE = 0.07			-- Balancing value to determine the chance of ground AA hitting an attacking airplane, affecting both the effective average damage done by AA to airplanes, and the reduction of damage done by airplanes due to AA support
+NDefines.NMilitary.ANTI_AIR_ATTACK_TO_AMOUNT = 0.005			-- Balancing value to convert equipment stat anti_air_attack to the random % value of airplanes being hit.
+
 NDefines.NAir.AIR_DEPLOYMENT_DAYS = 0
+NDefines.NAir.AIR_WING_MAX_SIZE = 1600
+
+NDefines.NNavy.TRAINING_ACCIDENT_CHANCES = 0.00
 
 NDefines.NAI.DIPLOMACY_ACCEPT_ATTACHE_BASE = 1000
 NDefines.NAI.DIPLOMACY_ACCEPT_ATTACHE_OPINION_TRASHHOLD = -100
@@ -19,8 +28,6 @@ NDefines.NAI.DIVISION_UPGRADE_MIN_XP = 0
 NDefines.NAI.DIVISION_CREATE_MIN_XP = 0
 
 NDefines.NOperatives.OPERATIVE_BASE_PROPAGANDA_POWER = 0.0000
-
-NDefines.NNavy.TRAINING_ACCIDENT_CHANCES = 0.0
 
 -- graphics
 NDefines_Graphics.NAirGfx.MAX_MISSILE_BOMBING_SCENARIOS = 0

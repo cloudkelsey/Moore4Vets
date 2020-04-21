@@ -1,0 +1,397 @@
+﻿###########################
+# French Events
+###########################
+
+add_namespace = france
+
+# Japan demands Indochina
+country_event = {
+	id = france.1
+	title = france.1.t
+	desc = france.1.d
+	picture = GFX_report_event_japan_army_mountainside
+	
+	is_triggered_only = yes
+	
+	option = { # Accept demands
+		name = france.1.a
+		ai_chance = {
+			factor = 25 
+			modifier = {
+				factor = 50
+				has_war = yes
+				any_enemy_country = {
+					strength_ratio = { 
+						tag = ROOT 
+						ratio < 0.4
+					}
+				}
+			}
+			modifier = {
+				factor = 75
+				16 = { NOT = { is_controlled_by = FRA } } #Paris	
+			}
+		} 
+		JAP = {
+			country_event = { days = 5 id = japan.6 }
+		}
+	}
+}
+
+# Maginot Line Extension
+country_event = {
+	id = france.2
+	title = france.2.t
+	desc = france.2.d
+	picture = GFX_report_event_bunker_01
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = france.2.a
+		18 = {
+			add_building_construction = {
+				type = bunker
+				province = 5291
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = bunker
+				province = 3560
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = bunker
+				province = 9472
+				level = 2
+				instant_build = yes
+			}
+		}
+		29 = {
+			add_building_construction = {
+				type = bunker
+				province = 11606
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = bunker
+				province = 11483
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = bunker
+				province = 575
+				level = 2
+				instant_build = yes
+			}
+		}
+		785 = {
+			add_building_construction = {
+				type = bunker
+				province = 3447
+				level = 2
+				instant_build = yes
+			}
+		}
+	}
+}
+
+# Alpine Line Extension
+country_event = {
+	id = france.3
+	title = france.3.t
+	desc = france.3.d
+	picture = GFX_report_event_bunker_01
+
+	is_triggered_only = yes
+	
+	option = {
+		name = france.3.a
+		735 = {
+			add_building_construction = {
+				type = bunker
+				province = 764
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = bunker
+				province = 9909
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = bunker
+				province = 3959
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = bunker
+				province = 6975
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = bunker
+				province = 3764
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = bunker
+				province = 9745
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = bunker
+				province = 778
+				level = 2
+				instant_build = yes
+			}
+		}
+	}
+}
+
+### The Fall of France
+
+# The Battle is Lost
+country_event = {
+	id = france.10
+	title = france.10.t
+	desc = france.10.d
+	picture = GFX_report_event_german_parade_paris
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { # decide to fight on
+		name = france.10.e
+		ai_chance = {
+			factor = 15
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		trigger = { has_war_support > 0.7 }
+		add_stability = -0.05
+	}
+}
+
+#Capital captured by non french faction
+country_event = {
+	id = france.16
+	title = france.16.t
+	desc = france.16.d
+	picture = GFX_report_event_french_resistance_02
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = france.16.a
+		remove_ideas = FRA_victors_of_wwi
+		remove_ideas = FRA_disjointed_government
+		remove_ideas = FRA_protected_by_the_maginot_line
+	}
+}
+
+# De Gaulle becomes leader
+country_event = {
+	id = france.20
+	title = france.20.t
+	desc = france.20.d
+	picture = GFX_report_event_degaulle_churchill
+	
+	is_triggered_only = yes
+	
+	option = {
+		custom_effect_tooltip = france.20.a_tt
+		set_country_flag = france_de_gaulle
+		hidden_effect =  {
+			create_country_leader = {
+				name = "Charles de Gaulle"
+				desc = "POLITICS_CHARLES_DE_GAULLE_DESC"
+				picture = "Portrait_France_Charles_De_Gaulle.dds"
+				expire = "1965.1.1"
+				ideology = conservatism
+				traits = {
+					
+				}
+			}
+		}
+		
+		name = france.20.a
+	}
+}
+
+# French strikes
+country_event = {
+	id = france.21
+	title = france.21.t
+	desc = france.21.d
+	picture = GFX_report_event_worker_protests
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		ai_chance = {
+			base = 15
+		}
+		name = france.21.a
+		add_timed_idea = {
+			idea = FRA_factory_strikes
+			days = 360
+		}
+	}
+}
+
+# French strikes
+country_event = {
+	id = france.22
+	title = france.21.t
+	desc = france.21.d
+	picture = GFX_report_event_worker_protests
+	
+	is_triggered_only = yes
+
+	option = {
+		ai_chance = {
+			base = 15
+		}
+		name = france.21.a
+		add_timed_idea = {
+			idea = FRA_factory_strikes
+			days = 60
+		}
+		hidden_effect = {
+			country_event = { id = france.23 days = 60 }
+		}
+	}
+
+	option = {
+		ai_chance = {
+			base = 85
+		}
+		name = france.21.b
+		add_political_power = -50
+	}
+}
+
+# Strikes are over
+country_event = {
+	id = france.23
+	title = france.23.t
+	desc = france.23.d
+	picture = GFX_report_event_airplane_factory
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = france.23.a
+	}
+}
+
+# British abandon yugoslavia
+country_event = {
+	id = france.25
+	title = france.25.t
+	desc = france.25.d
+	picture = GFX_report_event_hitler_croatia_handshake
+
+	is_triggered_only = yes	
+	option = { # Follow Britain's lead
+		name = france.25.a
+		ai_chance = {
+			factor = 90
+			modifier = {
+				factor = 0
+				is_in_faction_with = YUG
+			}
+		}
+		if = {
+			limit = {
+				has_guaranteed = YUG
+			}
+			diplomatic_relation = {
+   				country = YUG
+   				relation = guarantee
+   				active = no
+  			}
+		}
+		if = {
+			limit = {
+				ITA = {
+					OR = {
+						NOT = { has_completed_focus = ITA_yugoslavia_friend }						
+						is_in_faction_with = GER
+						exists = no
+					}
+				}
+			}
+			YUG = {
+				add_opinion_modifier = { target = FRA modifier = western_betrayal }
+				country_event = { id = yugoslavia.5 hours = 6 }
+			}			
+		}
+		if = {
+			limit = { 
+				ITA = {
+					has_completed_focus = ITA_yugoslavia_friend
+					NOT = { is_in_faction_with = GER }
+					NOT = { has_war_with = YUG }
+				}
+			}
+			ITA = { country_event = { id = italy.12 } }
+		}
+	}
+}
+
+# France - Britain accepts Ally request
+country_event = {
+	id = france.29
+	title = france.29.t
+	desc = france.29.d
+	picture = GFX_report_event_generic_sign_treaty2
+
+	is_triggered_only = yes
+
+	option = {
+		name = france.29.a
+	}
+}
+
+# Édouard Daladier Resigns
+country_event = {
+    id = france.31
+    title = france.31.t
+    desc = france.31.d
+    picture = GFX_report_event_german_parade_paris
+ 
+    fire_only_once = yes
+	is_triggered_only = yes
+
+    option = {
+        name = france.31.a
+        retire_country_leader = yes
+        create_country_leader = {
+        	name = "Paul Reynaud"
+        	desc = "POLITICS_PAUL_REYNAUD_DESC"
+        	picture = "Portrait_France_Paul_Reynaud.dds"
+        	expire = "1965.1.1"
+        	ideology = liberalism
+        	traits = {
+            }
+        }
+        set_country_flag = daladier_resigned
+      }
+}

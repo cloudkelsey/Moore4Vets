@@ -1,0 +1,11 @@
+focus_tree = {
+	id = empty_focus_tree
+	
+	country = { 
+		factor = 0
+		modifier = { tag = IRQ add = 100 }
+		modifier = { tag = COL add = 100 }
+	}
+		
+	default = no
+}

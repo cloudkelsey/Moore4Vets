@@ -1,24 +1,56 @@
 event_firing = {
+	################################# GERMANY #################################
 	give_eastern_poland = {
 		available = { POL = { has_war_with = GER has_capitulated = yes } }
 		fire_only_once = yes
 		days_mission_timeout = 9999
 		complete_effect = { GER = { country_event = germany.14 } }
 	}
-	
 	mefo_bills_payments_anti_meme = {
 		available = { GER = { has_country_flag = mefo_bills_removed_through_war has_war = no } }
 		days_mission_timeout = 9999
 		complete_effect = { GER = { country_event = wtt_germany.62 } }
 	}
+	################################# GERMANY #################################
 	
+	################################# FRANCE #################################
+	french_factory_strikes = {
+		available = { 
+			date > 1936.6.1
+			date < 1938.1.1
+			FRA = {
+				NOT = { has_government = communism }
+				NOT = { has_idea = FRA_matignon_agreements }
+				has_completed_focus = FRA_form_the_popular_front
+				NOT = { has_country_flag = FRA_popular_front_cooldown }
+			} 
+		}
+		visible = { date > 1936.2.1 }
+		fire_only_once = yes
+		ai_will_do = { factor = 1000 }
+		complete_effect = { FRA = { country_event = france.21 } }
+	}
+	dalaider_resigns = {
+		available = {
+			FRA = {
+				has_government = democratic
+				has_global_flag = fall_of_france
+				NOT = { has_country_flag = france_de_gaulle }
+			}
+		}
+		fire_only_once = yes
+		ai_will_do = { factor = 1000 }
+		complete_effect = { FRA = { country_event = france.31 } }
+	}
 	compagne_armistice = {
 		available = { FRA = { has_war_with = GER surrender_progress > 0.7 } 16 = { is_controlled_by = GER } }
 		fire_only_once = yes
 		days_mission_timeout = 9999
-		complete_effect = { FRA = { country_event = france.10 } }
+		complete_effect = { FRA = { country_event = france.10 country_event = france.16 } }
 	}
+	################################# FRANCE #################################
 	
+	################################# JAPAN #################################
 	panay_incident = {
 		available = {
 			JAP = {
@@ -41,21 +73,24 @@ event_firing = {
 		days_mission_timeout = 9999
 		complete_effect = { JAP = { country_event = panay_incident.1 } }
 	}
+	################################# JAPAN #################################
 	
+	################################# UK #################################
 	get_rid_of_chamberlain = {
 		available = { ENG = { has_war = yes } POL = { has_capitulated = yes } }
 		fire_only_once = yes
 		days_mission_timeout = 9999
 		complete_effect = { ENG = { country_event = britain.9 } }
 	}
-	
 	give_shadow_scheme_factories = {
 		available = { ENG = { has_completed_focus = shadow_scheme_focus has_war = yes } }
 		fire_only_once = yes
 		days_mission_timeout = 9999
 		complete_effect = { ENG = { country_event = britain.24 } }
 	}
+	################################# UK #################################
 	
+	################################# USA #################################
 	remove_usa_faction_idea = {
 		available = { 
 			USA = {
@@ -82,4 +117,20 @@ event_firing = {
 		days_mission_timeout = 9999
 		complete_effect = { USA = { remove_ideas = { usa_no_faction_joining } country_event = moore4vets_news.2 } }
 	}
+	################################# USA #################################
+	
+	################################# SPAIN #################################
+	get_down_mr_president = {
+		available = { date > 1936.4.20 SPR = { NOT = { has_global_flag = spanish_civil_war } } }
+		fire_only_once = yes
+		ai_will_do = { factor = 1000 }
+		complete_effect = { SPR = { country_event = lar_spain.90 } }
+	}
+	core_spain_after_war = {
+		available = { SPR = { has_global_flag = scw_over } }
+		fire_only_once = yes
+		ai_will_do = { factor = 1000 }
+		complete_effect = { SPR = { country_event = moore4vets.4 } }
+	}
+	################################# SPAIN #################################
 }

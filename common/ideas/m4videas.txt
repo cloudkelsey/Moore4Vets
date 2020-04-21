@@ -50,6 +50,7 @@ ideas = {
 		}
 		
 		usa_no_faction_joining = {
+			picture = hol_aloof_neutrality
 			allowed = { tag = USA }
 			removal_cost = -1
 			modifier = { join_faction_tension = 100 }

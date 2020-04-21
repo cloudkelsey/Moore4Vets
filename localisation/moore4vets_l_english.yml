@@ -517,3 +517,7 @@
  moore4vets_news.2.d:0 "The world situation has developed to a point where we can no longer remain neutral, we must act!"
  moore4vets_news.2.option:0 "To arms!"
  
+ moore4vets.4.t:0 "Civil Violence Settles"
+ moore4vets.4.d:0 "After our glorious leader Franco taking victory in the great Spanish Civil War, the people are much less likely to rebel, and those workers that have not died have returned to the factories."
+ moore4vets.4.option:0 "Excellent."
+ moore4vets.4.display:0 "Add cores for all of Spain"
