@@ -15,7 +15,7 @@ state=
 		owner = FRA
 		buildings = {
 			infrastructure = 3
-			industrial_complex = 1
+			#industrial_complex = 1
 			7959 = {
 				naval_base = 2
 			}
