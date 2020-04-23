@@ -23,7 +23,7 @@ focus_tree = {
 	focus = {
 		id = GER_four_year_plan
 		icon = GFX_goal_generic_construction
-		x = 6
+		x = 0
 		y = 0
 		cost = 10
 		ai_will_do = {
@@ -47,7 +47,7 @@ focus_tree = {
 		id = GER_west_wall
 		icon = GFX_goal_generic_construct_military
 		prerequisite = { focus = GER_four_year_plan }
-		x = -4
+		x = -2
 		y = 1
 		relative_position_id = GER_four_year_plan
 		cost = 10
@@ -954,124 +954,31 @@ focus_tree = {
 	}
 
 	focus = {
-		id = GER_align_hungary
+		id = GER_align_hungary_and_romania
 		icon = GFX_goal_generic_positive_trade_relations
 		prerequisite = { focus = GER_grosraumwirtschaft }
 		x = 0
 		y = 1
 		relative_position_id = GER_grosraumwirtschaft
-		cost = 10
+		cost = 1
 		
 		ai_will_do = {
 			factor = 1
 		}
-
-		available = {
-			NOT = { has_war_with = HUN }
-		}
-
-		bypass = {
-			HUN = {
-				OR = {
-					exists = no
-					is_subject = yes			
-					AND = {
-						is_subject = no
-						is_in_faction_with = ROOT
-					}
-				}
-			}
-		}
 		
 		completion_reward = {
-			if = {
-				limit = {
-					has_government = fascism
-				}
-				HUN = {
-					add_timed_idea = { idea = GER_align_hungary days = 730 }
-				}
-			}	
-			if = {
-				limit = {
-					has_government = neutrality
-				}
-				HUN = {
-					add_timed_idea = { idea = GER_align_hungary_unaligned days = 730 }
-				}
-			}	
-			if = {
-				limit = {
-					has_government = democratic
-				}
-				HUN = {
-					add_timed_idea = { idea = GER_align_hungary_democratic days = 730 }
-				}
-			}	
+			HUN = {
+				add_timed_idea = { idea = GER_align_hungary days = 730 }
+			}
 			HUN = {
 				add_opinion_modifier = {
 					target = ROOT
 					modifier = GER_align_hungary
 				}
 			}
-		}
-	}
-
-	focus = {
-		id = GER_align_romania
-		icon = GFX_goal_generic_positive_trade_relations
-		prerequisite = { focus = GER_grosraumwirtschaft }
-		x = -2
-		y = 1
-		relative_position_id = GER_grosraumwirtschaft
-		cost = 10
-		
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-			NOT = { has_war_with = ROM }
-		}
-
-		bypass = {
 			ROM = {
-				OR = {
-					exists = no
-					is_subject = yes
-					AND = {
-						is_subject = no
-						is_in_faction_with = ROOT
-					}
-				}
+				add_timed_idea = { idea = GER_align_romania days = 730 }
 			}
-		}
-		
-		completion_reward = {
-			if = {
-				limit = {
-					has_government = fascism
-				}
-				ROM = {
-					add_timed_idea = { idea = GER_align_romania days = 730 }
-				}
-			}	
-			if = {
-				limit = {
-					has_government = neutrality
-				}
-				ROM = {
-					add_timed_idea = { idea = GER_align_romania_unaligned days = 730 }
-				}
-			}	
-			if = {
-				limit = {
-					has_government = democratic
-				}
-				ROM = {
-					add_timed_idea = { idea = GER_align_romania_democratic days = 730 }
-				}
-			}	
 			ROM = {
 				add_opinion_modifier = {
 					target = ROOT
@@ -1084,12 +991,11 @@ focus_tree = {
 	focus = {
 		id = GER_integrate_war_economies
 		icon = GFX_goal_generic_construct_mil_factory
-		prerequisite = { focus = GER_align_hungary }
-		prerequisite = { focus = GER_align_romania }
+		prerequisite = { focus = GER_align_hungary_and_romania }
 		mutually_exclusive = { focus = GER_german_war_economy }
 		x = 0
 		y = 1
-		relative_position_id = GER_align_hungary
+		relative_position_id = GER_align_hungary_and_romania
 		cost = 10
 		ai_will_do = {
 			factor = 1
@@ -1394,7 +1300,7 @@ focus_tree = {
 		id = GER_air_innovation
 		text = air_innovation
 		icon = GFX_goal_generic_build_airforce
-		x = 16
+		x = 10
 		y = 0
 		cost = 10
 		ai_will_do = {
@@ -1625,7 +1531,7 @@ focus_tree = {
 	focus = {
 		id = GER_army_innovation
 		icon = GFX_goal_generic_axis_build_infantry
-		x = 19
+		x = 13
 		y = 0
 		cost = 10
 		ai_will_do = {
@@ -1847,17 +1753,11 @@ focus_tree = {
 		cost = 10
 		ai_will_do = {
 			factor = 10
-			modifier = {
-				factor = 0
-				NOT = { has_completed_focus = GER_anti_comitern_pact }
-			}
 		}	
 		completion_reward = {
-			
 			SOV = {
 				country_event = { id = germany.11 days = 1 }
-				custom_effect_tooltip = GER_mol_rib_pact_tt
-				custom_effect_tooltip = needs_approval
+				custom_effect_tooltip = m4v_custom_mr_pact_tip
 			}
 		}
 	}
@@ -1949,7 +1849,7 @@ focus_tree = {
 	focus = {
 		id = GER_rhineland
 		icon = GFX_goal_generic_military_sphere
-		x = 25
+		x = 17
 		y = 0
 		cost = 10
 		available = {
@@ -2089,8 +1989,8 @@ focus_tree = {
 		id = GER_anti_comitern_pact
 		icon = GFX_goal_anti_comintern_pact
 		prerequisite = { focus = GER_rhineland  }
-		x = -3
-		y = 2
+		x = -2
+		y = 1
 		relative_position_id = GER_rhineland
 		cost = 10
 		available = {
@@ -2344,8 +2244,8 @@ focus_tree = {
 			}
 		}
 		cancel_if_invalid = no
-		x = 3
-		y = 2
+		x = 2
+		y = 1
 		relative_position_id = GER_rhineland
 		cost = 10
 		ai_will_do = {

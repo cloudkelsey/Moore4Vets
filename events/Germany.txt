@@ -143,18 +143,6 @@ country_event = {
 		name = germany.11.a	#sounds good
 		ai_chance = { 
 			factor = 90 
-			modifier = {
-				factor = 0
-				GER = {
-					OR = { 
-						has_wargoal_against = SOV
-						is_justifying_wargoal_against = SOV
-					}
-					NOT = {
-						is_in_faction_with = SOV
-					}
-				}
-			}
 		}
 		add_opinion_modifier = { target = GER modifier = MR_pact }# pact		
 		custom_effect_tooltip = germany.11.a.tt
@@ -178,6 +166,18 @@ country_event = {
 		add_state_claim = 97
 		add_state_claim = 80
 		add_state_claim = 784
+		annex_country = { target = LIT }
+		annex_country = { target = LAT }
+		annex_country = { target = EST }
+		ROM = { country_event = romania.1 }
+		set_country_flag = bessarabia_demand
+		create_wargoal = {
+			type = take_state_focus
+			target = FIN
+			generator = { 146 }
+		}
+		add_political_power = -400
+		
 		hidden_effect =  { add_timed_idea = { idea = SOV_molotov_ribbentrop_pact days = 730 } }
 		GER = {
 			country_event = { days = 1 id = germany.12 }

@@ -446,6 +446,7 @@
  BUL_research_collaboration_desc:0 "If we combine our research efforts, we have a bigger chance of succeeding."
  BUL_modernize_navy:0 "Modernize our Navy"
  BUL_modernize_navy_desc:0 "We have gotten our naval production back on track, now to modernize it."
+ GER_align_hungary_and_romania:0 "Align Hungary and Romania"
  
  #Events
  moore4vets_news.1.t:0 "Ethiopia submits"
@@ -521,3 +522,6 @@
  moore4vets.4.d:0 "After our glorious leader Franco taking victory in the great Spanish Civil War, the people are much less likely to rebel, and those workers that have not died have returned to the factories."
  moore4vets.4.option:0 "Excellent."
  moore4vets.4.display:0 "Add cores for all of Spain"
+ 
+ m4v_custom_mr_pact_tip:0 "The USSR will immediately take control of all land claimed by the MR pact, and recieve a wargoal on Finland."
+ 

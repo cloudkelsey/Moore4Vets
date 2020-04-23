@@ -29,6 +29,32 @@ country_event = {
 	}
 }
 
+# King abdicates - Man the Guns version
+country_event = {
+	id = mtg_britain.14
+	title = britain.17.t
+	desc = britain.17.d
+	picture = GFX_report_event_generic_sign_treaty2
+
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			remove_ideas = ENG_king_edward
+			add_ideas = ENG_george_vi
+			set_country_flag = ENG_edward_viii_abdicated
+		}
+	}
+
+	option = {
+		name = britain.17.a
+		effect_tooltip = {
+			remove_ideas = ENG_king_edward
+			add_ideas = ENG_george_vi		
+		}
+	}
+}
+
 ### END ABDICATION CRISIS ###
 
 # Event for ENG and Dominions notifying of Imperial Conference

@@ -2180,7 +2180,6 @@ focus_tree = {
 				uses = 1
 				technology = heavy_fighter1
 				technology = heavy_fighter2
-				technology = heavy_fighter3
 			}
 		}
 	}

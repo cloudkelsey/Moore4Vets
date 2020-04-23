@@ -49,11 +49,11 @@ country_event = { #this event will be fired at the start of the game, and will b
 			# https://www.calculatorsoup.com/calculators/time/date-difference-calculator.php	
 			
 																		# these dates may be 1-2 days off, test if you care
-			ITA = { country_event = { id = moore4vets.2 days = 194 } } 	# ethiopia 15/7/1936
+			#ITA = { country_event = { id = moore4vets.2 days = 194 } } 	# ethiopia 15/7/1936
 			ENG = {
 				country_event = { id = britain.16 days = 18 } 			# king dies 19/1/1936
 				country_event = { id = mtg_britain.1 days = 150 } 		# abdication crisis 1/6/1936
-				country_event = { id = britain.17 days = 333 } 			# king abdicates 1/12/1936
+				#country_event = { id = britain.17 days = 333 } 			# king abdicates 1/12/1936
 				country_event = { id = britain.22 days = 511 } 			# stanley baldwin retires 28/5/1937
 			}
 			
