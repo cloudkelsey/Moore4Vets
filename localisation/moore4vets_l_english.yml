@@ -509,8 +509,11 @@
  GER_mefo_bills_hnh:0 "MEFO Bills"
  hnh_neutrality:0 "HnH Neutrality"
  hnh_neutrality_desc:0 "These nations are useless. Do not request to play them."
- socialism_in_one_nation: "Socialism in One Nation"
+ socialism_in_one_nation:0 "Socialism in One Nation"
+ usa_no_faction_joining:0 "American Neutrality"
+ no_building_a_navy:0 "Stunted Naval Industry"
  
+ #Events
  moore4vets_news.1.t:0 "Ethiopia submits"
  moore4vets_news.1.d:0 "The cowardly Ethiopians have surrendered to us and are now part of our glorious empire!"
  moore4vets_news.1.option:0 "As expected."

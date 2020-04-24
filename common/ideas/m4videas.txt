@@ -55,5 +55,18 @@ ideas = {
 			removal_cost = -1
 			modifier = { join_faction_tension = 100 }
 		}
+		
+		no_building_a_navy = {
+			picture = generic_navy_bonus
+			allowed = { OR = { tag = COL tag = IRQ tag = SPR } }
+			removal_cost = -1
+			equipment_bonus = {
+				ship_hull_heavy = { build_cost_ic = 1000 instant = yes }
+				ship_hull_carrier = { build_cost_ic = 1000 instant = yes }
+				ship_hull_cruiser = { build_cost_ic = 1000 instant = yes }
+				ship_hull_light = { build_cost_ic = 1000 instant = yes }
+				ship_hull_submarine = { build_cost_ic = 1000 instant = yes }
+			}
+		}
 	}
 }
