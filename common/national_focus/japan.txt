@@ -4020,7 +4020,7 @@
 	focus = {
 		id = JAP_the_manchurian_project
 		icon = GFX_focus_jap_manchurian_project
-		x = 8
+		x = 5
 		y = 0
 		relative_position_id = JAP_purge_the_kodoha_faction
 		offset = {
@@ -4068,36 +4068,6 @@
 				add_political_power = 150
 			}
 		}
-	}
-
-	focus = {
-		id = JAP_expand_the_showa_steel_works
-		icon = GFX_goal_generic_construct_civilian
-		prerequisite = { focus = JAP_the_manchurian_project }
-		x = 2
-		y = 1
-		relative_position_id = JAP_the_manchurian_project
-
-		cost = 10
-
-		ai_will_do = {
-			factor = 2
-		}
-
-		available = {
-			716 = { is_fully_controlled_by = MAN }
-			MAN = { is_subject_of = ROOT }
-		}
-
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			716 = {
 				if = {
@@ -4118,6 +4088,55 @@
 			}
 		}
 	}
+
+	# focus = {
+		# id = JAP_expand_the_showa_steel_works
+		# icon = GFX_goal_generic_construct_civilian
+		# prerequisite = { focus = JAP_the_manchurian_project }
+		# x = 2
+		# y = 1
+		# relative_position_id = JAP_the_manchurian_project
+
+		# cost = 10
+
+		# ai_will_do = {
+			# factor = 2
+		# }
+
+		# available = {
+			# 716 = { is_fully_controlled_by = MAN }
+			# MAN = { is_subject_of = ROOT }
+		# }
+
+		# bypass = {
+
+		# }
+
+		# cancel_if_invalid = yes
+		# continue_if_invalid = no
+		# available_if_capitulated = no
+
+		# search_filters = { FOCUS_FILTER_INDUSTRY }
+		# completion_reward = {
+			# 716 = {
+				# if = {
+					# limit = {
+						# MAN = { has_focus_tree = generic_focus }
+					# }
+					# add_resource = {
+						# type = steel
+						# amount = 16
+					# }				
+				# }
+				# add_extra_state_shared_building_slots = 2
+				# add_building_construction = {
+					# type = industrial_complex
+					# level = 2
+					# instant_build = yes
+				# }
+			# }
+		# }
+	# }
 
 	focus = {
 		id = JAP_develop_aluminum_sources
@@ -4176,7 +4195,7 @@
 		id = JAP_expand_manchurian_railways
 		icon = GFX_goal_generic_construct_infrastructure
 		prerequisite = { focus = JAP_the_manchurian_project }
-		x = -2
+		x = 0
 		y = 1
 		relative_position_id = JAP_the_manchurian_project
 
@@ -4259,6 +4278,9 @@
 					set_state_flag = JAP_expand_manchurian_railways_Inf2
 				}
 			}
+			715 = { add_extra_state_shared_building_slots = 1 }
+			610 = { add_extra_state_shared_building_slots = 1 }
+			328 = { add_extra_state_shared_building_slots = 1 }
 		}
 	}
 
@@ -4266,7 +4288,7 @@
 		id = JAP_light_industry_development
 		icon = GFX_goal_generic_construct_mil_factory
 		prerequisite = { focus = JAP_expand_manchurian_railways }
-		x = -1
+		x = 0
 		y = 1
 		relative_position_id = JAP_expand_manchurian_railways
 
@@ -4294,50 +4316,13 @@
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			715 = {
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = industrial_complex
 					level = 2
 					instant_build = yes
-				}
-			}
-		}
-	}
-
-	focus = {
-		id = JAP_heavy_industry_development
-		icon = GFX_goal_generic_build_tank
-		prerequisite = { focus = JAP_expand_manchurian_railways }
-		x = 1
-		y = 1
-		relative_position_id = JAP_expand_manchurian_railways
-
-		cost = 10
-
-		ai_will_do = {
-			factor = 2
-		}
-
-		available = {
-			MAN = {
-				is_subject_of = ROOT
-				has_full_control_of_state = 716				
-			}
-		}
-
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-		completion_reward = {
-			716 = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
+					}
+					add_building_construction = {
 					type = arms_factory
 					level = 2
 					instant_build = yes
@@ -4346,51 +4331,93 @@
 		}
 	}
 
-	focus = {
-		id = JAP_japanese_settlement
-		icon = GFX_goal_generic_construct_civ_factory
-		prerequisite = { focus = JAP_heavy_industry_development }
-		prerequisite = { focus = JAP_light_industry_development }
-		x = 0
-		y = 2
-		relative_position_id = JAP_expand_manchurian_railways
+	# focus = {
+		# id = JAP_heavy_industry_development
+		# icon = GFX_goal_generic_build_tank
+		# prerequisite = { focus = JAP_expand_manchurian_railways }
+		# x = 1
+		# y = 1
+		# relative_position_id = JAP_expand_manchurian_railways
 
-		cost = 10
+		# cost = 10
 
-		ai_will_do = {
-			factor = 1
-		}
+		# ai_will_do = {
+			# factor = 2
+		# }
 
-		available = {
-			MAN = {
-				is_subject_of = ROOT
-				has_full_control_of_state = 715
-				has_full_control_of_state = 610
-				has_full_control_of_state = 328
-			}
-		}
+		# available = {
+			# MAN = {
+				# is_subject_of = ROOT
+				# has_full_control_of_state = 716				
+			# }
+		# }
 
-		bypass = {
+		# bypass = {
 
-		}
+		# }
 
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
+		# cancel_if_invalid = yes
+		# continue_if_invalid = no
+		# available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-		completion_reward = {
-			715 = { add_extra_state_shared_building_slots = 1 }
-			610 = { add_extra_state_shared_building_slots = 1 }
-			328 = { add_extra_state_shared_building_slots = 1 }
-		}
-	}
+		# search_filters = { FOCUS_FILTER_INDUSTRY }
+		# completion_reward = {
+			# 716 = {
+				# add_extra_state_shared_building_slots = 2
+				# add_building_construction = {
+					# type = arms_factory
+					# level = 2
+					# instant_build = yes
+				# }
+			# }
+		# }
+	# }
+
+	# focus = {
+		# id = JAP_japanese_settlement
+		# icon = GFX_goal_generic_construct_civ_factory
+		# prerequisite = { focus = JAP_heavy_industry_development }
+		# prerequisite = { focus = JAP_light_industry_development }
+		# x = 0
+		# y = 2
+		# relative_position_id = JAP_expand_manchurian_railways
+
+		# cost = 10
+
+		# ai_will_do = {
+			# factor = 1
+		# }
+
+		# available = {
+			# MAN = {
+				# is_subject_of = ROOT
+				# has_full_control_of_state = 715
+				# has_full_control_of_state = 610
+				# has_full_control_of_state = 328
+			# }
+		# }
+
+		# bypass = {
+
+		# }
+
+		# cancel_if_invalid = yes
+		# continue_if_invalid = no
+		# available_if_capitulated = no
+
+		# search_filters = { FOCUS_FILTER_INDUSTRY }
+		# completion_reward = {
+			# 715 = { add_extra_state_shared_building_slots = 1 }
+			# 610 = { add_extra_state_shared_building_slots = 1 }
+			# 328 = { add_extra_state_shared_building_slots = 1 }
+		# }
+	# }
 
 	focus = {
 		id = JAP_fortify_the_border
 		icon = GFX_goal_generic_construct_military
 		prerequisite = { focus = JAP_the_manchurian_project }
-		x = 0
+		x = 2
 		y = 1
 		relative_position_id = JAP_the_manchurian_project 
 
@@ -4443,7 +4470,7 @@
 	focus = {
 		id = JAP_army_expansion_law
 		icon = GFX_goal_generic_army_doctrines
-		x = 6
+		x = 5
 		y = 0
 		relative_position_id = JAP_the_manchurian_project 
 
