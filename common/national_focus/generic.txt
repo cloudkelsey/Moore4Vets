@@ -65,8 +65,17 @@ focus_tree = {
 				name = infantry_artillery_bonus
 				bonus = 1.0
 				uses = 1
-				category = infantry_weapons
-				category = artillery
+				technology = improved_infantry_weapons 
+				technology = advanced_infantry_weapons
+				technology = gw_artillery 
+				technology = artillery1 
+				technology = artillery4 
+				technology = interwar_antiair 
+				technology = antiair2 
+				technology = antiair5 
+				technology = interwar_antitank 
+				technology = antitank2 
+				technology = antitank5
 			}
 		}
 	}
@@ -136,8 +145,17 @@ focus_tree = {
 				name = infantry_artillery_bonus
 				bonus = 1.0
 				uses = 1
-				category = infantry_weapons
-				category = artillery
+				technology = improved_infantry_weapons 
+				technology = advanced_infantry_weapons
+				technology = gw_artillery 
+				technology = artillery1 
+				technology = artillery4 
+				technology = interwar_antiair 
+				technology = antiair2 
+				technology = antiair5 
+				technology = interwar_antitank 
+				technology = antitank2 
+				technology = antitank5
 			}
 		}
 	}
@@ -207,8 +225,17 @@ focus_tree = {
 				name = infantry_artillery_bonus
 				ahead_reduction = 2
 				uses = 1
-				category = infantry_weapons
-				category = artillery
+				technology = improved_infantry_weapons 
+				technology = advanced_infantry_weapons
+				technology = gw_artillery 
+				technology = artillery1 
+				technology = artillery4 
+				technology = interwar_antiair 
+				technology = antiair2 
+				technology = antiair5 
+				technology = interwar_antitank 
+				technology = antitank2 
+				technology = antitank5
 			}
 		}
 	}
