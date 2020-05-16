@@ -81,3 +81,10 @@ event_firing = {
 acquire_islands = {
 	allowed = { always = yes }
 }
+
+GER_spanish_civil_war_AI_control = {
+	allowed = { original_tag = GER }
+	available = { has_global_flag = spanish_civil_war SPR = { has_war = yes } }
+	visible = { NOT = { has_global_flag = scw_over } is_ai = no SPR = { is_ai = yes } }
+	priority = 1000
+}

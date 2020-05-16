@@ -206,6 +206,17 @@ event_firing = {
 	################################# BENELUX #################################
 }
 
+GER_spanish_civil_war_AI_control = {
+	spain_stop_attacking = {
+		available = { SPR = { NOT = { has_country_flag = SPR_dont_attack } } }
+		complete_effect = { SPR = { set_country_flag = SPR_dont_attack } }
+	}
+	spain_start_attacking = {
+		available = { SPR = { has_country_flag = SPR_dont_attack } }
+		complete_effect = { SPR = { clr_country_flag = SPR_dont_attack } }
+	}
+}
+
 acquire_islands = {
 	uk_acquire_azores = {
 		ai_will_do = { factor = 10 }
@@ -226,9 +237,9 @@ ger_annexation = {
 		allowed = {
 			tag = GER
 		}
+		available = { date > 1939.1.1 }
 		visible = {
 			HUN = { is_ai = yes }
-			date > 1939.1.1
 			country_exists = HUN
 		}
 		complete_effect = {
@@ -245,9 +256,9 @@ ger_annexation = {
 		allowed = {
 			tag = GER
 		}
+		available = { date > 1939.1.1 }
 		visible = {
 			ROM = { is_ai = yes }
-			date > 1939.1.1
 			country_exists = ROM
 		}
 		complete_effect = {
@@ -264,9 +275,9 @@ ger_annexation = {
 		allowed = {
 			tag = GER
 		}
+		available = { date > 1939.1.1 }
 		visible = {
 			BUL = { is_ai = yes }
-			date > 1939.1.1
 			country_exists = BUL
 		}
 		complete_effect = {

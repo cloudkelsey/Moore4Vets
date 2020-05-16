@@ -136,19 +136,21 @@ SPR_dont_attack_at_startup_of_civil_war = {
 	enable = {
 		OR = {
 			has_global_flag = SPR_civil_war_startup # Don't attack for 30 days
-			#AND = {
-			#	SPR = { controls_state = 41 controls_state = 165 }
-			#	JAP = { has_war = no }
-			#}
 			has_idea = SPR_death_before_surrender # Don't attack if you're Republican Spain before 39
 			AND = { # Don't attack if you're Nationalist Spain before 39 and control Madrid + Barcelona before Japan is at war
 				has_idea = SPA_death_before_surrender
 				controls_state = 41
-				controls_state = 165
+				controls_state = 165 # Barcelona is a bit of a stretch, may end up in capitulations
 				JAP = { has_war = no }
+			}
+			AND = { # Don't attack if you're Nationalist Spain and Germany tells you not to
+				tag = SPR
+				has_country_flag = SPR_dont_attack
 			}
 		}
 	}
+	
+	abort_when_not_enabled = yes
 	
 	ai_strategy = {
 		type = front_control
@@ -161,78 +163,6 @@ SPR_dont_attack_at_startup_of_civil_war = {
 		manual_attack = no
 	}
 }
-
-# SPR_dont_attack_in_urban_states_1 = {
-	# allowed = { original_tag = SPR }
-	# enable = { date < 1939.3.1 }
-	# ai_strategy = {
-		# type = front_control
-
-		# state = 41
-		
-		# execute_order = no
-		# manual_attack = no
-	# }
-# }
-
-# SPR_dont_attack_in_urban_states_2 = {
-	# allowed = { original_tag = SPR }
-	# enable = { date < 1939.3.1 }
-	# ai_strategy = {
-		# type = front_control
-
-		# state = 165
-		
-		# execute_order = no
-		# manual_attack = no
-	# }
-# }
-
-# SPR_be_careful_at_startup_of_civil_war = {
-	# allowed = {
-		# original_tag = SPR
-	# }
-	
-	# enable = {
-		# has_global_flag = SPR_civil_war_startup
-	# }
-	
-	# abort_when_not_enabled = yes
-	
-	# ai_strategy = {
-		# type = front_control
-
-		# country_trigger = {
-			# original_tag = SPR
-		# }
-		
-		# execution_type = careful
-	# }
-# }
-
-# SPR_dont_attack_at_startup_of_civil_war = {
-	# allowed = {
-		# original_tag = SPR
-	# }
-	
-	# enable = {
-		# NOT = { has_global_flag = SPR_civil_war_startup }
-		# OR = { has_idea = SPR_death_before_surrender has_idea = SPA_death_before_surrender }
-	# }
-	
-	# abort_when_not_enabled = yes
-	
-	# ai_strategy = {
-		# type = front_control
-
-		# country_trigger = {
-			# original_tag = SPR
-		# }
-		
-		# execute_order = no
-		# manual_attack = yes
-	# }
-# }
 
 # Prevent Nationalist Spain to join any faction on historical mode
 nationalist_spain_allies_nobody_on_historical = {
