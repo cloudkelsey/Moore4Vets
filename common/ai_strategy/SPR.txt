@@ -135,9 +135,16 @@ SPR_dont_attack_at_startup_of_civil_war = {
 	
 	enable = {
 		OR = {
-			has_global_flag = SPR_civil_war_startup
-			AND = {
-				SPR = { controls_state = 41 controls_state = 165 }
+			has_global_flag = SPR_civil_war_startup # Don't attack for 30 days
+			#AND = {
+			#	SPR = { controls_state = 41 controls_state = 165 }
+			#	JAP = { has_war = no }
+			#}
+			has_idea = SPR_death_before_surrender # Don't attack if you're Republican Spain before 39
+			AND = { # Don't attack if you're Nationalist Spain before 39 and control Madrid + Barcelona before Japan is at war
+				has_idea = SPA_death_before_surrender
+				controls_state = 41
+				controls_state = 165
 				JAP = { has_war = no }
 			}
 		}

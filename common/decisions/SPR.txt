@@ -8953,8 +8953,7 @@ SPR_expand_resource_extraction = {
 					has_state_flag = basque_steel_developed
 				}
 			}
-				has_completed_focus = SPA_reduce_reliance_on_foreign_resources
-			}
+			has_completed_focus = SPA_reduce_reliance_on_foreign_resources
 		}
 
 		fire_only_once = yes
@@ -9008,8 +9007,7 @@ SPR_expand_resource_extraction = {
 					has_state_flag = western_aragon_steel_developed
 				}
 			}
-				has_completed_focus = SPA_reduce_reliance_on_foreign_resources
-			}
+			has_completed_focus = SPA_reduce_reliance_on_foreign_resources
 		}
 
 		fire_only_once = yes
