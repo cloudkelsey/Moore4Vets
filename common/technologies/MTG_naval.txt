@@ -1437,7 +1437,10 @@ early_ship_hull_carrier = {
 			leads_to_tech = basic_submarine_snorkel
 			research_cost_coeff = 1
 		}
-		
+		path = {
+			leads_to_tech = improved_ship_hull_submarine
+			research_cost_coeff = 1
+		}
 		research_cost = 1.25
 
 		start_year = 1936
@@ -1445,6 +1448,53 @@ early_ship_hull_carrier = {
 		folder = {
 			name = mtgnavalfolder
 			position = {  x = -2 y = 7 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 7
+				OR = {
+					tag = GER
+					tag = USA
+				}
+			}
+		}
+		
+		categories = {
+			naval_equipment
+			ss_tech
+		}
+	}
+	
+	improved_ship_hull_submarine = {
+
+		enable_equipments = {
+			ship_hull_submarine_3
+		}
+		enable_equipment_modules = { 
+			ship_torpedo_sub_3
+			#sub_ship_engine_3
+		}
+		
+		#path = {
+		#	leads_to_tech = advanced_ship_hull_submarine
+		#	research_cost_coeff = 1
+		#}
+		
+		#path = {
+		#	leads_to_tech = basic_submarine_snorkel
+		#	research_cost_coeff = 1
+		#	}
+		
+		research_cost = 1.25
+
+		start_year = 1940
+		
+		folder = {
+			name = mtgnavalfolder
+			position = {  x = -2 y = 13 }
 		}
 		
 		ai_will_do = {

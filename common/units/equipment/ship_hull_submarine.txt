@@ -128,6 +128,57 @@ equipments = {
 			submarine
 		}
 	}
+	
+	ship_hull_submarine_3 = {
+        year = 1940
+
+        archetype = ship_hull_submarine
+        priority = 2500
+        parent = ship_hull_submarine_2
+        module_slots = {
+            fixed_ship_torpedo_slot = inherit 
+            fixed_ship_engine_slot = inherit
+            front_1_custom_slot = {
+                required = no
+                allowed_module_categories = {
+                    ship_torpedo_sub
+                    ship_mine_layer_sub
+                }
+            }
+            mid_1_custom_slot = {
+                required = no
+                allowed_module_categories = {
+                    ship_radar
+                    ship_sub_snorkel
+                }
+            }
+            rear_1_custom_slot = front_1_custom_slot
+        }
+
+        default_modules = {
+            front_1_custom_slot = empty
+            mid_1_custom_slot = empty
+            rear_1_custom_slot = empty
+        }
+        
+        sub_visibility = 15
+        naval_speed = 15
+        reliability = 0.75
+        
+        naval_range = 5000
+        
+        max_strength = 30
+
+
+        
+        build_cost_ic = 320
+        resources = {
+            steel = 2
+        }
+        type = { 
+            submarine
+        }    
+    }
 
 	ship_hull_cruiser_submarine = {
 		year = 1940
