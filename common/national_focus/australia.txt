@@ -129,7 +129,17 @@
 				name = AST_royal_australian_artillery
 				bonus = 1.0
 				uses = 1
-				category = artillery
+				#category = artillery
+				#technology = artillery_equipment_1
+				#technology = gw_artillery 
+				technology = artillery1 
+				technology = artillery4 
+				#technology = interwar_antiair 
+				technology = antiair2 
+				technology = antiair5 
+				technology = interwar_antitank 
+				technology = antitank2 
+				technology = antitank5 
 			}
 		}
 	}
@@ -297,8 +307,17 @@
 				name = AST_specialize_equipment
 				bonus = 1.0
 				uses = 1
-				category = infantry_weapons
-				category = artillery
+				technology = improved_infantry_weapons 
+				technology = advanced_infantry_weapons
+				#technology = gw_artillery 
+				technology = artillery1 
+				technology = artillery4 
+				#technology = interwar_antiair 
+				technology = antiair2 
+				technology = antiair5 
+				technology = interwar_antitank 
+				technology = antitank2 
+				technology = antitank5 
 			}
 		}
 	}
@@ -410,10 +429,49 @@
 				name = AST_fund_owen_gun_research
 				bonus = 1.0
 				uses = 1
-				category = infantry_weapons
+				#category = infantry_weapons
+				technology = improved_infantry_weapons 
+				technology = advanced_infantry_weapons 
 			}
 		}
 	}
+	
+	# focus = {
+		# id = AST_fund_owen_gun_research
+		# icon = GFX_goal_generic_small_arms
+		# prerequisite = { focus = AST_hmas_assault }
+		# x = 1
+		# y = 3
+		# relative_position_id = AST_additional_militia_training
+		
+		# cost = 10
+
+		# ai_will_do = {
+			# factor = 1
+		# }
+
+		# available = {
+
+		# }
+		
+		# bypass = {
+
+		# }
+
+		# cancel_if_invalid = yes
+		# continue_if_invalid = no
+		# available_if_capitulated = yes
+		# search_filters = { FOCUS_FILTER_RESEARCH  }
+
+		# completion_reward = {
+			# add_tech_bonus = {
+				# name = AST_fund_owen_gun_research
+				# bonus = 1.0
+				# uses = 1
+				# category = infantry_weapons
+			# }
+		# }
+	# }
 
 	focus = {
 		id = AST_sentinel_tank_project

@@ -1190,7 +1190,8 @@
 				name = SAF_improve_the_three_oh_three
 				bonus = 1.0
 				uses = 1
-				category = infantry_weapons
+				technology = improved_infantry_weapons 
+				technology = advanced_infantry_weapons
 			}
 		}
 	}
@@ -1306,7 +1307,15 @@
 				name = SAF_expand_the_south_african_artillery
 				bonus = 1.0
 				uses = 1
-				category = artillery
+				#technology = gw_artillery 
+				technology = artillery1 
+				technology = artillery4 
+				technology = interwar_antiair 
+				technology = antiair2 
+				technology = antiair5 
+				technology = interwar_antitank 
+				technology = antitank2 
+				technology = antitank5 
 			}
 		}
 	}
@@ -1380,8 +1389,17 @@
 				name = SAF_equipment_effort
 				bonus = 1.0
 				uses = 1
-				category = infantry_weapons
-				category = artillery
+				technology = improved_infantry_weapons 
+				technology = advanced_infantry_weapons
+			#	technology = gw_artillery 
+				technology = artillery1 
+				technology = artillery4 
+				technology = interwar_antiair 
+				technology = antiair2 
+				technology = antiair5 
+				technology = interwar_antitank 
+				technology = antitank2 
+				technology = antitank5 
 			}
 		}
 	}

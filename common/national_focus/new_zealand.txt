@@ -1358,7 +1358,8 @@
 				name = NZL_charlton_automatic_rifle
 				bonus = 1.0
 				uses = 1
-				category = infantry_weapons
+				technology = improved_infantry_weapons 
+				technology = advanced_infantry_weapons
 			}
 		}
 	}
@@ -1573,7 +1574,15 @@
 				name = NZL_artillery_focus
 				bonus = 1.00
 				uses = 1
-				category = artillery
+				#technology = gw_artillery 
+				technology = artillery1 
+				technology = artillery4 
+				technology = interwar_antiair 
+				technology = antiair2 
+				technology = antiair5 
+				technology = interwar_antitank 
+				technology = antitank2 
+				technology = antitank5 
 			}
 		}
 	}

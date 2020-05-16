@@ -30,6 +30,13 @@ ideas = {
 			}
 		}
 		
+		jap_army_training_speed = {
+		picture = hajime_sugiyama
+		allowed = { tag = JAP }
+		#modifier = {army_chief_drill_3 }
+		modifier = { training_time_army_factor = -0.15 }
+			}
+		
 		papertiger = {
 
 			picture = generic_spy_intel
@@ -69,4 +76,5 @@ ideas = {
 			}
 		}
 	}
+	
 }

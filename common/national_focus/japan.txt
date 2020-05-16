@@ -4504,6 +4504,7 @@
 
 		completion_reward = {
 			army_experience = 30
+			add_ideas = jap_army_training_speed
 		}
 	}
 
@@ -4543,7 +4544,8 @@
 				name = JAP_small_arms_modernization
 				bonus = 1.0
 				uses = 1
-				category = infantry_weapons	
+				technology = improved_infantry_weapons 
+				technology = advanced_infantry_weapons
 			}
 		}
 	}
@@ -4617,7 +4619,15 @@
 				name = JAP_modern_artillery
 				bonus = 1.0
 				uses = 2
-				category = artillery	
+				#technology = gw_artillery 
+				technology = artillery1 
+				technology = artillery4 
+				technology = interwar_antiair 
+				technology = antiair2 
+				technology = antiair5 
+				technology = interwar_antitank 
+				technology = antitank2 
+				technology = antitank5 	
 			}
 		}
 	}

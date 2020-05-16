@@ -642,13 +642,22 @@ focus_tree = {
 				name = SPA_the_corpo_truppe_volontarie
 				bonus = 1.0
 				uses = 1
-				category = infantry_weapons
+				technology = improved_infantry_weapons 
+				technology = advanced_infantry_weapons
 			}
 			add_tech_bonus = {
 				name = SPA_the_corpo_truppe_volontarie
 				bonus = 1.0
 				uses = 1
-				category = artillery
+				#technology = gw_artillery 
+				technology = artillery1 
+				technology = artillery4 
+				#technology = interwar_antiair 
+				technology = antiair2 
+				technology = antiair5 
+				technology = interwar_antitank 
+				technology = antitank2 
+				technology = antitank5 
 			}
 		}
 	}
@@ -1516,7 +1525,8 @@ focus_tree = {
 				name = SPA_equipment_modernization
 				bonus = 1.0
 				uses = 2
-				category = infantry_weapons
+				technology = improved_infantry_weapons 
+				technology = advanced_infantry_weapons
 			}
 		}
 	}
@@ -1542,7 +1552,15 @@ focus_tree = {
 				name = SPA_artillery_modernization
 				bonus = 1.0
 				uses = 2
-				category = artillery
+				#technology = gw_artillery 
+				technology = artillery1 
+				technology = artillery4 
+				#technology = interwar_antiair 
+				technology = antiair2 
+				technology = antiair5 
+				technology = interwar_antitank 
+				technology = antitank2 
+				technology = antitank5 
 			}
 		}
 	}
