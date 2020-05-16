@@ -1,0 +1,184 @@
+
+#### Cities ########################################################
+
+## RELOAD ME VIA "cityreload"
+
+entity = {
+	name = "westerngfx_house_1_1"
+	pdxmesh = "westerngfx_house_1_1"
+	scale = 1.4
+}
+
+entity = {
+	name = "westerngfx_house_1_2"
+	pdxmesh = "westerngfx_house_1_2"
+	scale = 1.8
+	
+	default_state = "idle"
+	state = { name = "idle" }
+}
+
+entity = {
+	name = "westerngfx_house_1_3"
+	pdxmesh = "westerngfx_house_1_3"
+	scale = 1.8
+}
+
+entity = {
+	name = "westerngfx_house_1_4"
+	pdxmesh = "westerngfx_house_1_4"
+	scale = 2.0
+}
+
+
+#French city
+
+entity = {
+	name = "french_city_4_01_entity"
+	pdxmesh = "french_city_4_01"
+	scale = 0.2
+}
+
+entity = {
+	name = "french_city_4_02_entity"
+	pdxmesh = "french_city_4_02"
+	scale = 1
+	
+	default_state = "idle"
+	state = { name = "idle" }
+}
+
+entity = {
+	name = "french_city_4_03_entity"
+	pdxmesh = "french_city_4_03"
+	scale = 0.3
+}
+
+entity = {
+	name = "french_city_4_04_entity"
+	pdxmesh = "french_city_4_04"
+	scale = 0.3
+}
+
+
+
+## Asian city
+
+entity = {
+	name = "asia_city_01_entity"
+	pdxmesh = "asia_city_01"
+	scale = 0.2
+}
+
+entity = {
+	name = "asia_city_02_entity"
+	pdxmesh = "asia_city_02"
+	scale = 1
+	
+	default_state = "idle"
+	state = { name = "idle" }
+}
+
+entity = {
+	name = "asia_city_03_entity"
+	pdxmesh = "asia_city_03"
+	scale = 0.3
+}
+
+entity = {
+	name = "asia_city_04_entity"
+	pdxmesh = "asia_city_04"
+	scale = 1
+	
+	locator = { name = "damage_locator_01"	position = { 0.8 0.0 1.2 } }
+	
+	default_state = "idle"
+	state = { name = "idle" }
+}
+
+## Unciv city
+
+entity = {
+	name = "unciv_city_01_entity"
+	pdxmesh = "unciv_city_01"
+	scale = 0.4
+}
+
+entity = {
+	name = "unciv_city_02_entity"
+	pdxmesh = "unciv_city_02"
+	scale = 1
+	
+	default_state = "idle"
+	state = { name = "idle" }
+}
+
+entity = {
+	name = "unciv_city_03_entity"
+	pdxmesh = "unciv_city_03"
+	scale = 0.6
+}
+
+entity = {
+	name = "unciv_city_04_entity"
+	pdxmesh = "unciv_city_04"
+	scale = 0.9
+	
+	default_state = "idle"
+	state = { name = "idle" }
+}
+
+
+
+#### Buildings ########################################################
+# Name must match "building_" + building tag
+
+entity = {
+	name = "building_air_base"
+	pdxmesh = "building_air_base"	
+	scale = 1.4
+	
+	default_state = "idle"
+	state = { name = "idle" }
+}
+
+entity = {
+	name = "building_naval_base_1"
+	pdxmesh = "building_naval_base_1"
+	scale = 0.8
+	
+	default_state = "idle"
+	state = { name = "idle" }
+}
+entity = {
+	name = "building_naval_base_2"
+	pdxmesh = "building_naval_base_2"
+	scale = 0.8
+	
+	default_state = "idle"
+	state = { name = "idle" }
+}
+entity = {
+	name = "building_naval_base_3"
+	pdxmesh = "building_naval_base_3"
+	scale = 0.8
+	
+	default_state = "idle"
+	state = { name = "idle" }
+}
+
+entity = {
+	name = "building_bunker"
+	pdxmesh = "building_bunker"
+	
+	default_state = "idle"
+	state = { name = "idle" }
+}
+
+entity = {
+	name = "building_coastal_bunker"
+	pdxmesh = "building_coastal_bunker"
+	
+	default_state = "idle"
+	state = { name = "idle" }
+}

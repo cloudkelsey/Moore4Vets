@@ -1,0 +1,55 @@
+MAN_historical_plan = {
+	name = "Manchukuo historical plan"
+	desc = "Historical behavior for Manchukuo"
+
+	enable = {
+		original_tag = MAN
+	}
+	abort = {
+	}
+
+	ai_national_focuses = {
+		MAN_pacify_the_countryside
+		MAN_army_modernization
+		MAN_obedience
+		MAN_first_five_year_plan
+		MAN_alliance_with_the_kwantung_army
+		MAN_chinese_leadership
+		MAN_national_cooperation_government
+		MAN_invite_japanese_investors
+		MAN_develop_aluminum_sources
+		MAN_expand_showa_steel_works
+		MAN_mukden_arsenal
+		CHI_invite_foreign_investors
+		MAN_trade_delegation
+		MAN_expand_the_textile_industry
+		MAN_invite_japanese_investors
+		MAN_collective_farms
+		MAN_hoankyoku
+		MAN_expand_the_railways
+		MAN_social_research_unit
+		MAN_mamc
+		MAN_second_five_year_plan
+	}
+
+	focus_factors = {
+	}
+
+	research = {
+
+	}
+
+	ideas = {
+
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+}

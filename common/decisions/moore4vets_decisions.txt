@@ -1,3 +1,223 @@
+event_firing = {
+	################################# GERMANY #################################
+	give_eastern_poland = {
+		available = { POL = { has_war_with = GER has_capitulated = yes } }
+		fire_only_once = yes
+		ai_will_do = { factor = 1000 }
+		complete_effect = { GER = { country_event = germany.14 } }
+	}
+	mefo_bills_payments_anti_meme = {
+		available = { GER = { has_country_flag = mefo_bills_removed_through_war has_war = no } }
+		ai_will_do = { factor = 1000 }
+		complete_effect = { GER = { country_event = wtt_germany.62 } }
+	}
+	################################# GERMANY #################################
+	
+	################################# ITALY #################################
+	kill_ethiopia = {
+		available = { ETH = { exists = yes has_war_with = ITA } date > 1936.7.15 }
+		fire_only_once = yes
+		ai_will_do = { factor = 1000 }
+		complete_effect = { ITA = { country_event = moore4vets.2 } }
+	}
+	################################# ITALY #################################
+	
+	################################# FRANCE #################################
+	french_factory_strikes = {
+		available = { 
+			date > 1936.6.1
+			date < 1938.1.1
+			FRA = {
+				NOT = { has_government = communism }
+				NOT = { has_idea = FRA_matignon_agreements }
+				has_completed_focus = FRA_form_the_popular_front
+				NOT = { has_country_flag = FRA_popular_front_cooldown }
+			} 
+		}
+		fire_only_once = yes
+		ai_will_do = { factor = 1000 }
+		complete_effect = { FRA = { country_event = france.21 } }
+	}
+	dalaider_resigns = {
+		available = {
+			FRA = {
+				has_government = democratic
+				has_global_flag = fall_of_france
+				NOT = { has_country_flag = france_de_gaulle }
+			}
+		}
+		fire_only_once = yes
+		ai_will_do = { factor = 1000 }
+		complete_effect = { FRA = { country_event = france.31 } }
+	}
+	compagne_armistice = {
+		available = { FRA = { has_war_with = GER surrender_progress > 0.9 } 16 = { is_controlled_by = GER } }
+		fire_only_once = yes
+		ai_will_do = { factor = 1000 }
+		complete_effect = { FRA = { country_event = france.10 } }
+		# country_event = france.16
+	}
+	# swap_french_tree = {
+		# available = { FRA = { has_capitulated = yes } }
+		# fire_only_once = yes
+		# ai_will_do = { factor = 1000 }
+		# complete_effect = { FRA = { load_focus_tree = free_french_focus } }
+	# }
+	################################# FRANCE #################################
+	
+	################################# JAPAN #################################
+	panay_incident = {
+		available = {
+			JAP = {
+				has_war_with = CHI
+				OR = {
+					AND = { #JAP has made headway in the north
+						608 = { is_controlled_by = JAP } #Beijing
+						614 = { is_controlled_by = JAP } #Hebei
+						597 = { is_controlled_by = JAP } #Shandong
+						598 = { is_controlled_by = JAP } #Jiangsu
+						}
+					OR = { #JAP has captured key coastal states in the south
+						597 = { is_controlled_by = JAP } #Shanghai
+						592 = { is_controlled_by = JAP } #Guangzhou
+					}
+				}
+			}
+		}
+		fire_only_once = yes
+		ai_will_do = { factor = 1000 }
+		complete_effect = { JAP = { country_event = panay_incident.1 } }
+	}
+	################################# JAPAN #################################
+	
+	################################# UK #################################
+	get_rid_of_chamberlain = {
+		available = { ENG = { has_war = yes } POL = { has_capitulated = yes } }
+		fire_only_once = yes
+		ai_will_do = { factor = 1000 }
+		complete_effect = { ENG = { country_event = britain.9 } }
+	}
+	give_shadow_scheme_factories = {
+		available = { ENG = { has_completed_focus = shadow_scheme_focus has_war = yes } }
+		fire_only_once = yes
+		ai_will_do = { factor = 1000 }
+		complete_effect = { ENG = { country_event = britain.24 } }
+	}
+	################################# UK #################################
+	
+	################################# USA #################################
+	remove_usa_faction_idea = {
+		available = { 
+			USA = {
+				OR = {
+					has_war_with = JAP
+					OR = {
+						# ROEBUCK: Problem: is_controlled_by, is_fully_controlled_by etc. can only accept states as their argument so checking port provinces is impossible (?)
+						127 = { NOT = { is_fully_controlled_by = ENG } } # triggers even if province taken isn't port
+						123 = { NOT = { is_fully_controlled_by = ENG } }
+						122 = { NOT = { is_fully_controlled_by = ENG } }
+						132 = { NOT = { is_fully_controlled_by = ENG } }
+						133 = { NOT = { is_fully_controlled_by = ENG } }
+						120 = { NOT = { is_fully_controlled_by = ENG } }
+						121 = { NOT = { is_fully_controlled_by = ENG } }
+						131 = { NOT = { is_fully_controlled_by = ENG } }
+						130 = { NOT = { is_fully_controlled_by = ENG } }
+						125 = { NOT = { is_fully_controlled_by = ENG } }
+						126 = { NOT = { is_fully_controlled_by = ENG } }
+					} 
+				}
+			} 
+		}
+		fire_only_once = yes
+		ai_will_do = { factor = 1000 }
+		complete_effect = { USA = { remove_ideas = { no_faction_joining } country_event = moore4vets_news.2 } }
+	}
+	################################# USA #################################
+	
+	################################# SPAIN #################################
+	get_down_mr_president = {
+		available = { date > 1936.4.20 SPR = { NOT = { has_global_flag = spanish_civil_war } } }
+		fire_only_once = yes
+		ai_will_do = { factor = 1000 }
+		complete_effect = { SPR = { country_event = lar_spain.90 } }
+	}
+	core_spain_after_war = {
+		available = { SPR = { has_global_flag = scw_over } }
+		fire_only_once = yes
+		ai_will_do = { factor = 1000 }
+		complete_effect = { SPR = { country_event = moore4vets.4 } }
+	}
+	################################# SPAIN #################################
+	
+	################################# POLAND #################################
+	join_the_allies_please = {
+		available = { POL = { has_war = yes } }
+		fire_only_once = yes
+		ai_will_do = { factor = 1000 }
+		complete_effect = { ENG = { add_to_faction = POL } }
+	}
+	################################# POLAND #################################
+	
+	################################# INDIA #################################
+	warn_india_about_famine = {
+		available = { RAJ = { has_war = yes } }
+		fire_only_once = yes
+		ai_will_do = { factor = 1000 }
+		complete_effect = { RAJ = { news_event = moore4vets_news.4 } }
+	}
+	what_are_you_communist = {
+		available = { date > 1940.2.1 RAJ = { has_idea = RAJ_risk_of_famine } } # Want to do this earlier but Germany late declaring could fuck them
+		fire_only_once = yes
+		ai_will_do = { factor = 1000 }
+		complete_effect = { RAJ = { country_event = tfv_raj.21 } }
+	}
+	################################# INDIA #################################
+	
+	################################# BENELUX #################################
+	fra_annex_belgium = { # was originally UK but I feel this is more fair since UK already gets Dutch East Indies (plus it looks better and that's definitely not the main reason)
+		available = {
+			BEL = {
+				has_capitulated = yes
+				any_enemy_country = {
+					has_full_control_of_state = 6
+					has_full_control_of_state = 34
+				}
+			}
+		}
+		fire_only_once = yes
+		ai_will_do = { factor = 1000 }
+		complete_effect = { FRA = { annex_country = { target = BEL transfer_troops = no } } if = { limit = { HOL = { has_capitulated = yes } } news_event = moore4vets_news.3 } }
+	}
+	uk_annex_netherlands = {
+		available = {
+			HOL = {
+				has_capitulated = yes
+				any_enemy_country = {
+					has_full_control_of_state = 7
+					has_full_control_of_state = 35
+					has_full_control_of_state = 36
+				}
+			}
+		}
+		fire_only_once = yes
+		ai_will_do = { factor = 1000 }
+		complete_effect = { ENG = { annex_country = { target = HOL transfer_troops = no } set_autonomy = { target = INS autonomous_state = temporary_puppet } } if = { limit = { BEL = { has_capitulated = yes } } news_event = moore4vets_news.3 } }
+	}
+	################################# BENELUX #################################
+}
+
+acquire_islands = {
+	uk_acquire_azores = {
+		ai_will_do = { factor = 10 }
+		allowed = { tag = ENG }
+		available = { date > 1940.6.1 }
+		visible = { always = yes }
+		fire_only_once = yes
+		cost = 50
+		complete_effect = { transfer_state = 698 }
+	}
+}
+
 ger_annexation = {
 
 	annex_hungary = {
@@ -46,6 +266,7 @@ ger_annexation = {
 		}
 		visible = {
 			BUL = { is_ai = yes }
+			date > 1939.1.1
 			country_exists = BUL
 		}
 		complete_effect = {
@@ -211,7 +432,7 @@ uk_annexation = {
 }
 
 jap_annexation = {
-	JAP_annex_siam= {	
+	JAP_annex_siam = {	
 		ai_will_do = { factor = 0 }
 		cost = 5
 		visible = {
@@ -235,9 +456,8 @@ jap_annexation = {
 fin_white_peace = {
 	force_white_peace = {
 		ai_will_do = { factor = 100 }
-		cost = 0
 		allowed = { tag = FIN }
-		available = { has_war_with = SOV OR = { surrender_progress > 0.8 date > 1941.1.1 } }
+		available = { has_war_with = SOV OR = { surrender_progress > 0.8 date > 1940.9.1 } }
 		fire_only_once = yes
 		complete_effect = { SOV = { white_peace = { tag = FIN message = FIN_agree_peace  } transfer_state = 146 transfer_state = 147 transfer_state = 722 }  }
 	}

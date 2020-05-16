@@ -1,0 +1,271 @@
+# befriend
+# conquer
+# antagonize
+# build_ship
+# build_army
+# unit_ratio
+# build_building
+# research_tech
+# garrison
+# protect
+# influence
+
+# make italy and germany want to send stuff to the fascist side of SCW
+ITA_and_GER_help_SPA_win_civil_war = {
+	reversed = yes
+	enable = {
+		date < 1939.1.1
+		country_exists = SPR
+		SPR = {
+			has_government = fascism
+		}
+		has_government = fascism
+		SPR = { has_civil_war = yes }
+		NOT = { has_dlc = "La Resistance" }
+		NOT = { has_global_flag = scw_over }
+	}
+	abort = {
+		OR = {
+			date > 1939.1.1
+			NOT = { has_government = fascism }
+			SPR = { has_civil_war = no }
+			has_global_flag = scw_over
+		}
+	}
+	
+	ai_strategy = {
+		type = send_volunteers_desire
+		id = SPR
+		value = 50
+	}
+
+}
+
+# Make nobody want to ally Spain during the civil war.
+spanish_civil_war_ally_nobody = {
+	enable = {
+		SPR_scw_in_progress = yes
+		NOT = {
+			original_tag = SPR
+		}
+		has_dlc = "La Resistance"
+	}
+	abort = {
+		has_global_flag = scw_over
+	}
+	
+	ai_strategy = {
+		type = alliance
+		id = SPD
+		value = -200
+	}
+	ai_strategy = {
+		type = alliance
+		id = SPA
+		value = -200
+	}
+	ai_strategy = {
+		type = alliance
+		id = SPB
+		value = -200
+	}
+	ai_strategy = {
+		type = alliance
+		id = SPC
+		value = -200
+	}
+}
+
+# Make countries less likely to support Carlist Spain
+spanish_civil_war_isolate_carlists = {
+	enable = {
+		country_exists = SPB
+		SPR_scw_in_progress = yes
+		NOT = {
+			original_tag = SPR
+		}
+		has_dlc = "La Resistance"
+		NOT = { has_government = neutrality }
+	}
+	abort = {
+		has_global_flag = scw_over
+	}
+	
+	ai_strategy = {
+		type = ignore
+		id = SPB
+		value = 100
+	}
+	ai_strategy = {
+		type = alliance
+		id = SPB
+		value = -50
+	}
+	ai_strategy = {
+		type = befriend
+		id = SPB
+		value = -50
+	}
+	ai_strategy = {
+		type = support
+		id = SPB
+		value = -50
+	}
+	ai_strategy = {
+		type = protect
+		id = SPB
+		value = -50
+	}
+	ai_strategy = {
+		type = send_volunteers_desire
+		id = SPB
+		value = -50
+	}
+	ai_strategy = {
+		type = send_lend_lease_desire
+		id = SPB
+		value = -50
+	}
+}
+
+SPR_dont_attack_at_startup_of_civil_war = {
+	allowed = {
+		original_tag = SPR
+	}
+	
+	enable = {
+		OR = {
+			has_global_flag = SPR_civil_war_startup
+			AND = {
+				SPR = { controls_state = 41 controls_state = 165 }
+				JAP = { has_war = no }
+			}
+		}
+	}
+	
+	ai_strategy = {
+		type = front_control
+
+		country_trigger = {
+			original_tag = SPR
+		}
+		
+		execute_order = no
+		manual_attack = no
+	}
+}
+
+# SPR_dont_attack_in_urban_states_1 = {
+	# allowed = { original_tag = SPR }
+	# enable = { date < 1939.3.1 }
+	# ai_strategy = {
+		# type = front_control
+
+		# state = 41
+		
+		# execute_order = no
+		# manual_attack = no
+	# }
+# }
+
+# SPR_dont_attack_in_urban_states_2 = {
+	# allowed = { original_tag = SPR }
+	# enable = { date < 1939.3.1 }
+	# ai_strategy = {
+		# type = front_control
+
+		# state = 165
+		
+		# execute_order = no
+		# manual_attack = no
+	# }
+# }
+
+# SPR_be_careful_at_startup_of_civil_war = {
+	# allowed = {
+		# original_tag = SPR
+	# }
+	
+	# enable = {
+		# has_global_flag = SPR_civil_war_startup
+	# }
+	
+	# abort_when_not_enabled = yes
+	
+	# ai_strategy = {
+		# type = front_control
+
+		# country_trigger = {
+			# original_tag = SPR
+		# }
+		
+		# execution_type = careful
+	# }
+# }
+
+# SPR_dont_attack_at_startup_of_civil_war = {
+	# allowed = {
+		# original_tag = SPR
+	# }
+	
+	# enable = {
+		# NOT = { has_global_flag = SPR_civil_war_startup }
+		# OR = { has_idea = SPR_death_before_surrender has_idea = SPA_death_before_surrender }
+	# }
+	
+	# abort_when_not_enabled = yes
+	
+	# ai_strategy = {
+		# type = front_control
+
+		# country_trigger = {
+			# original_tag = SPR
+		# }
+		
+		# execute_order = no
+		# manual_attack = yes
+	# }
+# }
+
+# Prevent Nationalist Spain to join any faction on historical mode
+nationalist_spain_allies_nobody_on_historical = {
+	enable = {
+		has_global_flag = scw_over
+		has_dlc = "La Resistance"
+		tag = SPA
+		OR = {
+			AND = {
+				is_historical_focus_on = yes
+				has_game_rule = {
+					rule = SPR_ai_behavior 
+					option = DEFAULT
+				}
+			}
+			has_country_flag = SPR_AI_RANDOM_NATIONALIST_HISTORICAL
+			has_game_rule = {
+				rule = SPR_ai_behavior 
+				option = NATIONALIST_HISTORICAL
+			}
+		}
+	}
+	abort = {
+		OR = {
+			SPA = { has_war = yes }
+			SPA = { is_in_faction = yes }
+			GER = { NOT = { has_government = fascism } }
+			ENG = { NOT = { has_government = democratic } }
+		}
+	}
+	
+	ai_strategy = {
+		type = alliance
+		id = GER
+		value = -200
+	}
+
+	ai_strategy = {
+		type = alliance
+		id = ENG
+		value = -200
+	}
+}

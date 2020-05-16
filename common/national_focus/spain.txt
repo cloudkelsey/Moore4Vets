@@ -26,27 +26,6 @@ focus_tree = {
 
 	continuous_focus_position = { x = 50 y = 2500 }
 
-	initial_show_position = {
-		x = 33
-		y = 0
-		offset = {
-			x = -16
-			y = 0
-			trigger = {
-				has_global_flag = spanish_civil_war
-				has_completed_focus = SPA_a_great_spain
-			}
-		}
-		offset = {
-			x = -19
-			y = 0
-			trigger = {
-				has_global_flag = spanish_civil_war
-				has_completed_focus = SPR_the_popular_front
-			}
-		}
-	}
-
 #  #  ##  ### ###  ##  #  #  ##  #   ###  ## ###     ###  #  # ### #   ###     #  # ###  
 ## # #  #  #   #  #  # ## # #  # #    #  #    #      #  # #  #  #  #   #  #    #  # #  # 
 # ## ####  #   #  #  # # ## #### #    #   #   #      ###  #  #  #  #   #  # ## #  # ###  
@@ -83,16 +62,8 @@ focus_tree = {
 		
 		
 		icon = GFX_goal_generic_demand_territory
-		x = 31
+		x = 0
 		y = 0
-		offset = {
-			x = -14
-			y = 0
-			trigger = {
-				has_completed_focus = SPA_a_great_spain
-				has_global_flag = spanish_civil_war
-			}
-		}
 		cost = 5
 
 		available_if_capitulated = yes
@@ -133,16 +104,8 @@ focus_tree = {
 		prerequisite = { focus = SPA_a_great_spain }
 		
 		icon = GFX_focus_generic_concessions
-		x = -5
+		x = 0
 		y = 1
-		offset = {
-			x = 15
-			y = 0
-			trigger = {
-				has_completed_focus = SPA_a_great_spain
-				has_global_flag = spanish_civil_war
-			}
-		}
 		relative_position_id = SPA_a_great_spain
 		cost = 5
 
@@ -237,6 +200,8 @@ focus_tree = {
 							state = 176
 							state = 166
 							state = 172
+							state = 790
+							state = 792
 						}
 					}
 					set_state_flag = SPA_northern_garrisons_state_flag
@@ -256,6 +221,8 @@ focus_tree = {
 							state = 176
 							state = 166
 							state = 172
+							state = 790
+							state = 792
 						}
 					}
 					set_state_flag = SPA_northern_garrisons_state_flag
@@ -275,6 +242,8 @@ focus_tree = {
 							state = 176
 							state = 166
 							state = 172
+							state = 790
+							state = 792
 						}
 					}
 					set_state_flag = SPA_northern_garrisons_state_flag
@@ -335,28 +304,14 @@ focus_tree = {
 		mutually_exclusive = { focus = SPA_a_great_spain }
 		cancel_if_invalid = yes
 		allow_branch = {
-			OR = {
-				NOT = {
-					has_global_flag = spanish_civil_war
-				}
-				AND = {
-					NOT = { has_completed_focus = SPA_a_great_spain }
-					has_global_flag = spanish_civil_war
-				}
-			}
+			NOT = { has_completed_focus = SPA_a_great_spain }
+			has_global_flag = spanish_civil_war
+			is_ai = yes
 		}
 		
 		icon = GFX_goal_generic_national_unity
-		x = 33
+		x = 0
 		y = 0
-		offset = {
-			x = -19
-			y = 0
-			trigger = {
-				has_completed_focus = SPR_the_popular_front
-				has_global_flag = spanish_civil_war
-			}
-		}
 		cost = 5
 
 		available_if_capitulated = yes
@@ -397,16 +352,8 @@ focus_tree = {
 		mutually_exclusive = { focus = SPR_secure_the_guardia_civil }
 		
 		icon = GFX_goal_generic_political_pressure
-		x = 5
+		x = -1
 		y = 1
-		offset = {
-			x = -14
-			y = 0
-			trigger = {
-				has_completed_focus = SPR_the_popular_front
-				has_global_flag = spanish_civil_war
-			}
-		}
 		relative_position_id = SPR_the_popular_front
 		cost = 10
 
@@ -444,16 +391,8 @@ focus_tree = {
 		mutually_exclusive = { focus = SPR_secure_the_guardia_de_asalto }
 		
 		icon = GFX_focus_generic_support_the_left_right
-		x = 7
+		x = 1
 		y = 1
-		offset = {
-			x = -14
-			y = 0
-			trigger = {
-				has_completed_focus = SPR_the_popular_front
-				has_global_flag = spanish_civil_war
-			}
-		}
 		relative_position_id = SPR_the_popular_front
 		cost = 10
 
@@ -642,22 +581,13 @@ focus_tree = {
 				name = SPA_the_corpo_truppe_volontarie
 				bonus = 1.0
 				uses = 1
-				technology = improved_infantry_weapons 
-				technology = advanced_infantry_weapons
+				category = infantry_weapons
 			}
 			add_tech_bonus = {
 				name = SPA_the_corpo_truppe_volontarie
 				bonus = 1.0
 				uses = 1
-				#technology = gw_artillery 
-				technology = artillery1 
-				technology = artillery4 
-				#technology = interwar_antiair 
-				technology = antiair2 
-				technology = antiair5 
-				technology = interwar_antitank 
-				technology = antitank2 
-				technology = antitank5 
+				category = artillery
 			}
 		}
 	}
@@ -1069,7 +999,6 @@ focus_tree = {
 	focus = {
 		id = SPA_consolidate_the_north
 		available = {
-			controls_state = 166
 			controls_state = 172
 			controls_state = 176
 			controls_state = 792
@@ -1525,8 +1454,7 @@ focus_tree = {
 				name = SPA_equipment_modernization
 				bonus = 1.0
 				uses = 2
-				technology = improved_infantry_weapons 
-				technology = advanced_infantry_weapons
+				category = infantry_weapons
 			}
 		}
 	}
@@ -1552,15 +1480,7 @@ focus_tree = {
 				name = SPA_artillery_modernization
 				bonus = 1.0
 				uses = 2
-				#technology = gw_artillery 
-				technology = artillery1 
-				technology = artillery4 
-				#technology = interwar_antiair 
-				technology = antiair2 
-				technology = antiair5 
-				technology = interwar_antitank 
-				technology = antitank2 
-				technology = antitank5 
+				category = artillery
 			}
 		}
 	}
@@ -1703,7 +1623,6 @@ focus_tree = {
 					}
 				}
 			}
-			NOT = { has_completed_focus = SPA_the_latin_bloc }
 			NOT = { has_global_flag = POR_iberian_summit_in_progress_flag }
 		}
 		bypass = {
@@ -2332,7 +2251,6 @@ focus_tree = {
 	focus = {
 		id = SPA_expand_the_axis_gold_trade
 		available = {
-			NOT = { has_completed_focus = SPA_the_stabilization_plan }
 		}
 		bypass = {
 		}
@@ -3206,7 +3124,6 @@ focus_tree = {
 		}
 		bypass = {
 			AND = {
-				has_completed_focus = SPR_the_stalinist_doctrine
 				has_global_flag = scw_over
 			}
 		}

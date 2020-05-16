@@ -3,14 +3,11 @@ siam_mils_are_for_losers = {
 	ai_strategy = { type = added_military_to_civilian_factory_ratio value = -100 }
 }
 
-siam_build_airports = {
+siam_build_stuff = {
 	allowed = { tag = SIA }
 	ai_strategy = { type = build_building id = air_base target = 724 value = 10 }
 	ai_strategy = { type = build_building id = air_base target = 289 value = 10 }
-}
-
-siam_build_radar = {
-	allowed = { tag = SIA }
 	ai_strategy = { type = build_building id = radar_station target = 724 value = 6 }
 	ai_strategy = { type = build_building id = radar_station target = 289 value = 6 }
+	ai_strategy = { type = build_building id = naval_base target = 289 value = 10 }
 }

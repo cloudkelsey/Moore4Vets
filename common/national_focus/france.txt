@@ -1035,15 +1035,7 @@
 				name = FRA_artillery_focus
 				bonus = 1.0
 				uses = 1
-				#technology = gw_artillery 
-				technology = artillery1 
-				technology = artillery4 
-				#technology = interwar_antiair 
-				technology = antiair2 
-				technology = antiair5 
-				technology = interwar_antitank 
-				technology = antitank2 
-				technology = antitank5 
+				category = artillery
 			}
 		}
 	}
@@ -1655,7 +1647,7 @@
 			focus = FRA_nationalize_key_industry
 		}
 		relative_position_id = FRA_nationalize_key_industry
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -2342,7 +2334,7 @@
 			focus = FRA_review_foreign_policy
 		}
 		relative_position_id = FRA_review_foreign_policy
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -2437,7 +2429,7 @@
 		x = 0
 		y = 1
 		relative_position_id = FRA_buy_time
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -2455,10 +2447,6 @@
 			modifier = {
 				factor = 0.5
 				ai_irrationality > 30
-			}
-			modifier = {
-				factor = 0
-				has_idea = GER_communist_refugees
 			}
 		}
 		completion_reward = {
@@ -3186,7 +3174,7 @@
 				name = FRA_heavy_bomber_focus
 				bonus = 1.0
 				uses = 2
-				category = cat_strategic_bomber
+				category = tactical_bomber
 			}
 		}
 	}

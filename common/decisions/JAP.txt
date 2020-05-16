@@ -45,9 +45,10 @@ JAP_intervene_in_china = {
 		}
 
 		visible = {
-			has_completed_focus = JAP_secure_china
+			JAP_has_idea_JAP_intervene_in_china = no
 			any_enemy_country = {
 				is_literally_china = yes
+				has_war_with = JAP
 			}
 			event_target:WTT_current_china_leader = {
 				NOT = { is_puppet_of = JAP }
@@ -843,65 +844,6 @@ JAP_southern_expansion = {
 
 		available = {
 			16 = { NOT = { is_controlled_by = FRA } } #Paris has fallen
-			286 = { 
-				CONTROLLER = { 
-					NOT = {
-						has_war_with = ROOT
-						is_in_faction_with = ROOT
-					}
-				} 
-			}
-			670 = { 
-				CONTROLLER = { 
-					NOT = {
-						has_war_with = ROOT
-						is_in_faction_with = ROOT
-					}
-				} 
-			}
-			671 = { 
-				CONTROLLER = { 
-					NOT = {
-						has_war_with = ROOT
-						is_in_faction_with = ROOT
-					}
-				} 
-			}
-			custom_trigger_tooltip = {
-				tooltip = demand_indochina_focus_tt
-				OR = {
-					286 = { 
-						CONTROLLER = { 
-							OR = { 
-								tag = FRA 
-								tag = VIC
-								is_subject_of = FRA
-								is_subject_of = VIC 
-							} 
-						}
-					}
-					670 = { 
-						CONTROLLER = { 
-							OR = { 
-								tag = FRA 
-								tag = VIC 
-								is_subject_of = FRA
-								is_subject_of = VIC
-							} 
-						}
-					}
-					671 = { 
-						CONTROLLER = { 
-							OR = { 
-								tag = FRA 
-								tag = VIC 
-								is_subject_of = FRA
-								is_subject_of = VIC
-							} 
-						}
-					}
-				}
-			}
 		}
 
 		visible = {
@@ -935,36 +877,13 @@ JAP_southern_expansion = {
 		}
 
 		complete_effect = {
-			if = {
-				limit = {
-					FRA = {
-						OR = {
-							controls_state = 671
-							671 = { CONTROLLER = { is_subject_of = FRA } }
-							controls_state = 670
-							670 = { CONTROLLER = { is_subject_of = FRA } }
-							controls_state = 286
-							286 = { CONTROLLER = { is_subject_of = FRA } }
-						}
-					}
-				}
-				FRA = { country_event = { id = france.1 } }
-			}
-			else_if = {
-				limit = {
-					VIC = {
-						OR = {
-							controls_state = 671
-							controls_state = 670
-							controls_state = 286
-							671 = { CONTROLLER = { is_subject_of = VIC } }
-							670 = { CONTROLLER = { is_subject_of = VIC } }
-							286 = { CONTROLLER = { is_subject_of = VIC } }
-						}
-					}
-				}
-				VIC = { country_event = { id = france.1 } }
-			}
+			hidden_effect = { news_event = news.5 }
+			transfer_state = 286
+			transfer_state = 670
+			transfer_state = 671
+			transfer_state = 728
+			transfer_state = 741
+			add_named_threat = { threat = 3 name = france.1.t }
 		}
 
 	}

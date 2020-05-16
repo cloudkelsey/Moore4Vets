@@ -538,180 +538,20 @@ shared_focus = {
 	completion_reward = {
 		custom_effect_tooltip = CHI_experimental_mechanised_unit_effect
 		hidden_effect = {
-			if = {
-				limit = {
-					tag = CHI
-				}
-				division_template = {
-					name = "Experimental Mechanised Division"
-					division_names_group = CHI_MEC_01
-					priority = 2
-					regiments = {
-						light_armor = { x = 0 y = 0 }
-						light_armor = { x = 0 y = 1 }
+			division_template = {
+				name = "Experimental Mechanised Division"
+				priority = 2
+				regiments = {
+					light_armor = { x = 0 y = 0 }
+					light_armor = { x = 0 y = 1 }
 			
-						motorized = { x = 1 y = 0 }
-						motorized = { x = 1 y = 1 }
-						motorized = { x = 1 y = 2 }
-						motorized = { x = 1 y = 3 }
-					}
-					support = {
-						
-					}
+					motorized = { x = 1 y = 0 }
+					motorized = { x = 1 y = 1 }
+					motorized = { x = 1 y = 2 }
+					motorized = { x = 1 y = 3 }
 				}
-			}
-			if = {
-				limit = {
-					tag = PRC
-				}
-				division_template = {
-					name = "Experimental Mechanised Division"
-					division_names_group = PRC_MEC_01
-					priority = 2
-					regiments = {
-						light_armor = { x = 0 y = 0 }
-						light_armor = { x = 0 y = 1 }
-			
-						motorized = { x = 1 y = 0 }
-						motorized = { x = 1 y = 1 }
-						motorized = { x = 1 y = 2 }
-						motorized = { x = 1 y = 3 }
-					}
-					support = {
-						
-					}
-				}
-			}
-			if = {
-				limit = {
-					tag = YUN
-				}
-				division_template = {
-					name = "Experimental Mechanised Division"
-					division_names_group = YUN_MEC_01
-					priority = 2
-					regiments = {
-						light_armor = { x = 0 y = 0 }
-						light_armor = { x = 0 y = 1 }
-			
-						motorized = { x = 1 y = 0 }
-						motorized = { x = 1 y = 1 }
-						motorized = { x = 1 y = 2 }
-						motorized = { x = 1 y = 3 }
-					}
-					support = {
-						
-					}
-				}
-			}
-			if = {
-				limit = {
-					tag = GXC
-				}
-				division_template = {
-					name = "Experimental Mechanised Division"
-					division_names_group = GXC_MEC_01
-					priority = 2
-					regiments = {
-						light_armor = { x = 0 y = 0 }
-						light_armor = { x = 0 y = 1 }
-			
-						motorized = { x = 1 y = 0 }
-						motorized = { x = 1 y = 1 }
-						motorized = { x = 1 y = 2 }
-						motorized = { x = 1 y = 3 }
-					}
-					support = {
-						
-					}
-				}
-			}
-			if = {
-				limit = {
-					tag = SHX
-				}
-				division_template = {
-					name = "Experimental Mechanised Division"
-					division_names_group = SHX_MEC_01
-					priority = 2
-					regiments = {
-						light_armor = { x = 0 y = 0 }
-						light_armor = { x = 0 y = 1 }
-			
-						motorized = { x = 1 y = 0 }
-						motorized = { x = 1 y = 1 }
-						motorized = { x = 1 y = 2 }
-						motorized = { x = 1 y = 3 }
-					}
-					support = {
-						
-					}
-				}
-			}
-			if = {
-				limit = {
-					tag = XSM
-				}
-				division_template = {
-					name = "Experimental Mechanised Division"
-					division_names_group = XSM_MEC_01
-					priority = 2
-					regiments = {
-						light_armor = { x = 0 y = 0 }
-						light_armor = { x = 0 y = 1 }
-			
-						motorized = { x = 1 y = 0 }
-						motorized = { x = 1 y = 1 }
-						motorized = { x = 1 y = 2 }
-						motorized = { x = 1 y = 3 }
-					}
-					support = {
-						
-					}
-				}
-			}
-			if = {
-				limit = {
-					tag = SIK
-				}
-				division_template = {
-					name = "Experimental Mechanised Division"
-					division_names_group = SIK_MEC_01
-					priority = 2
-					regiments = {
-						light_armor = { x = 0 y = 0 }
-						light_armor = { x = 0 y = 1 }
-			
-						motorized = { x = 1 y = 0 }
-						motorized = { x = 1 y = 1 }
-						motorized = { x = 1 y = 2 }
-						motorized = { x = 1 y = 3 }
-					}
-					support = {
-						
-					}
-				}
-			}
-			if = {
-				limit = {
-					tag = MAN
-				}
-				division_template = {
-					name = "Experimental Mechanised Division"
-					division_names_group = MAN_MEC_01
-					priority = 2
-					regiments = {
-						light_armor = { x = 0 y = 0 }
-						light_armor = { x = 0 y = 1 }
-			
-						motorized = { x = 1 y = 0 }
-						motorized = { x = 1 y = 1 }
-						motorized = { x = 1 y = 2 }
-						motorized = { x = 1 y = 3 }
-					}
-					support = {
-						
-					}
+				support = {
+					
 				}
 			}
 			capital_scope = {
@@ -1147,9 +987,7 @@ shared_focus = {
 			name = CHI_small_arms_expertise
 			bonus = 1.0
 			uses = 1
-			technology = infantry_weapons1 
-			technology = improved_infantry_weapons 
-			technology = advanced_infantry_weapons
+			category = infantry_weapons
 		}
 	}
 }
@@ -1208,7 +1046,6 @@ shared_focus = {
 			custom_effect_tooltip = CHI_free_mountain_template_tt
 			division_template = {
 				name = "Chinese Mountain Division"
-				division_names_group = CHI_MNT_01
 				regiments = {
 					mountaineers = { x = 0 y = 0 }
 					mountaineers = { x = 0 y = 1 }
@@ -1268,15 +1105,7 @@ shared_focus = {
 			name = CHI_heavy_weapons
 			bonus = 1.0
 			uses = 1
-			technology = gw_artillery 
-			technology = artillery1 
-			technology = artillery4 
-			technology = interwar_antiair 
-			technology = antiair2 
-			technology = antiair5 
-			technology = interwar_antitank 
-			technology = antitank2 
-			technology = antitank5 
+			category = artillery
 		}
 	}
 }

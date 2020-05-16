@@ -43,17 +43,26 @@
 
 		completion_reward = {
 			custom_effect_tooltip = NZL_transfer_ships_tt
-			ENG = {
-			    transfer_ship = {
-			        prefer_name = "HMS Achilles"
-			        type = light_cruiser
-			        target = NZL
-			    }
-			    transfer_ship = {
-			        prefer_name = "HMS Leander"
-			        type = light_cruiser
-			        target = NZL
-			    }
+			hidden_effect = {
+				create_equipment_variant = {
+					name = "Leander Class"
+					type = ship_hull_cruiser_2
+					name_group = ENG_CL_HISTORICAL
+					parent_version = 0
+					modules = {
+						fixed_ship_battery_slot = ship_light_medium_battery_2
+						fixed_ship_anti_air_slot = ship_anti_air_2
+						fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+						fixed_ship_radar_slot = empty
+						fixed_ship_engine_slot = cruiser_ship_engine_2
+						fixed_ship_armor_slot = ship_armor_cruiser_1
+						front_1_custom_slot = empty
+						mid_1_custom_slot = ship_torpedo_1
+						mid_2_custom_slot = ship_airplane_launcher_1
+						rear_1_custom_slot = ship_light_medium_battery_2
+					}
+				}
+				load_oob = NZL_transfer_division 
 			}
 		}
 	}
@@ -592,7 +601,6 @@
 				name = NZL_bomber_focus
 				bonus = 1.00
 				uses = 1
-				category = cat_strategic_bomber
 				category = tactical_bomber
 			}
 		}
@@ -671,7 +679,6 @@
 				technology = early_fighter
 				technology = fighter1
 				technology = fighter2
-				technology = fighter3
 				category = cat_heavy_fighter
 			}
 		}
@@ -710,7 +717,7 @@
 				name = NZL_heavy_bombers
 				bonus = 1.0
 				uses = 2
-				category = cat_strategic_bomber
+				category = tactical_bomber
 			}
 		}
 	}
@@ -1358,8 +1365,7 @@
 				name = NZL_charlton_automatic_rifle
 				bonus = 1.0
 				uses = 1
-				technology = improved_infantry_weapons 
-				technology = advanced_infantry_weapons
+				category = infantry_weapons
 			}
 		}
 	}
@@ -1574,15 +1580,7 @@
 				name = NZL_artillery_focus
 				bonus = 1.00
 				uses = 1
-				#technology = gw_artillery 
-				technology = artillery1 
-				technology = artillery4 
-				technology = interwar_antiair 
-				technology = antiair2 
-				technology = antiair5 
-				technology = interwar_antitank 
-				technology = antitank2 
-				technology = antitank5 
+				category = artillery
 			}
 		}
 	}
@@ -2049,7 +2047,7 @@
 		y = 1
 		relative_position_id = NZL_strengthen_the_commonwealth
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 25

@@ -65,17 +65,8 @@ focus_tree = {
 				name = infantry_artillery_bonus
 				bonus = 1.0
 				uses = 1
-				technology = improved_infantry_weapons 
-				technology = advanced_infantry_weapons
-				technology = gw_artillery 
-				technology = artillery1 
-				technology = artillery4 
-				technology = interwar_antiair 
-				technology = antiair2 
-				technology = antiair5 
-				technology = interwar_antitank 
-				technology = antitank2 
-				technology = antitank5 
+				category = infantry_weapons
+				category = artillery
 			}
 		}
 	}
@@ -145,17 +136,8 @@ focus_tree = {
 				name = infantry_artillery_bonus
 				bonus = 1.0
 				uses = 1
-				technology = improved_infantry_weapons 
-				technology = advanced_infantry_weapons
-				technology = gw_artillery 
-				technology = artillery1 
-				technology = artillery4 
-				technology = interwar_antiair 
-				technology = antiair2 
-				technology = antiair5 
-				technology = interwar_antitank 
-				technology = antitank2 
-				technology = antitank5 
+				category = infantry_weapons
+				category = artillery
 			}
 		}
 	}
@@ -225,17 +207,8 @@ focus_tree = {
 				name = infantry_artillery_bonus
 				ahead_reduction = 2
 				uses = 1
-				technology = improved_infantry_weapons 
-				technology = advanced_infantry_weapons
-				technology = gw_artillery 
-				technology = artillery1 
-				technology = artillery4 
-				technology = interwar_antiair 
-				technology = antiair2 
-				technology = antiair5 
-				technology = interwar_antitank 
-				technology = antitank2 
-				technology = antitank5 
+				category = infantry_weapons
+				category = artillery
 			}
 		}
 	}
@@ -427,8 +400,6 @@ focus_tree = {
 				bonus = 1.0
 				uses = 2
 				technology = strategic_bomber1
-				technology = strategic_bomber2
-				technology = strategic_bomber3
 				category = tactical_bomber
 			}
 		}
@@ -568,7 +539,6 @@ focus_tree = {
 				ahead_reduction = 2
 				uses = 2
 				category = rocketry
-				category = jet_technology
 			}
 		}
 
@@ -611,7 +581,7 @@ focus_tree = {
 		icon = GFX_goal_generic_construct_naval_dockyard
 		x = 9
 		y = 0
-		cost = 10
+		cost = 5
 
 		search_filters = {  FOCUS_FILTER_INDUSTRY }
 		
@@ -742,7 +712,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = naval_effort
-		cost = 10
+		cost = 5
 		
 		search_filters = {  FOCUS_FILTER_RESEARCH }
 
@@ -784,7 +754,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = naval_effort
-		cost = 10
+		cost = 5
 		
 		search_filters = {   FOCUS_FILTER_RESEARCH }
 
@@ -821,7 +791,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = flexible_navy
-		cost = 10
+		cost = 5
 		
 		search_filters = {  FOCUS_FILTER_RESEARCH }
 		
@@ -859,7 +829,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = large_navy
-		cost = 10
+		cost = 5
 		
 		search_filters = {  FOCUS_FILTER_RESEARCH }
 
@@ -898,7 +868,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = submarine_effort
-		cost = 10
+		cost = 5
 
 		search_filters = {  FOCUS_FILTER_RESEARCH }
 		
@@ -936,7 +906,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = cruiser_effort
-		cost = 10
+		cost = 5
 
 		search_filters = {  FOCUS_FILTER_RESEARCH }
 		
@@ -1429,7 +1399,7 @@ focus_tree = {
 				all_owned_state = {
 					free_building_slots = {
 						building = arms_factory
-						size < 1
+						size < 2
 						include_locked = yes
 					}					
 				}
@@ -1437,10 +1407,10 @@ focus_tree = {
 		}
 
 		complete_tooltip = {
-			add_extra_state_shared_building_slots = 1
+			add_extra_state_shared_building_slots = 2
 			add_building_construction = {
 				type = arms_factory
-				level = 1
+				level = 2
 				instant_build = yes
 			}
 		}		
@@ -1469,10 +1439,10 @@ focus_tree = {
 						}
 					}
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}

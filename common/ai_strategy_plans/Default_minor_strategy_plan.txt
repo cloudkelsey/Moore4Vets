@@ -1,8 +1,8 @@
-DFLTMNR_historical_plan = {
+DFLTMNR_default_plan = {
 	name = "Default minors historical plan"
 	desc = ""
 
-	enable = { OR = { original_tag = NZL original_tag = BUL original_tag = SIA } }
+	enable = { OR = { original_tag = ALB original_tag = FIN original_tag = LAT original_tag = EST original_tag = LIT original_tag = AUS } }
 	
 	ai_national_focuses = {
 		industrial_effort
@@ -24,8 +24,124 @@ DFLTMNR_historical_plan = {
 
 	}
 
-	# Keep small, as it is used as a factor for some things (such as research needs)
-	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+}
+
+DFLTMNR_communist_plan = {
+	name = "Default minors historical plan C"
+	desc = ""
+	
+	enable = { original_tag = PER }
+	
+	ai_national_focuses = {
+		industrial_effort
+		construction_effort
+		construction_effort_2
+		infrastructure_effort
+		construction_effort_3
+		production_effort
+		production_effort_2
+		production_effort_3
+		naval_effort
+		political_effort
+		collectivist_ethos
+		internationalism_focus
+		political_correctness
+		indoctrination_focus
+		political_commissars
+	}
+	
+	research = {
+
+	}
+
+	ideas = {
+
+	}
+
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+}
+
+DFLTMNR_fascist_plan = {
+	name = "Default minors historical plan F"
+	desc = ""
+	
+	enable = { OR = { original_tag = BUL original_tag = SIA } }
+	
+	ai_national_focuses = {
+		industrial_effort
+		construction_effort
+		construction_effort_2
+		infrastructure_effort
+		construction_effort_3
+		production_effort
+		production_effort_2
+		production_effort_3
+		naval_effort
+		political_effort
+		collectivist_ethos
+		nationalism_focus
+		militarism
+		military_youth
+	}
+	
+	research = {
+
+	}
+
+	ideas = {
+
+	}
+
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+}
+
+DFLTMNR_democratic_plan = {
+	name = "Default minors historical plan F"
+	desc = ""
+	
+	enable = { OR = { original_tag = NOR original_tag = BRA original_tag = GRE original_tag = DEN original_tag = INS original_tag = BEL } }
+	
+	ai_national_focuses = {
+		industrial_effort
+		construction_effort
+		construction_effort_2
+		infrastructure_effort
+		construction_effort_3
+		production_effort
+		production_effort_2
+		production_effort_3
+		naval_effort
+		political_effort
+		liberty_ethos
+		neutrality_focus
+		deterrence
+		why_we_fight
+	}
+	
+	research = {
+
+	}
+
+	ideas = {
+
+	}
+
 	weight = {
 		factor = 1.0
 		modifier = {

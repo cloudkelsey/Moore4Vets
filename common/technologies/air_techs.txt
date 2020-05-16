@@ -757,11 +757,6 @@ technologies = {
 		enable_equipments = {
 			heavy_fighter_equipment_2
 		}
-	
-		path = {
-			leads_to_tech = heavy_fighter3
-			research_cost_coeff = 1
-		}
 		
 		research_cost = 2
 		start_year = 1940
@@ -973,11 +968,6 @@ technologies = {
 		enable_equipments = {
 			strat_bomber_equipment_1
 		}
-	
-		path = {
-			leads_to_tech = strategic_bomber2
-			research_cost_coeff = 1
-		}
 
 		research_cost = 2
 		start_year = 1936
@@ -989,21 +979,10 @@ technologies = {
 		categories = {
 			heavy_air
 			air_equipment
-			cat_strategic_bomber
 		}
 		
 		ai_will_do = {
-			factor = 1
-			
-			modifier = {
-				factor = 5
-				tag = ENG
-			}
-			
-			modifier = {
-				factor = 5
-				tag = USA
-			}
+			factor = 0
 		}
 	}
 }

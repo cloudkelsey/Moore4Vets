@@ -157,19 +157,19 @@ on_actions = {
 	on_operative_detected_during_operation = {
 		effect = {
 			random_list = {
-				40 = {
+				45 = {
 					force_operative_leader_into_hiding = 45
 					operative_leader_event = {
 						id = lar_operative_event.2
 						set_from_from = FROM
 					}
 				}
-				35 = {
+				25 = {
 					capture_operative = {
 						captured_by = FROM
 					}
 				}
-				20 = {
+				25 = {
 					harm_operative_leader = 90
 					operative_leader_event = {
 						id = lar_operative_event.4
@@ -325,6 +325,16 @@ on_actions = {
 						}
 						remove_core_of = SPA
 						start_resistance = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_dlc = "La Resistance"
+				}
+				every_country = {
+					capital_scope = {
+						set_variable = { historical_capital_for_country = PREV }
 					}
 				}
 			}
@@ -1101,44 +1111,6 @@ on_actions = {
 	#ROOT is winner #FROM gets annexed - This fires just before FROM gets annexed, meaning the country and everything it owns still exists. It will also fire on_annex and on_civil_war_end
 	on_civil_war_end_before_annexation {
 		effect = {
-			if = { # Carlists Defeated, civil war not over
-				limit = {
-					FROM = {
-						tag = SPB
-						has_completed_focus = SPA_supremacy_of_the_communion
-					}
-					original_tag = SPR
-					SPR_scw_in_progress = yes
-					any_other_country = {
-						NOT = {
-							tag = ROOT
-							tag = SPB
-						}
-						original_tag = SPR
-						exists = yes
-					}
-				}
-				country_event = lar_spain.11
-			}
-			if = { # Fascists Defeated, civil war not over
-				limit = {
-					FROM = {
-						tag = SPA
-						has_completed_focus = SPA_the_phalanx_ascendant
-					}
-					original_tag = SPR
-					SPR_scw_in_progress = yes
-					any_other_country = {
-						NOT = {
-							tag = ROOT
-							tag = SPA
-						}
-						original_tag = SPR
-						exists = yes
-					}
-				}
-				country_event = lar_spain.12
-			}
 			if = { # Franco Defeated, civil war not over
 				limit = {
 					FROM = {
@@ -1158,44 +1130,6 @@ on_actions = {
 				}
 				country_event = lar_spain.13
 			}
-			if = { # Anarchists Defeated, civil war not over
-				limit = {
-					FROM = {
-						tag = SPC
-						has_completed_focus = SPR_regional_defense_council_of_aragon
-					}
-					original_tag = SPR
-					SPR_scw_in_progress = yes
-					any_other_country = {
-						NOT = {
-							tag = ROOT
-							tag = SPC
-						}
-						original_tag = SPR
-						exists = yes
-					}
-				}
-				country_event = lar_spain.14
-			}
-			if = { # Independent Communist Defeated, civil war not over
-				limit = {
-					FROM = {
-						tag = SPC
-						has_completed_focus = SPR_the_anti_fascist_workers_revolution
-					}
-					original_tag = SPR
-					SPR_scw_in_progress = yes
-					any_other_country = {
-						NOT = {
-							tag = ROOT
-							tag = SPC
-						}
-						original_tag = SPR
-						exists = yes
-					}
-				}
-				country_event = lar_spain.15
-			}
 			if = { # Democrats Defeated, civil war not over
 				limit = {
 					FROM = {
@@ -1214,25 +1148,6 @@ on_actions = {
 					}
 				}
 				country_event = lar_spain.16
-			}
-			if = { # Stalinist Communists Defeated, civil war not over
-				limit = {
-					FROM = {
-						tag = SPD
-						has_completed_focus = SPR_the_anti_fascist_workers_revolution
-					}
-					original_tag = SPR
-					SPR_scw_in_progress = yes
-					any_other_country = {
-						NOT = {
-							tag = ROOT
-							tag = SPD
-						}
-						original_tag = SPR
-						exists = yes
-					}
-				}
-				country_event = lar_spain.17
 			}
 		}
 	}
@@ -1275,12 +1190,7 @@ on_actions = {
 						}
 					}
 					OR = {
-						has_completed_focus = SPA_strengthen_the_supreme_reality_of_spain
 						has_completed_focus = SPA_adopt_the_26_points
-						has_completed_focus = SPA_confirm_the_fueros
-						has_completed_focus = SPR_all_must_bear_the_torch
-						has_completed_focus = SPR_all_must_do_their_part
-						has_completed_focus = SPR_red_bulwark_in_the_west
 					}
 				}
 				FROM.FROM = {
@@ -1288,29 +1198,51 @@ on_actions = {
 					remove_dynamic_modifier = { modifier = semi_autonomous_state }
 				}
 			}
-			if = {
+			if = { # AI Spanish factions surrender if they do not control any state in the Iberian Peninsula, but own other territories outside of it (preventing forcing the player to execute naval invasions to win the SCW)
 				limit = {
-					FROM.FROM = {
-						OR = {
-							state = 165
-							state = 171
-							state = 792
+					SPR_scw_in_progress = yes
+					original_tag = SPR
+					FROM = {
+						original_tag = SPR
+						is_ai = yes
+						NOT = {
+							any_controlled_state = {
+								OR = {
+									AND = {
+										has_state_flag = SPR_original_core
+										NOT = {
+											state = 177
+											state = 178
+										}
+									}
+									state = 118
+								}
+							}
 						}
-					}
-					OR = {
-						AND = {
-							has_completed_focus = SPR_united_under_socialism
-							NOT = { has_completed_focus = SPR_all_must_do_their_part }
-						}
-						AND = {
-							has_completed_focus = SPR_solidify_government_control
-							NOT = { has_completed_focus = SPR_red_bulwark_in_the_west }
+						any_controlled_state = {
+							OR = {
+								state = 177
+								state = 178
+								NOT = { is_on_continent = europe }
+							}
 						}
 					}
 				}
-				FROM.FROM = {
-					remove_dynamic_modifier = { modifier = autonomous_state }
-					add_dynamic_modifier = { modifier = semi_autonomous_state }
+				FROM = {
+					if = {
+						limit = {
+							has_idea = SPA_death_before_surrender
+						}
+						remove_ideas = SPA_death_before_surrender
+						add_ideas = SPA_death_before_surrender_capitulation
+					}
+					else_if = {
+						limit = {
+							has_idea = SPR_death_before_surrender
+						}
+						remove_ideas = SPR_death_before_surrender
+						add_ideas = SPR_death_before_surrender_capitulation
+					}
 				}
 			}
 		}
@@ -1355,39 +1287,6 @@ on_actions = {
 					is_ai = yes
 				}
 				update_operation_ai = yes
-			}
-		}
-	}
-
-	on_annex = {
-		effect = {
-			# Portuguese Anarchism
-			if = {
-				limit = {
-					original_tag = POR
-					has_government = neutrality
-					has_country_flag = SPR_portuguese_anarchism_flag
-					FROM = {
-						original_tag = POR
-					}
-					SPC = {
-						exists = yes
-						has_completed_focus = SPR_portuguese_anarchism
-					}
-				}
-				SPC = { country_event = lar_spain.50 }
-			}
-			if = {
-				limit = {
-					original_tag = POR
-					has_global_flag = SPR_portuguese_anarchism_flag
-					FROM = {
-						original_tag = POR
-						has_country_flag = SPR_portuguese_anarchism_flag
-					}
-				}
-				clr_global_flag = SPR_portuguese_anarchism_flag
-				set_rule = { can_join_factions = yes }
 			}
 		}
 	}

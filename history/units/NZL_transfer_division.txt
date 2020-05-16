@@ -1,0 +1,12 @@
+units = {
+	fleet = {
+		name = "British Cruisers"
+		naval_base = 1814
+		task_force = {
+			name = "British Cruisers"				
+			location = 1814
+			ship = { name = "Cruiser 1" definition = light_cruiser equipment = { ship_hull_cruiser_2 = { amount = 1 owner = NZL creator = NZL version_name = "Leander Class" } } }
+			ship = { name = "Cruiser 2" definition = light_cruiser equipment = { ship_hull_cruiser_2 = { amount = 1 owner = NZL creator = NZL version_name = "Leander Class" } } }
+		}
+	}
+}

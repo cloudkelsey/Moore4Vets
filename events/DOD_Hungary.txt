@@ -1,0 +1,764 @@
+﻿###########################
+# Hungarian Events
+###########################
+
+add_namespace = DOD_hungary
+
+#Demand Vojvodina event chain - intial event for Yugoslavia
+country_event = {
+	id = DOD_hungary.90
+	title = DOD_hungary.90.t
+	desc = DOD_hungary.90.desc 
+	picture = GFX_report_event_hungary_parliament
+	
+	is_triggered_only = yes
+
+	option = {# fold
+		name = DOD_hungary.90.a
+		ai_chance = {
+			factor = 30
+			modifier = {
+				is_in_faction = no
+				HUN = { is_in_faction = yes }
+				factor = 2
+			}
+			modifier = {
+				strength_ratio = { tag = HUN ratio < 1 }
+				factor = 2
+			}
+		}
+		HUN = { country_event = DOD_hungary.91 }
+		news_event = { id = news.307 days = 1 }
+	}
+	option = {# refuse
+		name = DOD_hungary.90.b
+		ai_chance = {
+			factor = 70
+			modifier = {
+				has_stability < 0.5
+				factor = 0.5
+			}
+		}
+		HUN = { country_event = DOD_hungary.92 }
+		
+	}
+}
+
+#Demand Vojvodina event chain - Yugoslavia folds
+country_event = {
+	id = DOD_hungary.91
+	title = DOD_hungary.91.t
+	desc = DOD_hungary.91.desc 
+	picture = GFX_report_event_generic_peaceful_annexation
+	
+	is_triggered_only = yes
+
+	option = {# great
+		name = DOD_hungary.91.a
+	  	transfer_state = 45
+	  	45 = { add_core_of = HUN }
+	}
+}
+
+#Demand Vojvodina event chain - Yugoslavia refuses
+country_event = {
+	id = DOD_hungary.92
+	title = DOD_hungary.92.t
+	desc = DOD_hungary.92.desc 
+	picture = GFX_report_event_hungary_refused
+	
+	is_triggered_only = yes
+
+	option = {# back down
+		name = DOD_hungary.92.a
+		ai_chance = {
+			factor = 10
+			modifier = {
+				has_war = yes
+				factor = 2
+			}
+		}
+		add_stability = -0.05
+
+	}
+	option = {# ask Germany for help
+		name = DOD_hungary.92.b
+		ai_chance = {
+			factor = 10
+			modifier = {
+				is_in_faction_with = GER
+				factor = 5
+			}
+			modifier = {
+				NOT = {
+					is_in_faction_with = ITA
+				}
+				factor = 5
+			}
+		}
+		trigger = {
+			GER = {
+				NOT = { has_war_with = ROOT }
+				exists = yes
+				is_puppet = no
+				has_capitulated = no
+				has_completed_focus = GER_anschluss
+			}
+			#Can't ask just one if in faction with both
+			NOT = {
+				AND = {
+					is_in_faction_with = GER
+					is_in_faction_with = ITA
+				}
+			}
+		}
+		GER = { country_event = DOD_hungary.93 }
+		
+	}
+	option = {# ask Italy for help
+		trigger = {
+			ITA = {
+				NOT = { has_war_with = ROOT }
+				exists = yes 
+				is_puppet = no
+				has_capitulated = no
+			}
+			#Can't ask just one if in faction with both
+			NOT = {
+				AND = {
+					is_in_faction_with = GER
+					is_in_faction_with = ITA
+				}
+			}
+		}
+		name = DOD_hungary.92.c
+		ai_chance = {
+			factor = 10
+			modifier = {
+				is_in_faction_with = ITA
+				factor = 5
+			}
+			modifier = {
+				NOT = {
+					is_in_faction_with = GER
+				}
+				factor = 5
+			}
+		}
+		ITA = { country_event = DOD_hungary.93 }
+		
+	}
+	option = {# ask both for help
+		name = DOD_hungary.92.d
+		ai_chance = {
+			factor = 170
+		}
+		trigger = {
+			AND = {
+				is_in_faction_with = GER
+				is_in_faction_with = ITA
+			}
+		}
+		set_country_flag = HUN_YUG_both
+		GER = { country_event = DOD_hungary.93 }	
+	}
+	option = {# Go alone
+		name = DOD_hungary.92.e
+		ai_chance = {
+			factor = 0
+			modifier = {
+				add = 10
+				AND = {
+					NOT = { is_in_faction_with = GER }
+					NOT = { is_in_faction_with = ITA }
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_wargoal_against = YUG }
+			}
+			create_wargoal = {
+				type = take_state_focus
+				target = YUG
+				generator = { 45 }
+			}
+		}
+		hidden_effect = {
+			news_event = { id = news.308 days = 1 }
+		}
+	}
+}
+
+#Demand Vojvodina event chain - Germany/Italy asked for support
+country_event = {
+	id = DOD_hungary.93
+	title = DOD_hungary.93.t
+	desc = DOD_hungary.93.desc 
+	picture = GFX_report_event_generic_sign_treaty1
+	
+	is_triggered_only = yes
+
+	option = {# yes
+		name = DOD_hungary.93.a
+		ai_chance = {
+			factor = 90
+			modifier = {
+				NOT = { has_government = fascism }
+				factor = 0.25
+			}
+		}
+		
+		if = {
+			limit = {
+				tag = GER
+			}
+			add_state_claim = 102#Slovenia
+			if = {
+				limit = {
+					HUN = {
+						has_country_flag = HUN_YUG_both
+					}
+				}
+				ITA = { country_event = DOD_hungary.93 }
+			}
+			if = {
+				limit = {
+					HUN = {
+						NOT = { has_country_flag = HUN_YUG_both }
+					}
+				}
+				HUN = { country_event = DOD_hungary.94 }
+			}
+		}
+		if = {
+			limit = {
+				tag = ITA
+			}
+			add_state_claim = 103#Dalmatia
+			HUN = { country_event = { id = DOD_hungary.94 hours = 6 } }
+		}
+
+	}
+	option = {# no
+		name = DOD_hungary.93.b
+		ai_chance = {
+			factor = 10
+			modifier = {
+				has_government = democratic
+				factor = 10
+			}
+		}
+		if = {
+			limit = {
+				tag = GER
+			}
+			
+			if = {
+				limit = {
+					HUN = {
+						has_country_flag = HUN_YUG_both
+					}
+				}
+				ITA = { country_event = DOD_hungary.93 }
+			}
+			if = {
+				limit = {
+					HUN = {
+						NOT = { has_country_flag = HUN_YUG_both }
+					}
+				}
+				HUN = { country_event = DOD_hungary.95 }
+			}
+		}
+		if = {
+			limit = {
+				tag = ITA
+				HUN = {
+					NOT = { has_country_flag = HUN_YUG_both }
+				}	
+			}
+			HUN = { country_event = DOD_hungary.95 }
+		}
+		if = {
+			limit = {
+				tag = ITA
+				102 = {
+					is_claimed_by = GER
+				}
+			}
+			HUN = {
+				country_event = DOD_hungary.94
+			}
+		}
+		
+	}
+}
+
+#Demand Vojvodina event chain - Germany/Italy support
+country_event = {
+	id = DOD_hungary.94
+	title = DOD_hungary.94.t
+	desc = DOD_hungary.94.desc 
+	picture = GFX_report_event_generic_sign_treaty3
+	
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {# Ultimatum to Yugoslavia
+		name = DOD_hungary.94.a
+		ai_chance = {
+			factor = 75
+		}
+		if = {
+			limit = {
+				102 = { is_claimed_by = GER }
+				NOT = { 103 = { is_claimed_by = ITA } } #only GER agreed
+			}
+			add_threat = 1
+			
+		}
+		if = {	
+			limit = {
+				103 = { is_claimed_by = ITA }
+				NOT = { 102 = { is_claimed_by = GER } } #only ITA agreed
+			}
+			add_threat = 1
+		}
+
+		if = {	
+			limit = {
+				103 = { is_claimed_by = ITA }
+				102 = { is_claimed_by = GER } #both agreed
+			}
+			add_threat = 3
+		}
+		YUG = { country_event = { id = DOD_hungary.96 hours = 24 } }
+	}
+	option = {# strike
+		name = DOD_hungary.94.b
+		ai_chance = {
+			factor = 25
+			modifier = {
+				has_war = no
+				factor = 3 #nothing better to do
+			}
+		}
+		if = {
+			limit = { 102 = { is_claimed_by = GER } }
+			GER = { 
+				create_wargoal = {
+					type = take_state_focus
+					target = YUG
+					generator = { 102 }
+				}
+			}
+		}
+		if = {
+			limit = { 103 = { is_claimed_by = ITA } }
+			ITA = { 
+				create_wargoal = {
+					type = take_state_focus
+					target = YUG
+					generator = { 103 }
+				}
+			}
+		}
+		if = {
+			limit = {
+			 NOT = { has_wargoal_against = YUG }
+			}
+			create_wargoal = {
+				type = take_state_focus
+				target = YUG
+				generator = { 45 }
+			}
+		}
+		news_event = { id = news.308 days = 1 }		
+	}
+}
+
+#Demand Vojvodina event chain - Germany/Italy refuses support
+country_event = {
+	id = DOD_hungary.95
+	title = DOD_hungary.95.t
+	desc = DOD_hungary.95.desc 
+	picture = GFX_report_event_german_speech
+	
+	is_triggered_only = yes
+
+	option = {# pity
+		name = DOD_hungary.95.a
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {# war
+		name = DOD_hungary.95.b
+		ai_chance = {
+			factor = 90
+		}
+		country_event = DOD_hungary.94
+	}
+}
+
+#Demand Vojvodina event chain - ultimatum
+country_event = {
+	id = DOD_hungary.96
+	title = DOD_hungary.96.t
+	desc = {
+		text = DOD_hungary.96.desc_HUN_GER
+		trigger = { 
+			102 = { is_claimed_by = GER } 
+			103 = { NOT = { is_claimed_by = ITA } }
+		}
+	}
+	desc = {
+		text = DOD_hungary.96.desc_HUN_ITA
+		trigger = { 
+			102 = { NOT = { is_claimed_by = GER } }
+			103 = { is_claimed_by = ITA } 
+		}
+	}
+	desc = {
+		text = DOD_hungary.96.desc_HUN_both
+		trigger = { 
+			102 = { is_claimed_by = GER } 
+			103 = { is_claimed_by = ITA } 
+		}
+	} 
+	picture = GFX_report_event_hitler_parade
+	
+	is_triggered_only = yes
+
+	option = {# fold
+		name = DOD_hungary.96.a
+		ai_chance = {
+			factor = 75
+		}
+		if = {
+			limit = {
+				102 = { is_claimed_by = GER }
+			}
+			GER = { transfer_state = 102 }
+		}
+		if = {	
+			limit = {
+				103 = { is_claimed_by = ITA }
+			}
+			ITA = { transfer_state = 103 }
+		}
+		HUN = { transfer_state = 45 }
+		45 = { add_core_of = HUN }
+	}
+	option = {# defiance
+		name = DOD_hungary.96.b
+		ai_chance = {
+			factor = 25
+			modifier = {
+				is_in_faction = yes
+				factor = 4
+			}
+		}
+		HUN = { country_event = DOD_hungary.97 }
+		if = {	
+			limit = {
+				103 = { is_claimed_by = ITA }
+			}
+			ITA = { country_event = DOD_hungary.97 }
+		}
+		if = {	
+			limit = {
+				102 = { is_claimed_by = GER }
+			}
+			GER = { country_event = DOD_hungary.97 }
+		}
+		
+	}
+}
+
+#Demand Vojvodina event chain - Yugoslavia being stubborn
+country_event = {
+	id = DOD_hungary.97
+	title = DOD_hungary.97.t
+	desc = DOD_hungary.97.desc 
+	picture = GFX_report_event_polish_army
+	
+	is_triggered_only = yes
+
+	option = {# war
+		name = DOD_hungary.97.a
+		if = {
+			limit = { 
+				tag = GER
+				102 = { is_claimed_by = GER } }
+			GER = { 
+				create_wargoal = {
+					type = take_state_focus
+					target = YUG
+					generator = { 102 }
+				}
+			}
+		}
+		if = {
+			limit = { 
+				tag = ITA
+				103 = { is_claimed_by = ITA } 
+			}
+			ITA = { 
+				create_wargoal = {
+					type = take_state_focus
+					target = YUG
+					generator = { 103 }
+				}
+			}
+		}
+		if = {
+			limit = {
+				tag = HUN
+			}	
+			HUN = {
+				create_wargoal = {
+					type = take_state_focus
+					target = YUG
+					generator = { 45 }
+				}
+				45 = { add_core_of = HUN }
+			}
+		}
+		hidden_effect = {
+			news_event = { id = news.308 days = 1 }
+		}
+	}
+}
+
+#Demand Overlordship over Slovakia - GER asked to split CZE with Hungary
+country_event = {
+	id = DOD_hungary.103
+	title = DOD_hungary.103.t
+	desc = DOD_hungary.103.desc 
+	picture = GFX_report_event_hitler_croatia_handshake
+	
+	is_triggered_only = yes
+
+	option = {# yes
+		name = DOD_hungary.103.a
+		ai_chance = {
+			factor = 75
+			modifier = {
+				has_government = democratic
+				factor = 0
+			}
+		}
+		set_global_flag = GER_HUN_CZE_split
+		HUN = { 
+			country_event = DOD_hungary.104 
+			add_opinion_modifier = { target = GER modifier = HUN_split_CZE }
+			add_ai_strategy = {
+					type = alliance
+					id = "GER"
+					value = 200
+				}
+		}
+
+	}
+
+	option = {# refuse
+		name = DOD_hungary.103.b
+		ai_chance = {
+			factor = 25
+		}
+		HUN = { country_event = DOD_hungary.105 }
+	}
+}
+
+#Demand Overlordship over Slovakia - GER agrees to split CZE with Hungary
+country_event = {
+	id = DOD_hungary.104
+	title = DOD_hungary.104.t
+	desc = DOD_hungary.104.desc 
+	picture = GFX_report_event_generic_sign_treaty3
+	
+	is_triggered_only = yes
+
+	option = {# great
+		name = DOD_hungary.104.a
+	}	
+}
+#Demand Overlordship over Slovakia - GER refuses to split CZE with Hungary
+country_event = {
+	id = DOD_hungary.105
+	title = DOD_hungary.105.t
+	desc = DOD_hungary.105.desc 
+	picture = GFX_report_event_german_inspect_troops
+	
+	is_triggered_only = yes
+
+	option = {# let it go
+		name = DOD_hungary.105.a
+		ai_chance = {
+			factor = 10
+		}
+	}
+
+	option = {# war goal
+		name = DOD_hungary.105.b
+		ai_chance = {
+			factor = 90
+		}
+		create_wargoal = {
+				type = take_state_focus
+				target = CZE
+				generator = { 70 71 72 73 }
+			}
+		hidden_effect = {
+			news_event = { id = news.311 days = 1 }
+		}
+	}
+}
+#Demand Overlordship over Slovakia - GER betrays promise
+country_event = {
+	id = DOD_hungary.106
+	title = DOD_hungary.106.t
+	desc = DOD_hungary.106.desc 
+	picture = GFX_report_event_german_troops
+	
+	is_triggered_only = yes
+
+	option = {# fume
+		name = DOD_hungary.106.a
+		ai_chance = {
+			factor = 5
+		}
+		remove_opinion_modifier = { target = GER modifier = HUN_split_CZE }
+		add_opinion_modifier = { target = GER modifier = HUN_split_CZE_betrayed }
+	}
+
+	option = {# take what is ours
+		name = DOD_hungary.106.b
+		ai_chance = {
+			factor = 95
+		}
+		remove_opinion_modifier = { target = GER modifier = HUN_split_CZE }
+		add_opinion_modifier = { target = GER modifier = HUN_split_CZE_betrayed }
+		create_wargoal = {
+				type = take_state_focus
+				target = CZE
+				generator = { 70 71 72 73 }
+		}
+		hidden_effect = {
+			news_event = { id = news.311 days = 1 }
+		}
+	}	
+}
+
+#Demand Overlordship over Slovakia - Slovakia independent
+country_event = {
+	id = DOD_hungary.107
+	title = DOD_hungary.107.t
+	desc = {
+		text = DOD_hungary.107.desc_SLO_independent
+		trigger = { 
+			SLO = { is_subject = no }
+		}
+	}
+	desc = {
+		text = DOD_hungary.107.desc_SLO_puppet
+		trigger = { 
+			SLO = { is_subject = yes }
+		}
+	}
+	picture = GFX_report_event_lithuania_army
+	
+	is_triggered_only = yes
+
+	option = {# agree to being a puppet
+		name = DOD_hungary.107.a
+		ai_chance = {
+			factor = 50
+		}
+		HUN = { country_event = DOD_hungary.108 }
+		hidden_effect = {
+			news_event = { id = news.310 days = 1 }
+		}
+	}
+
+	option = {# refuse
+		name = DOD_hungary.107.b
+		ai_chance = {
+			factor = 50
+			modifier = {
+				is_in_faction = yes
+				HUN = { is_in_faction = no }
+				factor = 5
+			}
+		}
+		HUN = { country_event = DOD_hungary.109 }
+		
+	}	
+}
+
+#Demand Overlordship over Slovakia - Slovakia agrees to become a puppet
+country_event = {
+	id = DOD_hungary.108
+	title = DOD_hungary.108.t
+	desc = DOD_hungary.108.desc 
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+
+	option = {# good
+		name = DOD_hungary.108.a
+		puppet = SLO
+	}
+}
+
+#Demand Overlordship over Slovakia - Slovakia refuses to become a puppet
+country_event = {
+	id = DOD_hungary.109
+	title = DOD_hungary.109.t
+	desc = DOD_hungary.109.desc 
+	picture = GFX_report_event_military_planning
+	
+	is_triggered_only = yes
+
+	option = {# war!
+		name = DOD_hungary.109.a
+		create_wargoal = {
+				type = puppet_wargoal_focus
+				target = SLO
+		}
+		hidden_effect = {
+			news_event = { id = news.311 days = 1 }
+		}
+	}
+}
+
+#Bled Agreement - HUN permitted to rearm
+country_event = {
+	id = DOD_hungary.142
+	title = DOD_hungary.142.t
+	desc = DOD_hungary.142.desc 
+	picture = GFX_report_event_generic_military_parade
+	
+	is_triggered_only = yes
+
+	option = {# 
+		name = DOD_hungary.142.a
+		if = {
+			limit = { has_idea = HUN_treaty_of_triannon }
+			swap_ideas = {
+				remove_idea = HUN_treaty_of_triannon
+				add_idea = HUN_treaty_of_triannon_3
+			}
+		}
+		if = {
+			limit = { has_idea = HUN_treaty_of_triannon_2 }
+			swap_ideas = {
+				remove_idea = HUN_treaty_of_triannon_2
+				add_idea = HUN_treaty_of_triannon_3
+			}
+		}
+	}
+}

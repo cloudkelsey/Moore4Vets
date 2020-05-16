@@ -279,8 +279,6 @@ focus_tree = {
 				OR = {
 					threat > 0.05
 					has_war = yes
-					has_idea = ENG_no_further_appeasement_idea
-					NOT = { has_government = democratic }
 				}
 			}
 			if = {
@@ -580,8 +578,6 @@ focus_tree = {
 				OR = {
 					threat > 0.05
 					has_war = yes
-					has_idea = ENG_no_further_appeasement_idea
-					NOT = { has_government = democratic }
 				}
 			}
 			if = {
@@ -667,8 +663,6 @@ focus_tree = {
 				OR = {
 					threat > 0.1 
 					has_war = yes
-					has_idea = ENG_no_further_appeasement_idea
-					NOT = { has_government = democratic }
 				}
 			}
 			if = {
@@ -739,8 +733,6 @@ focus_tree = {
 						has_completed_focus = GER_rhineland
 					}
 					threat > 0.2
-					has_idea = ENG_no_further_appeasement_idea
-					NOT = { has_government = democratic }
 				}
 			}
 			if = {
@@ -1194,7 +1186,6 @@ focus_tree = {
 				name = bomber_command_focus
 				bonus = 1.0
 				uses = 2
-				category = cat_strategic_bomber
 				category = tactical_bomber
 			}
 		}
@@ -1545,8 +1536,8 @@ focus_tree = {
 		id = ENG_anti_submarine_training_school
 		prerequisite = { focus = uk_convoy_focus }
 		icon = GFX_goal_generic_navy_doctrines_tactics
-		x = 0
-		y = 2
+		x = -1
+		y = 1
 		offset = {
 			x = 0
 			y = -1
@@ -1735,7 +1726,7 @@ focus_tree = {
 		prerequisite = { focus = uk_battleship_focus }
 		icon = GFX_focus_generic_navy_battleship2
 		x = 0
-		y = 2
+		y = 1
 		relative_position_id = uk_battleship_focus
 		cost = 10
 		ai_will_do = {
@@ -1748,7 +1739,7 @@ focus_tree = {
 
 		available = {
 			date > 1944.1.1
-			has_tech = advanced_ship_hull_heavy
+			has_tech = basic_ship_hull_heavy
 			has_full_control_of_state = 133
 			#has_tech = improved_heavy_battery
 			#has_tech = dp_secondary_battery
@@ -1839,17 +1830,12 @@ focus_tree = {
 		cost = 10
 		ai_will_do = {
 			factor = 1
-			modifier = {
-				factor = 0
-				has_completed_focus = ENG_concessions_to_the_trade_unions
-			}
 		}	
 
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_POLITICAL}
 		completion_reward = {
 			add_stability = 0.1
-			custom_effect_tooltip = ENG_concessions_to_the_trade_unions_tt_2
 		}
 	}
 	focus = {
@@ -2145,106 +2131,6 @@ focus_tree = {
 		}
 	}
 
-	focus = {
-		id = uk_balkan_strategy
-		prerequisite = { focus = uk_protect_suez }
-		prerequisite = { focus = uk_malta_focus }
-		icon = GFX_goal_generic_improve_relations
-		available = {
-			has_government = democratic
-		}
-		bypass = {
-			NOT = {
-				country_exists = YUG
-				country_exists = GRE
-				country_exists = ROM
-				country_exists = BUL
-				country_exists = HUN
-			}
-		}
-		x = 1
-		y = 1
-		relative_position_id = uk_protect_suez
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-		search_filters = {FOCUS_FILTER_POLITICAL}
-		completion_reward = {
-			every_country = {
-				limit = {
-					OR = {
-						tag = YUG
-						tag = GRE
-						tag = ROM
-					}
-					NOT = {
-						OR = {
-							AND = {
-								is_in_faction_with = GER
-								GER = { has_government = fascism }
-							}
-							AND = {
-								is_in_faction_with = ITA
-								ITA = { has_government = fascism }
-							}
-						}
-					}
-				}
-				country_event = { id = generic.19 }
-				add_offsite_building = { type = arms_factory level = 2 }
-			}
-			YUG = { add_opinion_modifier = { target = ENG modifier = balkan_strategy_good } }
-			GRE = { add_opinion_modifier = { target = ENG modifier = balkan_strategy_good } }
-			ROM = { add_opinion_modifier = { target = ENG modifier = balkan_strategy_good } }
-			BUL = { add_opinion_modifier = { target = ENG modifier = balkan_strategy_bad } }
-			HUN = { add_opinion_modifier = { target = ENG modifier = balkan_strategy_bad } }
-			hidden_effect = {
-				news_event = {
-					hours = 6 id = news.228
-				}
-			}
-			if = {
-				limit = {
-					has_dlc = "Death or Dishonor"
-				}
-				country_event = {
-					id = DOD_yugoslavia.40
-					days = 5
-				}
-			}
-		}
-	}
-
-	focus = {
-		id = uk_sanction_italy_focus
-		available = {
-			ITA = {
-				ENG_focus_available_embargo_sanction = yes
-			}	
-		}
-		bypass = {
-			has_war_with = ITA
-		}
-		prerequisite = { focus = uk_balkan_strategy }
-		icon = GFX_goal_generic_trade
-		x = 0
-		y = 1
-		relative_position_id = uk_balkan_strategy
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			ITA = {
-				add_opinion_modifier = { target = ENG modifier = embargo }
-				add_opinion_modifier = { target = ENG modifier = sanctions_relations } 
-			}
-		}
-	}
 	# focus = {
 		# id = ENG_war_with_italy
 		# available = {
@@ -4970,7 +4856,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = uk_burma_focus
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 1
 		}
@@ -6415,104 +6301,13 @@ focus_tree = {
 		
 		available = {
 			GER = { has_completed_focus = GER_anschluss }
-			CAN = {
-				OR = {
-					AND = {
-						is_subject_of = ENG
-						has_government = ROOT
-					}
-					exists = no
-				}
-			}
-			SAF = {
-				OR = {
-					AND = {
-						is_subject_of = ENG
-						has_government = ROOT
-					}
-					exists = no
-				}
-			}
-			AST = {
-				OR = {
-					AND = {
-						is_subject_of = ENG
-						has_government = ROOT
-					}
-					exists = no
-				}
-			}
-			NZL = {
-				OR = {
-					AND = {
-						is_subject_of = ENG
-						has_government = ROOT
-					}
-					exists = no
-				}
-			}
-			NOT = {
-				any_state = {
-					OR = {
-						is_core_of = ENG
-						is_core_of = CAN
-						is_core_of = SAF
-						is_core_of = AST
-						is_core_of = NZL
-					}
-					NOT = { state = 331 }
-					OWNER = {
-						NOT = {
-							OR = {
-								tag = ENG
-								tag = CAN
-								tag = SAF
-								tag = AST
-								tag = NZL
-							}
-						}
-					}
-				}
-			}
-
 		}
 
 		bypass = {
-			CAN = {
-				exists = no
-			}
-			SAF = {
-				exists = no
-			}
-			RAJ = {
-				OR = {
-					exists = no
-					NOT = { is_subject_of = ENG }
-				}
-			}
-			AST = {
-				exists = no
-			}
-			NZL = {
-				exists = no
-			}
-			NOT = {
-				any_state = {
-					OR = {
-						is_core_of = ENG
-						is_core_of = CAN
-						is_core_of = SAF
-						is_core_of = AST
-						is_core_of = NZL
-					}
-					OWNER = {
-						NOT = { tag = ENG }
-					}
-				}
-			}
+			
 		}
 
-		continue_if_invalid = no
+		continue_if_invalid = yes
 
 		icon = GFX_goal_generic_national_unity
 
@@ -6528,34 +6323,24 @@ focus_tree = {
 		}
 		search_filters = {FOCUS_FILTER_POLITICAL}	
 		completion_reward = {
-			add_political_power = 120
+			hidden_effect = { set_country_flag = ENG_imperial_conference_timer_flag }
+			if = {
+				limit = { is_ai = yes }
+				add_political_power = 200
+			}
+			else = { add_political_power = 100 }
 			every_country = {
 				limit = {
 					OR = {
 						tag = ENG
-						AND = {
-							is_subject_of = ENG
-							tag = CAN
-						}
-						AND = {
-							is_subject_of = ENG
-							tag = SAF
-						}
-						AND = {
-							is_subject_of = ENG
-							tag = RAJ
-						}
-						AND = {
-							is_subject_of = ENG
-							tag = AST
-						}
-						AND = {
-							is_subject_of = ENG
-							tag = NZL
-						}
+						tag = CAN
+						tag = SAF
+						tag = RAJ
+						tag = AST
+						tag = NZL
 					}
 				}
-				country_event = { id = mtg_britain.82 hours = 6 }
+				country_event = mtg_britain.82
 			}
 			hidden_effect = { news_event = { id = mtg_news.13 days = 1 } }
 			custom_effect_tooltip = ENG_imperial_conference_tt
@@ -8047,36 +7832,6 @@ focus_tree = {
 		completion_reward = {
 			remove_ideas = ENG_the_war_to_end_all_wars
 			set_rule = { can_send_volunteers = yes }
-		}
-	}
-
-	focus = {
-		id = ENG_embargo_germany
-		available = {
-			GER = {
-				ENG_focus_available_embargo_sanction = yes
-			}
-		}
-		bypass = {
-			has_war_with = GER
-		}
-
-		available_if_capitulated = yes
-
-		prerequisite = { focus = ENG_military_training_act }
-		icon = GFX_goal_generic_trade
-		x = 0
-		y = 1
-		relative_position_id = ENG_military_training_act
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}	
-		completion_reward = {
-			GER = {
-				add_opinion_modifier = { target = ENG modifier = embargo }
-				add_opinion_modifier = { target = ENG modifier = sanctions_relations }  
-			}
 		}
 	}
 

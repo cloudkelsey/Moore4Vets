@@ -70,8 +70,14 @@ sov_war_goals = {
 
 fin_white_peace = {
 	allowed = { original_tag = FIN }
+	visible = { is_ai = yes } # decisions need to be visible for the AI to take them
 }
 
 event_firing = {
-	allowed = { tag = IRQ }
+	allowed = { original_tag = IRQ }
+	visible = { is_ai = yes } # decisions need to be visible for the AI to take them
+}
+
+acquire_islands = {
+	allowed = { always = yes }
 }

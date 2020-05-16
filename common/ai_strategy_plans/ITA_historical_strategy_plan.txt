@@ -1,0 +1,48 @@
+ITA_historical_plan = {
+	name = "Italy historical plan"
+	desc = "Historical behavior for Italy"
+
+	enable = {
+		original_tag = ITA
+	}
+
+	ai_national_focuses = {
+		ITA_mare_nostrum
+		ITA_ethiopian_war_logistics
+		ITA_industrial_effort
+		ITA_industrial_effort_2
+		ITA_extra_tech_slot
+		ITA_air_innovation
+		ITA_light_ship_effort
+		ITA_army_primacy
+		ITA_victoryinETH
+		ITA_modernized_artillery
+		ITA_modernized_army
+		ITA_slovenia_dalmatia_claims
+		ITA_albania_war_goal
+		ITA_italian_highways
+		ITA_prospect_for_oil
+		ITA_bulgaria_friend
+		ITA_romania_friend
+		ITA_libyan_infrastructure
+		ITA_fortification_effort	
+	}				
+
+	research = {
+
+	}
+
+	ideas = {
+
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+}

@@ -144,7 +144,7 @@ set_politics = {
 	elections_allowed = yes
 }
 
-set_convoys = 150
+set_convoys = 400
 set_stability = 0.5
 
 if = {

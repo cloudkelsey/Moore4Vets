@@ -5,6 +5,8 @@ focus_tree = {
 		factor = 0
 		modifier = { tag = IRQ add = 100 }
 		modifier = { tag = COL add = 100 }
+		modifier = { tag = SWI add = 100 }
+		modifier = { tag = SWE add = 100 }
 	}
 		
 	default = no

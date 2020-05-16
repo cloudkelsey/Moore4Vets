@@ -86,9 +86,8 @@ ideas = {
 				if = {
 					limit = {
 						original_tag = RAJ
-						has_dlc = "Together for Victory"
 					}
-					is_subject = no
+					date > 1941.1.1
 				}
 
 				if = {
@@ -97,13 +96,6 @@ ideas = {
 						has_dlc = "Death or Dishonor"
 					}
 					NOT = { has_idea = HUN_treaty_of_triannon }
-				}
-				if = {
-					limit = {
-						original_tag = SPR
-						has_dlc = "La Resistance"
-					}
-					NOT = { has_completed_focus = SPR_all_must_bear_the_torch }
 				}
 			}
 
@@ -178,13 +170,6 @@ ideas = {
 						has_dlc = "Death or Dishonor"
 					}
 					NOT = { has_idea = HUN_treaty_of_triannon }
-				}
-				if = {
-					limit = {
-						original_tag = SPR
-						has_dlc = "La Resistance"
-					}
-					NOT = { has_completed_focus = SPR_all_must_bear_the_torch }
 				}
 			}
 			ai_will_do = {
@@ -275,13 +260,6 @@ ideas = {
 						has_dlc = "Death or Dishonor"
 					}
 					NOT = { has_idea = HUN_treaty_of_triannon }
-				}
-				if = {
-					limit = {
-						original_tag = SPR
-						has_dlc = "La Resistance"
-					}
-					NOT = { has_completed_focus = SPR_all_must_bear_the_torch }
 				}
 			}
 
@@ -393,13 +371,6 @@ ideas = {
 					}
 					NOT = { has_idea = HUN_treaty_of_triannon }
 				}
-				if = {
-					limit = {
-						original_tag = SPR
-						has_dlc = "La Resistance"
-					}
-					NOT = { has_completed_focus = SPR_all_must_bear_the_torch }
-				}
 			}
 
 			ai_will_do = {
@@ -501,13 +472,6 @@ ideas = {
 						has_dlc = "Death or Dishonor"
 					}
 					NOT = { has_idea = HUN_treaty_of_triannon }
-				}
-				if = {
-					limit = {
-						original_tag = SPR
-						has_dlc = "La Resistance"
-					}
-					NOT = { has_completed_focus = SPR_all_must_bear_the_torch }
 				}
 			}
 

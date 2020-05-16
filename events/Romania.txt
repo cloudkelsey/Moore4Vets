@@ -29,6 +29,7 @@ country_event = {
 			}
 			country_event = romania.6
 		}
+		remove_ideas = no_faction_joining
 	}
 }
 

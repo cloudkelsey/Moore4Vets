@@ -20,6 +20,8 @@ ENG_imperial_conference_decision = {
 		visible = {
 			tag = ENG
 			has_country_flag = ENG_imperial_conference_timer_flag
+			# Not making it invisible for some reason
+			#NOT = { has_country_flag = ENG_imperial_defense_flag has_country_flag = ENG_imperial_trade_flag has_country_flag = ENG_imperial_economy_flag has_country_flag = ENG_imperial_appeasement_flag }
 		}
 
 		cancel_if_not_visible = no
@@ -35,26 +37,11 @@ ENG_imperial_conference_decision = {
 			every_country = {
 				limit = {
 					OR = {
-						AND = {
-							is_subject_of = ENG
-							tag = CAN
-						}
-						AND = {
-							is_subject_of = ENG
-							tag = SAF
-						}
-						AND = {
-							is_subject_of = ENG
-							tag = RAJ
-						}
-						AND = {
-							is_subject_of = ENG
-							tag = AST
-						}
-						AND = {
-							is_subject_of = ENG
-							tag = NZL
-						}
+						tag = CAN
+						tag = SAF
+						tag = RAJ
+						tag = AST
+						tag = NZL
 					}
 				}
 				remove_opinion_modifier = { target = ENG modifier = ENG_imperial_conference_opinion }
@@ -72,7 +59,7 @@ ENG_imperial_conference_decision = {
 		}
 
 		available = {
-			NOT = { has_country_flag = ENG_imperial_conference_discussion_in_progress }
+			
 		}
 
 		cost = 50
@@ -85,12 +72,27 @@ ENG_imperial_conference_decision = {
 		}
 
 		complete_effect = {
-			country_event = { id = mtg_britain.83 hours = 6 }
-			set_country_flag = ENG_imperial_conference_discussion_in_progress
+			hidden_effect = { set_country_flag = ENG_imperial_defense_flag }
+			every_country = {
+				limit = {
+					OR = {
+						tag = CAN
+						tag = SAF
+						tag = RAJ
+						tag = AST
+						tag = NZL
+					}
+				}
+				add_political_power = -25
+				add_timed_idea = { idea = ENG_imperial_conference_defense_dominion days = 365 }
+				ENG = { ENG_imperial_conference_defense_level_up = yes }
+			}
+			ENG_imperial_conference_set_subject_counter = yes
+			ENG_imperial_conference_clear_in_progress_flags = yes
 		}
 
 		ai_will_do = {
-			factor = 100
+			factor = 1000
 		}
 	}
 
@@ -103,7 +105,7 @@ ENG_imperial_conference_decision = {
 		}
 
 		available = {
-			NOT = { has_country_flag = ENG_imperial_conference_discussion_in_progress }
+			
 		}
 
 		cost = 50
@@ -116,12 +118,25 @@ ENG_imperial_conference_decision = {
 		}
 
 		complete_effect = {
-			country_event = { id = mtg_britain.87 hours = 6 }
-			set_country_flag = ENG_imperial_conference_discussion_in_progress
+			hidden_effect = { set_country_flag = ENG_imperial_trade_flag }
+			every_country = {
+				limit = {
+					OR = {
+						tag = CAN
+						tag = SAF
+						tag = RAJ
+						tag = AST
+						tag = NZL
+					}
+				}
+				country_event = moore4vets.7
+			}
+			ENG_imperial_conference_set_subject_counter = yes
+			ENG_imperial_conference_clear_in_progress_flags = yes
 		}
 
 		ai_will_do = {
-			factor = 100
+			factor = 1000
 		}
 	}
 
@@ -134,7 +149,7 @@ ENG_imperial_conference_decision = {
 		}
 
 		available = {
-			NOT = { has_country_flag = ENG_imperial_conference_discussion_in_progress }
+		
 		}
 
 		cost = 50
@@ -147,12 +162,27 @@ ENG_imperial_conference_decision = {
 		}
 
 		complete_effect = {
-			country_event = { id = mtg_britain.91 hours = 6 }
-			set_country_flag = ENG_imperial_conference_discussion_in_progress
+			hidden_effect = { set_country_flag = ENG_imperial_economy_flag }
+			every_country = {
+				limit = {
+					OR = {
+						tag = CAN
+						tag = SAF
+						tag = RAJ
+						tag = AST
+						tag = NZL
+					}
+				}
+				add_political_power = -25
+				add_timed_idea = { idea = ENG_imperial_conference_economy_dominion days = 365 }
+				ENG = { ENG_imperial_conference_economy_level_up = yes }
+			}
+			ENG_imperial_conference_set_subject_counter = yes
+			ENG_imperial_conference_clear_in_progress_flags = yes
 		}
 
 		ai_will_do = {
-			factor = 100
+			factor = 1000
 		}
 	}
 
@@ -165,8 +195,7 @@ ENG_imperial_conference_decision = {
 		}
 
 		available = {
-			NOT = { has_country_flag = ENG_imperial_conference_discussion_in_progress }
-			has_war = no
+
 		}
 
 		cost = 50
@@ -179,12 +208,27 @@ ENG_imperial_conference_decision = {
 		}
 
 		complete_effect = {
-			country_event = { id = mtg_britain.95 hours = 6 }
-			set_country_flag = ENG_imperial_conference_discussion_in_progress
+			hidden_effect = { set_country_flag = ENG_imperial_appeasement_flag }
+			every_country = {
+				limit = {
+					OR = {
+						tag = CAN
+						tag = SAF
+						tag = RAJ
+						tag = AST
+						tag = NZL
+					}
+				}
+				add_political_power = -25
+				add_war_support = 0.1
+			}
+			add_war_support = 0.15
+			ENG_imperial_conference_set_subject_counter = yes
+			ENG_imperial_conference_clear_in_progress_flags = yes
 		}
 
 		ai_will_do = {
-			factor = 100
+			factor = 1000
 		}
 	}
 
@@ -540,113 +584,6 @@ political_actions = {
 			# POR = { country_event = wtt_britain_lease_azores.1 }
 		# }
 	# }
-
-	ENG_britain_demands_treaty_compliance = { # ENG demanding scuttling of ships to maintain Washington Naval Treaty
-
-		icon = generic_naval
-		
-		available = {
-			if = {
-				limit = {
-					original_tag = USA
-				}
-				custom_trigger_tooltip = {
-					tooltip = ENG_britain_demands_treaty_compliance_tt_1
-					naval_strength_comparison = {
-						other = ENG
-						ratio < 1.01
-						sub_unit_def_weights = {
-							carrier = 1
-							battleship = 1
-							battle_cruiser = 1
-						}
-					}
-				}
-			}
-			if = {
-				limit = {
-					original_tag = JAP
-				}
-				custom_trigger_tooltip = {
-					tooltip = ENG_britain_demands_treaty_compliance_tt_2
-					naval_strength_comparison = {
-						other = ENG
-						ratio < 0.66
-						sub_unit_def_weights = {
-							carrier = 1
-							battleship = 1
-							battle_cruiser = 1
-						}
-					}
-				}
-			}
-			if = {
-				limit = {
-					NOT = { original_tag = USA }
-					NOT = { original_tag = JAP }
-				}
-				custom_trigger_tooltip = {
-					tooltip = ENG_britain_demands_treaty_compliance_tt_3
-					naval_strength_comparison = {
-						other = ENG
-						ratio < 0.36
-						sub_unit_def_weights = {
-							carrier = 1
-							battleship = 1
-							battle_cruiser = 1
-						}
-					}
-				}
-			}
-		}
-
-		days_mission_timeout = 60
-
-		fire_only_once = no
-
-		activation = {
-			has_country_flag = ENG_demanding_ship_reduction_flag
-		}
-
-		visible = {
-			has_country_flag = ENG_demanding_ship_reduction_flag
-		}
-
-		cancel_if_not_visible = yes
-
-		is_good = no
-
-		complete_effect = {
-			clr_country_flag = ENG_demanding_ship_reduction_flag
-			random_country = {
-				limit = {
-					original_tag = ENG
-					has_completed_focus = ENG_enforce_the_naval_treaties
-				}
-				country_event = { id = mtg_britain.107 }
-			}
-		}
-
-		timeout_effect = {
-			clr_country_flag = ENG_demanding_ship_reduction_flag
-			random_country = {
-				limit = {
-					original_tag = ENG
-					has_completed_focus = ENG_enforce_the_naval_treaties
-				}
-				country_event = { id = mtg_britain.108 }
-			}
-			effect_tooltip = {
-				ENG = {
-					create_wargoal = {
-						target = ROOT
-						type = puppet_wargoal_focus
-						expire = 0
-					}
-				}
-			}
-		}
-	}
 }
 
 operations = {
@@ -799,214 +736,4 @@ operations = {
 			}
 		}
 	}
-}
-
-ENG_enforce_the_naval_treaties = {
-
-	ENG_demand_treaty_compliance = {
-
-		icon = eng_trade_unions_demand
-
-		allowed = {
-			tag = ENG
-		}
-
-		available = {
-			has_navy_size = {
-			    size > 14
-				archetype = ship_hull_heavy
-			}
-			if = {
-				limit = {
-					FROM = {
-						original_tag = USA
-					}
-				}
-				FROM = {
-					custom_trigger_tooltip = {
-						tooltip = ENG_demand_treaty_compliance_tt2
-						naval_strength_comparison = {
-							other = ENG
-							ratio > 1
-							sub_unit_def_weights = {
-								carrier = 1
-								battleship = 1
-								battle_cruiser = 1
-							}
-						}
-					}
-					NOT = { is_in_faction_with = ROOT }
-					NOT = { has_war_with = ROOT }
-				}
-			}
-			if = {
-				limit = {
-					FROM = {
-						original_tag = JAP
-					}
-				}
-				FROM = {
-					custom_trigger_tooltip = {
-						tooltip = ENG_demand_treaty_compliance_tt3
-						naval_strength_comparison = {
-							other = ENG
-							ratio > 0.65
-							sub_unit_def_weights = {
-								carrier = 1
-								battleship = 1
-								battle_cruiser = 1
-							}
-						}
-					}
-					NOT = { is_in_faction_with = ROOT }
-					NOT = { has_war_with = ROOT }
-				}
-			}
-			if = {
-				limit = {
-					FROM = {
-						NOT = { original_tag = USA }
-						NOT = { original_tag = JAP }
-					}
-				}
-				FROM = {
-					custom_trigger_tooltip = {
-						tooltip = ENG_demand_treaty_compliance_tt4
-						naval_strength_comparison = {
-							other = ENG
-							ratio > 0.35
-							sub_unit_def_weights = {
-								carrier = 1
-								battleship = 1
-								battle_cruiser = 1
-							}
-						}
-					}
-					NOT = { is_in_faction_with = ROOT }
-					NOT = { has_war_with = ROOT }
-				}
-			}
-		}
-
-		target_trigger = {
-			FROM = {
-				OR = {
-					AND = {
-						original_tag = USA
-						naval_strength_comparison = {
-							other = ENG
-							ratio > 0.8
-							sub_unit_def_weights = {
-								carrier = 1
-								battleship = 1
-								battle_cruiser = 1
-							}
-						}
-						NOT = { is_in_faction_with = ROOT }
-						NOT = { has_war_with = ROOT }
-					}
-					AND = {
-						original_tag = JAP
-						naval_strength_comparison = {
-							other = ENG
-							ratio > 0.5
-							sub_unit_def_weights = {
-								carrier = 1
-								battleship = 1
-								battle_cruiser = 1
-							}
-						}
-						NOT = { is_in_faction_with = ROOT }
-						NOT = { has_war_with = ROOT }
-					}
-					AND = {
-						NOT = { original_tag = USA }
-						NOT = { original_tag = JAP }
-						naval_strength_comparison = {
-							other = ENG
-							ratio > 0.2
-							sub_unit_def_weights = {
-								carrier = 1
-								battleship = 1
-								battle_cruiser = 1
-							}
-						}
-						NOT = { is_in_faction_with = ROOT }
-						NOT = { has_war_with = ROOT }
-					}
-				}
-			}
-		}
-
-		cost = 50
-
-		fire_only_once = no
-
-		ai_will_do = {
-			factor = 10
-		}
-
-		visible = {
-			original_tag = ENG
-			has_completed_focus = ENG_enforce_the_naval_treaties
-			FROM = {
-				OR = {
-					AND = {
-						original_tag = USA
-						naval_strength_comparison = {
-							other = ENG
-							ratio > 0.8
-							sub_unit_def_weights = {
-								carrier = 1
-								battleship = 1
-								battle_cruiser = 1
-							}
-						}
-						NOT = { is_in_faction_with = ROOT }
-						NOT = { has_war_with = ROOT }
-					}
-					AND = {
-						original_tag = JAP
-						naval_strength_comparison = {
-							other = ENG
-							ratio > 0.5
-							sub_unit_def_weights = {
-								carrier = 1
-								battleship = 1
-								battle_cruiser = 1
-							}
-						}
-						NOT = { is_in_faction_with = ROOT }
-						NOT = { has_war_with = ROOT }
-					}
-					AND = {
-						NOT = { original_tag = USA }
-						NOT = { original_tag = JAP }
-						naval_strength_comparison = {
-							other = ENG
-							ratio > 0.2
-							sub_unit_def_weights = {
-								carrier = 1
-								battleship = 1
-								battle_cruiser = 1
-							}
-						}
-						NOT = { is_in_faction_with = ROOT }
-						NOT = { has_war_with = ROOT }
-					}
-				}
-			}
-		}
-
-		complete_effect = {
-			FROM = {
-				set_country_flag = ENG_demanding_ship_reduction_flag
-				activate_mission = ENG_britain_demands_treaty_compliance
-				country_event = { id = mtg_britain.106 hours = 6 }
-				custom_effect_tooltip = ENG_demand_treaty_compliance_tt
-			}
-		}
-
-	}
-
 }

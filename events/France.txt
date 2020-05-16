@@ -4,40 +4,6 @@
 
 add_namespace = france
 
-# Japan demands Indochina
-country_event = {
-	id = france.1
-	title = france.1.t
-	desc = france.1.d
-	picture = GFX_report_event_japan_army_mountainside
-	
-	is_triggered_only = yes
-	
-	option = { # Accept demands
-		name = france.1.a
-		ai_chance = {
-			factor = 25 
-			modifier = {
-				factor = 50
-				has_war = yes
-				any_enemy_country = {
-					strength_ratio = { 
-						tag = ROOT 
-						ratio < 0.4
-					}
-				}
-			}
-			modifier = {
-				factor = 75
-				16 = { NOT = { is_controlled_by = FRA } } #Paris	
-			}
-		} 
-		JAP = {
-			country_event = { days = 5 id = japan.6 }
-		}
-	}
-}
-
 # Maginot Line Extension
 country_event = {
 	id = france.2
@@ -169,50 +135,29 @@ country_event = {
 	
 	fire_only_once = yes
 	is_triggered_only = yes
-
-	option = { # decide to fight on
-		name = france.10.e
-		ai_chance = {
-			factor = 15
-			modifier = {
-				factor = 0
-				is_historical_focus_on = yes
-			}
-		}
-		trigger = { has_war_support > 0.7 }
-		add_stability = -0.05
-	}
-}
-
-#Capital captured by non french faction
-country_event = {
-	id = france.16
-	title = france.16.t
-	desc = france.16.d
-	picture = GFX_report_event_french_resistance_02
-
-	fire_only_once = yes
-	is_triggered_only = yes
 	
-	option = {
-		name = france.16.a
+	option = { # Become Free French
+		name = france.10.b
+		ai_chance = {
+			factor = 100
+		}
+		set_cosmetic_tag = FRA_FREE 
+		add_ideas = FRA_defeatism
+		if = {
+			limit = {
+				capital_scope = {
+					NOT = {
+						state = 16
+						state = 635
+					}
+				}
+				controls_state = 635
+			}
+			set_capital = 635
+		}
 		remove_ideas = FRA_victors_of_wwi
 		remove_ideas = FRA_disjointed_government
 		remove_ideas = FRA_protected_by_the_maginot_line
-	}
-}
-
-# De Gaulle becomes leader
-country_event = {
-	id = france.20
-	title = france.20.t
-	desc = france.20.d
-	picture = GFX_report_event_degaulle_churchill
-	
-	is_triggered_only = yes
-	
-	option = {
-		custom_effect_tooltip = france.20.a_tt
 		set_country_flag = france_de_gaulle
 		hidden_effect =  {
 			create_country_leader = {
@@ -226,8 +171,7 @@ country_event = {
 				}
 			}
 		}
-		
-		name = france.20.a
+		load_focus_tree = free_french_focus
 	}
 }
 
@@ -328,30 +272,9 @@ country_event = {
    				active = no
   			}
 		}
-		if = {
-			limit = {
-				ITA = {
-					OR = {
-						NOT = { has_completed_focus = ITA_yugoslavia_friend }						
-						is_in_faction_with = GER
-						exists = no
-					}
-				}
-			}
-			YUG = {
-				add_opinion_modifier = { target = FRA modifier = western_betrayal }
-				country_event = { id = yugoslavia.5 hours = 6 }
-			}			
-		}
-		if = {
-			limit = { 
-				ITA = {
-					has_completed_focus = ITA_yugoslavia_friend
-					NOT = { is_in_faction_with = GER }
-					NOT = { has_war_with = YUG }
-				}
-			}
-			ITA = { country_event = { id = italy.12 } }
+		YUG = {
+			add_opinion_modifier = { target = FRA modifier = western_betrayal }
+			country_event = { id = yugoslavia.5 hours = 6 }
 		}
 	}
 }

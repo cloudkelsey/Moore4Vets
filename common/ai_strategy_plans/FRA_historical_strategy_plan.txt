@@ -1,0 +1,44 @@
+FRA_historical_plan = {
+	name = "France historical plan"
+	desc = "Historical behavior for France"
+
+	enable = {
+		original_tag = FRA
+	}
+
+	ai_national_focuses = {
+		FRA_form_the_popular_front
+		FRA_reform_the_labour_laws
+		FRA_review_foreign_policy
+		FRA_buy_time
+		FRA_strengthen_government_support
+		FRA_defensive_strategems
+		FRA_the_blum_viollette_proposal
+		FRA_begin_rearmament
+		FRA_defensive_focus
+		FRA_firepower_kills
+		FRA_infantry_focus
+		FRA_artillery_focus
+		FRA_heavy_armor_focus
+		FRA_army_reform
+		FRA_devalue_the_franc		
+	}
+
+	research = {
+
+	}
+
+	ideas = {
+
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+}

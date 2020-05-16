@@ -4,107 +4,40 @@ German_historical = {
 
 	enable = {
 		original_tag = GER
-		or = {
-			AND = {
-				is_historical_focus_on = yes
-				OR = {
-					not = { has_dlc = "Waking the Tiger" }
-					has_game_rule = {
-						rule = GER_ai_behavior
-						option = DEFAULT
-					}
-				}	
-			}
-			has_country_flag = GER_AI_RANDOM_FASCIST
-			has_game_rule = {
-				rule = GER_ai_behavior
-				option = FASCIST
-			}
-		}
-	}
-	abort = {
-		OR = {
-			SWE = {
-				has_government = communism #prio 1, crush Sweden
-			}
-			SOV = {
-				NOT = {
-					has_government = communism
-				}
-			}
-			ENG = {
-				NOT = {
-					has_government = democratic
-				}
-			}
-			any_country_with_original_tag = {
-				original_tag_to_check = HUN
-				has_completed_focus = HUN_invite_the_habsburg_prince
-			}
-			any_country_with_original_tag = {
-				original_tag_to_check = FRA
-				OR = {
-					has_completed_focus = FRA_utilize_the_leagues
-					has_completed_focus = FRA_invite_communist_ministers
-					has_completed_focus = FRA_leftist_rhetoric
-					has_completed_focus = FRA_right_wing_rhetoric
-				}
-			}
-			any_country_with_original_tag = {
-				original_tag_to_check = USA
-				OR = {
-					has_completed_focus = USA_war_plan_red
-					has_completed_focus = USA_war_plan_white
-				}
-			}
-		}
 	}
 
-	ai_national_focuses = {
-		# grab as fast as you can if available
-		GER_around_maginot
-
-		GER_rhineland
-		GER_four_year_plan
-		GER_west_wall
-		GER_autarky
-		GER_anti_comitern_pact
-		#1937
-		GER_hermann_goring_werke
+	ai_national_focuses = {	
 		GER_army_innovation
 		GER_soviet_treaty
-		GER_kdf_wagen
-		GER_coal_liquidization
-		#1938
+		GER_rhineland
+		
 		GER_anschluss
-		GER_synthetic_rubber
-		GER_army_innovation_2
 		GER_demand_sudetenland
 		GER_first_vienna_award
-		#1939
-		GER_demand_memel
 		GER_end_of_czechoslovakia
-		GER_mol_rib_pact
-		GER_weserubung
-		GER_danzig_or_war
-		#1940
-		GER_war_with_france
+		
+		GER_four_year_plan
+		GER_autarky
+		GER_hermann_goring_werke
+		GER_kdf_wagen
+		GER_extra_tech_slot
 		GER_autobahn
-		GER_german_war_economy
-		GER_second_vienna_award
-		GER_extra_tech_slot		
-		#1941
-		GER_rocketry_focus
-		GER_italy_ally
-		GER_naval_air_effort
-		GER_air_innovation
-		#1942
-		GER_tactical_air_effort
-		GER_ussr_war_goal
-		GER_air_innovation_2
+		GER_grosraumwirtschaft
+		GER_align_hungary_and_romania
+		GER_army_innovation_2
+		GER_demand_memel
+		GER_mol_rib_pact
 		GER_naval_rearmament
+		GER_integrate_war_economies
+		GER_danzig_or_war
+		GER_around_maginot
+		GER_coal_liquidization
+		GER_synthetic_rubber
+		GER_weserubung
+		GER_reintegrate_luxemburg_and_alsace_lorraine
 		GER_naval_effort
-		GER_wunderwaffe
+		GER_anti_comitern_pact
+		GER_ussr_war_goal
 	}
 
 	research = {

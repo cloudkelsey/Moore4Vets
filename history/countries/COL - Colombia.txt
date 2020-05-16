@@ -1,18 +1,23 @@
 ﻿capital = 306
 
+set_research_slots = 0
+set_convoys = 10000
+
 oob = "COL_1936"
 
 add_ideas = {
-		zeromanpower
-		no_building_a_navy
-	}
+	zeromanpower
+	no_building_a_navy
+}
 
-if = {
-	limit = { has_dlc = "Man the Guns" }
-		set_naval_oob = "COL_1936_naval_mtg"
-	else = {
-		set_naval_oob = "COL_1936_naval_legacy"
-	}
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+set_popularities = {
+	neutrality = 100
 }
 
 create_country_leader = {

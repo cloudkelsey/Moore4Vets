@@ -27,15 +27,10 @@ ideas = {
 				political_power_factor = -2.00
 				consumer_goods_factor = 1.00
 				min_export = 0.5
+				industrial_capacity_factory = -100
+				production_speed_buildings_factor = -100
 			}
 		}
-		
-		jap_army_training_speed = {
-		picture = hajime_sugiyama
-		allowed = { tag = JAP }
-		#modifier = {army_chief_drill_3 }
-		modifier = { training_time_army_factor = -0.15 }
-			}
 		
 		papertiger = {
 
@@ -53,12 +48,13 @@ ideas = {
 
 			modifier = {
 				surrender_limit = -0.1
+				industrial_capacity_factory = -0.15
 			}
 		}
 		
-		usa_no_faction_joining = {
+		no_faction_joining = {
 			picture = hol_aloof_neutrality
-			allowed = { tag = USA }
+			allowed = { always = yes }
 			removal_cost = -1
 			modifier = { join_faction_tension = 100 }
 		}
@@ -67,14 +63,7 @@ ideas = {
 			picture = generic_navy_bonus
 			allowed = { OR = { tag = COL tag = IRQ tag = SPR } }
 			removal_cost = -1
-			equipment_bonus = {
-				ship_hull_heavy = { build_cost_ic = 1000 instant = yes }
-				ship_hull_carrier = { build_cost_ic = 1000 instant = yes }
-				ship_hull_cruiser = { build_cost_ic = 1000 instant = yes }
-				ship_hull_light = { build_cost_ic = 1000 instant = yes }
-				ship_hull_submarine = { build_cost_ic = 1000 instant = yes }
-			}
+			modifier = { industrial_capacity_dockyard = -1000 }
 		}
 	}
-	
 }

@@ -16,9 +16,9 @@ ideas = {
 			picture = great_depression
 			
 			modifier = {
-				consumer_goods_factor = 0.25
-				industrial_capacity_factory = -0.20
-				industrial_capacity_dockyard = -0.20
+				consumer_goods_factor = 0.1
+				industrial_capacity_factory = -0.10
+				industrial_capacity_dockyard = -0.10
 			}
 		}
 
@@ -37,30 +37,9 @@ ideas = {
 			picture = great_depression
 			
 			modifier = {
-				consumer_goods_factor = 0.10
-				industrial_capacity_factory = -0.10
-				industrial_capacity_dockyard = -0.10
-			}
-		}
-
-		CAN_patriation = {
-
-			allowed = {
-				always = no
-			}
-
-			allowed_civil_war = {
-				NOT = { has_government = democratic }
-			}
-
-			removal_cost = -1
-
-			picture = can_patriation
-			
-			rule = { can_decline_call_to_war = yes }
-
-			modifier = {
-				autonomy_gain = 1
+				consumer_goods_factor = 0.05
+				industrial_capacity_factory = -0.05
+				industrial_capacity_dockyard = -0.05
 			}
 		}
 
@@ -79,7 +58,7 @@ ideas = {
 			picture = tfv_can_conscription_crisis
 			
 			modifier = {
-				conscription_factor = -0.30
+				conscription_factor = -0.20
 			}
 		}
 		
@@ -118,48 +97,6 @@ ideas = {
 			
 			modifier = {
 				communism_drift = -0.01
-				fascism_drift = -0.01
-				foreign_subversive_activites = -0.50
-			}
-		}
-
-		CAN_defence_of_canada_regulations_fascism = {
-
-			allowed = {
-				always = no
-			}
-
-			allowed_civil_war = {
-				has_government = fascism
-			}
-
-			removal_cost = -1
-
-			picture = can_defence_of_canada_regulations_fascism
-			
-			modifier = {
-				democratic_drift = -0.01
-				communism_drift = -0.01
-				foreign_subversive_activites = -0.50
-			}
-		}
-
-		CAN_defence_of_canada_regulations_communism = {
-
-			allowed = {
-				always = no
-			}
-
-			allowed_civil_war = {
-				has_government = communism
-			}
-
-			removal_cost = -1
-
-			picture = can_defence_of_canada_regulations_communism
-			
-			modifier = {
-				democratic_drift = -0.01
 				fascism_drift = -0.01
 				foreign_subversive_activites = -0.50
 			}

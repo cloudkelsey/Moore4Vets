@@ -759,7 +759,12 @@
 			else = {
 				set_technology = { excavation1 = 1 }
 			}
-			unlock_decision_tooltip = MAN_develop_kirin_aluminium_deposits
+			328 = {
+				add_resource = {
+					type = aluminium
+					amount = 12
+				}
+			}
 		}
 	}
 
@@ -849,7 +854,7 @@
 		prerequisite = { focus = MAN_social_research_unit }
 		prerequisite = { focus = MAN_expand_showa_steel_works }
 		prerequisite = { focus = MAN_mamc }
-		x = 0
+		x = 1
 		y = 4
 		relative_position_id = MAN_first_five_year_plan
 
@@ -969,10 +974,10 @@
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			716 = {
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -984,10 +989,10 @@
 		icon = GFX_goal_generic_air_fighter
 		prerequisite = { focus = MAN_mukden_arsenal }
 		x = 0
-		y = 1
+		y = 2
 		relative_position_id = MAN_mukden_arsenal
 
-		cost = 10
+		cost = 1
 
 		ai_will_do = {
 			factor = 1
@@ -1091,49 +1096,8 @@
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			MAN_low_legitimacy_level_down = yes
-		}
-	}
-
-	focus = {
-		id = MAN_vassalize_mengukuo
-		icon = GFX_goal_generic_forceful_treaty
-		prerequisite = { focus = MAN_chinese_leadership }
-		x = -1
-		y = 1
-		relative_position_id = MAN_chinese_leadership
-
-		cost = 10
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-			is_subject_of = JAP
-			NOT = { has_war_with = JAP }
-			NOT = { has_war_with = MEN }
-			MEN = {
-				exists = yes
-				is_subject_of = JAP
-			}
-		}
-
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		search_filters = { FOCUS_FILTER_ANNEXATION }
-		complete_tooltip = {
-
-		}
-
-		completion_reward = {
-			annex_country = { target = MEN transfer_troops = yes }
+			add_stability = 0.15
+			add_war_support = 0.15
 		}
 	}
 
@@ -1141,7 +1105,7 @@
 		id = MAN_national_cooperation_government
 		icon = GFX_goal_generic_improve_relations
 		prerequisite = { focus = MAN_chinese_leadership }
-		x = 1
+		x = 0
 		y = 1
 		relative_position_id = MAN_chinese_leadership
 
@@ -1172,57 +1136,6 @@
 			every_state = {
 				limit = { is_core_of = CHI }
 				add_core_of = ROOT
-			}
-		}
-	}
-
-	focus = {
-		id = MAN_the_two_emperors
-		icon = GFX_goal_anschluss
-		prerequisite = { focus = MAN_vassalize_mengukuo }
-		prerequisite = { focus = MAN_national_cooperation_government }
-		x = 0
-		y = 2
-		relative_position_id = MAN_chinese_leadership
-
-		cost = 10
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-			is_subject_of = JAP
-			compare_autonomy_state > autonomy_wtt_imperial_protectorate			
-			MAN = { 
-				ic_ratio = {
-					tag = JAP
-					ratio > 0.2
-				}
-			}
-			strength_ratio = {
-				tag = JAP
-				ratio > 0.25
-			}
-		}
-
-		bypass = {
-			is_subject = no
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		complete_tooltip = {
-
-		}
-
-		search_filters = { FOCUS_FILTER_POLITICAL }
-		completion_reward = {
-			add_autonomy_ratio = {
-				value = 0.15
-				localization = MAN_the_two_emperors
 			}
 		}
 	}

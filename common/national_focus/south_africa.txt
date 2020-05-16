@@ -286,7 +286,7 @@
 		prerequisite = { focus = SAF_war_measures_act }
 		prerequisite = { focus = SAF_support_the_policy_of_appeasement }
 		x = -1
-		y = 1
+		y = 2
 		relative_position_id = SAF_support_the_policy_of_appeasement
 
 		cost = 10
@@ -326,7 +326,7 @@
 		y = 1
 		relative_position_id = SAF_support_the_policy_of_appeasement
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 2
@@ -355,43 +355,12 @@
 	}
 
 	focus = {
-		id = SAF_joint_air_training_scheme
-		icon = GFX_goal_generic_air_fighter2
-		prerequisite = { focus = SAF_csir }
-		x = 0
-		y = 1
-		relative_position_id = SAF_csir
-
-		cost = 10
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-
-		}
-		
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-			add_ideas = SAF_joint_air_training_scheme
-		}
-	}
-
-	focus = {
 		id = SAF_desert_equipment
 		icon = GFX_goal_generic_allies_build_infantry
-		prerequisite = { focus = SAF_joint_air_training_scheme }
+		prerequisite = { focus = SAF_csir }
 		x = -1
 		y = 1
-		relative_position_id = SAF_joint_air_training_scheme
+		relative_position_id = SAF_csir
 
 		cost = 10
 
@@ -419,11 +388,11 @@
 	focus = {
 		id = SAF_suppress_the_stormjaers
 		icon = GFX_goal_generic_military_sphere
-		prerequisite = { focus = SAF_joint_air_training_scheme }
+		prerequisite = { focus = SAF_csir }
 		prerequisite = { focus = SAF_police_windhoek }
 		x = 1
 		y = 1
-		relative_position_id = SAF_joint_air_training_scheme
+		relative_position_id = SAF_csir
 
 		cost = 10
 
@@ -1059,7 +1028,7 @@
 		}
 
 		available = {
-			is_subject = no
+			num_of_factories > 25
 		}
 		
 		bypass = {
@@ -1091,16 +1060,9 @@
 		}
 
 		available = {
-			is_subject = no
 			has_war = yes
 			is_in_faction = yes
-			OR = {
-				num_of_factories > 50
-				any_other_country = {
-					is_in_faction_with = ROOT
-					num_of_factories > 50
-				}
-			}
+			num_of_factories > 50
 		}
 		
 		bypass = {
@@ -1190,8 +1152,7 @@
 				name = SAF_improve_the_three_oh_three
 				bonus = 1.0
 				uses = 1
-				technology = improved_infantry_weapons 
-				technology = advanced_infantry_weapons
+				category = infantry_weapons
 			}
 		}
 	}
@@ -1307,15 +1268,7 @@
 				name = SAF_expand_the_south_african_artillery
 				bonus = 1.0
 				uses = 1
-				#technology = gw_artillery 
-				technology = artillery1 
-				technology = artillery4 
-				technology = interwar_antiair 
-				technology = antiair2 
-				technology = antiair5 
-				technology = interwar_antitank 
-				technology = antitank2 
-				technology = antitank5 
+				category = artillery
 			}
 		}
 	}
@@ -1389,17 +1342,8 @@
 				name = SAF_equipment_effort
 				bonus = 1.0
 				uses = 1
-				technology = improved_infantry_weapons 
-				technology = advanced_infantry_weapons
-			#	technology = gw_artillery 
-				technology = artillery1 
-				technology = artillery4 
-				technology = interwar_antiair 
-				technology = antiair2 
-				technology = antiair5 
-				technology = interwar_antitank 
-				technology = antitank2 
-				technology = antitank5 
+				category = infantry_weapons
+				category = artillery
 			}
 		}
 	}
@@ -1449,7 +1393,7 @@
 		y = 5
 		relative_position_id = SAF_special_service_battalion
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -1628,7 +1572,6 @@
 				technology = early_fighter
 				technology = fighter1
 				technology = fighter2
-				technology = fighter3
 			}
 		}
 	}

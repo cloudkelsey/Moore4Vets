@@ -1,5 +1,6 @@
 ﻿capital = 291
 
+set_research_slots = 0
 add_ideas = {
 		zeromanpower
 		no_building_a_navy
@@ -18,7 +19,7 @@ set_technology = {
 	fuel_silos = 1
 }
 
-set_convoys = 5
+set_convoys = 10000
 
 set_politics = {
 	ruling_party = neutrality
@@ -27,8 +28,7 @@ set_politics = {
 	elections_allowed = no
 }
 set_popularities = {
-	fascism = 20
-	neutrality = 80
+	neutrality = 100
 }
 
 create_country_leader = {
