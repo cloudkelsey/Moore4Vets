@@ -1786,8 +1786,13 @@ focus_tree = {
 				name = USA_support_rock_island
 				uses = 2
 				bonus = 1.0
-				category = artillery
-				category = support_tech
+				technology = artillery1 
+				technology = artillery4  
+				technology = antiair2 
+				technology = antiair5 
+				technology = interwar_antitank 
+				technology = antitank2 
+				technology = antitank5
 			}
 		}
 	}
