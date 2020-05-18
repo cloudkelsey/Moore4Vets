@@ -148,6 +148,20 @@ event_firing = {
 		ai_will_do = { factor = 1000 }
 		complete_effect = { SPR = { country_event = moore4vets.4 } }
 	}
+	spain_clear_flag_if_no_volunteers = {
+		available = {
+			SPR = {
+				has_volunteers_amount_from = {
+					tag = GER
+					count < 1
+				}
+				has_country_flag = SPR_dont_attack
+			}
+		}
+		fire_only_once = no
+		ai_will_do = { factor = 1000 }
+		complete_effect = { SPR = { clr_country_flag = SPR_dont_attack } }
+	}
 	################################# SPAIN #################################
 	
 	################################# POLAND #################################
@@ -207,6 +221,149 @@ event_firing = {
 	################################# BENELUX #################################
 }
 
+give_division_templates = {
+	give_20_infantry = {
+		available = { always = yes }
+		ai_will_do = { factor = 100 }
+		fire_only_once = yes
+		complete_effect = {
+			division_template = {
+				name = "20w pure"
+				regiments = {
+					infantry = { x = 0 y = 0 } infantry = { x = 0 y = 1 } infantry = { x = 0 y = 2 } infantry = { x = 0 y = 3 }
+					infantry = { x = 1 y = 0 } infantry = { x = 1 y = 1 } infantry = { x = 1 y = 2 }
+					infantry = { x = 2 y = 0 } infantry = { x = 2 y = 1 } infantry = { x = 2 y = 2 }
+				}
+			}
+			
+			if = {
+				limit = { has_tech = tech_engineers }
+				division_template = {
+					name = "20w engi"
+					regiments = {
+						infantry = { x = 0 y = 0 } infantry = { x = 0 y = 1 } infantry = { x = 0 y = 2 } infantry = { x = 0 y = 3 }
+						infantry = { x = 1 y = 0 } infantry = { x = 1 y = 1 } infantry = { x = 1 y = 2 }
+						infantry = { x = 2 y = 0 } infantry = { x = 2 y = 1 } infantry = { x = 2 y = 2 }
+					}
+					support = { engineer = { x = 0 y = 0 } }
+				}
+				
+				if = {
+					limit = { has_tech = gw_artillery }
+					division_template = {
+						name = "20w engi arty"
+						regiments = {
+							infantry = { x = 0 y = 0 } infantry = { x = 0 y = 1 } infantry = { x = 0 y = 2 } infantry = { x = 0 y = 3 }
+							infantry = { x = 1 y = 0 } infantry = { x = 1 y = 1 } infantry = { x = 1 y = 2 }
+							infantry = { x = 2 y = 0 } infantry = { x = 2 y = 1 } infantry = { x = 2 y = 2 }
+						}
+						support = { engineer = { x = 0 y = 0 } artillery = { x = 0 y = 1 } }
+					}
+				}
+				
+				if = {
+					limit = { has_tech = interwar_antiair }
+					division_template = {
+						name = "20w engi AA"
+						regiments = {
+							infantry = { x = 0 y = 0 } infantry = { x = 0 y = 1 } infantry = { x = 0 y = 2 } infantry = { x = 0 y = 3 }
+							infantry = { x = 1 y = 0 } infantry = { x = 1 y = 1 } infantry = { x = 1 y = 2 }
+							infantry = { x = 2 y = 0 } infantry = { x = 2 y = 1 } infantry = { x = 2 y = 2 }
+						}
+						support = { engineer = { x = 0 y = 0 } anti_air = { x = 0 y = 1 } }
+					}
+				}
+			}
+			
+			if = {
+				limit = { has_tech = interwar_antiair }
+				division_template = {
+					name = "20w AA"
+					regiments = {
+						infantry = { x = 0 y = 0 } infantry = { x = 0 y = 1 } infantry = { x = 0 y = 2 } infantry = { x = 0 y = 3 }
+						infantry = { x = 1 y = 0 } infantry = { x = 1 y = 1 } infantry = { x = 1 y = 2 }
+						infantry = { x = 2 y = 0 } infantry = { x = 2 y = 1 } infantry = { x = 2 y = 2 }
+					}
+					support = { anti_air = { x = 0 y = 0 } }
+				}
+			}
+		}
+	}
+	
+	give_40_infantry = {
+		available = { always = yes }
+		ai_will_do = { factor = 100 }
+		fire_only_once = yes
+		complete_effect = {
+			division_template = {
+				name = "40w"
+				regiments = {
+					infantry = { x = 0 y = 0 } infantry = { x = 0 y = 1 } infantry = { x = 0 y = 2 } infantry = { x = 0 y = 3 } infantry = { x = 0 y = 4 }
+					infantry = { x = 1 y = 0 } infantry = { x = 1 y = 1 } infantry = { x = 1 y = 2 } infantry = { x = 1 y = 3 } infantry = { x = 1 y = 4 }
+					infantry = { x = 2 y = 0 } infantry = { x = 2 y = 1 } infantry = { x = 2 y = 2 } infantry = { x = 2 y = 3 } infantry = { x = 2 y = 4 }
+					infantry = { x = 3 y = 0 } infantry = { x = 3 y = 1 } infantry = { x = 3 y = 2 } infantry = { x = 3 y = 3 } infantry = { x = 3 y = 4 }
+				}
+			}
+			
+			if = {
+				limit = { has_tech = tech_engineers }
+				division_template = {
+					name = "40w engi"
+					regiments = {
+						infantry = { x = 0 y = 0 } infantry = { x = 0 y = 1 } infantry = { x = 0 y = 2 } infantry = { x = 0 y = 3 } infantry = { x = 0 y = 4 }
+						infantry = { x = 1 y = 0 } infantry = { x = 1 y = 1 } infantry = { x = 1 y = 2 } infantry = { x = 1 y = 3 } infantry = { x = 1 y = 4 }
+						infantry = { x = 2 y = 0 } infantry = { x = 2 y = 1 } infantry = { x = 2 y = 2 } infantry = { x = 2 y = 3 } infantry = { x = 2 y = 4 }
+						infantry = { x = 3 y = 0 } infantry = { x = 3 y = 1 } infantry = { x = 3 y = 2 } infantry = { x = 3 y = 3 } infantry = { x = 3 y = 4 }
+					}
+					support = { engineer = { x = 0 y = 0 } }
+				}
+				
+				if = {
+					limit = { has_tech = gw_artillery }
+					division_template = {
+						name = "40w engi arty"
+						regiments = {
+							infantry = { x = 0 y = 0 } infantry = { x = 0 y = 1 } infantry = { x = 0 y = 2 } infantry = { x = 0 y = 3 } infantry = { x = 0 y = 4 }
+							infantry = { x = 1 y = 0 } infantry = { x = 1 y = 1 } infantry = { x = 1 y = 2 } infantry = { x = 1 y = 3 } infantry = { x = 1 y = 4 }
+							infantry = { x = 2 y = 0 } infantry = { x = 2 y = 1 } infantry = { x = 2 y = 2 } infantry = { x = 2 y = 3 } infantry = { x = 2 y = 4 }
+							infantry = { x = 3 y = 0 } infantry = { x = 3 y = 1 } infantry = { x = 3 y = 2 } infantry = { x = 3 y = 3 } infantry = { x = 3 y = 4 }
+						}
+						support = { engineer = { x = 0 y = 0 } artillery = { x = 0 y = 1 } }
+					}
+				}
+				
+				if = {
+					limit = { has_tech = interwar_antiair }
+					division_template = {
+						name = "40w engi AA"
+						regiments = {
+							infantry = { x = 0 y = 0 } infantry = { x = 0 y = 1 } infantry = { x = 0 y = 2 } infantry = { x = 0 y = 3 } infantry = { x = 0 y = 4 }
+							infantry = { x = 1 y = 0 } infantry = { x = 1 y = 1 } infantry = { x = 1 y = 2 } infantry = { x = 1 y = 3 } infantry = { x = 1 y = 4 }
+							infantry = { x = 2 y = 0 } infantry = { x = 2 y = 1 } infantry = { x = 2 y = 2 } infantry = { x = 2 y = 3 } infantry = { x = 2 y = 4 }
+							infantry = { x = 3 y = 0 } infantry = { x = 3 y = 1 } infantry = { x = 3 y = 2 } infantry = { x = 3 y = 3 } infantry = { x = 3 y = 4 }
+						}
+						support = { engineer = { x = 0 y = 0 } anti_air = { x = 0 y = 1 } }
+					}
+				}
+			}
+			
+			if = {
+				limit = { has_tech = interwar_antiair }
+				division_template = {
+					name = "40w AA"
+					regiments = {
+						infantry = { x = 0 y = 0 } infantry = { x = 0 y = 1 } infantry = { x = 0 y = 2 } infantry = { x = 0 y = 3 } infantry = { x = 0 y = 4 }
+						infantry = { x = 1 y = 0 } infantry = { x = 1 y = 1 } infantry = { x = 1 y = 2 } infantry = { x = 1 y = 3 } infantry = { x = 1 y = 4 }
+						infantry = { x = 2 y = 0 } infantry = { x = 2 y = 1 } infantry = { x = 2 y = 2 } infantry = { x = 2 y = 3 } infantry = { x = 2 y = 4 }
+						infantry = { x = 3 y = 0 } infantry = { x = 3 y = 1 } infantry = { x = 3 y = 2 } infantry = { x = 3 y = 3 } infantry = { x = 3 y = 4 }
+					}
+					support = { anti_air = { x = 0 y = 0 } }
+				}
+			}
+		}
+	}
+}
+
 GER_spanish_civil_war_AI_control = {
 	spain_stop_attacking = {
 		available = { SPR = { NOT = { has_country_flag = SPR_dont_attack } } }
@@ -233,7 +390,6 @@ acquire_islands = {
 SPR_civil_war_offensives = {
 	begin_ultimate_offensive = {
 		ai_will_do = { factor = 1000 modifier = { factor = 0 has_country_flag = SPR_dont_attack } }
-		allowed = { tag = SPR }
 		available = {
 			OR = {
 				AND = {
@@ -243,7 +399,7 @@ SPR_civil_war_offensives = {
 				NOT = { has_idea = SPA_death_before_surrender }
 			}
 		}
-		visible = { is_ai = yes NOT = { has_idea = spain_ultimate_offensive } }
+		visible = { tag = SPR is_ai = yes NOT = { has_idea = spain_ultimate_offensive } }
 		#fire_only_once = yes
 		complete_effect = { add_timed_idea = { idea = spain_ultimate_offensive days = 30 } } 
 	}
@@ -252,7 +408,6 @@ SPR_civil_war_offensives = {
 ger_annexation = {
 
 	annex_hungary = {
-		ai_will_do = { factor = 0 }
 		cost = 5	
 		allowed = {
 			tag = GER
@@ -271,7 +426,6 @@ ger_annexation = {
 	}
 
 	annex_romania = {
-		ai_will_do = { factor = 0 }
 		cost = 5	
 		allowed = {
 			tag = GER
@@ -290,7 +444,6 @@ ger_annexation = {
 	}
 
 	annex_bulgaria = {
-		ai_will_do = { factor = 0 }
 		cost = 5
 		allowed = {
 			tag = GER
@@ -313,9 +466,7 @@ ger_annexation = {
 }
 
 ast_annexation = {
-
 	annex_new_zealand = {
-		ai_will_do = { factor = 0 }
 		cost = 5
 		visible = {
 			tag = AST
@@ -330,19 +481,16 @@ ast_annexation = {
 				add_state_core = 284 	#North Island
 				add_state_core = 723 	#South Island
 				add_state_core = 726 	#Somoa
-				# add_ideas = annex_new_zealand_idea
+				add_ideas = annex_new_zealand_idea
 			}
 		}
 	}
 }
 
 uk_annexation = {
-
 	annex_canada = {
-		ai_will_do = { factor = 0 }
 		cost = 5	
 		visible = {
-			tag = ENG
 			CAN = { is_ai = yes }
 			country_exists = CAN
 			date > 1939.1.1
@@ -372,10 +520,8 @@ uk_annexation = {
 	}
 
 	annex_british_raj = {
-		ai_will_do = { factor = 0 }
 		cost = 5
 		visible = {
-			tag = ENG
 			RAJ = { is_ai = yes }
 			country_exists = RAJ
 			date > 1939.1.1
@@ -390,10 +536,8 @@ uk_annexation = {
 	}
 
 	annex_south_africa = {
-		ai_will_do = { factor = 0 }
 		cost = 5
 		visible = {
-			tag = ENG
 			SAF = { is_ai = yes }
 			country_exists = SAF
 			date > 1939.1.1
@@ -412,10 +556,8 @@ uk_annexation = {
 	}
 
 	annex_australia = {
-		ai_will_do = { factor = 0 }
 		cost = 5
 		visible = {
-			tag = ENG
 			AST = { is_ai = yes }
 			country_exists = AST
 			date > 1939.1.1
@@ -441,10 +583,8 @@ uk_annexation = {
 	}
 
 	annex_new_zealand_uk = {
-		ai_will_do = { factor = 0 }
 		cost = 5
 		visible = {
-			tag = ENG
 			NZL = { is_ai = yes }
 			country_exists = NZL
 			date > 1939.1.1
@@ -456,7 +596,7 @@ uk_annexation = {
 				add_state_core = 723
 				add_state_core = 726
 				annex_country = { target = NZL transfer_troops = yes }
-				#add_ideas = annex_new_zealand_idea
+				add_ideas = annex_new_zealand_idea
 			}
 		}
 	}
@@ -464,11 +604,9 @@ uk_annexation = {
 
 jap_annexation = {
 	JAP_annex_siam = {	
-		ai_will_do = { factor = 0 }
 		cost = 5
 		visible = {
 			date > 1939.1.1
-			tag = JAP
 			SIA = { is_ai = yes }
 			country_exists = SIA
 			is_in_faction_with = SIA
@@ -486,10 +624,9 @@ jap_annexation = {
 
 fin_white_peace = {
 	force_white_peace = {
-		ai_will_do = { factor = 100 }
-		allowed = { tag = FIN }
+		ai_will_do = { factor = 1000 }
 		available = { has_war_with = SOV OR = { surrender_progress > 0.8 date > 1940.9.1 } }
 		fire_only_once = yes
-		complete_effect = { SOV = { white_peace = { tag = FIN message = FIN_agree_peace  } transfer_state = 146 transfer_state = 147 transfer_state = 722 }  }
+		complete_effect = { SOV = { white_peace = { tag = FIN message = FIN_agree_peace } transfer_state = 146 transfer_state = 147 transfer_state = 722 } }
 	}
 }

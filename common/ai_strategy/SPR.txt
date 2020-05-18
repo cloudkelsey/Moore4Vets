@@ -134,6 +134,10 @@ SPR_dont_attack_at_startup_of_civil_war = {
 	}
 	
 	enable = {
+		NOT = {
+			has_idea = spain_ultimate_offensive
+			NOT = { has_country_flag = SPR_dont_attack }
+		}
 		OR = {			
 			has_global_flag = SPR_civil_war_startup # Don't attack for 10 days
 			AND = {

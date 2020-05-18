@@ -1,71 +1,31 @@
 uk_annexation = {
 	icon = GFX_idea_eng_the_sun_never_sets
-	allowed = {
-		original_tag = ENG
-	}
+	allowed = { original_tag = ENG }
+	visible = { is_ai = no }
 }
 
 ast_annexation = {
 	icon = GFX_focus_attack_australia
-	allowed = {
-		original_tag = AST
-	}
+	allowed = { original_tag = AST }
+	visible = { is_ai = no }
 }
 
 ger_annexation = {
 	icon = GFX_focus_chi_mission_to_germany
-	allowed = {
-		original_tag = GER
-	}
-}
-
-spr_resource= {
-	icon = GFX_focus_usa_reestablish_the_gold_standard
-	allowed = {
-		original_tag = SPR
-	}
+	allowed = { original_tag = GER }
+	visible = { is_ai = no }
 }
 
 jap_annexation = {
 	icon = GFX_focus_jap_strike_south
-	allowed = {
-		original_tag = JAP
-	}
+	allowed = { original_tag = JAP }
+	visible = { is_ai = no }
 }
 
 usa_annexation = {
 	icon = GFX_focus_usa_recruit_the_free_corps
-	allowed = {
-		original_tag = USA
-	}
-}
-
-ger_war_goals = {
-	icon = GFX_decision_category_usa_intervention_mandate
-	allowed = {
-		original_tag = GER
-	}
-}
-
-ita_war_goals = {
-	icon = GFX_decision_category_usa_intervention_mandate
-	allowed = {
-		original_tag = ITA
-	}
-}
-
-eng_war_goals = {
-	icon = GFX_decision_category_usa_intervention_mandate
-	allowed = {
-		original_tag = ENG
-	}
-}
-
-sov_war_goals = {
-	icon = GFX_decision_category_usa_intervention_mandate
-	allowed = {
-		original_tag = SOV
-	}
+	allowed = { original_tag = USA }
+	visible = { is_ai = no }
 }
 
 fin_white_peace = {
@@ -87,4 +47,8 @@ GER_spanish_civil_war_AI_control = {
 	available = { has_global_flag = spanish_civil_war SPR = { has_war = yes has_volunteers_amount_from = { tag = GER count > 0 } } }
 	visible = { NOT = { has_global_flag = scw_over } is_ai = no SPR = { is_ai = yes } }
 	priority = 1000
+}
+
+give_division_templates = {
+	allowed = { always = yes }
 }

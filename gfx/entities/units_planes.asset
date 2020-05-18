@@ -1,0 +1,170 @@
+# Internal scenes
+
+# generic fallbacks
+entity = {
+	name = "light_plane_entity"
+}
+entity = {
+	name = "medium_plane_entity"
+}
+entity = {
+	name = "heavy_plane_entity"
+}
+
+entity = { 
+	name = "jet_plane_entity"
+}
+
+
+# Britain / Commonwealth
+entity = {
+	name = "ENG_light_plane_entity"
+}
+entity = {
+	name = "ENG_medium_plane_entity"
+}
+
+entity = {
+	name = "ENG_heavy_plane_entity"
+}
+
+entity = { 
+	name = "ENG_jet_plane_entity"
+}
+
+# France
+entity = {
+	name = "FRA_light_plane_entity"
+}
+entity = {
+	name = "FRA_medium_plane_entity"
+}
+entity = {
+	name = "FRA_heavy_plane_entity"
+}
+
+# Germany
+entity = {
+	name = "GER_light_plane_entity"
+}
+entity = {
+	name = "GER_medium_plane_entity"
+}
+entity = {
+	name = "GER_heavy_plane_entity"
+}
+entity = { 
+	name = "GER_jet_plane_entity"
+}
+
+# Italian
+entity = {
+	name = "ITA_light_plane_entity"
+}
+entity = {
+	name = "ITA_medium_plane_entity"
+}
+entity = {
+	name = "ITA_heavy_plane_entity"
+}
+
+# Japan
+entity = {
+	name = "JAP_light_plane_entity"
+}
+entity = {
+	name = "JAP_medium_plane_entity"
+}
+entity = {
+	name = "JAP_heavy_plane_entity"
+}
+
+# Soviet
+entity = {
+	name = "SOV_light_plane_entity"
+}
+entity = {
+	name = "SOV_medium_plane_entity"
+}
+entity = {
+	name = "SOV_heavy_plane_entity"
+}
+
+# USA 
+entity = {
+	name = "USA_light_plane_entity"
+}
+entity = {
+	name = "USA_medium_plane_entity"
+}
+entity = {
+	name = "USA_heavy_plane_entity"
+}
+
+entity = {
+	name = "missile_default_entity"
+}
+
+entity = {
+	name = "missile_1_bombing_entity"
+}
+
+entity = {
+	name = "missile_1_launch_entity"
+}
+
+# World scenes
+entity = {
+	name = "fighter_1_patrol_entity"
+}
+entity = {
+	name = "fighter_3_patrol_entity"
+}
+entity = {
+	name = "bomber_1_bombing_entity"
+}
+entity = {
+	name = "bomber_1_CAS_entity"
+}
+entity = {
+	name = "bomber_3_CAS_entity"
+}
+entity = {
+	name = "bomber_3_bombing_entity"
+}
+
+entity = {
+	name = "fighter_1_vs_bomber_1_entity"
+}
+entity = {
+	name = "fighter_1_vs_fighter_1_entity"
+}
+entity = {
+	name = "fighter_3_vs_fighter_3_entity"
+}
+
+entity = {
+	name = "fighter_1_kamikaze_entity"
+}
+entity = {
+	name = "fighter_3_kamikaze_entity"
+}
+
+entity = {
+	name = "fighter_1_vs_transport_1_entity"
+}
+
+entity = {
+	name = "transport_1_supplying_entity"
+}
+
+entity = {
+	name = "transport_3_supplying_entity"
+}
+
+entity = {
+	name = "scout_1_patrol_entity"
+}
+entity = {
+	name = "scout_3_patrol_entity"
+}

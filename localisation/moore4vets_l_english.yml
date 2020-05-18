@@ -16,18 +16,19 @@
  jap_annexation:0 "Dream of the Fisherman's Wife"
  JAP_annex_siam:0 "Annex Siam"
  acquire_islands:0 "Acquire Islands"
- 
  ENG_discuss_imperial_defense_desc:0 "Will increase factory and dockyard output by 10% for dominions and 15% for you."
  ENG_discuss_imperial_trade_desc:0 "Will change your - and all puppet's - trade law to Free Trade"
  ENG_discuss_imperial_economy_desc:0 "Will incrase construction speed of Civilian Factories, Military Factories and Dockyards by 10% for dominions and 15% for you."
  ENG_discuss_appeasement_desc:0 "Will raise the base war support of each dominion by 10% and by 15% for you."
- 
  uk_acquire_azores:0 "Acquire ownership of the Azores"
  uk_acquire_azores_desc:0 "The strange disappearance of Portugal has given us the opportunity to sieze the Azores islands for our war effort."
  GER_spanish_civil_war_AI_control:0 "Spanish Civil War AI Control"
  spain_stop_attacking:0 "Stop Attacking"
  spain_start_attacking:0 "Start Attacking"
  SPR_dont_attack:0 "AI don't attack flag"
+ give_division_templates:0 "Give Division Templates"
+ give_20_infantry:0 "Give 20 Width Infantry Templates"
+ give_40_infantry:0 "Give 40 Width Infantry Templates"
  
  #Focuses
  GER_align_hungary_and_romania:0 "Align Hungary and Romania"
@@ -57,6 +58,7 @@
  zeromanpower:0 "Bad Country"
  jap_army_training_speed:0 "Hajime Sugiyama"
  spain_ultimate_offensive:0 "Franco's Ultimate Offensive"
+ china_extra_corruption_against_AI:0 "Just Plain Stupid Army"
  
  #Events
  moore4vets_news.1.t:0 "Ethiopia submits"
@@ -72,7 +74,6 @@
  moore4vets_news.4.t:0 "Food running dangerously low"
  moore4vets_news.4.d:0 "With war being brought upon our nation, our global supply of food is being strained, and we can no longer rely on our own production. Something must be done."
  moore4vets_news.4.option:0 "Worrying."
- 
  moore4vets.4.t:0 "Civil Violence Settles"
  moore4vets.4.d:0 "After our glorious leader Franco taking victory in the great Spanish Civil War, the people are much less likely to rebel, and those workers that have not died have returned to the factories."
  moore4vets.4.option:0 "Excellent."
@@ -87,11 +88,11 @@
  moore4vets.7.option1:0 "We agree."
  moore4vets.7.option2:0 "We disagree."
  
+ #Misc
  m4v_custom_mr_pact_tip:0 "The USSR will §Rimmediately§! take control of all land claimed by the MR pact, and recieve a wargoal on Finland."
  m4v_india_famine_warning:0 "If the §gClamp down on corruption§! focus is not finished before §RFebruary 1940§!, we will recieve a famine."
  NZL_transfer_ships_tt:0 "We will recieve two new British built cruisers."
  italy_bypass_pos_tip:0 "§RJoin the Axis to bypass this focus.§!"
  
- #Misc
  temporary_puppet:0 "Temporary Puppet"
  
