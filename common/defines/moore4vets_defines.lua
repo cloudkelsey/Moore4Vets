@@ -18,7 +18,6 @@ NDefines.NProduction.EQUIPMENT_MODULE_REPLACE_XP_COST = 0
 NDefines.NProduction.EQUIPMENT_MODULE_CONVERT_XP_COST = 0
 NDefines.NProduction.EQUIPMENT_MODULE_REMOVE_XP_COST = 0
 NDefines.NProduction.MIN_NAVAL_EQUIPMENT_CONVERSION_IC_COST_FACTOR = 0.1
---NDefines.NProduction.MIN_NAVAL_EQUIPMENT_CONVERSION_RESOURCE_COST_FACTOR = 0.2
 
 NDefines.NBuildings.MAX_SHARED_SLOTS = 30
 
@@ -41,42 +40,11 @@ NDefines.NAI.RESEARCH_DAYS_BETWEEN_WEIGHT_UPDATE = 20
 
 NDefines.NOperatives.OPERATIVE_BASE_PROPAGANDA_POWER = 0.0000
 
--- old graphics defines
---NDefines_Graphics.NAirGfx.MAX_MISSILE_BOMBING_SCENARIOS = 0
---NDefines_Graphics.NAirGfx.MAX_BOMBING_SCENARIOS = 0
---NDefines_Graphics.NAirGfx.MAX_PATROL_SCENARIOS = 0
---NDefines_Graphics.NAirGfx.MAX_DOGFIGHTS_SCENARIOS = 0
---NDefines_Graphics.NAirGfx.MAX_TRANSPORT_SCENARIOS = 0
---NDefines_Graphics.NAirGfx.AIRPLANES_ANIMATION_GLOBAL_SPEED_PER_GAMESPEED = { 0.3, 0.3, 0.3, 0.3, 0.3, 0.3 }
---NDefines_Graphics.NGraphics.DRAW_MAP_OBJECTS_CUTOFF = 1.0
---NDefines_Graphics.NGraphics.MAX_MESHES_LOADED_PER_FRAME = 5
---NDefines_Graphics.NGraphics.DRAW_DETAILED_CUTOFF = 100
---NDefines_Graphics.NMapMode.RADAR_ROTATION_SPEED = 0.0
---NDefines_Graphics.NMapMode.AIR_RANGE_INDICATOR_ROTATION_SPEED = 0.0000
---NDefines_Graphics.NAirGfx.AIRPLANES_SMOOTH_INTERPOLATION_MOVE = 0.02
---NDefines_Graphics.NAirGfx.AIRPLANES_SMOOTH_INTERPOLATION_TURN = 0.02
---NDefines_Graphics.NInterface.GRIDBOX_ELEMENTS_INTERPOLATION_SPEED = 0.2
---NDefines_Graphics.NGraphics.TREE_FADE_NEAR = 150.0
---NDefines_Graphics.NGraphics.TREE_FADE_FAR = 250.0
---NDefines_Graphics.NGraphics.MAPICON_GROUP_PASSES = 5
---NDefines_Graphics.NGraphics.DRAW_REFRACTIONS_CUTOFF = 0
---NDefines_Graphics.NGraphics.GRADIENT_BORDERS_FIELD_COUNTRY_REFRESH = 40
---NDefines_Graphics.NGraphics.WEATHER_DISTANCE_CUTOFF = 50
---NDefines_Graphics.NGraphics.BLOOM_WIDTH = 0
---NDefines_Graphics.NGraphics.BLOOM_SCALE = 0
---NDefines_Graphics.NGraphics.BRIGHT_THRESHOLD = 0
---NDefines_Graphics.NGraphics.EMISSIVE_BLOOM_STRENGTH = 0
---NDefines_Graphics.NGraphics.DAY_NIGHT_FEATHER = 0.024
---NDefines_Graphics.NGraphics.DRAW_SHADOWS_CUTOFF = 0
---NDefines_Graphics.NGraphics.DRAW_SHADOWS_FADE_LENGTH = 0
---NDefines_Graphics.NGraphics.DRAW_FOW_CUTOFF = 0
---NDefines_Graphics.NGraphics.DRAW_FOW_FADE_LENGTH = 0
-
 -- aesthetic
 NDefines_Graphics.NGraphics.BORDER_WIDTH = 2.5
 
 -- EXPERIMENTAL
-NDefines_Graphics.NMapMode.AIR_RANGE_INDICATOR_DEFAULT_COLOR = { 0, 0, 0, 0 } -- Makes air range circle invisible, should help with AC performance, could make this low alpha instead of 0 to keep it if needed
+NDefines_Graphics.NMapMode.AIR_RANGE_INDICATOR_DEFAULT_COLOR = { 0.8, 0.8, 0, 0.55 } -- Lowered alpha instead of removing due to multiple requests
 
 -- minimum planes could be irrelevant when max scenarios are <= 0, keeping them anyway
 NDefines_Graphics.NAirGfx.AIRPLANES_1_FIGHTER_PATROL_ANIM = 100000			-- Number of fighters needed for a single instance of this animation 
