@@ -9063,7 +9063,6 @@ SPR_expand_resource_extraction = {
 			}
 			OR = {
 				has_completed_focus = SPA_reduce_reliance_on_foreign_resources
-				has_completed_focus = SPA_support_the_war_industry
 			}
 		}
 
@@ -9120,7 +9119,6 @@ SPR_expand_resource_extraction = {
 			}
 			OR = {
 				has_completed_focus = SPA_reduce_reliance_on_foreign_resources
-				has_completed_focus = SPA_support_the_war_industry
 			}
 		}
 
@@ -9182,7 +9180,6 @@ SPR_expand_resource_extraction = {
 			}
 			OR = {
 				has_completed_focus = SPA_reduce_reliance_on_foreign_resources
-				has_completed_focus = SPA_support_the_war_industry
 			}
 		}
 
@@ -9244,7 +9241,6 @@ SPR_expand_resource_extraction = {
 			}
 			OR = {
 				has_completed_focus = SPA_reduce_reliance_on_foreign_resources
-				has_completed_focus = SPA_support_the_war_industry
 			}
 		}
 
@@ -9306,7 +9302,6 @@ SPR_expand_resource_extraction = {
 			}
 			OR = {
 				has_completed_focus = SPA_reduce_reliance_on_foreign_resources
-				has_completed_focus = SPA_support_the_war_industry
 			}
 		}
 
@@ -9368,7 +9363,6 @@ SPR_expand_resource_extraction = {
 			}
 			OR = {
 				has_completed_focus = SPA_reduce_reliance_on_foreign_resources
-				has_completed_focus = SPA_support_the_war_industry
 			}
 		}
 

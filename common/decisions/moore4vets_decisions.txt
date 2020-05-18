@@ -108,25 +108,26 @@ event_firing = {
 	################################# USA #################################
 	remove_usa_faction_idea = {
 		available = { 
-			USA = {
-				OR = {
-					has_war_with = JAP
+			OR = {
+				USA = { has_war_with = JAP }
+				ENG = {
 					OR = {
-						# ROEBUCK: Problem: is_controlled_by, is_fully_controlled_by etc. can only accept states as their argument so checking port provinces is impossible (?)
-						127 = { NOT = { is_fully_controlled_by = ENG } } # triggers even if province taken isn't port
-						123 = { NOT = { is_fully_controlled_by = ENG } }
-						122 = { NOT = { is_fully_controlled_by = ENG } }
-						132 = { NOT = { is_fully_controlled_by = ENG } }
-						133 = { NOT = { is_fully_controlled_by = ENG } }
-						120 = { NOT = { is_fully_controlled_by = ENG } }
-						121 = { NOT = { is_fully_controlled_by = ENG } }
-						131 = { NOT = { is_fully_controlled_by = ENG } }
-						130 = { NOT = { is_fully_controlled_by = ENG } }
-						125 = { NOT = { is_fully_controlled_by = ENG } }
-						126 = { NOT = { is_fully_controlled_by = ENG } }
-					} 
+						NOT = { controls_province = 3501 }
+						NOT = { controls_province = 9458 }
+						NOT = { controls_province = 540 }
+						NOT = { controls_province = 3369 }
+						NOT = { controls_province = 377 }
+						NOT = { controls_province = 6384 }
+						NOT = { controls_province = 6395 }
+						NOT = { controls_province = 11064 }
+						NOT = { controls_province = 6300 }
+						NOT = { controls_province = 351 }
+						NOT = { controls_province = 11297 }
+						NOT = { controls_province = 271 }
+						NOT = { controls_province = 11374 }
+					}
 				}
-			} 
+			}
 		}
 		fire_only_once = yes
 		ai_will_do = { factor = 1000 }
@@ -226,6 +227,25 @@ acquire_islands = {
 		fire_only_once = yes
 		cost = 50
 		complete_effect = { transfer_state = 698 }
+	}
+}
+
+SPR_civil_war_offensives = {
+	begin_ultimate_offensive = {
+		ai_will_do = { factor = 1000 modifier = { factor = 0 has_country_flag = SPR_dont_attack } }
+		allowed = { tag = SPR }
+		available = {
+			OR = {
+				AND = {
+					JAP = { has_war = yes }
+					NOT = { controls_state = 41 }
+				}
+				NOT = { has_idea = SPA_death_before_surrender }
+			}
+		}
+		visible = { is_ai = yes NOT = { has_idea = spain_ultimate_offensive } }
+		#fire_only_once = yes
+		complete_effect = { add_timed_idea = { idea = spain_ultimate_offensive days = 30 } } 
 	}
 }
 

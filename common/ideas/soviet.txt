@@ -702,7 +702,7 @@ ideas = {
 				NOT = { has_country_flag = counter_purge }
 			}
 			
-
+			ai_will_do = { factor = 5 }
 			
 			traits = { popular_figurehead }
 		}
@@ -726,6 +726,8 @@ ideas = {
 				}
 			}
 			
+			ai_will_do = { factor = 0 }
+			
 			traits = { ideological_crusader }
 		}
 
@@ -737,6 +739,8 @@ ideas = {
 				original_tag = SOV
 			}
 			
+			ai_will_do = { factor = 0 }
+			
 			traits = { smooth_talking_charmer }
 		}
 
@@ -747,6 +751,8 @@ ideas = {
 			allowed = {
 				original_tag = SOV
 			}
+			
+			ai_will_do = { factor = 100 }
 			
 			traits = { captain_of_industry }
 		}
@@ -764,6 +770,8 @@ ideas = {
 				NOT = { has_country_flag = counter_purge }
 				NOT = { has_country_flag = purge_2_group_a }
 			}
+			
+			ai_will_do = { factor = 0.1 }
 			
 			traits = { prince_of_terror }
 		}

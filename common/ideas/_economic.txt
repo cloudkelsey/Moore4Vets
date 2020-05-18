@@ -228,6 +228,11 @@ ideas = {
 				}
 				
 				modifier = {
+					factor = 1000
+					tag = SOV
+				}
+				
+				modifier = {
 					add = 1800
 					
 					# revert from closed_economy if we have large allies
@@ -351,7 +356,19 @@ ideas = {
 
 			ai_will_do = {
    				factor = 1
-
+				
+				modifier = {
+					factor = 150
+					is_major = yes
+					NOT = { tag = JAP }
+				}
+				
+				modifier = {
+					factor = 750
+					tag = SOV
+					date < 1939.1.1
+				}
+				
    				modifier = {
 					factor = 300
 

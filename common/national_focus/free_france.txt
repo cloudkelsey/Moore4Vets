@@ -1,7 +1,7 @@
 ﻿focus_tree = {
 	id = free_french_focus
 	
-	continuous_focus_position = { x = 50 y = 1550 }
+	continuous_focus_position = { x = 50 y = 1650 }
 	
 	country = {
 		factor = 0
