@@ -13,6 +13,7 @@ set_research_slots = 3
 
 add_ideas = {
 	extensive_conscription
+	no_faction_joining
 }
 
 add_manpower = 100000

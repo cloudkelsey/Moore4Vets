@@ -7,7 +7,6 @@ oob = "COL_1936"
 
 add_ideas = {
 	zeromanpower
-	no_building_a_navy
 }
 
 set_politics = {

@@ -86,44 +86,6 @@ country_event = {
 		}
 	}
 
-	# Popular Front
-	option = {
-		name = lar_spain.1.a
-		trigger = {
-			NOT = {
-				has_completed_focus = SPA_a_great_spain
-			}
-		}
-		add_popularity = {
-			ideology = communism
-			popularity = 0.1
-		}
-		add_political_power = 5
-		if = {
-			limit = {
-				NOT = {
-					has_completed_focus = SPR_the_popular_front
-				}
-			}
-			complete_national_focus = SPR_the_popular_front
-			add_political_power = -35
-			activate_mission = SPR_military_plot_republicans
-			hidden_effect = {
-				country_event = { id = lar_spain.4 days = 4 } # Nationalists working against the government
-				country_event = { id = lar_spain.5 }
-				activate_mission = SPR_military_plot_republicans
-				if = {
-					limit = {
-						NOT = { has_active_mission = SPA_hand_over_the_ceda_campaign_chest_mission }
-					}
-					activate_mission = SPA_hand_over_the_ceda_campaign_chest_mission
-				}
-			}
-		}
-		effect_tooltip = { add_ideas = SPR_government_power_struggle }
-		custom_effect_tooltip = SPR_republican_garrison_control_decisions_tt
-	}
-
 	# Falange
 	option = {
 		name = lar_spain.1.b
@@ -231,7 +193,7 @@ country_event = {
 				}
 				set_state_flag = SPR_core_of_spain_flag
 			}
-			set_global_flag = { flag = SPR_civil_war_startup value = 1 days = 30 } # Make AI avoid attacking for a few days
+			set_global_flag = { flag = SPR_civil_war_startup value = 1 days = 10 } # Make AI avoid attacking for a few days
 		}
 
 #  #  ##  ### ###  ##  #  #  ##  #   ###  ## ###     ### ### ### ###  ##  ### 
@@ -724,12 +686,12 @@ country_event = {
 					count = 3
 				}
 			}
-			41 = { # Extra 6 divisions to make Madrid harder to capture (as historically)
+			41 = { # Extra (20)6 divisions to make Madrid harder to capture (as historically)
 				create_unit = {
 					division = "division_template = \"Guarnición Republicana\" start_experience_factor = 0.1" 
 					owner = SPD
 					allow_spawning_on_enemy_provs = yes
-					count = 6
+					count = 26
 				}
 			}
 			# Add 3 Nationalist garrisons to every state where the Nationalists have TOTAL control
@@ -2425,7 +2387,7 @@ country_event = {
 			set_global_flag = spanish_civil_war # Start civil war - used in many triggers
 			#country_event = { id = lar_spain.6 days = 7 } # SCW notification event for the player
 			country_event = { id = lar_spain.78 days = 7 random_days = 7 } # Sanjurjo dies
-			if = { limit = { is_ai = yes } add_equipment_to_stockpile = { type = infantry_equipment_0 amount = 5000 producer = SPR } }
+			if = { limit = { is_ai = yes } add_equipment_to_stockpile = { type = infantry_equipment_0 amount = 12500 producer = SPR } }
 		}
 		hidden_effect = {
 			# Marks gui as "dirty" so the code updates the layout to properly hide the unused branches
@@ -3239,62 +3201,6 @@ country_event = {
 	}
 }
 
-# Tangiers Enclave - Event for UK
-country_event = {
-	id = lar_spain.36
-	title = lar_spain.36.t
-	desc = lar_spain.36.desc
-	picture = GFX_report_event_spr_occupation_of_tangiers
-	
-	is_triggered_only = yes
-	
-	option = { # Let it slide
-		name = lar_spain.36.b
-		ai_chance = {
-			base = 66
-			modifier = {
-				factor = 10
-				has_war = yes
-			}
-			modifier = {
-				factor = 5
-				has_government = fascism
-			}
-			modifier = {
-				factor = 10
-				surrender_progress > 0.1
-			}
-		}
-		hidden_effect = {
-			FROM = {
-				country_event = { id = lar_spain.38 hours = 18 random_hours = 6 }
-			}
-		}
-	}
-}
-
-# Tangiers Enclave - Event for Spain - UK let it slide
-country_event = {
-	id = lar_spain.38
-	title = lar_spain.36.t
-	desc = lar_spain.38.desc
-	picture = GFX_report_event_spr_occupation_of_tangiers
-	
-	is_triggered_only = yes
-	
-	option = { # OK
-		name = lar_spain.38.a
-		290 = {
-			add_extra_state_shared_building_slots = 3
-			add_building_construction = {
-				type = industrial_complex
-				level = 2
-				instant_build = yes
-			}
-		}
-	}
-}
-
 # Relocate the Gold Reserves - Event for Spain - Choose target
 country_event = {
 	id = lar_spain.51
@@ -3303,53 +3209,6 @@ country_event = {
 	picture = GFX_report_event_generic_read_write
 	
 	is_triggered_only = yes
-
-	immediate = {
-		hidden_effect = {
-			random_other_country = {
-				limit = {
-					ROOT = {
-						has_volunteers_amount_from = {
-						    tag = PREV
-						    count > 0
-						}
-					}
-					NOT = { tag = SOV }
-				}
-				set_country_flag = SPR_relocated_gold_reserves_selection_flag1
-				save_event_target_as = SPR_relocated_gold_reserves_selection_1
-			}
-			random_other_country = {
-				limit = {
-					ROOT = {
-						has_volunteers_amount_from = {
-						    tag = PREV
-						    count > 0
-						}
-					}
-					NOT = { tag = SOV }
-					NOT = { has_country_flag = SPR_relocated_gold_reserves_selection_flag1 }
-				}
-				set_country_flag = SPR_relocated_gold_reserves_selection_flag2
-				save_event_target_as = SPR_relocated_gold_reserves_selection_2
-			}
-			random_other_country = {
-				limit = {
-					ROOT = {
-						has_volunteers_amount_from = {
-						    tag = PREV
-						    count > 0
-						}
-					}
-					NOT = { tag = SOV }
-					NOT = { has_country_flag = SPR_relocated_gold_reserves_selection_flag1 }
-					NOT = { has_country_flag = SPR_relocated_gold_reserves_selection_flag2 }
-				}
-				set_country_flag = SPR_relocated_gold_reserves_selection_flag3
-				save_event_target_as = SPR_relocated_gold_reserves_selection_3
-			}
-		}
-	}
 	
 	option = { # Send to SOV
 		name = lar_spain.51.a
@@ -3363,68 +3222,8 @@ country_event = {
 				}
 			}
 		}
-		trigger = {
-			SOV = {
-				exists = yes
-				has_government = communism
-			}
-		}
 		SOV = { set_country_flag = SPR_relocated_gold_reserves_selection_flag_sov }
 		SOV = { country_event = { id = lar_spain.52 hours = 6 random_hours = 6 } }
-	}
-	option = { # Send to #1
-		name = lar_spain.51.b
-		ai_chance = {
-			base = 25
-			modifier = {
-				factor = 0
-				is_historical_focus_on = yes
-			}
-		}
-		trigger = {
-			any_other_country = {
-				has_country_flag = SPR_relocated_gold_reserves_selection_flag1
-			}
-		}
-		event_target:SPR_relocated_gold_reserves_selection_1 = {
-			country_event = { id = lar_spain.52 hours = 6 random_hours = 6 }
-		}
-	}
-	option = { # Send to #2
-		name = lar_spain.51.c
-		ai_chance = {
-			base = 25
-			modifier = {
-				factor = 0
-				is_historical_focus_on = yes
-			}
-		}
-		trigger = {
-			any_other_country = {
-				has_country_flag = SPR_relocated_gold_reserves_selection_flag2
-			}
-		}
-		event_target:SPR_relocated_gold_reserves_selection_2 = {
-			country_event = { id = lar_spain.52 hours = 6 random_hours = 6 }
-		}
-	}
-	option = { # Send to #3
-		name = lar_spain.51.d
-		ai_chance = {
-			base = 25
-			modifier = {
-				factor = 0
-				is_historical_focus_on = yes
-			}
-		}
-		trigger = {
-			any_other_country = {
-				has_country_flag = SPR_relocated_gold_reserves_selection_flag3
-			}
-		}
-		event_target:SPR_relocated_gold_reserves_selection_3 = {
-			country_event = { id = lar_spain.52 hours = 6 random_hours = 6 }
-		}
 	}
 }
 

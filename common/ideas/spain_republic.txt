@@ -1843,7 +1843,7 @@ ideas = {
 					}
 				}
 				modifier = {
-					factor = 10
+					factor = 1000
 					has_completed_focus = SPR_maintain_the_second_republic
 				}
 			}

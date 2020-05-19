@@ -297,9 +297,8 @@ ideas = {
 					has_manpower < 2000000
 				}
 				modifier = {
-					factor = 1000
+					factor = 0
 					original_tag = SOV
-					check_variable = { manpower_k < 3000 }
 				}
 
 			}

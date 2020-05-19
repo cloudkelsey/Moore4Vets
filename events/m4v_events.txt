@@ -76,6 +76,8 @@ country_event = { #this event will be fired at the start of the game, and will b
 				country_event = { id = mtg_britain.1 days = 150 } 		# abdication crisis 1/6/1936
 				country_event = { id = britain.22 days = 511 } 			# stanley baldwin retires 28/5/1937
 			}
+			
+			SPR = { add_ideas = no_building_a_navy }
 
 			# civ adjustment event calls
 			# ROEBUCK: Decide whether to keep this ugly code or add a call in each event option that works as a date offset

@@ -35,6 +35,8 @@ JAP_historical_plan = {
 		JAP_expand_manchurian_railways
 		JAP_light_industry_development
 		JAP_unified_fighter_development
+		JAP_small_arms_modernization
+		JAP_expand_the_snlf
 		JAP_warrior_spirit
 		JAP_non_aggression_pact_with_the_soviet_union
 		JAP_coal_liquification

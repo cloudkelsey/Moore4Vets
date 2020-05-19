@@ -2738,7 +2738,10 @@ focus_tree = {
 		icon = GFX_goal_generic_military_deal
 		prerequisite = { focus = GER_demand_sudetenland }
 		bypass = {
-			HUN = { owns_state = 664 }
+			OR = {
+				664 = { is_controlled_by_ROOT_or_ally = yes }
+				HUN = { owns_state = 664 }
+			}
 		}
 		available = {
 			is_puppet = no

@@ -78,7 +78,7 @@ if = {
 	}
 	SPR = {
 		set_variable = { var = spa_civil_war_divisions_counter_var value = 17 }
-		set_variable = { var = spr_civil_war_divisions_counter_var value = 66 }
+		set_variable = { var = spr_civil_war_divisions_counter_var value = 86 }
 	}
 	for_each_scope_loop = {
 	    array = core_states
@@ -90,7 +90,6 @@ if = {
 		SPR_military_disloyalty
 		SPR_political_violence
 		SPR_national_strikes_3
-		no_building_a_navy
 	}
 	165 = {
 		add_dynamic_modifier = { modifier = autonomous_state }

@@ -172,6 +172,7 @@ country_event = {
 			}
 		}
 		load_focus_tree = free_french_focus
+		set_global_flag = fall_of_france
 	}
 }
 

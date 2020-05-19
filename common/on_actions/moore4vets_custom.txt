@@ -1,12 +1,13 @@
 on_actions = {
-		
-		on_startup = {
+	on_startup = {
 		effect = {
-			#Mexican oil concessions
-			if = {
-				SIA = {
-					give_resource_rights = { receiver = JAP state = 289 }
-					
+			SIA = {
+				give_resource_rights = { receiver = JAP state = 289 }
+			}
+			CHI = {
+				if = {
+					limit = { JAP = { is_ai = yes } }
+					add_ideas = { china_extra_corruption_against_AI }
 				}
 			}
 		}

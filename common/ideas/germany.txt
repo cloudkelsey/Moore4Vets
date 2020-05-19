@@ -236,7 +236,7 @@ ideas = {
 
 			modifier = {
 				fascism_drift = 0.2
-				fascism_acceptance = 200
+				fascism_acceptance = 300
 			}
 		}
 
@@ -1147,11 +1147,7 @@ ideas = {
 				original_tag = GER
 			}
 			available = {
-				NOT = { has_country_flag = flight_of_hess }
-				OR = {
-					has_government = fascism
-					has_country_flag = GER_reinstated_nazi_leadership
-				}
+				NOT = { has_global_flag = fall_of_france }
 			}
 			
 			traits = { silent_workhorse }

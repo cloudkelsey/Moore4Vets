@@ -28,12 +28,11 @@ SOV_historical_plan = {
 	
 		SOV_stalin_constitution
 		SOV_collectivist_propaganda
-		SOV_socialist_realism # Have to put this here or war eco in November lol
 		SOV_finish_five_year_plan
-		SOV_production_effort
-		SOV_extra_tech_slot_early
 		SOV_militarized_schools
 		SOV_workers_culture
+		SOV_production_effort
+		SOV_extra_tech_slot_early
 		SOV_infrastructure_effort
 		SOV_tranformation_of_nature
 		SOV_improve_railway
@@ -47,6 +46,7 @@ SOV_historical_plan = {
 		SOV_diversify_the_programme
 		SOV_closed_city_network
 		SOV_infrastructure_effort
+		SOV_socialist_realism
 		SOV_anti_fascist_diplomacy
 		SOV_improve_stalin_line
 	}

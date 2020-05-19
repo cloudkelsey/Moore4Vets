@@ -13,6 +13,19 @@
 # area_priority
 # building_target
 
+GER_civ_printer_goes_brrr = {
+	allowed = { tag = GER }
+	enable = { date < 1937.10.1 }
+	abort_when_not_enabled = yes
+	ai_strategy = { type = building_target id = industrial_complex value = 150 }
+}
+
+GER_mil_printer_goes_brrr = {
+	allowed = { tag = GER }
+	enable = { date > 1937.10.1 }
+	abort_when_not_enabled = yes
+	ai_strategy = { type = building_target id = arms_factory value = 150 }
+}
 
 GER_unit_production = {
 	enable = {
