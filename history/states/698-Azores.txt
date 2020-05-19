@@ -9,6 +9,7 @@ state={
 		victory_points = {
 			1751 1
 		}
+		owner = COL
 		buildings = {
 			infrastructure = 1
 			1751 = {
