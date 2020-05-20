@@ -135,8 +135,11 @@ SPR_dont_attack_at_startup_of_civil_war = {
 	
 	enable = {
 		NOT = {
-			has_idea = spain_ultimate_offensive
-			NOT = { has_country_flag = SPR_dont_attack }
+			has_idea = spain_ultimate_offensive # Attack if you don't have Franco's Ultimate Offensive
+			AND = {
+				tag = SPR
+				NOT = { has_country_flag = SPR_dont_attack } # Unless you're told not to
+			}
 		}
 		OR = {			
 			has_global_flag = SPR_civil_war_startup # Don't attack for 10 days

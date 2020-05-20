@@ -51,4 +51,5 @@ GER_spanish_civil_war_AI_control = {
 
 give_division_templates = {
 	allowed = { always = yes }
+	priority = 100
 }

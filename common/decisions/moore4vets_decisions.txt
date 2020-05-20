@@ -55,14 +55,19 @@ event_firing = {
 		fire_only_once = yes
 		ai_will_do = { factor = 1000 }
 		complete_effect = { FRA = { country_event = france.10 } }
-		# country_event = france.16
 	}
-	# swap_french_tree = {
-		# available = { FRA = { has_capitulated = yes } }
-		# fire_only_once = yes
-		# ai_will_do = { factor = 1000 }
-		# complete_effect = { FRA = { load_focus_tree = free_french_focus } }
-	# }
+	congo_anti_meme = { # Todo: Find out why this is happening and actually fix it instead of this ghetto fix
+		available = { GER = { controls_state = 	718 controls_state = 538 controls_state = 295 controls_state = 768 controls_state = 769 } }
+		fire_only_once = yes
+		ai_will_do = { factor = 1000 }
+		complete_effect = { FRA = { transfer_state = 718 transfer_state = 538 transfer_state = 295 transfer_state = 768 transfer_state = 769 } }
+	}
+	caledonia_anti_meme = { # Todo: Find out why this is happening and actually fix it instead of this ghetto fix (I have no clue on this one lmao)
+		available = { GER = { controls_state = 635 } }
+		fire_only_once = yes
+		ai_will_do = { factor = 1000 }
+		complete_effect = { FRA = { transfer_state = 635 } }
+	}
 	################################# FRANCE #################################
 	
 	################################# JAPAN #################################
@@ -224,7 +229,7 @@ event_firing = {
 give_division_templates = {
 	give_20_infantry = {
 		available = { always = yes }
-		ai_will_do = { factor = 100 }
+		ai_will_do = { factor = 100 modifier = { OR = { tag = FIN tag = CHI } factor = 0 } }
 		fire_only_once = yes
 		complete_effect = {
 			division_template = {
@@ -289,10 +294,9 @@ give_division_templates = {
 			}
 		}
 	}
-	
 	give_40_infantry = {
 		available = { always = yes }
-		ai_will_do = { factor = 100 }
+		ai_will_do = { factor = 100 modifier = { OR = { tag = FIN tag = CHI } factor = 0 } }
 		fire_only_once = yes
 		complete_effect = {
 			division_template = {
@@ -362,6 +366,66 @@ give_division_templates = {
 			}
 		}
 	}
+	give_suppression_templates = {
+		available = { always = yes }
+		ai_will_do = { factor = 100 modifier = { OR = { tag = FIN tag = CHI } factor = 0 } }
+		fire_only_once = yes
+		complete_effect = {
+			if = {
+				limit = { has_tech = tech_military_police }
+				division_template = {
+					name = "Cav suppression"
+					regiments = {
+						cavalry = { x = 0 y = 0 } cavalry = { x = 0 y = 1 } cavalry = { x = 0 y = 2 } cavalry = { x = 0 y = 3 } cavalry = { x = 0 y = 4 }
+						cavalry = { x = 1 y = 0 } cavalry = { x = 1 y = 1 } cavalry = { x = 1 y = 2 } cavalry = { x = 1 y = 3 } cavalry = { x = 1 y = 4 }
+						cavalry = { x = 2 y = 0 } cavalry = { x = 2 y = 1 } cavalry = { x = 2 y = 2 } cavalry = { x = 2 y = 3 } cavalry = { x = 2 y = 4 }
+						cavalry = { x = 3 y = 0 } cavalry = { x = 3 y = 1 } cavalry = { x = 3 y = 2 } cavalry = { x = 3 y = 3 } cavalry = { x = 3 y = 4 }
+						cavalry = { x = 4 y = 0 } cavalry = { x = 4 y = 1 } cavalry = { x = 4 y = 2 } cavalry = { x = 4 y = 3 } cavalry = { x = 4 y = 4 }
+					}
+					support = { military_police = { x = 0 y = 0 } }				
+				}
+				if = {
+					limit = { has_tech = armored_car1 }
+					division_template = {
+						name = "Armored car suppression"
+						regiments = {
+							armored_car = { x = 0 y = 0 } armored_car = { x = 0 y = 1 } armored_car = { x = 0 y = 2 } armored_car = { x = 0 y = 3 } armored_car = { x = 0 y = 4 }
+							armored_car = { x = 1 y = 0 } armored_car = { x = 1 y = 1 } armored_car = { x = 1 y = 2 } armored_car = { x = 1 y = 3 } armored_car = { x = 1 y = 4 }
+							armored_car = { x = 2 y = 0 } armored_car = { x = 2 y = 1 } armored_car = { x = 2 y = 2 } armored_car = { x = 2 y = 3 } armored_car = { x = 2 y = 4 }
+							armored_car = { x = 3 y = 0 } armored_car = { x = 3 y = 1 } armored_car = { x = 3 y = 2 } armored_car = { x = 3 y = 3 } armored_car = { x = 3 y = 4 }
+							armored_car = { x = 4 y = 0 } armored_car = { x = 4 y = 1 } armored_car = { x = 4 y = 2 } armored_car = { x = 4 y = 3 } armored_car = { x = 4 y = 4 }
+						}
+						support = { military_police = { x = 0 y = 0 } }				
+					}
+				}
+			}
+			else = {
+				division_template = {
+					name = "Cav suppression"
+					regiments = {
+						cavalry = { x = 0 y = 0 } cavalry = { x = 0 y = 1 } cavalry = { x = 0 y = 2 } cavalry = { x = 0 y = 3 } cavalry = { x = 0 y = 4 }
+						cavalry = { x = 1 y = 0 } cavalry = { x = 1 y = 1 } cavalry = { x = 1 y = 2 } cavalry = { x = 1 y = 3 } cavalry = { x = 1 y = 4 }
+						cavalry = { x = 2 y = 0 } cavalry = { x = 2 y = 1 } cavalry = { x = 2 y = 2 } cavalry = { x = 2 y = 3 } cavalry = { x = 2 y = 4 }
+						cavalry = { x = 3 y = 0 } cavalry = { x = 3 y = 1 } cavalry = { x = 3 y = 2 } cavalry = { x = 3 y = 3 } cavalry = { x = 3 y = 4 }
+						cavalry = { x = 4 y = 0 } cavalry = { x = 4 y = 1 } cavalry = { x = 4 y = 2 } cavalry = { x = 4 y = 3 } cavalry = { x = 4 y = 4 }
+					}			
+				}
+				if = {
+					limit = { has_tech = armored_car1 }
+					division_template = {
+						name = "Armored car suppression"
+						regiments = {
+							armored_car = { x = 0 y = 0 } armored_car = { x = 0 y = 1 } armored_car = { x = 0 y = 2 } armored_car = { x = 0 y = 3 } armored_car = { x = 0 y = 4 }
+							armored_car = { x = 1 y = 0 } armored_car = { x = 1 y = 1 } armored_car = { x = 1 y = 2 } armored_car = { x = 1 y = 3 } armored_car = { x = 1 y = 4 }
+							armored_car = { x = 2 y = 0 } armored_car = { x = 2 y = 1 } armored_car = { x = 2 y = 2 } armored_car = { x = 2 y = 3 } armored_car = { x = 2 y = 4 }
+							armored_car = { x = 3 y = 0 } armored_car = { x = 3 y = 1 } armored_car = { x = 3 y = 2 } armored_car = { x = 3 y = 3 } armored_car = { x = 3 y = 4 }
+							armored_car = { x = 4 y = 0 } armored_car = { x = 4 y = 1 } armored_car = { x = 4 y = 2 } armored_car = { x = 4 y = 3 } armored_car = { x = 4 y = 4 }
+						}			
+					}
+				}
+			}
+		}
+	}
 }
 
 GER_spanish_civil_war_AI_control = {
@@ -391,7 +455,9 @@ SPR_civil_war_offensives = {
 	begin_ultimate_offensive = {
 		ai_will_do = { factor = 1000 modifier = { factor = 0 has_country_flag = SPR_dont_attack } }
 		available = {
+			tag = SPR
 			OR = {
+				surrender_progress > 0.075
 				AND = {
 					JAP = { has_war = yes }
 					NOT = { controls_state = 41 }
@@ -399,7 +465,7 @@ SPR_civil_war_offensives = {
 				NOT = { has_idea = SPA_death_before_surrender }
 			}
 		}
-		visible = { tag = SPR is_ai = yes NOT = { has_idea = spain_ultimate_offensive } }
+		visible = { has_war = yes tag = SPR is_ai = yes NOT = { has_idea = spain_ultimate_offensive } }
 		#fire_only_once = yes
 		complete_effect = { add_timed_idea = { idea = spain_ultimate_offensive days = 30 } } 
 	}
@@ -605,8 +671,8 @@ uk_annexation = {
 jap_annexation = {
 	JAP_annex_siam = {	
 		cost = 5
+		available = { date > 1939.1.1 }
 		visible = {
-			date > 1939.1.1
 			SIA = { is_ai = yes }
 			country_exists = SIA
 			is_in_faction_with = SIA

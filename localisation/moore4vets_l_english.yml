@@ -29,6 +29,7 @@
  give_division_templates:0 "Give Division Templates"
  give_20_infantry:0 "Give 20 Width Infantry Templates"
  give_40_infantry:0 "Give 40 Width Infantry Templates"
+ give_suppression_templates:0 "Give Suppression Templates"
  
  #Focuses
  GER_align_hungary_and_romania:0 "Align Hungary and Romania"
