@@ -757,7 +757,7 @@ infantry_big_generic = {
 			support = {
 				engineer = 1
 				recon = 1
-				artillery
+				artillery = 1
 			}
 			
 			regiments = {
