@@ -258,7 +258,7 @@ set_convoys = 100
 create_corps_commander = {
 	name = "Leslie Morshead"
 	gfx = "GFX_AST_leslie_morshead"
-	traits = { }
+	traits = { jungle_rat }
 	skill = 4
     attack_skill = 4
     defense_skill = 2
@@ -266,12 +266,10 @@ create_corps_commander = {
     logistics_skill = 2
 }
 
-
-
-create_corps_commander = {
+create_field_marshal = {
 	name = "Thomas Blamey"
 	gfx = "GFX_AST_thomas_blamey"
-	traits = { }
+	traits = { skilled_staffer expert_delegator }
 	skill = 4
     attack_skill = 4
     defense_skill = 3
