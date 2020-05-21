@@ -27,7 +27,7 @@ German_historical = {
 		GER_army_innovation_2
 		GER_demand_memel
 		GER_mol_rib_pact
-		GER_naval_rearmament
+		GER_anti_comitern_pact
 		GER_integrate_war_economies
 		GER_danzig_or_war
 		GER_around_maginot
@@ -35,8 +35,8 @@ German_historical = {
 		GER_synthetic_rubber
 		GER_weserubung
 		GER_reintegrate_luxemburg_and_alsace_lorraine
+		GER_naval_rearmament
 		GER_naval_effort
-		GER_anti_comitern_pact
 		GER_ussr_war_goal
 	}
 

@@ -634,24 +634,7 @@ focus_tree = {
 		}
 
 		available = {
-			
-			if = {
-				limit = { 
-					country_exists = CZE 
-					664 = { is_owned_by = CZE }
-				}
-				strength_ratio = { tag = CZE ratio > 0.75 }
-			}
-			if = {
-				limit = { 
-					country_exists = SLO 
-					664 = { is_owned_by = SLO }
-				}
-				strength_ratio = { tag = SLO ratio > 0.75 }
-			}
-				
-			
-			has_army_manpower = { size > 120000 }
+
 		}
 
 		bypass = {
@@ -698,8 +681,7 @@ focus_tree = {
 		}
 
 		available = {
-			strength_ratio = { tag = YUG ratio > 0.75 }
-			has_army_manpower = { size > 175000 }
+
 		}
 
 		bypass = {
@@ -787,10 +769,7 @@ focus_tree = {
 		}
 
 		available = {
-			SLO = {
-				exists = yes
-			}
-			has_army_manpower = { size > 175000 }
+			SLO = { exists = yes }
 		}
 
 		bypass = {

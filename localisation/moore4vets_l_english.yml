@@ -26,9 +26,15 @@
  spain_stop_attacking:0 "Stop Attacking"
  spain_start_attacking:0 "Start Attacking"
  SPR_dont_attack:0 "AI don't attack flag"
- give_division_templates:0 "Give Division Templates"
+ give_division_templates:0 "Give Division Templates (INCOMPLETE)"
+ give_division_templates_desc:0 "An incomplete list of division templates, available at the click of a button, note that the divisions unlocked depend on the technology you have researched."
  give_20_infantry:0 "Give 20 Width Infantry Templates"
  give_40_infantry:0 "Give 40 Width Infantry Templates"
+ give_20_infantry_arty:0 "Give 20 Width Artillery Infantry Templates"
+ give_40_infantry_arty:0 "Give 40 Width Artillery Infantry Templates"
+ give_light_tank_templates:0 "Give Light Tank Templates"
+ give_medium_tank_templates:0 "Give Medium Tank Templates"
+ give_heavy_tank_templates:0 "Give Heavy Tank Templates"
  give_suppression_templates:0 "Give Suppression Templates"
  
  #Focuses

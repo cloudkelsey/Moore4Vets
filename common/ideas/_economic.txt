@@ -522,6 +522,12 @@ ideas = {
 					has_idea = closed_economy
 					has_large_ally_not_pick_closed_economy = yes
 				}
+				
+				modifier = {
+					factor = 750
+					tag = SOV
+					date > 1939.1.1
+				}
    			}
 		}
 		

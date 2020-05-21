@@ -1722,7 +1722,6 @@ focus_tree = {
 		available = {
 			is_puppet = no
 			has_government = fascism
-			has_army_manpower = { size > 849999 } #ca 90 div
 			SOV = {
 				NOT = { has_war_with = GER }
 				country_exists = SOV
@@ -2217,7 +2216,6 @@ focus_tree = {
 		available = {
 			date > 1937.11.30
 			is_puppet = no
-			has_army_manpower = { size > 499999 }
 			NOT = { has_idea = rhineland_challenge_met }
 		}
 		cancel = {
@@ -2326,7 +2324,6 @@ focus_tree = {
 		available = {
 			has_completed_focus = GER_mol_rib_pact
 			is_puppet = no
-			has_army_manpower = { size > 949999 } #100 div
 		}
 
 		bypass = {
@@ -2693,8 +2690,7 @@ focus_tree = {
 		will_lead_to_war_with = CZE
 		will_lead_to_war_with = FRA
 		available = {
-			is_puppet = no
-			has_army_manpower = { size > 724999 } #80 div		
+			is_puppet = no	
 			NOT = {
 				AND = {
 					CZE = { is_in_faction_with = GER }
@@ -2774,7 +2770,6 @@ focus_tree = {
 		prerequisite = { focus = GER_first_vienna_award }
 		available = { 
 			is_puppet = no
-			has_army_manpower = { size > 749999 }
 			NOT = { has_war_with = CZE }
 		}
 
@@ -2814,7 +2809,6 @@ focus_tree = {
 		}
 		available = {
 			is_puppet = no
-			has_army_manpower = { size > 749999 }
 			has_capitulated = no
 		}
 		bypass = {
@@ -3940,7 +3934,6 @@ focus_tree = {
 			is_subject = no
 			controls_state = 4
 			controls_state = 152
-			has_army_manpower = { size > 749999 } #ca 80 div
 		}
 		bypass = {
 			OR = {
