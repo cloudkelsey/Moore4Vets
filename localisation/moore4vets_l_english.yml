@@ -55,6 +55,16 @@
  COL_neutrality_DEF:0 "Banana Republic"
  IRQ_neutrality:0 "Free Trade"
  IRQ_neutrality_DEF:0 "Free Trade"
+ LIT_neutrality:0 "Baltic Union"
+ LIT_neutrality_DEF:0 "Baltic Union"
+ CHI_neutrality:0 "United China"
+ CHI_neutrality_DEF:0 "United China"
+ LIT:0 "United Baltic"
+ LIT_DEF:0 "United Baltic"
+ CHI_neutrality:0 "United China"
+ CHI_neutrality_DEF:0 "United China"
+ CHI:0 "United China"
+ CHI_DEF:0 "United China"
  
  #Ideas
  GER_mefo_bills_hnh:0 "MEFO Bills"
@@ -66,7 +76,9 @@
  jap_army_training_speed:0 "Hajime Sugiyama"
  spain_ultimate_offensive:0 "Franco's Ultimate Offensive"
  china_extra_corruption_against_AI:0 "Just Plain Stupid Army"
- 
+ expensive_armor_licenses:0 "Expensive License Imports"
+ expensive_armor_licenses_desc:0 "Countries knowing the current state of our nations armor development and need are demanding a premium for their current tank technology.  This will be removed after Medium 2 or Heavy 2 Tanks are researched."
+                
  #Events
  moore4vets_news.1.t:0 "Ethiopia submits"
  moore4vets_news.1.d:0 "The cowardly Ethiopians have surrendered to us and are now part of our glorious empire!"
