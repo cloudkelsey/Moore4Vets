@@ -93,5 +93,9 @@ ideas = {
 			allowed = { tag = CHI JAP = { is_ai = yes } }
 			modifier = { army_defence_factor = -0.4 army_attack_factor = -0.4 }
 		}
+		expensive_armor_licenses = {
+			picture =  chi_hyper_inflation
+			modifier = { license_armor_purchase_cost = +10.0 }
 	}
+}
 }

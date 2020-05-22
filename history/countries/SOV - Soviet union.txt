@@ -102,6 +102,7 @@ add_to_faction = TAN
 add_ideas = {
 	trotskyite_plot
 	home_of_revolution
+	expensive_armor_licenses
 }
 
 create_country_leader = {
