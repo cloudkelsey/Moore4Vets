@@ -5,6 +5,7 @@ NDefines.NGame.COMBAT_LOG_MAX_MONTHS = 24
 
 NDefines.NDiplomacy.GUARANTEE_COST = 999
 NDefines.NDiplomacy.FRONT_IS_DANGEROUS = 0
+NDefines.NDiplomacy.MIN_TRUST_VALUE = -500
 
 NDefines.NCountry.EVENT_PROCESS_OFFSET = 100
 NDefines.NCountry.SPECIAL_FORCES_CAP_BASE = 0.05

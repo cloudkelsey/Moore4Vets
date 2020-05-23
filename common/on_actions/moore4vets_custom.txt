@@ -10,6 +10,13 @@ on_actions = {
 					add_ideas = { china_extra_corruption_against_AI }
 				}
 			}
+			COL = {
+				add_opinion_modifier = { target = SPR modifier = embargo }
+				add_opinion_modifier = { target = SPR modifier = sanctions_relations } 
+				add_opinion_modifier = { target = SPR modifier = embargo }
+				add_opinion_modifier = { target = SPR modifier = sanctions_relations }
+				#COL = { add_opinion_modifier = { target = SPR modifier = huge_decrease } }
+			}
 		}
 	}
 }
