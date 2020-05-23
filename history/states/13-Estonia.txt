@@ -22,7 +22,7 @@ state={
 				coastal_bunker = 1
 			}
 		}
-		add_core_of = EST
+		add_core_of = LIT
 	}
 
 	provinces={
