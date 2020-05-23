@@ -16,10 +16,6 @@
  jap_annexation:0 "Dream of the Fisherman's Wife"
  JAP_annex_siam:0 "Annex Siam"
  acquire_islands:0 "Acquire Islands"
- ENG_discuss_imperial_defense_desc:0 "Will increase factory and dockyard output by 10% for dominions and 15% for you."
- ENG_discuss_imperial_trade_desc:0 "Will change your - and all puppet's - trade law to Free Trade"
- ENG_discuss_imperial_economy_desc:0 "Will incrase construction speed of Civilian Factories, Military Factories and Dockyards by 10% for dominions and 15% for you."
- ENG_discuss_appeasement_desc:0 "Will raise the base war support of each dominion by 10% and by 15% for you."
  uk_acquire_azores:0 "Acquire ownership of the Azores"
  uk_acquire_azores_desc:0 "The strange disappearance of Portugal has given us the opportunity to sieze the Azores islands for our war effort."
  GER_spanish_civil_war_AI_control:0 "Spanish Civil War AI Control"
@@ -27,7 +23,7 @@
  spain_start_attacking:0 "Start Attacking"
  SPR_dont_attack:0 "AI don't attack flag"
  give_division_templates:0 "Give Division Templates (INCOMPLETE)"
- give_division_templates_desc:0 "An incomplete list of division templates, available at the click of a button, note that the divisions unlocked depend on the technology you have researched."
+ give_division_templates_desc:0 "An incomplete list of division templates, available at the click of a button, note that the templates unlocked depend on the technology you have researched."
  give_20_infantry:0 "Give 20 Width Infantry Templates"
  give_40_infantry:0 "Give 40 Width Infantry Templates"
  give_20_infantry_arty:0 "Give 20 Width Artillery Infantry Templates"
@@ -39,36 +35,8 @@
  
  #Focuses
  GER_align_hungary_and_romania:0 "Align Hungary and Romania"
- SPA_secure_the_northern_garrisons_tt:1 "Increases §YGarrison Control§! to §GTotal§! in §Y[171.GetName]§!, §Y[174.GetName]§!, §Y[788.GetName]§!, §Y[791.GetName]§!, §Y[176.GetName]§!, §Y[166.GetName]§!, §Y[172.GetName]§!, §Y[790.GetName]§! and §Y[792.GetName]§!.\n\nThe Nationalists will begin the civil war in control of these provinces as long as their §YGarrison Control§! in them is at least §OWeak§!.\n"
- 
- #Events
- moore4vets_news.1.t:0 "Ethiopia submits"
- moore4vets_news.1.d:0 "The cowardly Ethiopians have surrendered, and are already a part of our glorious empire."
- moore4vets_news.1.option:0 "Very cool"
-
- moore4vets.1.t:0 "You shouldn't be seeing this!"
- moore4vets.1.d:0 "This event is used to make other events work on time, please ignore it"
- 
- #Countries
- VIC_fascism:0 "Vichy France"
- COL_neutrality:0 "Banana Republic"
- COL_neutrality_DEF:0 "Banana Republic"
- IRQ_neutrality:0 "Free Trade"
- IRQ_neutrality_DEF:0 "Free Trade"
- LIT_neutrality:0 "Baltic Union"
- LIT_neutrality_DEF:0 "Baltic Union"
- CHI_neutrality:0 "United China"
- CHI_neutrality_DEF:0 "United China"
- LIT:0 "United Baltic"
- LIT_DEF:0 "United Baltic"
- CHI_neutrality:0 "United China"
- CHI_neutrality_DEF:0 "United China"
- CHI:0 "United China"
- CHI_DEF:0 "United China"
  
  #Ideas
- GER_mefo_bills_hnh:0 "MEFO Bills"
- socialism_in_one_nation:0 "Socialism in One Nation"
  no_faction_joining:0 "Strict Neutrality"
  no_building_a_navy:0 "Stunted Naval Industry"
  HUN_air_superiority_guy:0 "Székely Mihály"

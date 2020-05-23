@@ -224,6 +224,7 @@ country_event = { # Dominion chooses whether or not to take free trade
 	picture = GFX_report_event_imperial_conference
 	
 	is_triggered_only = yes
+	trigger = { NOT = { has_idea = free_trade } }
 	
 	option = { name = moore4vets.7.option1 add_ideas = free_trade }
 	option = { name = moore4vets.7.option2 }

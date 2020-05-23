@@ -224,6 +224,20 @@ event_firing = {
 		complete_effect = { ENG = { annex_country = { target = HOL transfer_troops = no } set_autonomy = { target = INS autonomous_state = temporary_puppet } } if = { limit = { BEL = { has_capitulated = yes } } news_event = moore4vets_news.3 } }
 	}
 	################################# BENELUX #################################
+	
+	################################# MISC/MULTIPLE COUNTRIES #################################
+	remove_tank_license_idea_FRA_SOV = {
+		available = {
+			OR = {
+				FRA = { OR = { has_tech = improved_medium_tank has_tech = improved_heavy_tank } }
+				SOV = { OR = { has_tech = improved_medium_tank has_tech = improved_heavy_tank } }
+			}
+		}
+		fire_only_once = yes
+		ai_will_do = { factor = 1000 }
+		complete_effect = { FRA = { remove_ideas = { expensive_armor_licenses } } SOV = { remove_ideas = { expensive_armor_licenses } } }
+	}
+	################################# MISC/MULTIPLE COUNTRIES #################################
 }
 
 GER_spanish_civil_war_AI_control = {
@@ -265,7 +279,7 @@ SPR_civil_war_offensives = {
 		}
 		visible = { has_war = yes tag = SPR is_ai = yes NOT = { has_idea = spain_ultimate_offensive } }
 		#fire_only_once = yes
-		complete_effect = { add_timed_idea = { idea = spain_ultimate_offensive days = 30 } } 
+		complete_effect = { add_timed_idea = { idea = spain_ultimate_offensive days = 10 } add_equipment_to_stockpile = { type = infantry_equipment_0 amount = 1000 producer = SPR } } 
 	}
 }
 
@@ -498,7 +512,7 @@ fin_white_peace = {
 give_division_templates = {
 	give_20_infantry = {
 		available = { always = yes }
-		ai_will_do = { factor = 100 modifier = { OR = { tag = FIN tag = CHI } factor = 0 } }
+		ai_will_do = { factor = 100 }
 		fire_only_once = yes
 		complete_effect = {
 			division_template = {
@@ -570,7 +584,7 @@ give_division_templates = {
 	}
 	give_40_infantry = {
 		available = { always = yes }
-		ai_will_do = { factor = 100 modifier = { OR = { tag = FIN tag = CHI } factor = 0 } }
+		ai_will_do = { factor = 100 }
 		fire_only_once = yes
 		complete_effect = {
 			division_template = {
@@ -647,7 +661,7 @@ give_division_templates = {
 	}
 	give_20_infantry_arty = {
 		available = { always = yes }
-		ai_will_do = { factor = 100 modifier = { OR = { tag = FIN tag = CHI } factor = 0 } }
+		ai_will_do = { factor = 100 }
 		fire_only_once = yes
 		complete_effect = {
 			division_template = {
@@ -714,7 +728,7 @@ give_division_templates = {
 	}
 	give_40_infantry_arty = {
 		available = { always = yes }
-		ai_will_do = { factor = 100 modifier = { OR = { tag = FIN tag = CHI } factor = 0 } }
+		ai_will_do = { factor = 100 }
 		fire_only_once = yes
 		complete_effect = {
 			division_template = {
@@ -791,7 +805,7 @@ give_division_templates = {
 	}
 	give_light_tank_templates = {
 		available = { has_tech = gwtank has_tech = motorised_infantry }
-		ai_will_do = { factor = 100 modifier = { OR = { tag = FIN tag = CHI } factor = 0 } }
+		ai_will_do = { factor = 100 }
 		fire_only_once = yes
 		complete_effect = {
 			division_template = {
@@ -809,7 +823,7 @@ give_division_templates = {
 	}
 	give_medium_tank_templates = {
 		available = { has_tech = basic_medium_tank has_tech = motorised_infantry }
-		ai_will_do = { factor = 100 modifier = { OR = { tag = FIN tag = CHI } factor = 0 } }
+		ai_will_do = { factor = 100 }
 		fire_only_once = yes
 		complete_effect = {
 			division_template = {
@@ -827,7 +841,7 @@ give_division_templates = {
 	}
 	give_heavy_tank_templates = {
 		available = { has_tech = basic_heavy_tank has_tech = motorised_infantry }
-		ai_will_do = { factor = 100 modifier = { OR = { tag = FIN tag = CHI } factor = 0 } }
+		ai_will_do = { factor = 100 }
 		fire_only_once = yes
 		complete_effect = {
 			division_template = {
@@ -859,7 +873,7 @@ give_division_templates = {
 	}
 	give_suppression_templates = {
 		available = { always = yes }
-		ai_will_do = { factor = 100 modifier = { OR = { tag = FIN tag = CHI } factor = 0 } }
+		ai_will_do = { factor = 100 }
 		fire_only_once = yes
 		complete_effect = {
 			if = {

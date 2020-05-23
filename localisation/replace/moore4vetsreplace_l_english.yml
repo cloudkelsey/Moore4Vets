@@ -1,0 +1,19 @@
+﻿l_english:
+ #Decisions
+ ENG_discuss_imperial_defense_desc:0 "Will increase factory and dockyard output by 10% for dominions and 15% for you."
+ ENG_discuss_imperial_trade_desc:0 "Will change your trade law to Free Trade, and ask all of your puppets if they want to change to it."
+ ENG_discuss_imperial_economy_desc:0 "Will incrase construction speed of Civilian Factories, Military Factories and Dockyards by 10% for dominions and 15% for you."
+ ENG_discuss_appeasement_desc:0 "Will raise the base war support of each dominion by 10% and by 15% for you."
+ 
+ #Focuses
+ SPA_secure_the_northern_garrisons_tt:1 "Increases §YGarrison Control§! to §GTotal§! in §Y[171.GetName]§!, §Y[174.GetName]§!, §Y[788.GetName]§!, §Y[791.GetName]§!, §Y[176.GetName]§!, §Y[166.GetName]§!, §Y[172.GetName]§!, §Y[790.GetName]§! and §Y[792.GetName]§!.\n\nThe Nationalists will begin the civil war in control of these provinces as long as their §YGarrison Control§! in them is at least §OWeak§!.\n"
+ 
+ #Countries
+ COL_neutrality:0 "Banana Republic"
+ COL_neutrality_DEF:0 "Banana Republic"
+ IRQ_neutrality:0 "Free Trade"
+ IRQ_neutrality_DEF:0 "Free Trade"
+ LIT_neutrality:0 "Baltic Union"
+ LIT_neutrality_DEF:0 "Baltic Union"
+ CHI_neutrality:0 "United China"
+ CHI_neutrality_DEF:0 "United China"
