@@ -134,30 +134,19 @@ SPR_dont_attack_at_startup_of_civil_war = {
 	}
 	
 	enable = {
-		NOT = {
-			has_idea = spain_ultimate_offensive # Attack if you have Franco's Ultimate Offensive
-			AND = {
-				tag = SPR
-				NOT = { has_country_flag = SPR_dont_attack } # Unless you're told not to
-			}
-		}
-		OR = {			
+		OR = {
 			has_global_flag = SPR_civil_war_startup # Don't attack for 10 days
+			has_country_flag = SPR_dont_attack # Don't attack if Germany tells you not to
 			AND = {
-				#has_idea = SPR_death_before_surrender # Don't attack if you're Republican Spain before 39
-				tag = SPD # Don't attack if you're Republican Spain
+				has_war_with = SPR # Don't attack if you're Republican Spain
 				date > 1936.9.1 # "Attack" until September (to make AI push up to the river line)
 			}
-			AND = { # Don't attack if you're Nationalist Spain before 39 and control Madrid + Barcelona before Japan is at war
-				has_idea = SPA_death_before_surrender
-				controls_state = 41
-				#controls_state = 165 # Barcelona is a bit of a stretch, may end up in capitulations
-				controls_state = 794 # Eastern Aragon
-				JAP = { has_war = no }
-			}
-			AND = { # Don't attack if you're Nationalist Spain and Germany tells you not to
+			AND = { # Don't attack if you're Nationalist Spain before 39 and if you control Madrid + other state before Japan is at war
 				tag = SPR
-				has_country_flag = SPR_dont_attack
+				controls_state = 41 # Madrid
+				#controls_state = 165 # Barcelona is a bit of a stretch, may end up in capitulations
+				controls_state = 166 # Western Aragon
+				JAP = { has_war = no }
 			}
 		}
 	}
