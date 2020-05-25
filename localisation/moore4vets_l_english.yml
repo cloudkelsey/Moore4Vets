@@ -44,6 +44,7 @@
  jap_army_training_speed:0 "Hajime Sugiyama"
  spain_ultimate_offensive:0 "Franco's Ultimate Offensive"
  china_extra_corruption_against_AI:0 "Just Plain Stupid Army"
+ china_extra_corruption_against_AI_desc:0 "§RThis is only for AI Japans.§"
  expensive_armor_licenses:0 "Expensive License Imports"
  expensive_armor_licenses_desc:0 "Countries knowing the current state of our nations armor development and need are demanding a premium for their current tank technology.  This will be removed from both France and Soviet after Medium 2 or Heavy 2 Tanks are researched by one of the respective countries."
                 
@@ -74,6 +75,9 @@
  moore4vets.7.d:0 "One discussion in the Imperial Conference is the policy on the empire's trade, the United Kingdom is asking whether we support the idea of free trade between dominions."
  moore4vets.7.option1:0 "We agree."
  moore4vets.7.option2:0 "We disagree."
+ moore4vets.8.t:0 "Yugoslavian Bomber Purchases"
+ moore4vets.8.d:0 "The government of Yugoslavia has reached out to us, and 3 other major nations, to purchase bomber aircraft for their airforce."
+ moore4vets.8.option:0 "We will provide."
  
  #Misc
  m4v_custom_mr_pact_tip:0 "The USSR will §Rimmediately§! take control of all land claimed by the MR pact, and recieve a wargoal on Finland."

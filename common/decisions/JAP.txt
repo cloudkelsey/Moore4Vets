@@ -843,7 +843,10 @@ JAP_southern_expansion = {
 	JAP_pressure_france = { 
 
 		available = {
-			16 = { NOT = { is_controlled_by = FRA } } #Paris has fallen
+			OR = {
+				16 = { NOT = { is_controlled_by = FRA } } #Paris has fallen
+				date > 1940.7.1
+			}
 		}
 
 		visible = {

@@ -206,7 +206,7 @@ event_firing = {
 		}
 		fire_only_once = yes
 		ai_will_do = { factor = 1000 }
-		complete_effect = { FRA = { annex_country = { target = BEL transfer_troops = no } } if = { limit = { HOL = { has_capitulated = yes } } news_event = moore4vets_news.3 } }
+		complete_effect = { FRA = { annex_country = { target = BEL transfer_troops = no } } add_to_variable = { var = benelux_annexes value = 1 } }
 	}
 	uk_annex_netherlands = {
 		available = {
@@ -221,7 +221,13 @@ event_firing = {
 		}
 		fire_only_once = yes
 		ai_will_do = { factor = 1000 }
-		complete_effect = { ENG = { annex_country = { target = HOL transfer_troops = no } set_autonomy = { target = INS autonomous_state = temporary_puppet } } if = { limit = { BEL = { has_capitulated = yes } } news_event = moore4vets_news.3 } }
+		complete_effect = { ENG = { annex_country = { target = HOL transfer_troops = no } set_autonomy = { target = INS autonomous_state = temporary_puppet } } add_to_variable = { var = benelux_annexes value = 1 } }
+	}
+	benelux_news_event = {
+		available = { check_variable = { var = benelux_annexes value = 2 compare = equals } }
+		fire_only_once = yes
+		ai_will_do = { factor = 1000 }
+		complete_effect = { news_event = moore4vets_news.3 }
 	}
 	################################# BENELUX #################################
 	

@@ -75,9 +75,14 @@ country_event = { #this event will be fired at the start of the game, and will b
 				country_event = { id = britain.16 days = 18 } 			# king dies 19/1/1936
 				country_event = { id = mtg_britain.1 days = 150 } 		# abdication crisis 1/6/1936
 				country_event = { id = britain.22 days = 511 } 			# stanley baldwin retires 28/5/1937
+				country_event = { id = moore4vets.8 days = 734 }
 			}
 			
-			SPR = { add_ideas = no_building_a_navy }
+			GER = { country_event = { id = moore4vets.8 days = 734 } }
+			ITA = { country_event = { id = moore4vets.8 days = 734 } }
+			FRA = { country_event = { id = moore4vets.8 days = 734 } }
+			
+			SPR = { add_ideas = no_building_a_navy } # Can't add through the history file
 
 			# civ adjustment event calls
 			# ROEBUCK: Decide whether to keep this ugly code or add a call in each event option that works as a date offset
@@ -113,9 +118,6 @@ country_event = { #Italy annexes Ethiopia
 				news_event = moore4vets_news.1
 			}
 		}
-		hidden_effect = {
-			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 1500 producer = ITA }
-		}
 		add_threat = -0.8
 	}
 
@@ -147,25 +149,18 @@ country_event = { # Civ trade adjustments
 	option = {
 		trigger = { AND = { date > 1936.11.1 date < 1937.2.1 } } # 1/1/1937
 		USA = { add_offsite_building = { type = industrial_complex level = 3 } }
-		SOV = { add_offsite_building = { type = industrial_complex level = 2 } }
 		FRA = { add_offsite_building = { type = industrial_complex level = 1 } }
 	}
 	option = {
 		trigger = { OR = { AND = { date > 1937.11.1 date < 1938.2.1 } AND = { date > 1938.5.1 date < 1938.7.1 } } } # 1/1/1938 OR 1/6/1938 
 		USA = { add_offsite_building = { type = industrial_complex level = 7 } }
-		SOV = { add_offsite_building = { type = industrial_complex level = 4 } }
 	}
 	option = {
 		trigger = { OR = { AND = { date > 1938.11.1 date < 1939.2.1 } AND = { date > 1939.5.1 date < 1939.7.1 } } } # 1/1/1939 OR 1/6/1939 
 		USA = { add_offsite_building = { type = industrial_complex level = 6 } }
-		SOV = { add_offsite_building = { type = industrial_complex level = 5 } }
 		ENG = { add_offsite_building = { type = industrial_complex level = 3 } }
 	}
-	option = {
-		trigger = { date > 1939.11.1 date < 1940.2.1 } # 1/1/1940
-		SOV = { add_offsite_building = { type = industrial_complex level = 9 } }
-	}
-	option = { trigger = { date > 1940.2.1 } }
+	option = {}
 }
 
 country_event = { # Core Spain
@@ -228,4 +223,24 @@ country_event = { # Dominion chooses whether or not to take free trade
 	
 	option = { name = moore4vets.7.option1 add_ideas = free_trade }
 	option = { name = moore4vets.7.option2 }
+}
+
+country_event = { # Yugoslavian aircraft purchases
+	id = moore4vets.8
+	title = moore4vets.8.t
+	desc = moore4vets.8.d
+	
+	is_triggered_only = yes
+	trigger = { YUG = { exists = yes } NOT = { any_allied_country = { has_war_with = YUG } } }
+	
+	immediate = {
+		add_timed_idea = { idea = YUG_air_payment days = 180 }
+		add_timed_idea = { idea = YUG_bomber_production_diverted days = 180 }
+		if = {
+			limit = { has_equipment = { tac_bomber_equipment > 25 } }
+			send_equipment = { target = YUG type = tac_bomber_equipment amount = 25 } # Air XP for Yugo war
+		}
+	}
+	
+	option = { name = moore4vets.8.option }
 }

@@ -1461,7 +1461,7 @@ shared_focus = {
 	}
 
 	available = {
-
+		NOT = { original_tag = MAN }
 	}
 
 	bypass = {
