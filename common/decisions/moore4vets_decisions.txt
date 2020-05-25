@@ -226,16 +226,17 @@ event_firing = {
 	################################# BENELUX #################################
 	
 	################################# MISC/MULTIPLE COUNTRIES #################################
-	remove_tank_license_idea_FRA_SOV = {
+	remove_tank_license_idea_FRA_SOV_USA = {
 		available = {
 			OR = {
 				FRA = { OR = { has_tech = improved_medium_tank has_tech = improved_heavy_tank } }
 				SOV = { OR = { has_tech = improved_medium_tank has_tech = improved_heavy_tank } }
+				# Could add USA here but what are the chances of them getting armor tech first
 			}
 		}
 		fire_only_once = yes
 		ai_will_do = { factor = 1000 }
-		complete_effect = { FRA = { remove_ideas = { expensive_armor_licenses } } SOV = { remove_ideas = { expensive_armor_licenses } } }
+		complete_effect = { FRA = { remove_ideas = { expensive_armor_licenses } } SOV = { remove_ideas = { expensive_armor_licenses } } USA = { remove_ideas = { expensive_armor_licenses } } }
 	}
 	################################# MISC/MULTIPLE COUNTRIES #################################
 }
