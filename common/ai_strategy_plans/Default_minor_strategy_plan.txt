@@ -2,7 +2,7 @@ DFLTMNR_default_plan = {
 	name = "Default minors historical plan"
 	desc = ""
 
-	enable = { OR = { original_tag = ALB original_tag = FIN original_tag = LAT original_tag = EST original_tag = LIT original_tag = AUS } }
+	enable = { OR = { original_tag = ALB original_tag = FIN original_tag = LIT original_tag = AUS } }
 	
 	ai_national_focuses = {
 		industrial_effort
@@ -112,7 +112,7 @@ DFLTMNR_fascist_plan = {
 }
 
 DFLTMNR_democratic_plan = {
-	name = "Default minors historical plan F"
+	name = "Default minors historical plan D"
 	desc = ""
 	
 	enable = { OR = { original_tag = NOR original_tag = BRA original_tag = GRE original_tag = DEN original_tag = INS original_tag = BEL } }

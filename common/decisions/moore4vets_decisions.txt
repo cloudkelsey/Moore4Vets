@@ -38,20 +38,9 @@ event_firing = {
 		ai_will_do = { factor = 1000 }
 		complete_effect = { FRA = { country_event = france.21 } }
 	}
-	dalaider_resigns = {
-		available = {
-			FRA = {
-				has_government = democratic
-				has_global_flag = fall_of_france
-				NOT = { has_country_flag = france_de_gaulle }
-			}
-		}
-		fire_only_once = yes
-		ai_will_do = { factor = 1000 }
-		complete_effect = { FRA = { country_event = france.31 } }
-	}
 	compagne_armistice = {
-		available = { FRA = { has_war_with = GER surrender_progress > 0.9 } 16 = { is_controlled_by = GER } }
+		#available = { FRA = { has_war_with = GER surrender_progress > 0.9 } 16 = { is_controlled_by = GER } }
+		available = { FRA = { has_capitulated = yes } }
 		fire_only_once = yes
 		ai_will_do = { factor = 1000 }
 		complete_effect = { FRA = { country_event = france.10 } }

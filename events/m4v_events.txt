@@ -54,7 +54,6 @@ country_event = { #this event will be fired at the start of the game, and will b
 	id = moore4vets.1
 	title = moore4vets.1.t
 	desc = moore4vets.1.d
-	#picture = GFX_report_event_german_speech
 
 	fire_only_once = yes
 	hidden = yes
@@ -93,7 +92,7 @@ country_event = { #this event will be fired at the start of the game, and will b
 			country_event = { id = moore4vets.3 days = 880 } # 1/6/1938
 			country_event = { id = moore4vets.3 days = 1094 } # 1/1/1939
 			country_event = { id = moore4vets.3 days = 1245 } # 1/6/1939
-			country_event = { id = moore4vets.3 days = 1459 } # 1/1/1940
+			#country_event = { id = moore4vets.3 days = 1459 } # 1/1/1940
 		}
 	}
 
@@ -120,7 +119,7 @@ country_event = { #Italy annexes Ethiopia
 		}
 		add_threat = -0.8
 	}
-
+ 
 	option = { name = moore4vets.2.option }
 }
 
@@ -130,37 +129,41 @@ country_event = { # Civ trade adjustments
 	desc = moore4vets.3.d
 
 	is_triggered_only = yes
-	hidden = yes
-	timeout_days = 1
+	#hidden = yes
 	
 	# I miss switch statements
 	option = {
-		trigger = { date < 1936.1.3 } # 2/1/1936
+		trigger = { OR = { date < 1936.1.3 AND = { date > 1936.5.1 date < 1936.7.1 } } } # 2/1/1936 OR 1/6/1936
 		USA = { add_offsite_building = { type = industrial_complex level = 13 } }
 		ENG = { add_offsite_building = { type = industrial_complex level = 1 } }
 		FRA = { add_offsite_building = { type = industrial_complex level = 1 } }
+		ROM = { add_offsite_building = { type = industrial_complex level = 2 } }
 	}
 	option = {
-		trigger = { AND = { date > 1936.5.1 date < 1936.7.1 } } # 1/6/1936
-		USA = { add_offsite_building = { type = industrial_complex level = 14 } }
-		ENG = { add_offsite_building = { type = industrial_complex level = 1 } }
-		FRA = { add_offsite_building = { type = industrial_complex level = 2 } }
-	}
-	option = {
-		trigger = { AND = { date > 1936.11.1 date < 1937.2.1 } } # 1/1/1937
+		trigger = { AND = { date > 1936.12.1 date < 1937.2.1 } } # 1/1/1937
 		USA = { add_offsite_building = { type = industrial_complex level = 3 } }
 		FRA = { add_offsite_building = { type = industrial_complex level = 1 } }
 	}
 	option = {
-		trigger = { OR = { AND = { date > 1937.11.1 date < 1938.2.1 } AND = { date > 1938.5.1 date < 1938.7.1 } } } # 1/1/1938 OR 1/6/1938 
+		trigger = { OR = { AND = { date > 1937.12.1 date < 1938.2.1 } AND = { date > 1938.5.1 date < 1938.7.1 } } } # 1/1/1938 OR 1/6/1938 
 		USA = { add_offsite_building = { type = industrial_complex level = 7 } }
+		GER = { add_offsite_building = { type = industrial_complex level = 1 } }
+		HUN = { add_offsite_building = { type = industrial_complex level = 1 } }
 	}
 	option = {
-		trigger = { OR = { AND = { date > 1938.11.1 date < 1939.2.1 } AND = { date > 1939.5.1 date < 1939.7.1 } } } # 1/1/1939 OR 1/6/1939 
+		trigger = { OR = { AND = { date > 1938.12.1 date < 1939.2.1 } AND = { date > 1939.5.1 date < 1939.7.1 } } } # 1/1/1939 OR 1/6/1939 
 		USA = { add_offsite_building = { type = industrial_complex level = 6 } }
 		ENG = { add_offsite_building = { type = industrial_complex level = 3 } }
 	}
-	option = {}
+	option = { name = "Fail" if = { limit = { date < 1940.1.1 } COL = { news_event = moore4vets.25 } } ai_chance = { factor = 0 } }
+}
+
+news_event = {
+	id = moore4vets.25
+	title = "Civ debug FAIL"
+	desc = ""
+	is_triggered_only = yes
+	option = { name = "f" }
 }
 
 country_event = { # Core Spain
