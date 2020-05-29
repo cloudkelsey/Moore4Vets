@@ -2144,7 +2144,6 @@ focus_tree = {
 	focus = {
 		id = SPA_la_division_azul
 		available = {
-			has_completed_focus = SPA_adopt_the_26_points
 		}
 		bypass = {
 		}
@@ -2507,7 +2506,7 @@ focus_tree = {
 		prerequisite = { focus = SPR_the_future_of_the_republic }
 		
 		icon = GFX_focus_usa_reestablish_the_gold_standard
-		x = -4
+		x = -2
 		y = 1
 		relative_position_id = SPR_the_future_of_the_republic
 		cost = 5
@@ -2536,7 +2535,7 @@ focus_tree = {
 		prerequisite = { focus = SPR_the_future_of_the_republic }
 		
 		icon = GFX_goal_generic_propaganda
-		x = -2
+		x = 0
 		y = 1
 		relative_position_id = SPR_the_future_of_the_republic
 		cost = 5
@@ -2811,44 +2810,6 @@ focus_tree = {
 				uses = 1
 				category = armor
 			}
-		}
-	}
-
-	focus = {
-		id = SPR_petition_for_french_aid
-		available = {
-			NOT = { has_war_with = FRA }
-			NOT = { has_global_flag = scw_over }
-			FRA = {
-				OR = {
-					has_government = democratic
-					has_government = communism
-				}
-			}
-		}
-		bypass = {
-		}
-		prerequisite = { focus = SPR_the_future_of_the_republic }
-
-		icon = GFX_focus_chi_reach_out_to_france
-		x = 0
-		y = 1
-		relative_position_id = SPR_the_future_of_the_republic
-		cost = 10
-
-		available_if_capitulated = yes
-		search_filters = {FOCUS_FILTER_WAR_SUPPORT}
-
-		completion_reward = {
-			effect_tooltip = {
-				add_war_support = 0.15
-				FRA = {
-					add_timed_idea = { idea = SPR_equipment_shipments days = 730 }
-					add_opinion_modifier = { target = ROOT modifier = SPA_spanish_civil_war_commitments }
-				}
-			}
-			custom_effect_tooltip = SPR_petition_for_french_aid_tt
-			FRA = { country_event = { id = lar_spain.64 hours = 6 random_hours = 6 } }
 		}
 	}
 

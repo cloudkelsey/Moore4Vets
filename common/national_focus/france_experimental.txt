@@ -1,0 +1,60 @@
+focus_tree = {
+	id = french_m4v_focus
+	default = no
+	
+	country = {
+		factor = 0
+		
+		# modifier = {
+			# add = 10
+			# tag = FRA
+		# }
+	}
+	
+	# Plans for industry tree (NOT IN ORDER):
+	# Generic factory adding with a twist (choose to develop mainland or overseas shit, mainland will give double factories but will obviously go to Germany)
+	# Tech bonuses?
+	# *CHOICE* to trade economy for stability (Matignon)
+	# etc. etc.
+	
+	focus = {
+		id = M4V1_industry_1
+		icon = GFX_goal_generic_construct_civilian
+		x = 0
+		y = 0
+		prerequisite = {}
+		mutually_exclusive = {}
+		cost = 5
+		available = {}
+		bypass = {}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {}
+	}
+	
+	# Plans for political tree (NOT IN ORDER):
+	# 150pp
+	# base stability
+	# base stability over time
+	# War support for stability?
+	# African cores?
+	
+	focus = {
+		id = M4V1_political_1
+		#icon = GFX_goal_generic_construct_civilian
+		x = 5
+		y = 0
+		prerequisite = {}
+		mutually_exclusive = {}
+		cost = 5
+		available = {}
+		bypass = {}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {}
+	}
+}

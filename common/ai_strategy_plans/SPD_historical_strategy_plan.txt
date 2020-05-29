@@ -33,7 +33,7 @@ SPD_historical_plan = {
 		SPR_maintain_the_second_republic
 		SPR_new_leadership
 		SPR_the_future_of_the_republic
-		SPR_petition_for_french_aid
+		#SPR_petition_for_french_aid
 		SPR_reaffirm_the_popular_front_strategy
 		#SPR_crush_the_revolution
 		SPR_relocate_the_gold_reserves
