@@ -137,7 +137,6 @@ country_event = { # Civ trade adjustments
 		USA = { add_offsite_building = { type = industrial_complex level = 13 } }
 		ENG = { add_offsite_building = { type = industrial_complex level = 1 } }
 		FRA = { add_offsite_building = { type = industrial_complex level = 1 } }
-		ROM = { add_offsite_building = { type = industrial_complex level = 2 } }
 	}
 	option = {
 		trigger = { AND = { date > 1936.12.1 date < 1937.2.1 } } # 1/1/1937
@@ -147,8 +146,6 @@ country_event = { # Civ trade adjustments
 	option = {
 		trigger = { OR = { AND = { date > 1937.12.1 date < 1938.2.1 } AND = { date > 1938.5.1 date < 1938.7.1 } } } # 1/1/1938 OR 1/6/1938 
 		USA = { add_offsite_building = { type = industrial_complex level = 7 } }
-		GER = { add_offsite_building = { type = industrial_complex level = 1 } }
-		HUN = { add_offsite_building = { type = industrial_complex level = 1 } }
 	}
 	option = {
 		trigger = { OR = { AND = { date > 1938.12.1 date < 1939.2.1 } AND = { date > 1939.5.1 date < 1939.7.1 } } } # 1/1/1939 OR 1/6/1939 
