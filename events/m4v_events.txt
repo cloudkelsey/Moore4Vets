@@ -129,7 +129,7 @@ country_event = { # Civ trade adjustments
 	desc = moore4vets.3.d
 
 	is_triggered_only = yes
-	#hidden = yes
+	hidden = yes
 	
 	# I miss switch statements
 	option = {
