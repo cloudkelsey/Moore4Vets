@@ -1606,10 +1606,10 @@ operation_steal_tech_civilian = { ### 12 3/35
 				target = FROM
 				uses = 1
 			}
-			remove_operation_token = {
-				tag = FROM
-				token = token_civilian
-			}
+			#remove_operation_token = {
+			#	tag = FROM
+			#	token = token_civilian
+			#}
 		}
 	}
 	outcome_potential = {
@@ -2187,10 +2187,10 @@ operation_steal_tech_army = { ### 16 3/55
 				target = FROM
 				uses = 1
 			}
-			remove_operation_token = {
-				tag = FROM
-				token = token_army
-			}
+			# remove_operation_token = {
+				# tag = FROM
+				# token = token_army
+			# }
 		}
 	}
 
@@ -2355,10 +2355,10 @@ operation_steal_tech_navy = { ### 17 3/55
 					target = FROM
 					uses = 1
 				}
-				remove_operation_token = {
-					tag = FROM
-					token = token_navy
-				}
+				# remove_operation_token = {
+					# tag = FROM
+					# token = token_navy
+				# }
 			}
   		}
   		else = {
@@ -2515,10 +2515,10 @@ operation_steal_tech_airforce = { ### 18 3/55
 				target = FROM
 				uses = 1
 			}
-			remove_operation_token = {
-				tag = FROM
-				token = token_airforce
-			}
+			# remove_operation_token = {
+				# tag = FROM
+				# token = token_airforce
+			# }
 		}
 	}
 
