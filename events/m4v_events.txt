@@ -231,7 +231,7 @@ country_event = { # Yugoslavian aircraft purchases
 	desc = moore4vets.8.d
 	
 	is_triggered_only = yes
-	trigger = { YUG = { exists = yes } NOT = { any_allied_country = { has_war_with = YUG } } }
+	trigger = { YUG = { exists = yes } NOT = { has_war_with = YUG } }
 	
 	immediate = {
 		add_timed_idea = { idea = YUG_air_payment days = 180 }
