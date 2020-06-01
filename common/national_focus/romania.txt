@@ -1784,7 +1784,7 @@
 				technology = antiair5 
 				technology = interwar_antitank 
 				technology = antitank2 
-				technology = antitank
+				technology = antitank5
 			}
 		}
 	}
