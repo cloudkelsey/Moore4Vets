@@ -62,16 +62,6 @@ if = {
 }
 add_ideas = { neutrality_idea no_faction_joining }
 
-#Kick off kings crazy life
-if = {
-	limit = {
-		has_dlc = "Death or Dishonor"
-	}
-	ROM = {
-		country_event = { id = moore4vets.5 days = 2 random_days = 20 } # King's lifestyle firer
-	}
-}
-
 set_convoys = 10
 
 set_politics = {

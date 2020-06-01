@@ -1,15 +1,8 @@
 on_actions = {
 	on_startup = {
 		effect = {
-			SIA = {
-				give_resource_rights = { receiver = JAP state = 289 }
-			}
-			CHI = {
-				if = {
-					limit = { JAP = { is_ai = yes } }
-					add_ideas = { china_extra_corruption_against_AI }
-				}
-			}
+			SIA = { give_resource_rights = { receiver = JAP state = 289 } }
+			CHI = { if = { limit = { JAP = { is_ai = yes } } add_ideas = { china_extra_corruption_against_AI } } }
 			COL = {
 				add_opinion_modifier = { target = SPR modifier = embargo }
 				add_opinion_modifier = { target = SPR modifier = sanctions_relations } 
@@ -17,6 +10,9 @@ on_actions = {
 				add_opinion_modifier = { target = SPR modifier = sanctions_relations }
 				#COL = { add_opinion_modifier = { target = SPR modifier = huge_decrease } }
 			}
+			
+			#EVENT FIRING
+			GER = { country_event = moore4vets.1 }
 		}
 	}
 }

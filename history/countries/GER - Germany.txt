@@ -119,7 +119,6 @@ set_popularities = {
 create_faction = Axis
 add_to_faction = GER
 
-
 add_ideas = {
 	sour_loser
 	general_staff
