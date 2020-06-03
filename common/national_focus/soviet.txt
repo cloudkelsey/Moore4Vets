@@ -955,7 +955,7 @@
 		id = SOV_anti_fascist_diplomacy
 		icon = GFX_goal_generic_military_deal
 		prerequisite = { focus = SOV_peoples_commissariat }
-		x = -2
+		x = -1
 		y = 1
 		relative_position_id = SOV_peoples_commissariat
 		cost = 5
@@ -1016,8 +1016,8 @@
 		icon = GFX_goal_generic_fortify_city
 		prerequisite = { focus = SOV_anti_fascist_diplomacy }
 		available = { has_offensive_war = no }
-		x = 1
-		y = 0
+		x = 0
+		y = 1
 		relative_position_id = SOV_anti_fascist_diplomacy
 		cost = 10
 		ai_will_do = {
