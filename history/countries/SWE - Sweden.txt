@@ -1,7 +1,7 @@
 ﻿capital = 141
 
 set_research_slots = 0
-add_ideas = { neutrality_idea no_resources_to_market }
+add_ideas = { neutrality_idea no_resources_to_market free_trade }
 
 every_country = {
 	limit = { NOT = { original_tag = GER } }
@@ -36,7 +36,7 @@ create_country_leader = {
 	expire = "1965.1.1"
 	ideology = socialism
 	traits = {
-		#
+		no_authority
 	}
 }
 

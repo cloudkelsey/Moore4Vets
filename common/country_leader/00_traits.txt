@@ -3896,4 +3896,8 @@ leader_traits = {
 			}
 		}
 	}
+	
+	no_authority = {
+		political_power_factor = -100
+	}
 }
