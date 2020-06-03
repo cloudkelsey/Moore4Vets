@@ -1271,112 +1271,20 @@ focus_tree = {
 			add_research_slot = 1
 		}
 	}
-
-	focus = {
-		id = SPA_banish_the_party_leaders
-		available = {
-		}
-		bypass = {
-			has_global_flag = SPR_carlist_uprising_flag
-		}
-		prerequisite = { focus = SPA_extol_the_martyrs_of_the_war }
-		prerequisite = { focus = SPA_foment_a_carlist_split }
-		
-		icon = GFX_focus_generic_support_the_left_right
-		x = 1
-		y = 1
-		relative_position_id = SPA_extol_the_martyrs_of_the_war
-		cost = 10
-
-		available_if_capitulated = yes
-		search_filters = {FOCUS_FILTER_POLITICAL FOCUS_FILTER_SPA_CARLIST_UPRISING}
-		completion_reward = {
-			add_political_power = 200
-			custom_effect_tooltip = remove_political_advisor
-			show_ideas_tooltip = SPA_manuel_hedilla
-			custom_effect_tooltip = available_political_advisor
-			show_ideas_tooltip = SPA_raimundo_fernandez_cuesta
-		}
-	}
-
-	focus = {
-		id = SPA_fuse_the_parties
-		available = {
-		}
-		bypass = {
-			has_global_flag = SPR_carlist_uprising_flag
-		}
-		prerequisite = { focus = SPA_banish_the_party_leaders }
-		prerequisite = { focus = SPA_safeguard_the_freedom_of_worship }
-		
-		icon = GFX_focus_spa_fuse_the_parties
-		x = -1
-		y = 1
-		relative_position_id = SPA_banish_the_party_leaders
-		cost = 10
-
-		available_if_capitulated = yes
-		search_filters = {FOCUS_FILTER_MANPOWER}
-		completion_reward = {
-			set_party_name = { ideology = fascism long_name = SPR_fascism_francoist_party_long name = SPR_fascism_francoist_party }
-			set_party_name = { ideology = neutrality long_name = SPR_fascism_francoist_party_long name = SPR_fascism_francoist_party }
-			if = {
-				limit = {
-					NOT = {
-						has_idea = SPA_carlism_2
-						has_idea = SPA_carlism_3
-					}
-				}
-				effect_tooltip = {
-					swap_ideas = {
-						remove_idea = SPA_carlism_2
-						add_idea = SPA_carlism_3
-					}
-				}
-			}
-			if = {
-				limit = {
-					has_idea = SPA_carlism_2
-				}
-				swap_ideas = {
-					remove_idea = SPA_carlism_2
-					add_idea = SPA_carlism_5
-				}
-			}
-			if = {
-				limit = {
-					has_idea = SPA_carlism_3
-				}
-				swap_ideas = {
-					remove_idea = SPA_carlism_3
-					add_idea = SPA_carlism_4
-				}
-			}
-			#custom_effect_tooltip = SPA_fuse_the_parties_tt
-			if = {
-				limit = {
-					has_global_flag = scw_early_end
-				}
-				set_global_flag = nationalist_victory
-				set_global_flag = scw_over
-				country_event = { id = lar_news.1 hours = 6 }
-			}
-		}
-	}
 	
 	focus = {
 		id = SPA_the_national_and_popular_army_of_spain
 		available = {
-			has_global_flag = scw_over
+			date > 1937.1.1
 		}
 		bypass = {
 		}
-		prerequisite = { focus = SPA_fuse_the_parties }
+		prerequisite = { focus = SPA_unify_the_nationalist_front }
 		
 		icon = GFX_goal_generic_army_doctrines
-		x = -5
+		x = 6
 		y = 1
-		relative_position_id = SPA_fuse_the_parties
+		relative_position_id = SPA_unify_the_nationalist_front
 		cost = 10
 
 		available_if_capitulated = yes
@@ -1618,6 +1526,98 @@ focus_tree = {
 	}
 
 	focus = {
+		id = SPA_banish_the_party_leaders
+		available = {
+		}
+		bypass = {
+			has_global_flag = SPR_carlist_uprising_flag
+		}
+		prerequisite = { focus = SPA_extol_the_martyrs_of_the_war }
+		prerequisite = { focus = SPA_foment_a_carlist_split }
+		
+		icon = GFX_focus_generic_support_the_left_right
+		x = 1
+		y = 1
+		relative_position_id = SPA_extol_the_martyrs_of_the_war
+		cost = 10
+
+		available_if_capitulated = yes
+		search_filters = {FOCUS_FILTER_POLITICAL FOCUS_FILTER_SPA_CARLIST_UPRISING}
+		completion_reward = {
+			add_political_power = 200
+			custom_effect_tooltip = remove_political_advisor
+			show_ideas_tooltip = SPA_manuel_hedilla
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = SPA_raimundo_fernandez_cuesta
+		}
+	}
+
+	focus = {
+		id = SPA_fuse_the_parties
+		available = {
+		}
+		bypass = {
+			has_global_flag = SPR_carlist_uprising_flag
+		}
+		prerequisite = { focus = SPA_banish_the_party_leaders }
+		prerequisite = { focus = SPA_safeguard_the_freedom_of_worship }
+		
+		icon = GFX_focus_spa_fuse_the_parties
+		x = -1
+		y = 1
+		relative_position_id = SPA_banish_the_party_leaders
+		cost = 10
+
+		available_if_capitulated = yes
+		search_filters = {FOCUS_FILTER_MANPOWER}
+		completion_reward = {
+			set_party_name = { ideology = fascism long_name = SPR_fascism_francoist_party_long name = SPR_fascism_francoist_party }
+			set_party_name = { ideology = neutrality long_name = SPR_fascism_francoist_party_long name = SPR_fascism_francoist_party }
+			if = {
+				limit = {
+					NOT = {
+						has_idea = SPA_carlism_2
+						has_idea = SPA_carlism_3
+					}
+				}
+				effect_tooltip = {
+					swap_ideas = {
+						remove_idea = SPA_carlism_2
+						add_idea = SPA_carlism_3
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_idea = SPA_carlism_2
+				}
+				swap_ideas = {
+					remove_idea = SPA_carlism_2
+					add_idea = SPA_carlism_5
+				}
+			}
+			if = {
+				limit = {
+					has_idea = SPA_carlism_3
+				}
+				swap_ideas = {
+					remove_idea = SPA_carlism_3
+					add_idea = SPA_carlism_4
+				}
+			}
+			#custom_effect_tooltip = SPA_fuse_the_parties_tt
+			if = {
+				limit = {
+					has_global_flag = scw_early_end
+				}
+				set_global_flag = nationalist_victory
+				set_global_flag = scw_over
+				country_event = { id = lar_news.1 hours = 6 }
+			}
+		}
+	}
+
+	focus = {
 		id = SPA_national_recovery
 		available = {
 			has_global_flag = scw_over
@@ -1627,7 +1627,7 @@ focus_tree = {
 		prerequisite = { focus = SPA_fuse_the_parties }
 		
 		icon = GFX_goal_generic_consumer_goods
-		x = 0
+		x = -2
 		y = 1
 		relative_position_id = SPA_fuse_the_parties
 		cost = 10
@@ -2012,7 +2012,7 @@ focus_tree = {
 		prerequisite = { focus = SPA_fuse_the_parties }
 		
 		icon = GFX_focus_generic_treaty
-		x = 3
+		x = 2
 		y = 1
 		relative_position_id = SPA_fuse_the_parties
 		cost = 10

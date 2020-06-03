@@ -130,3 +130,8 @@ FIN_always_border_the_soviets = {
 	allowed = { tag = FIN }
 	ai_strategy = { type = prepare_for_war id = SOV value = 100 }
 }
+
+FIN_stop_ruining_the_grind = {
+	allowed = { tag = FIN }
+	ai_strategy = { type = front_control country_trigger = { original_tag = SOV } execute_order = no manual_attack = no }
+}

@@ -335,6 +335,8 @@ ideas = {
 		
 		free_trade = {
 
+			allowed = { NOT = { tag = ITA } }
+
 			available = {
 			
 			}

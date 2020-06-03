@@ -129,24 +129,15 @@ spanish_civil_war_isolate_carlists = {
 }
 
 SPR_dont_attack_at_startup_of_civil_war = {
-	allowed = {
-		original_tag = SPR
-	}
+	allowed = { original_tag = SPR }
 	
 	enable = {
 		OR = {
 			has_global_flag = SPR_civil_war_startup # Don't attack for 10 days
 			has_country_flag = SPR_dont_attack # Don't attack if Germany tells you not to
-			AND = {
-				#tag = SPD
-				#has_war_with = SPR # Don't attack if you're Republican Spain
-				NOT = { controls_state = 177 } # Doesn't control the Balearic Islands (this shit is getting so ghetto lmao)
-				date > 1936.9.1 # "Attack" until September (to make AI push up to the river line)
-			}
 			AND = { # Don't attack if you're Nationalist Spain before 39 and if you control Madrid + other state before Japan is at war
 				has_idea = SPA_death_before_surrender
 				controls_state = 41 # Madrid
-				#controls_state = 165 # Barcelona is a bit of a stretch, may end up in capitulations
 				controls_state = 166 # Western Aragon
 				JAP = { has_war = no }
 			}
@@ -158,9 +149,7 @@ SPR_dont_attack_at_startup_of_civil_war = {
 	ai_strategy = {
 		type = front_control
 
-		country_trigger = {
-			original_tag = SPR
-		}
+		country_trigger = { original_tag = SPR }
 		
 		execute_order = no
 		manual_attack = no

@@ -717,9 +717,9 @@ ideas = {
 			}
 
 			modifier = {
-				send_volunteer_size = 3
-				send_volunteer_divisions_required = -0.25
-				send_volunteers_tension = -0.20
+				send_volunteer_size = 10
+				send_volunteer_divisions_required = -1
+				send_volunteers_tension = -1
 			}
 		}
 

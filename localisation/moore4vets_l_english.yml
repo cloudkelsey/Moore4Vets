@@ -35,6 +35,9 @@
  
  #Focuses
  GER_align_hungary_and_romania:0 "Align Hungary and Romania"
+ FRA_military_factories_colonial:0 "Colonial Military Factories"
+ FRA_military_factories_colonial_desc:0 "Placing our military production outside Europe ensures that even if the enemy gains control of our airspace, we will maintain a constant flow of equipment to our front-line troops."
+ FRA_invest_in_congo:0 "Invest In The Congo"
  
  #Ideas
  no_faction_joining:0 "Strict Neutrality"
@@ -84,6 +87,7 @@
  m4v_india_famine_warning:0 "If the §gClamp down on corruption§! focus is not finished before §RFebruary 1940§!, we will recieve a famine."
  NZL_transfer_ships_tt:0 "We will recieve two new British built cruisers."
  italy_bypass_pos_tip:0 "§RJoin the Axis to bypass this focus.§!"
+ france_indochina_warning:0 "§RThis land will be annexed by the Japanese in the future! Bear this in mind when picking this focus!§!"
  
  temporary_puppet:0 "Temporary Puppet"
  
