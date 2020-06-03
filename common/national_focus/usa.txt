@@ -1845,6 +1845,14 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = available_designer
 			show_ideas_tooltip = tank_destroyer_board
+			add_tech_bonus = {
+				name = USA_main_battle_tanks
+				#bonus = 1.0
+				ahead_reduction = 1.0
+				uses = 1
+				technology = advanced_medium_tank
+				technology = advanced_heavy_tank
+			}
 		}
 	}
 	focus = {
@@ -1876,6 +1884,14 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = available_designer
 			show_ideas_tooltip = detroit_arsenal
+			add_tech_bonus = {
+				name = USA_main_battle_tanks
+				#bonus = 1.0
+				ahead_reduction = 1.0
+				uses = 1
+				technology = advanced_medium_tank
+				technology = advanced_heavy_tank
+			}
 		}
 	}
 	focus = {
