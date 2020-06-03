@@ -32,6 +32,9 @@
  give_medium_tank_templates:0 "Give Medium Tank Templates"
  give_heavy_tank_templates:0 "Give Heavy Tank Templates"
  give_suppression_templates:0 "Give Suppression Templates"
+ develop_macedonia_chromium:0 "Develop Chromium in Macedonia"
+ develop_montenegro_chromium:0 "Develop Chromium in Montenegro"
+ develop_central_macedonia_chromium:0 "Develop Chromium in Central Macedonia"
  
  #Focuses
  GER_align_hungary_and_romania:0 "Align Hungary and Romania"
@@ -50,7 +53,9 @@
  china_extra_corruption_against_AI_desc:0 "§RThis is only for AI Japans§"
  expensive_armor_licenses:0 "Expensive License Imports"
  expensive_armor_licenses_desc:0 "Countries knowing the current state of our nations armor development and need are demanding a premium for their current tank technology.  This will be removed from both France and Soviet after Medium 2 or Heavy 2 Tanks are researched by one of the respective countries."
-                
+ no_resources_to_market:0 "Trade Embargo"
+ no_resources_to_market_desc:0 "The tyrannical government of Norway has established a blockade on our nation, if only someone were to deal with them, maybe we could trade again..."
+ 
  #Events
  moore4vets_news.1.t:0 "Ethiopia submits"
  moore4vets_news.1.d:0 "The cowardly Ethiopians have surrendered to us and are now part of our glorious empire!"

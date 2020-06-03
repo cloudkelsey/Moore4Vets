@@ -5,29 +5,6 @@ state={
 	manpower = 860589
 	state_category = rural
 
-	resources={
-		tungsten=40 # was: 70
-		steel= 90 # was: 80
-		chromium = 25 # was: 40
-	}
-
-	history={
-		owner = IRQ
-		victory_points = {
-			6938 1 
-		}
-		victory_points = {
-			6995 1 
-		}
-		buildings = {
-			infrastructure = 3
-			6995 = {
-				naval_base = 1
-			}
-		}
-		add_core_of = IRQ
-	}
-
 	provinces={
 		979 3967 3982 6920 6938 6978 6995 9844 9871 11839 11897 
 	}

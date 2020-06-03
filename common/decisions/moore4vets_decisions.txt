@@ -216,7 +216,7 @@ event_firing = {
 		available = { check_variable = { var = benelux_annexes value = 2 compare = equals } }
 		fire_only_once = yes
 		ai_will_do = { factor = 1000 }
-		complete_effect = { news_event = moore4vets_news.3 }
+		complete_effect = { ENG = { news_event = moore4vets_news.3 } }
 	}
 	################################# BENELUX #################################
 	
@@ -232,6 +232,38 @@ event_firing = {
 		fire_only_once = yes
 		ai_will_do = { factor = 1000 }
 		complete_effect = { FRA = { remove_ideas = { expensive_armor_licenses } } SOV = { remove_ideas = { expensive_armor_licenses } } USA = { remove_ideas = { expensive_armor_licenses } } }
+	}
+	enable_swedish_exports = {
+		available = {
+			SWE = { has_idea = no_resources_to_market }
+			#SWE = { has_idea = international_trade_embargo }
+			GER = {
+				OR = { controls_state = 37 any_allied_country = { controls_state = 37 } }
+				OR = { controls_state = 110 any_allied_country = { controls_state = 110 } }
+				OR = { controls_state = 142 any_allied_country = { controls_state = 142 } }
+			}
+		}
+		fire_only_once = no
+		ai_will_do = { factor = 1000 }
+		complete_effect = { SWE = { remove_ideas = no_resources_to_market } }
+		#complete_effect = { SWE = { swap_ideas = { remove_idea = international_trade_embargo add_idea = international_trade_embargo_except_GER } } }
+	}
+	disable_swedish_exports = {
+		available = {
+			NOT = { SWE = { has_idea = no_resources_to_market } }
+			#SWE = { has_idea = international_trade_embargo_except_GER }
+			NOT = {
+				GER = {
+					OR = { controls_state = 37 all_allied_country = { controls_state = 37 } }
+					OR = { controls_state = 110 all_allied_country = { controls_state = 110 } }
+					OR = { controls_state = 142 all_allied_country = { controls_state = 142 } }
+				}
+			}
+		}
+		fire_only_once = no
+		ai_will_do = { factor = 1000 }
+		complete_effect = { SWE = { add_ideas = no_resources_to_market } }
+		#complete_effect = { SWE = { swap_ideas = { add_idea = international_trade_embargo remove_idea = international_trade_embargo_except_GER } } }
 	}
 	################################# MISC/MULTIPLE COUNTRIES #################################
 }

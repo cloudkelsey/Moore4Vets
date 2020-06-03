@@ -1,0 +1,44 @@
+prospect_for_resources = {
+	develop_macedonia_chromium = {
+		icon = chromium
+		highlight_state_targets = { state = 106 }
+		available = { owns_state = 106 controls_state = 106 num_of_civilian_factories_available_for_projects > 5 }
+		visible = { original_tag = ITA NOT = { 106 = { has_state_flag = macedonia_chromium_developed } } }
+		cost = 50
+		days_remove = 60
+		modifier = { civilian_factory_use = 5 }
+		ai_will_do = { factor = 1 }
+		remove_effect = { 
+			106 = { set_state_flag = macedonia_chromium_developed } 
+			106 = { add_resource = { type = chromium amount = 15 } add_compliance = 10 }
+		}
+	}
+	develop_montenegro_chromium = {
+		icon = chromium
+		highlight_state_targets = { state = 105 }
+		available = { owns_state = 105 controls_state = 105 num_of_civilian_factories_available_for_projects > 5 }
+		visible = { original_tag = ITA NOT = { 105 = { has_state_flag = montenegro_chromium_developed } } }
+		cost = 50
+		days_remove = 60
+		modifier = { civilian_factory_use = 5 }
+		ai_will_do = { factor = 1 }
+		remove_effect = { 
+			105 = { set_state_flag = montenegro_chromium_developed } 
+			105 = { add_resource = { type = chromium amount = 15 } add_compliance = 10 }
+		}
+	}
+	develop_central_macedonia_chromium = {
+		icon = chromium
+		highlight_state_targets = { state = 731 }
+		available = { owns_state = 731 controls_state = 731 num_of_civilian_factories_available_for_projects > 5 }
+		visible = { original_tag = ITA NOT = { 731 = { has_state_flag = central_macedonia_chromium_developed } } }
+		cost = 50
+		days_remove = 60
+		modifier = { civilian_factory_use = 5 }
+		ai_will_do = { factor = 1 }
+		remove_effect = { 
+			731 = { set_state_flag = central_macedonia_chromium_developed } 
+			731 = { add_resource = { type = chromium amount = 15 } add_compliance = 10 }
+		}
+	}
+}

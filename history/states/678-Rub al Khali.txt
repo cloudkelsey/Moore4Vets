@@ -5,14 +5,6 @@ state={
 	manpower=42
 	state_category = wasteland
 
-	history={
-		owner = IRQ
-		buildings = {
-			infrastructure = 0
-		}
-		add_core_of = IRQ
-	}
-
 	provinces={
 		4932 5081 8030 8118 10870 12740 12768 
 	}

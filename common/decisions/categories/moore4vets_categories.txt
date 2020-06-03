@@ -34,7 +34,7 @@ fin_white_peace = {
 }
 
 event_firing = {
-	allowed = { original_tag = IRQ }
+	allowed = { original_tag = COL }
 	visible = { is_ai = yes } # decisions need to be visible for the AI to take them
 }
 

@@ -3,11 +3,22 @@ state={
 	id=38
 	name="STATE_38"
 	manpower=931955
+	resources={
+		steel=40 # was: 62
+	}
 	
 	state_category = town
 	
 
 	history={
+		owner = SWE
+		victory_points = {
+			156 1 
+		}
+		buildings = {
+			infrastructure = 4
+		}
+		add_core_of = SWE
 	}
 
 	provinces={

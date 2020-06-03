@@ -6,17 +6,6 @@ state={
 
 	state_category = rural
 
-	history={
-		owner = IRQ
-		victory_points = {
-			10056 1
-		}
-		buildings = {
-			infrastructure = 3
-		}
-		add_core_of = IRQ
-	}
-
 	provinces={
 		1122 4008 4124 4127 7026 7143 10056 
 	}
