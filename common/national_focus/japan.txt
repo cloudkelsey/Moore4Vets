@@ -4273,60 +4273,60 @@
 		# }
 	# }
 
-	focus = {
-		id = JAP_fortify_the_border
-		icon = GFX_goal_generic_construct_military
-		prerequisite = { focus = JAP_the_manchurian_project }
-		x = 2
-		y = 1
-		relative_position_id = JAP_the_manchurian_project 
+	# focus = {
+		# id = JAP_fortify_the_border
+		# icon = GFX_goal_generic_construct_military
+		# prerequisite = { focus = JAP_the_manchurian_project }
+		# x = 2
+		# y = 1
+		# relative_position_id = JAP_the_manchurian_project 
 
-		cost = 10
+		# cost = 10
 
-		ai_will_do = {
-			factor = 1
-		}
+		# ai_will_do = {
+			# factor = 1
+		# }
 
-		available = {
-			MAN = { is_subject_of = ROOT }
-		}
+		# available = {
+			# MAN = { is_subject_of = ROOT }
+		# }
 
-		bypass = {
+		# bypass = {
 
-		}
+		# }
 
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
+		# cancel_if_invalid = yes
+		# continue_if_invalid = no
+		# available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-		completion_reward = {
-			MAN = {
-				every_owned_state = {
-					limit = {
-						is_fully_controlled_by = PREV
-						any_neighbor_state = {
-							is_controlled_by = SOV
-						}
-					}
-					set_building_level = {
-						type = bunker
-						level = 2
-						province = {
-							all_provinces = yes
-							limit_to_border = yes
-							level < 2
-						}
-					}
-				}				
-			}
-		}
-	}
+		# search_filters = { FOCUS_FILTER_INDUSTRY }
+		# completion_reward = {
+			# MAN = {
+				# every_owned_state = {
+					# limit = {
+						# is_fully_controlled_by = PREV
+						# any_neighbor_state = {
+							# is_controlled_by = SOV
+						# }
+					# }
+					# set_building_level = {
+						# type = bunker
+						# level = 2
+						# province = {
+							# all_provinces = yes
+							# limit_to_border = yes
+							# level < 2
+						# }
+					# }
+				# }				
+			# }
+		# }
+	# }
 
 	focus = {
 		id = JAP_army_expansion_law
 		icon = GFX_goal_generic_army_doctrines
-		x = 5
+		x = 3
 		y = 0
 		relative_position_id = JAP_the_manchurian_project 
 
@@ -4576,7 +4576,7 @@
 		id = JAP_fighter_modernization
 		icon = GFX_goal_generic_air_fighter2
 		prerequisite = { focus = JAP_army_expansion_law focus = JAP_new_naval_estimates }
-		x = 4
+		x = 3
 		y = 2
 		relative_position_id = JAP_army_expansion_law
 
@@ -4801,7 +4801,7 @@
 	focus = {
 		id = JAP_new_naval_estimates
 		icon = GFX_goal_generic_construct_naval_dockyard
-		x = 8
+		x = 7
 		y = 0
 		relative_position_id = JAP_army_expansion_law
 
