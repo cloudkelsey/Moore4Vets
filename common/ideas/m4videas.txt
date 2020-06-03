@@ -32,6 +32,72 @@ ideas = {
 			}
 		}
 		
+		NZL_2nzef_new = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_volunteer_expedition_bonus
+
+			rule = {
+				can_send_volunteers = yes
+			}
+			
+			modifier = {
+				send_volunteers_tension = -0.5
+				send_volunteer_size = 1
+				conscription_factor = 0.03
+			}
+
+		}
+
+		NZL_the_manpower_act_new = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_infantry_bonus
+			
+			modifier = {
+				conscription_factor = 0.05
+				mobilization_speed = 0.3
+			}
+		}
+
+		NZL_maori_conscription_new = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_intel_bonus
+			
+			modifier = {
+				conscription = 0.02
+				stability_factor = -0.05
+			}
+		}
+	
 		papertiger = {
 
 			picture = generic_spy_intel

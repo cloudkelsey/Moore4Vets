@@ -55,6 +55,9 @@
  expensive_armor_licenses_desc:0 "Countries knowing the current state of our nations armor development and need are demanding a premium for their current tank technology.  This will be removed from both France and Soviet after Medium 2 or Heavy 2 Tanks are researched by one of the respective countries."
  no_resources_to_market:0 "Trade Embargo"
  no_resources_to_market_desc:0 "The tyrannical government of Norway has established a blockade on our nation, if only someone were to deal with them, maybe we could trade again..."
+ NZL_2nzef_new:0 "2NZEF - 2nd New Zealand Expeditionary Force"
+ NZL_maori_conscription_new:0 "Maori Conscription Law"
+ NZL_the_manpower_act_new:0 "The New Manpower Act"
  
  #Events
  moore4vets_news.1.t:0 "Ethiopia submits"

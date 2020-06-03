@@ -1841,7 +1841,7 @@
 		search_filters = { FOCUS_FILTER_MANPOWER }
 
 		completion_reward = {
-			add_ideas = NZL_the_manpower_act
+			add_ideas = NZL_the_manpower_act_new
 		}
 	}
 
@@ -1849,7 +1849,7 @@
 		id = NZL_amend_the_maori_affairs_act
 		icon = GFX_goal_generic_construct_civilian
 		prerequisite = { focus = NZL_the_manpower_act }
-		mutually_exclusive = { focus = NZL_waitangi_tribunal }
+		#mutually_exclusive = { focus = NZL_waitangi_tribunal }
 		x = -1
 		y = 3
 		relative_position_id = NZL_ratana_alliance
@@ -1887,7 +1887,7 @@
 		id = NZL_waitangi_tribunal
 		icon = GFX_goal_generic_neutrality_focus
 		prerequisite = { focus = NZL_the_manpower_act }
-		mutually_exclusive = { focus = NZL_amend_the_maori_affairs_act }
+		#mutually_exclusive = { focus = NZL_amend_the_maori_affairs_act }
 		x = 1
 		y = 3
 		relative_position_id = NZL_ratana_alliance
@@ -1919,10 +1919,10 @@
 	focus = {
 		id = NZL_maori_conscription
 		icon = GFX_goal_generic_small_arms
-		prerequisite = { focus = NZL_amend_the_maori_affairs_act }
-		x = -1
-		y = 4
-		relative_position_id = NZL_ratana_alliance
+		prerequisite = { focus = NZL_maori_volunteers }
+		x = 0
+		y = 1
+		relative_position_id = NZL_maori_volunteers
 
 		cost = 10
 
@@ -1944,7 +1944,7 @@
 		search_filters = { FOCUS_FILTER_MANPOWER }
 
 		completion_reward = {
-			add_ideas = NZL_maori_conscription
+			add_ideas = NZL_maori_conscription_new
 		}
 	}
 
@@ -1952,7 +1952,8 @@
 		id = NZL_maori_volunteers
 		icon = GFX_goal_generic_propaganda
 		prerequisite = { focus = NZL_waitangi_tribunal }
-		x = 1
+		prerequisite = { focus = NZL_amend_the_maori_affairs_act }
+		x = 0
 		y = 4
 		relative_position_id = NZL_ratana_alliance
 
@@ -1975,27 +1976,28 @@
 		available_if_capitulated = no
 
 		completion_reward = {
-			division_template = {
-				is_locked = yes
-				name = "Maori Volunteers"
-				division_names_group = NZL_INF_01
-				regiments = {
-					infantry = { x = 0 y = 0 }
-					infantry = { x = 0 y = 1 }
-					infantry = { x = 0 y = 2 }
+			add_manpower = 16000
+			# division_template = {
+				# is_locked = yes
+				# name = "Maori Volunteers"
+				# division_names_group = NZL_INF_01
+				# regiments = {
+					# infantry = { x = 0 y = 0 }
+					# infantry = { x = 0 y = 1 }
+					# infantry = { x = 0 y = 2 }
 					
-					infantry = { x = 1 y = 0 }
-					infantry = { x = 1 y = 1 }
-					infantry = { x = 1 y = 2 }
-				}
-			}
-			random_owned_controlled_state = {
-				prioritize = { 284 723 }
-				create_unit = {
-					division = " name = \"Maori Volunteers\" division_template = \"Maori Volunteers\" start_experience_factor = 0.0"
-					owner = NZL
-				}
-			}
+					# infantry = { x = 1 y = 0 }
+					# infantry = { x = 1 y = 1 }
+					# infantry = { x = 1 y = 2 }
+				# }
+			# }
+			# random_owned_controlled_state = {
+				# prioritize = { 284 723 }
+				# create_unit = {
+					# division = " name = \"Maori Volunteers\" division_template = \"Maori Volunteers\" start_experience_factor = 0.0"
+					# owner = NZL
+				# }
+			# }
 		}
 	}
 
@@ -2073,7 +2075,7 @@
 		available_if_capitulated = no
 
 		completion_reward = {
-			add_ideas = NZL_2nzef
+			add_ideas = NZL_2nzef_new
 		}
 	}
 
@@ -2142,6 +2144,7 @@
  				id = commonwealth_research
  				bonus = 0.05  # we get 20% higher bonus from this group
 			}
+			add_stability = 0.05
 		}
 	}
 	
