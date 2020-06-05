@@ -1917,38 +1917,6 @@
 	}
 
 	focus = {
-		id = NZL_maori_conscription
-		icon = GFX_goal_generic_small_arms
-		prerequisite = { focus = NZL_maori_volunteers }
-		x = 0
-		y = 1
-		relative_position_id = NZL_maori_volunteers
-
-		cost = 10
-
-		ai_will_do = {
-			factor = 25
-		}
-
-		available = {
-
-		}
-
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		search_filters = { FOCUS_FILTER_MANPOWER }
-
-		completion_reward = {
-			add_ideas = NZL_maori_conscription_new
-		}
-	}
-
-	focus = {
 		id = NZL_maori_volunteers
 		icon = GFX_goal_generic_propaganda
 		prerequisite = { focus = NZL_waitangi_tribunal }
@@ -2001,6 +1969,37 @@
 		}
 	}
 
+	focus = {
+		id = NZL_maori_conscription
+		icon = GFX_goal_generic_small_arms
+		prerequisite = { focus = NZL_maori_volunteers }
+		x = 0
+		y = 1
+		relative_position_id = NZL_maori_volunteers
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 25
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_MANPOWER }
+
+		completion_reward = {
+			add_ideas = NZL_maori_conscription_new
+		}
+	}
 
 	#########################
 	### THE CLASH SECTION ###
