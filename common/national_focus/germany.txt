@@ -2726,6 +2726,7 @@ focus_tree = {
 			add_state_core = 74
 			transfer_state = 69
 			transfer_state = 74
+			play_peace_in_our_time_effect = yes
 		}
 	}
 
