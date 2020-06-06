@@ -331,55 +331,55 @@ chinese_war = {
 	}		
 }
 
-strike_usa = {
-	enable = {
-		tag = JAP
-		has_completed_focus = JAP_secure_the_philippines
-		country_exists = USA
-	}
-	abort = {
-		NOT = {
-			country_exists = USA
-		}
-	}
+# strike_usa = {
+	# enable = {
+		# tag = JAP
+		# has_completed_focus = JAP_secure_the_philippines
+		# country_exists = USA
+	# }
+	# abort = {
+		# NOT = {
+			# country_exists = USA
+		# }
+	# }
 	
-	ai_strategy = {
-		type = antagonize
-		id = "USA"			
-		value = 200
-	}
+	# ai_strategy = {
+		# type = antagonize
+		# id = "USA"			
+		# value = 200
+	# }
 
-	ai_strategy = {
-		type = antagonize
-		id = "PHI"			
-		value = 200
-	}	
-}
+	# ai_strategy = {
+		# type = antagonize
+		# id = "PHI"			
+		# value = 200
+	# }	
+# }
 
 # "I can run wild for six months… after that, I have no expectation of success"
-jap_hush_yamamoto_its_gonna_be_ok = {
-	enable = {
-		tag = JAP
-		has_completed_focus = JAP_secure_the_philippines
-		country_exists = USA
-		NOT = { has_war_with = USA }
-	}
+# jap_hush_yamamoto_its_gonna_be_ok = {
+	# enable = {
+		# tag = JAP
+		# has_completed_focus = JAP_secure_the_philippines
+		# country_exists = USA
+		# NOT = { has_war_with = USA }
+	# }
 
-	abort = {
-		OR = {
-			has_war_with = USA
-			NOT = {
-				country_exists = USA
-			}
-		}
-	}
+	# abort = {
+		# OR = {
+			# has_war_with = USA
+			# NOT = {
+				# country_exists = USA
+			# }
+		# }
+	# }
 
-	ai_strategy = {
-		type = consider_weak
-		id = "USA"
-		value = 75
-	}
-}
+	# ai_strategy = {
+		# type = consider_weak
+		# id = "USA"
+		# value = 75
+	# }
+# }
 
 jap_conserve_fuel_for_usa_fight = {
 	enable = {

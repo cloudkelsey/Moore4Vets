@@ -40,8 +40,7 @@ JAP_historical_plan = {
 		JAP_warrior_spirit
 		JAP_non_aggression_pact_with_the_soviet_union
 		JAP_coal_liquification
-		JAP_secure_the_philippines
-		JAP_strike_on_the_southern_resource_area
+		JAP_declare_war_on_allies
 	}
 
 	research = {
