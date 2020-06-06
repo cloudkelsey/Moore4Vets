@@ -1637,7 +1637,7 @@ focus_tree = {
 	focus = {
 		id = RAJ_great_indian_peninsula_railway
 		icon = GFX_goal_generic_construct_infrastructure
-		x = 24
+		x = 25
 		y = 0
 
 		cost = 10
@@ -1745,7 +1745,7 @@ focus_tree = {
 		id = RAJ_industrial_expansion
 		icon = GFX_goal_generic_construct_civ_factory
 		prerequisite = { focus = RAJ_great_indian_peninsula_railway }
-		x = -4
+		x = -5
 		y = 1
 		relative_position_id = RAJ_great_indian_peninsula_railway
 
@@ -2014,8 +2014,8 @@ focus_tree = {
 	focus = {
 		id = RAJ_expand_mazagon_dock
 		icon = GFX_goal_generic_construct_naval_dockyard
-		prerequisite = { focus = RAJ_industrial_expansion }
-		x = 3
+		prerequisite = { focus = RAJ_industrial_expansion focus = RAJ_east_india_railways}
+		x = 5
 		y = 1
 		relative_position_id = RAJ_industrial_expansion
 
@@ -2059,10 +2059,30 @@ focus_tree = {
 					}
 				}
 			}
+			random_state = {
+				limit = {
+					has_state_flag = RAJ_found_scindia_shipyard
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+				if = {
+					limit = { has_state_flag = RAJ_found_scindia_shipyard_NB }
+					add_building_construction = {
+						type = naval_base
+						level = 1
+						instant_build = yes
+						province = 10255
+					}
+				}
+			}
 		}
 
 		completion_reward = {
-			navy_experience = 5
+			navy_experience = 25
 			random_owned_controlled_state = {
 				prioritize = { 429 }
 				limit = {
@@ -2091,61 +2111,6 @@ focus_tree = {
 					set_state_flag = RAJ_expand_mazagon_dock_NB
 				}
 			}
-		}
-	}
-
-	focus = {
-		id = RAJ_found_scindia_shipyard
-		icon = GFX_goal_generic_construct_naval_dockyard
-		prerequisite = { focus = RAJ_east_india_railways }
-		x = 2
-		y = 0
-		relative_position_id = RAJ_expand_mazagon_dock
-
-		cost = 5
-
-		ai_will_do = {
-			factor = 20
-		}
-
-		available = {
-
-		}
-
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-		complete_tooltip = {
-			random_state = {
-				limit = {
-					has_state_flag = RAJ_found_scindia_shipyard
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = dockyard
-					level = 1
-					instant_build = yes
-				}
-				if = {
-					limit = { has_state_flag = RAJ_found_scindia_shipyard_NB }
-					add_building_construction = {
-						type = naval_base
-						level = 1
-						instant_build = yes
-						province = 10255
-					}
-				}
-			}
-		}
-
-		completion_reward = {
-			navy_experience = 5
 			random_owned_controlled_state = {
 				prioritize = { 426 }
 				limit = {
@@ -2175,15 +2140,97 @@ focus_tree = {
 				}
 			}
 		}
-	}
+		}
+
+	# focus = {
+		# id = RAJ_found_scindia_shipyard
+		# icon = GFX_goal_generic_construct_naval_dockyard
+		# prerequisite = { focus = RAJ_east_india_railways }
+		# x = 2
+		# y = 0
+		# relative_position_id = RAJ_expand_mazagon_dock
+
+		# cost = 5
+
+		# ai_will_do = {
+			# factor = 20
+		# }
+
+		# available = {
+
+		# }
+
+		# bypass = {
+
+		# }
+
+		# cancel_if_invalid = yes
+		# continue_if_invalid = no
+		# available_if_capitulated = no
+
+		# search_filters = { FOCUS_FILTER_INDUSTRY }
+		# complete_tooltip = {
+			# random_state = {
+				# limit = {
+					# has_state_flag = RAJ_found_scindia_shipyard
+				# }
+				# add_extra_state_shared_building_slots = 1
+				# add_building_construction = {
+					# type = dockyard
+					# level = 1
+					# instant_build = yes
+				# }
+				# if = {
+					# limit = { has_state_flag = RAJ_found_scindia_shipyard_NB }
+					# add_building_construction = {
+						# type = naval_base
+						# level = 1
+						# instant_build = yes
+						# province = 10255
+					# }
+				# }
+			# }
+		# }
+
+		# completion_reward = {
+			# navy_experience = 5
+			# random_owned_controlled_state = {
+				# prioritize = { 426 }
+				# limit = {
+					# is_coastal = yes
+					# free_building_slots = {
+						# building = dockyard
+						# size > 0
+						# include_locked = yes
+					# }
+				# }
+				# add_extra_state_shared_building_slots = 1
+				# add_building_construction = {
+					# type = dockyard
+					# level = 1
+					# instant_build = yes
+				# }
+				# set_state_flag = RAJ_found_scindia_shipyard
+				# if = {
+					# limit = { state = 426 }
+					# add_building_construction = {
+						# type = naval_base
+						# level = 1
+						# instant_build = yes
+						# province = 10255
+					# }
+					# set_state_flag = RAJ_found_scindia_shipyard_NB
+				# }
+			# }
+		# }
+	# }
 
 	focus = {
 		id = RAJ_royal_indian_navy
 		icon = GFX_goal_generic_navy_doctrines_tactics
-		prerequisite = { focus = RAJ_expand_mazagon_dock
-		focus = RAJ_found_scindia_shipyard }
-		x = 1
-		y = 1
+		prerequisite = { focus = RAJ_expand_mazagon_dock }
+		x = 2
+		y = 2
 		relative_position_id = RAJ_expand_mazagon_dock
 
 		cost = 5
@@ -2206,11 +2253,11 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_RESEARCH }
 		completion_reward = {
-			navy_experience = 10
+			navy_experience = 5
 			add_tech_bonus = {
 				name = RAJ_royal_indian_navy
 				bonus = 1.0
-				uses = 1
+				uses = 2
 				category = naval_doctrine
 			}
 		}
@@ -2219,9 +2266,9 @@ focus_tree = {
 	focus = {
 		id = RAJ_screening_effort
 		icon = GFX_goal_generic_navy_cruiser
-		prerequisite = { focus = RAJ_royal_indian_navy }
-		x = 0
-		y = 2
+		prerequisite = { focus = RAJ_expand_mazagon_dock }
+		x = -3
+		y = 1
 		relative_position_id = RAJ_expand_mazagon_dock
 
 		cost = 5
@@ -2257,9 +2304,9 @@ focus_tree = {
 	focus = {
 		id = RAJ_cruiser_effort
 		icon = GFX_goal_generic_navy_battleship
-		prerequisite = { focus = RAJ_royal_indian_navy }
-		x = 2
-		y = 2
+		prerequisite = { focus = RAJ_expand_mazagon_dock }
+		x = -1
+		y = 1
 		relative_position_id = RAJ_expand_mazagon_dock
 
 		cost = 5
@@ -2295,9 +2342,9 @@ focus_tree = {
 	focus = {
 		id = RAJ_submarine_effort
 		icon = GFX_goal_generic_navy_submarine
-		prerequisite = { focus = RAJ_screening_effort focus = RAJ_cruiser_effort }
-		x = 0
-		y = 3
+		prerequisite = { focus = RAJ_expand_mazagon_dock }
+		x = 1
+		y = 1
 		relative_position_id = RAJ_expand_mazagon_dock
 
 		cost = 5
@@ -2332,9 +2379,9 @@ focus_tree = {
 	focus = {
 		id = RAJ_capital_ship_effort
 		icon = GFX_goal_generic_navy_battleship
-		prerequisite = { focus = RAJ_screening_effort focus = RAJ_cruiser_effort }
-		x = 2
-		y = 3
+		prerequisite = { focus = RAJ_expand_mazagon_dock }
+		x = 0
+		y = 2
 		relative_position_id = RAJ_expand_mazagon_dock
 
 		cost = 5
@@ -2370,9 +2417,9 @@ focus_tree = {
 	focus = {
 		id = RAJ_modernizing_navy
 		icon = GFX_goal_generic_navy_doctrines_tactics
-		prerequisite = { focus = RAJ_submarine_effort focus = RAJ_capital_ship_effort }
-		x = 1
-		y = 4
+		prerequisite = { focus = RAJ_royal_indian_navy }
+		x = 2
+		y = 3
 		relative_position_id = RAJ_expand_mazagon_dock
 
 		cost = 5
@@ -2395,10 +2442,11 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_RESEARCH }
 		completion_reward = {
+			navy_experience = 5
 			add_tech_bonus = {
 				name = RAJ_modernizing_navy
 				bonus = 1.0
-				uses = 3
+				uses = 2
 				category = naval_doctrine
 			}
 		}
@@ -2413,7 +2461,7 @@ focus_tree = {
 		id = RAJ_east_india_railways
 		icon = GFX_goal_generic_construct_infrastructure
 		prerequisite = { focus = RAJ_great_indian_peninsula_railway }
-		x = 4
+		x = 5
 		y = 1
 		relative_position_id = RAJ_great_indian_peninsula_railway
 
