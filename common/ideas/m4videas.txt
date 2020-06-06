@@ -162,7 +162,7 @@ ideas = {
 		
 		expensive_armor_licenses = {
 			picture = chi_hyper_inflation
-			modifier = { license_armor_purchase_cost = 10000 }
+			modifier = { license_armor_purchase_cost = 10000 license_light_tank_eq_cost_factor = -10000 }
 		}
 		
 		no_resources_to_market = {

@@ -816,7 +816,7 @@
 	focus = {
 		id = SOV_improve_railway
 		icon = GFX_goal_generic_construct_infrastructure
-		x = 11
+		x = 9
 		y = 0
 		cost = 10
 		ai_will_do = {
@@ -888,7 +888,7 @@
 	focus = {
 		id = SOV_transpolar_flights
 		icon = GFX_goal_generic_air_fighter2
-		x = 13
+		x = 11
 		y = 0
 		cost = 10
 		ai_will_do = {
@@ -910,7 +910,7 @@
 	focus = {
 		id = SOV_ocean_going_navy
 		icon = GFX_goal_generic_navy_battleship
-		x = 15
+		x = 13
 		y = 0
 		cost = 5
 		ai_will_do = {
@@ -1990,7 +1990,7 @@
 			NOT = { has_country_flag = counter_purge }
 			has_government = communism
 		}
-		x = 18
+		x = 16
 		y = 0
 		cost = 30
 		ai_will_do = {
