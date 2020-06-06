@@ -1967,7 +1967,9 @@ leader_traits = {
 	military_theorist = {
 		sprite = 14
 		experience_gain_army = 0.05
-		
+		experience_gain_navy = 0.05
+		experience_gain_air = 0.05
+
 		ai_will_do = {
 			factor = 500
 		}
@@ -2012,7 +2014,8 @@ leader_traits = {
 	air_warfare_theorist = {
 		sprite = 14
 		experience_gain_air = 0.05
-		
+		experience_gain_navy = 0.05
+		experience_gain_army = 0.05
 		ai_will_do = {
 			factor = 500
 		}
@@ -2063,6 +2066,14 @@ leader_traits = {
 	naval_theorist = {
 		sprite = 14
 		experience_gain_navy = 0.05
+		experience_gain_army = 0.05
+		experience_gain_air = 0.05
+		#naval_doctrine = 0.10
+		research_bonus = {
+			naval_doctrine = 0.1
+			air_doctrine = 0.1
+			land_doctrine = 0.1
+		}
 		
 		ai_will_do = {
 			factor = 100
@@ -2105,7 +2116,9 @@ leader_traits = {
 				maximum_speed = 0.10
 			}
 		}
+		experience_gain_navy = 0.05
 		experience_gain_army = 0.05
+		experience_gain_air = 0.05
 		
 		ai_will_do = {
 			factor = 500
