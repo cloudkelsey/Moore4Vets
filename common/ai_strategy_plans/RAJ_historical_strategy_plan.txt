@@ -57,8 +57,7 @@ RAJ_historical = {
 		RAJ_navy_funding									
 		RAJ_army_motorization								
 		RAJ_british_pilot_training							
-		RAJ_expand_air_bases								
-		RAJ_found_scindia_shipyard							
+		RAJ_expand_air_bases															
 		RAJ_red_eagle_division								
 		RAJ_indian_gurkhas									
 		RAJ_revive_the_screw_guns							
