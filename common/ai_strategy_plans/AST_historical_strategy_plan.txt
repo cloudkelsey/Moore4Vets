@@ -54,7 +54,7 @@ AST_historical = {
 		AST_cac_woomera									#1941
 		AST_cac_boomerang								#1941
 		AST_volunteer_air_observers_corps				#1941
-		AST_womens_auxilliary_australian_air_force		#1941
+		#AST_womens_auxilliary_australian_air_force		#1941
 		AST_australian_womens_army_service				#1941
 		AST_sentinel_tank_project						#1941
 		AST_cockatoo_island_shipyards					#1942

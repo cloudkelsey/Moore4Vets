@@ -348,6 +348,9 @@
 		completion_reward = {
 			
 			add_ideas = AST_australian_womens_army_service
+			set_rule = {
+				can_generate_female_aces = yes
+			}
 		}
 	}
 
@@ -1088,7 +1091,7 @@
 		icon = GFX_goal_generic_CAS
 		prerequisite = { focus = AST_volunteer_air_observers_corps }
 		x = -1
-		y = 5
+		y = 4
 		relative_position_id = AST_expand_the_raaf
 
 		cost = 10
@@ -1161,7 +1164,7 @@
 		}
 
 		completion_reward = {
-			air_experience = 25
+			air_experience = 50
 			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
@@ -1231,48 +1234,48 @@
 		}
 	}
 
-	focus = {
-		id = AST_womens_auxilliary_australian_air_force
-		icon = GFX_goal_generic_build_airforce
-		prerequisite = { focus = AST_volunteer_air_observers_corps focus = AST_naval_bombers }
-		x = 0
-		y = 4
-		relative_position_id = AST_expand_the_raaf
+	# focus = {
+		# id = AST_womens_auxilliary_australian_air_force
+		# icon = GFX_goal_generic_build_airforce
+		# prerequisite = { focus = AST_volunteer_air_observers_corps focus = AST_naval_bombers }
+		# x = 0
+		# y = 4
+		# relative_position_id = AST_expand_the_raaf
 
-		cost = 10
+		# cost = 10
 
-		ai_will_do = {
-			factor = 1
-		}
+		# ai_will_do = {
+			# factor = 1
+		# }
 
-		available = {
+		# available = {
 
-		}
+		# }
 		
-		bypass = {
+		# bypass = {
 
-		}
+		# }
 
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = yes
-		search_filters = {  }
+		# cancel_if_invalid = yes
+		# continue_if_invalid = no
+		# available_if_capitulated = yes
+		# search_filters = {  }
 
-		completion_reward = {
-			air_experience = 50
-			set_rule = {
-				can_generate_female_aces = yes
-			}
-		}
-	}
+		# completion_reward = {
+			# air_experience = 50
+			# set_rule = {
+				# can_generate_female_aces = yes
+			# }
+		# }
+	# }
 
 	focus = {
 		id = AST_dominate_the_skies
 		icon = GFX_goal_generic_air_doctrine
-		prerequisite = { focus = AST_womens_auxilliary_australian_air_force }
-		x = 1
-		y = 5
-		relative_position_id = AST_expand_the_raaf
+		prerequisite = { focus = AST_death_from_down_under }
+		x = 0
+		y = 1
+		relative_position_id = AST_death_from_down_under
 
 		cost = 10
 
@@ -1294,7 +1297,7 @@
 		search_filters = { FOCUS_FILTER_RESEARCH  }
 
 		complete_tooltip = {
-			air_experience = 25
+			air_experience = 50
 			random_state = {				
 				limit = {
 					has_state_flag = AST_dominate_the_skies_AB
