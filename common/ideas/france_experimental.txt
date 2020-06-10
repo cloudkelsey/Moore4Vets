@@ -1,0 +1,38 @@
+ideas = {
+	country = {
+		test_license_idea = {
+			modifier = { license_production_speed = 0.1 }
+		}
+		expanded_agency_power = {
+			modifier = { operative_slot = 1 intelligence_agency_defense = 1 }
+		}
+		engineer_corps_of_france = {
+			modifier = { max_dig_in = 5 dig_in_speed_factor = 0.25 }
+		}
+		realise_the_aerial_threat = {
+			modifier = { cas_damage_reduction = 0.1 }
+		}
+		
+		FRA_disjointed_government_2 = {
+			allowed = { original_tag = FRA always = no }
+			allowed_civil_war = { has_government = democratic }
+			removal_cost = -1
+			picture = generic_disjointed_gov
+			modifier = { political_power_cost = 0.6 stability_factor = -0.075 surrender_limit = -0.4 }
+		}
+		FRA_disjointed_government_3 = {
+			allowed = { original_tag = FRA always = no }
+			allowed_civil_war = { has_government = democratic }
+			removal_cost = -1
+			picture = generic_disjointed_gov
+			modifier = { political_power_cost = 0.4 stability_factor = -0.05 surrender_limit = -0.3 }
+		}
+		FRA_disjointed_government_4 = {
+			allowed = { original_tag = FRA always = no }
+			allowed_civil_war = { has_government = democratic }
+			removal_cost = -1
+			picture = generic_disjointed_gov
+			modifier = { political_power_cost = 0.2 stability_factor = -0.025 surrender_limit = -0.2 }
+		}
+	}
+}

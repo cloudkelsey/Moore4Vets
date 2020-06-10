@@ -1,6 +1,6 @@
 ﻿capital = 328
 
-set_stability = 0.7
+set_stability = 0.73
 set_war_support = 0.6
 
 oob = "MAN_1936"

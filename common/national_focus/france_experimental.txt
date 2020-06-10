@@ -6,19 +6,16 @@ focus_tree = {
 		factor = 0
 		
 		# modifier = {
-			# add = 10
+			# add = 100
 			# tag = FRA
 		# }
 	}
 	
-	# Plans for industry tree (NOT IN ORDER):
-	# Generic factory adding with a twist (choose to develop mainland or overseas shit, mainland will give double factories but will obviously go to Germany)
-	# Tech bonuses?
-	# *CHOICE* to trade economy for stability (Matignon)
-	# etc. etc.
-	
+	# BEGINNING PATH
+	# BEGINNING PATH
+	# BEGINNING PATH
 	focus = {
-		id = M4V1_industry_1
+		id = FRAE_fire_disloyal_ministers
 		icon = GFX_goal_generic_construct_civilian
 		x = 0
 		y = 0
@@ -30,23 +27,17 @@ focus_tree = {
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-		completion_reward = {}
+		search_filters = {  }
+		completion_reward = { add_stability = 0.05 }
 	}
 	
-	# Plans for political tree (NOT IN ORDER):
-	# 150pp
-	# base stability
-	# base stability over time
-	# War support for stability?
-	# African cores?
-	
 	focus = {
-		id = M4V1_political_1
-		#icon = GFX_goal_generic_construct_civilian
-		x = 5
-		y = 0
-		prerequisite = {}
+		id = FRAE_regain_cabinet_control
+		icon = GFX_goal_generic_construct_civilian
+		x = 0
+		y = 1
+		relative_position_id = FRAE_fire_disloyal_ministers
+		prerequisite = { focus = FRAE_fire_disloyal_ministers }
 		mutually_exclusive = {}
 		cost = 5
 		available = {}
@@ -54,7 +45,317 @@ focus_tree = {
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-		completion_reward = {}
+		search_filters = {  }
+		completion_reward = { add_political_power = 150 }
 	}
+	# BEGINNING PATH
+	# BEGINNING PATH
+	# BEGINNING PATH
+	
+	# PATH TO REARMAMENT
+	# PATH TO REARMAMENT
+	# PATH TO REARMAMENT
+	focus = {
+		id = FRAE_path_to_rearmament
+		icon = GFX_goal_generic_construct_civilian
+		x = -6
+		y = 1
+		relative_position_id = FRAE_regain_cabinet_control
+		prerequisite = { focus = FRAE_regain_cabinet_control }
+		mutually_exclusive = {}
+		cost = 5
+		available = { has_completed_focus = FRAE_begin_political_restabilisation }
+		bypass = {}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {  }
+		completion_reward = { add_ideas = low_economic_mobilisation add_political_power = -50 }
+	}
+	
+	focus = {
+		id = FRAE_the_old_war
+		icon = GFX_goal_generic_construct_civilian
+		x = -1
+		y = 1
+		relative_position_id = FRAE_path_to_rearmament
+		prerequisite = { focus = FRAE_path_to_rearmament }
+		mutually_exclusive = { focus = FRAE_the_new_war }
+		cost = 5
+		available = {}
+		bypass = {}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {  }
+		completion_reward = { army_experience = -25 add_political_power = 100 }
+	}
+	
+	focus = {
+		id = FRAE_engineer_corps_of_france # Make sure localisation is Corps d'Ingénieurs de France for extra spice
+		icon = GFX_goal_generic_construct_civilian
+		x = 0
+		y = 1
+		relative_position_id = FRAE_the_old_war
+		prerequisite = { focus = FRAE_the_old_war }
+		mutually_exclusive = {}
+		cost = 5
+		available = {}
+		bypass = {}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {  }
+		completion_reward = { add_ideas = engineer_corps_of_france  }
+	}
+	
+	focus = {
+		id = FRAE_the_new_war
+		icon = GFX_goal_generic_construct_civilian
+		x = 1
+		y = 1
+		relative_position_id = FRAE_path_to_rearmament
+		prerequisite = { focus = FRAE_path_to_rearmament }
+		mutually_exclusive = { focus = FRAE_the_old_war }
+		cost = 5
+		available = {}
+		bypass = {}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {  }
+		completion_reward = { army_experience = 25 add_political_power = -50 }
+	}
+	
+	focus = {
+		id = FRAE_realise_the_aerial_threat
+		icon = GFX_goal_generic_construct_civilian
+		x = 0
+		y = 1
+		relative_position_id = FRAE_the_new_war
+		prerequisite = { focus = FRAE_the_new_war }
+		mutually_exclusive = {}
+		cost = 5
+		available = {}
+		bypass = {}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {  }
+		completion_reward = { add_tech_bonus = { name = FRAE_aerial_threat bonus = 1.0 uses = 1 technology = antiair2 } add_ideas = realise_the_aerial_threat }
+	}
+	
+	focus = {
+		id = FRAE_the_french_armored_corps
+		icon = GFX_goal_generic_construct_civilian
+		x = 0
+		y = 1
+		relative_position_id = FRAE_realise_the_aerial_threat
+		prerequisite = { focus = FRAE_realise_the_aerial_threat }
+		mutually_exclusive = {}
+		cost = 5
+		available = {}
+		bypass = {}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {  }
+		completion_reward = { add_tech_bonus = { name = FRAE_aerial_threat bonus = 1.0 uses = 1 category = armor } }
+	}
+	# PATH TO REARMAMENT
+	# PATH TO REARMAMENT
+	# PATH TO REARMAMENT
+	
+	# PATH TO INDUSTRY
+	# PATH TO INDUSTRY
+	# PATH TO INDUSTRY
+	focus = {
+		id = FRAE_path_to_industrial_self_sufficiency
+		icon = GFX_goal_generic_construct_civilian
+		x = -2
+		y = 1
+		relative_position_id = FRAE_regain_cabinet_control
+		prerequisite = { focus = FRAE_regain_cabinet_control }
+		mutually_exclusive = {}
+		cost = 5
+		available = {}
+		bypass = {}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {  }
+		completion_reward = { add_ideas = FRA_felix_gouin }
+	}
+	# PATH TO INDUSTRY
+	# PATH TO INDUSTRY
+	# PATH TO INDUSTRY
+	
+	# PATH TO INTERNAL STABILITY
+	# PATH TO INTERNAL STABILITY
+	# PATH TO INTERNAL STABILITY
+	focus = {
+		id = FRAE_path_to_internal_stability
+		icon = GFX_goal_generic_construct_civilian
+		x = 2
+		y = 1
+		relative_position_id = FRAE_regain_cabinet_control
+		prerequisite = { focus = FRAE_regain_cabinet_control }
+		mutually_exclusive = {}
+		cost = 5
+		available = {}
+		bypass = {}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {  }
+		completion_reward = { add_stability = 0.05 add_political_power = 50 }
+	}
+	
+	focus = {
+		id = FRAE_hire_gaston
+		icon = GFX_goal_generic_construct_civilian
+		x = -1
+		y = 1
+		relative_position_id = FRAE_path_to_internal_stability
+		prerequisite = { focus = FRAE_path_to_internal_stability }
+		mutually_exclusive = {}
+		cost = 5
+		available = {}
+		bypass = {}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {  }
+		completion_reward = { if = { limit = { has_idea = FRA_gaston_henry_haye } add_political_power = 150 } else = { add_ideas = FRA_gaston_henry_haye } }
+	}
+	
+	focus = {
+		id = FRAE_expand_agency_power
+		icon = GFX_goal_generic_construct_civilian
+		x = 0
+		y = 1
+		relative_position_id = FRAE_hire_gaston
+		prerequisite = { focus = FRAE_hire_gaston }
+		mutually_exclusive = {}
+		cost = 5
+		available = { has_intelligence_agency = yes }
+		bypass = {}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {  }
+		completion_reward = { add_ideas = expanded_agency_power add_political_power = -50 }
+	}
+	
+	focus = {
+		id = FRAE_matignon_agreements
+		icon = GFX_goal_generic_construct_civilian
+		x = 1
+		y = 1
+		relative_position_id = FRAE_path_to_internal_stability
+		prerequisite = { focus = FRAE_path_to_internal_stability }
+		mutually_exclusive = {}
+		cost = 5
+		available = {}
+		bypass = {}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {  }
+		completion_reward = { add_ideas = FRA_matignon_agreements }
+	}
+	
+	focus = {
+		id = FRAE_begin_political_restabilisation
+		icon = GFX_goal_generic_construct_civilian
+		x = 0
+		y = 1
+		relative_position_id = FRAE_matignon_agreements
+		prerequisite = { focus = FRAE_matignon_agreements }
+		mutually_exclusive = {}
+		cost = 5
+		available = {}
+		bypass = {}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {  }
+		completion_reward = { swap_ideas = { add_idea = FRA_disjointed_government_2 remove_idea = FRA_disjointed_government } }
+	}
+	# PATH TO INTERNAL STABILITY
+	# PATH TO INTERNAL STABILITY
+	# PATH TO INTERNAL STABILITY
+	
+	# PATH TO EXTERNAL TIES
+	# PATH TO EXTERNAL TIES
+	# PATH TO EXTERNAL TIES
+	focus = {
+		id = FRAE_path_to_external_ties
+		icon = GFX_goal_generic_construct_civilian
+		x = 6
+		y = 1
+		relative_position_id = FRAE_regain_cabinet_control
+		prerequisite = { focus = FRAE_regain_cabinet_control }
+		mutually_exclusive = {}
+		cost = 5
+		available = {}
+		bypass = {}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {  }
+		completion_reward = { add_political_power = -50 }
+	}
+	
+	focus = {
+		id = FRAE_reliance_on_foreign_technology
+		icon = GFX_goal_generic_construct_civilian
+		x = -1
+		y = 1
+		relative_position_id = FRAE_path_to_external_ties
+		prerequisite = { focus = FRAE_path_to_external_ties }
+		mutually_exclusive = {}
+		cost = 5
+		available = {}
+		bypass = {}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {  }
+		completion_reward = { add_ideas = test_license_idea }
+	}
+	
+	focus = {
+		id = FRAE_international_volunteers
+		icon = GFX_goal_generic_construct_civilian
+		x = 1
+		y = 1
+		relative_position_id = FRAE_path_to_external_ties
+		prerequisite = { focus = FRAE_path_to_external_ties }
+		mutually_exclusive = {}
+		cost = 5
+		available = {}
+		bypass = {}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {  }
+		completion_reward = { add_manpower = 100000 }
+	}
+	# PATH TO EXTERNAL TIES
+	# PATH TO EXTERNAL TIES
+	# PATH TO EXTERNAL TIES
+	
+	# Plans for industry tree (NOT IN ORDER):
+	# Generic factory adding with a twist (choose to develop mainland or overseas shit, mainland will give double factories but will obviously go to Germany)
+	# Tech bonuses?
+	# *CHOICE* to trade economy for stability (Matignon)
+	# etc. etc.
+	
+	# Plans for political tree (NOT IN ORDER):
+	# 150pp
+	# base stability
+	# base stability over time
+	# War support for stability?
+	# African cores?
 }
