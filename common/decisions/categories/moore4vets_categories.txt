@@ -43,7 +43,7 @@ acquire_islands = {
 }
 
 GER_spanish_civil_war_AI_control = {
-	allowed = { original_tag = GER is_ai = no SPR = { is_ai = yes } }
+	allowed = { OR = { original_tag = GER original_tag = ITA } is_ai = no SPR = { is_ai = yes } }
 	available = { has_global_flag = spanish_civil_war SPR = { has_war = yes has_volunteers_amount_from = { tag = GER count > 0 } } }
 	visible = { NOT = { has_global_flag = scw_over } }
 	priority = 1000
@@ -51,5 +51,15 @@ GER_spanish_civil_war_AI_control = {
 
 give_division_templates = {
 	allowed = { NOT = { OR = { tag = IRQ tag = COL tag = FIN tag = CHI } } }
-	priority = 100
+	priority = 10
+}
+
+war_time_limit = {
+	allowed = { is_ai = no }
+	priority = 10000
+}
+
+automatic_air_controller_lendlease = {
+	allowed = { is_ai = no }
+	priority = 50
 }

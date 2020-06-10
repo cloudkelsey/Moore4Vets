@@ -695,11 +695,6 @@ on_actions = {
 				news_event = { id = country_capitulated.0 days = 0 }
 			}
 			if = {
-				limit = { tag = FRA }
-				set_global_flag = FRA_already_surrendered
-				set_variable = { global.FRA_capitulation_days = global.num_days }
-			}
-			if = {
 				limit = {
 					FROM = { tag = JAP }
 					ROOT = { tag = CHI }
@@ -729,12 +724,9 @@ on_actions = {
 			if = {
 				limit = {
 					original_tag = FRA
-					has_government = democratic
-					NOT = { has_global_flag = achievement_france_surrender } #might as well use the achievement flag to check if france.10 fired
-					is_subject = no
-					is_in_faction_with = ENG
-					has_war_with = GER
 				}
+				set_global_flag = FRA_already_surrendered
+				set_variable = { global.FRA_capitulation_days = global.num_days }
 				country_event = france.10
 			}
 		}

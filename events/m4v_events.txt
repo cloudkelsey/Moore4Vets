@@ -33,8 +33,8 @@ news_event = { # UK and France have annexed Belgium and Netherlands
 	is_triggered_only = yes
 	major = yes
 	
-	option = { name = moore4vets_news.3.option1 trigger = { 126 = { is_controlled_by_ROOT_or_ally = no } } }
-	option = { name = moore4vets_news.3.option2 trigger = { 126 = { is_controlled_by_ROOT_or_ally = yes } } }
+	option = { name = moore4vets_news.3.option1 trigger = { has_government = democratic } }
+	option = { name = moore4vets_news.3.option2 trigger = { NOT = { has_government = democratic } } }
 }
 
 news_event = { # Warn india about famine
@@ -47,6 +47,17 @@ news_event = { # Warn india about famine
 	is_triggered_only = yes
 	
 	option = { name = moore4vets_news.4.option custom_effect_tooltip = m4v_india_famine_warning }
+}
+
+news_event = { # Notification when country is in breach of 3 month war rule
+	id = moore4vets_news.5
+	title = moore4vets_news.5.t
+	desc = moore4vets_news.5.d
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = { name = moore4vets_news.5.option }
 }
 
 # This is now called in on_startup
@@ -231,4 +242,16 @@ country_event = { # Yugoslavian aircraft purchases
 	}
 	
 	option = { name = moore4vets.8.option }
+}
+
+country_event = { # Hidden event to remove the last nation with no_faction_joining from their faction
+	id = moore4vets.9
+	title = moore4vets.9.t
+	desc = moore4vets.9.d
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	immediate = { remove_from_faction = global.last_nation_not_allowed_to_join clear_variable = global.last_nation_not_allowed_to_join }
+	option = {}
 }

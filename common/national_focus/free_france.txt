@@ -1,7 +1,7 @@
 ﻿focus_tree = {
 	id = free_french_focus
 	
-	continuous_focus_position = { x = 50 y = 1650 }
+	continuous_focus_position = { x = 50 y = 1750 }
 	
 	country = {
 		factor = 0
@@ -608,7 +608,7 @@
 		relative_position_id = FRA_capital_ship_focus
 		cost = 5
 
-		available_if_capitulated = no
+		available_if_capitulated = yes
 
 		completion_reward = {
 			if = {
@@ -668,7 +668,7 @@
 		relative_position_id = FRA_carrier_focus
 		cost = 5
 
-		available_if_capitulated = no
+		available_if_capitulated = yes
 
 		completion_reward = {
 			if = {
@@ -1623,7 +1623,7 @@
 	
 		cancel_if_invalid = yes
 		continue_if_invalid = no
-		available_if_capitulated = no
+		available_if_capitulated = yes
 	
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
@@ -1659,6 +1659,7 @@
 		icon = GFX_goal_generic_construct_mil_factory
 		available = {
 		}
+		available_if_capitulated = yes
 		prerequisite = { focus = FRA_colonial_industry }
 		x = -2
 		y = 1

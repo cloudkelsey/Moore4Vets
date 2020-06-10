@@ -170,6 +170,7 @@ country_event = {
 					
 				}
 			}
+			set_country_flag = { flag = FRA_reclaim_colonies_window value = 1 days = 10 }
 		}
 		load_focus_tree = free_french_focus
 		set_global_flag = fall_of_france

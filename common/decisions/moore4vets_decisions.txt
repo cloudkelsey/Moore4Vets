@@ -38,13 +38,12 @@ event_firing = {
 		ai_will_do = { factor = 1000 }
 		complete_effect = { FRA = { country_event = france.21 } }
 	}
-	compagne_armistice = {
-		#available = { FRA = { has_war_with = GER surrender_progress > 0.9 } 16 = { is_controlled_by = GER } }
-		available = { FRA = { has_capitulated = yes } }
-		fire_only_once = yes
-		ai_will_do = { factor = 1000 }
-		complete_effect = { FRA = { country_event = france.10 } }
-	}
+	# compagne_armistice = {
+		# available = { FRA = { has_capitulated = yes } }
+		# fire_only_once = yes
+		# ai_will_do = { factor = 1000 }
+		# complete_effect = { FRA = { country_event = france.10 } }
+	# }
 	congo_anti_meme = { # Todo: Find out why this is happening and actually fix it instead of this ghetto fix
 		available = { GER = { controls_state = 	718 controls_state = 538 controls_state = 295 controls_state = 768 controls_state = 769 } }
 		fire_only_once = yes
@@ -56,6 +55,13 @@ event_firing = {
 		fire_only_once = yes
 		ai_will_do = { factor = 1000 }
 		complete_effect = { FRA = { transfer_state = 635 } }
+	}
+	give_me_back_my_colonies = {
+		available = { FRA = { has_country_flag = FRA_reclaim_colonies_window } }
+		#available = { FRA = { has_capitulated = yes } }
+		fire_only_once = yes
+		ai_will_do = { factor = 1 }
+		complete_effect = { every_state = { limit = { NOT = { is_on_continent = europe } is_controlled_by = GER } FRA = { transfer_state = PREV } } }
 	}
 	################################# FRANCE #################################
 	
@@ -226,7 +232,7 @@ event_firing = {
 			OR = {
 				FRA = { OR = { has_tech = improved_medium_tank has_tech = improved_heavy_tank } }
 				SOV = { OR = { has_tech = improved_medium_tank has_tech = improved_heavy_tank } }
-				# Could add USA here but what are the chances of them getting armor tech first
+				USA = { OR = { has_tech = improved_medium_tank has_tech = improved_heavy_tank } }
 			}
 		}
 		fire_only_once = yes
@@ -266,6 +272,102 @@ event_firing = {
 		#complete_effect = { SWE = { swap_ideas = { add_idea = international_trade_embargo remove_idea = international_trade_embargo_except_GER } } }
 	}
 	################################# MISC/MULTIPLE COUNTRIES #################################
+}
+
+# ROEBUCK: Could add decisions for majors to recall planes from the air controller in case they need to for whatever reason (player leaving/fucking up etc.)
+# Also should figure out how to add some sort of fuel sending but idk how that works
+automatic_air_controller_lendlease = {
+	hungary_lend_lease = {
+		allowed = { OR = { original_tag = GER original_tag = ITA original_tag = ROM original_tag = BUL } }
+		available = { HUN = { is_in_faction_with = ROOT has_country_flag = HUN_has_had_war } }
+		visible = { NOT = { has_country_flag = is_lend_leasing_hungary } }
+		complete_effect = { set_country_flag = is_lend_leasing_hungary activate_mission = hungary_lend_lease_mission }
+	}
+	hungary_stop_lend_lease = {
+		allowed = { OR = { original_tag = GER original_tag = ITA original_tag = ROM original_tag = BUL } }
+		visible = { has_country_flag = is_lend_leasing_hungary }
+		complete_effect = { clr_country_flag = is_lend_leasing_hungary }
+	}
+	canada_lend_lease = {
+		allowed = { OR = { original_tag = ENG original_tag = FRA original_tag = AST original_tag = SAF original_tag = RAJ original_tag = NZL } }
+		available = { CAN = { OR = { has_war = yes is_subject_of = ROOT } } }
+		visible = { NOT = { has_country_flag = is_lend_leasing_canada } }
+		complete_effect = { set_country_flag = is_lend_leasing_canada activate_mission = canada_lend_lease_mission }
+	}
+	canada_lend_lease_USA = { # Would look shitty combined into the above decision so aesthetics > efficiency
+		allowed = { original_tag = USA }
+		available = { has_global_flag = fall_of_france }
+		visible = { NOT = { has_country_flag = is_lend_leasing_canada } }
+		complete_effect = { set_country_flag = is_lend_leasing_canada activate_mission = canada_lend_lease_mission }
+	}
+	canada_stop_lend_lease = {
+		allowed = { OR = { original_tag = ENG original_tag = USA original_tag = FRA original_tag = AST original_tag = SAF original_tag = RAJ original_tag = NZL } }
+		visible = { has_country_flag = is_lend_leasing_canada }
+		complete_effect = { clr_country_flag = is_lend_leasing_canada }
+	}
+	manchu_lend_lease = {
+		allowed = { OR = { original_tag = JAP original_tag = SIA } }
+		visible = { NOT = { has_country_flag = is_lend_leasing_manchu } }
+		complete_effect = { set_country_flag = is_lend_leasing_manchu activate_mission = manchu_lend_lease_mission }
+	}
+	manchu_stop_lend_lease = {
+		allowed = { OR = { original_tag = JAP original_tag = SIA } }
+		visible = { has_country_flag = is_lend_leasing_manchu }
+		complete_effect = { clr_country_flag = is_lend_leasing_manchu }
+	}
+	
+	hungary_lend_lease_mission = {
+		days_mission_timeout = 30
+		activation = { always = no }
+		available = { NOT = { has_country_flag = is_lend_leasing_hungary } }
+		timeout_effect = {
+			hidden_effect = {
+				send_equipment = { equipment = fighter_equipment amount = 99999 target = HUN }
+				send_equipment = { equipment = tac_bomber_equipment amount = 99999 target = HUN }
+				send_equipment = { equipment = CAS_equipment amount = 99999 target = HUN }
+				send_equipment = { equipment = nav_bomber_equipment amount = 99999 target = HUN }
+				activate_mission = hungary_lend_lease_mission
+			}
+		}
+	}
+	canada_lend_lease_mission = {
+		days_mission_timeout = 30
+		activation = { always = no }
+		available = { NOT = { has_country_flag = is_lend_leasing_canada } }
+		timeout_effect = {
+			hidden_effect = {
+				send_equipment = { equipment = fighter_equipment amount = 99999 target = CAN }
+				send_equipment = { equipment = tac_bomber_equipment amount = 99999 target = CAN }
+				send_equipment = { equipment = CAS_equipment amount = 99999 target = CAN }
+				send_equipment = { equipment = nav_bomber_equipment amount = 99999 target = CAN }
+				activate_mission = canada_lend_lease_mission
+			}
+		}
+	}
+	manchu_lend_lease_mission = {
+		days_mission_timeout = 30
+		activation = { always = no }
+		available = { NOT = { has_country_flag = is_lend_leasing_manchu } }
+		timeout_effect = {
+			hidden_effect = {
+				send_equipment = { equipment = cv_fighter_equipment amount = 99999 target = MAN } # Don't think this will cause issues with reinforcing carrier air groups?
+				send_equipment = { equipment = fighter_equipment amount = 99999 target = MAN }
+				send_equipment = { equipment = tac_bomber_equipment amount = 99999 target = MAN }
+				send_equipment = { equipment = CAS_equipment amount = 99999 target = MAN }
+				send_equipment = { equipment = nav_bomber_equipment amount = 99999 target = MAN }
+				activate_mission = manchu_lend_lease_mission
+			}
+		}
+	}
+}
+
+war_time_limit = {
+	three_month_war_warning_mission = {
+		days_mission_timeout = 90
+		activation = { always = no }
+		available = { has_war = no }
+		timeout_effect = { news_event = moore4vets_news.5 }
+	}
 }
 
 GER_spanish_civil_war_AI_control = {
