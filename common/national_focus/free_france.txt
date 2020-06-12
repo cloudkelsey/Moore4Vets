@@ -1050,7 +1050,7 @@
 		id = FRA_national_council_of_the_resistance
 		icon = GFX_focus_focus_fra_national_resistance_council
 		x = 0
-		y = 2
+		y = 1
 		offset = {
 			x = 0
 			y = 0
@@ -1092,7 +1092,7 @@
 		id = FRA_national_uprising
 		icon = GFX_goal_generic_dangerous_deal
 		x = -2
-		y = 2
+		y = 1
 		offset = {
 			x = 0
 			y = 0
@@ -1124,7 +1124,7 @@
 		id = FRA_french_forces_of_the_interior
 		icon = GFX_focus_prc_infiltration
 		x = 2
-		y = 2
+		y = 1
 		offset = {
 			x = 0
 			y = 0
