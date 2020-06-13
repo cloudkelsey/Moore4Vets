@@ -242,7 +242,6 @@ event_firing = {
 	enable_swedish_exports = {
 		available = {
 			SWE = { has_idea = no_resources_to_market }
-			#SWE = { has_idea = international_trade_embargo }
 			GER = {
 				OR = { controls_state = 37 any_allied_country = { controls_state = 37 } }
 				OR = { controls_state = 110 any_allied_country = { controls_state = 110 } }
@@ -251,25 +250,25 @@ event_firing = {
 		}
 		fire_only_once = no
 		ai_will_do = { factor = 1000 }
-		complete_effect = { SWE = { remove_ideas = no_resources_to_market } }
-		#complete_effect = { SWE = { swap_ideas = { remove_idea = international_trade_embargo add_idea = international_trade_embargo_except_GER } } }
+		complete_effect = { SWE = { swap_ideas = { remove_idea = no_resources_to_market add_idea = zeromanpower } } }
+		#complete_effect = { SWE = { remove_ideas = no_resources_to_market } }
 	}
 	disable_swedish_exports = {
 		available = {
-			NOT = { SWE = { has_idea = no_resources_to_market } }
-			#SWE = { has_idea = international_trade_embargo_except_GER }
+			#NOT = { SWE = { has_idea = no_resources_to_market } }
+			SWE = { has_idea = zeromanpower }
 			NOT = {
 				GER = {
-					OR = { controls_state = 37 all_allied_country = { controls_state = 37 } }
-					OR = { controls_state = 110 all_allied_country = { controls_state = 110 } }
-					OR = { controls_state = 142 all_allied_country = { controls_state = 142 } }
+					OR = { controls_state = 37 any_allied_country = { controls_state = 37 } }
+					OR = { controls_state = 110 any_allied_country = { controls_state = 110 } }
+					OR = { controls_state = 142 any_allied_country = { controls_state = 142 } }
 				}
 			}
 		}
 		fire_only_once = no
 		ai_will_do = { factor = 1000 }
-		complete_effect = { SWE = { add_ideas = no_resources_to_market } }
-		#complete_effect = { SWE = { swap_ideas = { add_idea = international_trade_embargo remove_idea = international_trade_embargo_except_GER } } }
+		complete_effect = { SWE = { swap_ideas = { add_idea = no_resources_to_market remove_idea = zeromanpower } } }
+		#complete_effect = { SWE = { add_ideas = no_resources_to_market } }
 	}
 	################################# MISC/MULTIPLE COUNTRIES #################################
 }
