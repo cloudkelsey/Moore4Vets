@@ -633,9 +633,9 @@ jap_annexation = {
 fin_white_peace = {
 	force_white_peace = {
 		ai_will_do = { factor = 1000 }
-		available = { has_war_with = SOV OR = { surrender_progress > 0.8 date > 1940.9.1 } }
+		available = { has_war_with = SOV OR = { surrender_progress > 0.8 date > 1941.3.1 } }
 		fire_only_once = yes
-		complete_effect = { SOV = { white_peace = { tag = FIN message = FIN_agree_peace } transfer_state = 146 transfer_state = 147 transfer_state = 722 } }
+		complete_effect = { SOV = { white_peace = { tag = FIN message = FIN_agree_peace } transfer_state = 146 transfer_state = 147 } }
 	}
 }
 
