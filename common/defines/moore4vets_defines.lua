@@ -3,14 +3,23 @@ NDefines.NGame.LAG_DAYS_FOR_PAUSE = 120
 NDefines.NGame.GAME_SPEED_SECONDS = { 2.0, 0.5, 0.125, 0.03, 0.0 }
 NDefines.NGame.COMBAT_LOG_MAX_MONTHS = 24
 
+NDefines.NDiplomacy.PEACE_SCORE_PER_PASS = 100 -- unsorted
 NDefines.NDiplomacy.GUARANTEE_COST = 999
 NDefines.NDiplomacy.FRONT_IS_DANGEROUS = 0
 NDefines.NDiplomacy.MIN_TRUST_VALUE = -500
 
+NDefines.NCountry.MIN_FOCUSES_FOR_CONTINUOUS = 0 -- unsorted
+NDefines.NCountry.COUNTRY_SCORE_MULTIPLIER = 0 -- unsorted
+NDefines.NCountry.ARMY_SCORE_MULTIPLIER = 0 -- unsorted
+NDefines.NCountry.NAVY_SCORE_MULTIPLIER = 0 -- unsorted
+NDefines.NCountry.AIR_SCORE_MULTIPLIER = 0 -- unsorted
+NDefines.NCountry.INDUSTRY_SCORE_MULTIPLIER = 0 -- unsorted
+NDefines.NCountry.PROVINCE_SCORE_MULTIPLIER = 0 -- unsorted
 NDefines.NCountry.EVENT_PROCESS_OFFSET = 100
 NDefines.NCountry.SPECIAL_FORCES_CAP_BASE = 0.05
 NDefines.NCountry.SPECIAL_FORCES_CAP_MIN = 84
 
+NDefines.NProduction.SHIP_REFIT_MAX_PROGRESS_TO_CANCEL = 1 -- unsorted
 NDefines.NProduction.DEFAULT_MAX_NAV_FACTORIES_PER_LINE = 100
 NDefines.NProduction.CONVOY_MAX_NAV_FACTORIES_PER_LINE = 1000
 NDefines.NProduction.CAPITAL_SHIP_MAX_NAV_FACTORIES_PER_LINE = 20
@@ -23,10 +32,13 @@ NDefines.NProduction.MIN_NAVAL_EQUIPMENT_CONVERSION_IC_COST_FACTOR = 0.1
 
 NDefines.NBuildings.MAX_SHARED_SLOTS = 30
 
+NDefines.NMilitary.ENCIRCLED_DISBAND_MANPOWER_FACTOR = 0 -- unsorted
 NDefines.NMilitary.BASE_DIVISION_BRIGADE_GROUP_COST = 0
 NDefines.NMilitary.BASE_DIVISION_BRIGADE_CHANGE_COST = 0
 NDefines.NMilitary.BASE_DIVISION_SUPPORT_SLOT_COST = 0
 
+NDefines.NAir.AIR_WING_FLIGHT_SPEED_MULT = 0.2 -- unsorted
+NDefines.NAir.ACE_WING_SIZE_MAX_BONUS = 1 -- unsorted
 NDefines.NAir.AIR_DEPLOYMENT_DAYS = 0
 NDefines.NAir.AIR_WING_MAX_SIZE = 1600
 
