@@ -6,7 +6,8 @@ state= {
 	state_category = city
 	
 	resources={
-		rubber=1 # was: 2
+		oil=8
+		#steel=2 moved to Guerrero
 	}
 
 	history= {
