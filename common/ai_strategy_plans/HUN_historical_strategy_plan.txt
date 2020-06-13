@@ -4,24 +4,6 @@ HUN_historical = {
 
 	enable = {
 		original_tag = HUN
-		has_dlc = "Death or Dishonor"
-		OR = {
-			AND = {
-				is_historical_focus_on = yes
-				has_game_rule = {
-					rule = HUN_ai_behavior
-					option = DEFAULT
-				}
-			}
-			has_country_flag = HUN_AI_RANDOM_FASCIST_HISTORICAL
-			has_game_rule = {
-				rule = HUN_ai_behavior
-				option = FASCIST_HISTORICAL
-			}
-		}
-	}
-	abort = {
-		
 	}
 
 	ai_national_focuses = {
@@ -30,6 +12,20 @@ HUN_historical = {
 		HUN_renounce_the_treaty_of_trianon
 		HUN_reaffirm_territorial_claims
 		HUN_demand_southern_slovakia
+		HUN_trade_deal_with_germany
+		HUN_secret_rearmament
+		HUN_industrial_revitalization
+		HUN_reintegrate_the_railroads
+		HUN_support_domestic_industry
+		HUN_support_urbanization
+		HUN_institute_for_industrial_techniques
+		HUN_announce_the_gyor_program
+		HUN_civilian_industry
+		HUN_invite_foreign_investors
+		HUN_joint_aluminum_mining_company
+		HUN_expand_the_manfred_weiss_steel_works
+		HUN_expand_the_technical_university_of_budapest
+		HUN_expand_the_aluminum_industry
 	}
 
 	research = {

@@ -22,16 +22,16 @@ German_historical = {
 		GER_kdf_wagen
 		GER_extra_tech_slot
 		GER_autobahn
+		GER_army_innovation_2
+		GER_coal_liquidization
+		GER_demand_memel
 		GER_grosraumwirtschaft
 		GER_align_hungary_and_romania
-		GER_army_innovation_2
-		GER_demand_memel
 		GER_mol_rib_pact
 		GER_anti_comitern_pact
 		GER_integrate_war_economies
 		GER_danzig_or_war
 		GER_around_maginot
-		GER_coal_liquidization
 		GER_synthetic_rubber
 		GER_weserubung
 		GER_reintegrate_luxemburg_and_alsace_lorraine
