@@ -1227,6 +1227,8 @@
 		y = 2
 		relative_position_id = JAP_non_aggression_pact_with_the_soviet_union
 		cost = 10
+		will_lead_to_war_with = USA
+		will_lead_to_war_with = ENG
 		completion_reward = {
 			every_country = {
 				limit = { OR = { original_tag = USA is_in_faction_with = ENG } }
