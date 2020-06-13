@@ -219,7 +219,7 @@ country_event = { # Dominion chooses whether or not to take free trade
 	is_triggered_only = yes
 	trigger = { NOT = { has_idea = free_trade } }
 	
-	option = { name = moore4vets.7.option1 add_ideas = free_trade }
+	option = { name = moore4vets.7.option1 add_ideas = free_trade add_political_power = -25 }
 	option = { name = moore4vets.7.option2 }
 }
 

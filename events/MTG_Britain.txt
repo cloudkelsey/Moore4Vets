@@ -57,63 +57,6 @@ country_event = {
 
 ### END ABDICATION CRISIS ###
 
-# Event for ENG and Dominions notifying of Imperial Conference
-country_event = {
-	id = mtg_britain.82
-	title = mtg_britain.82.t
-	desc = mtg_britain.82.d
-	picture = GFX_report_event_imperial_conference
-
-	is_triggered_only = yes
-	
-	# Ok
-	option = {
-		name = mtg_britain.82.a
-		trigger = {
-			tag = ENG
-		}
-		activate_mission = ENG_imperial_conference_decision
-		set_country_flag = { flag = ENG_imperial_conference_timer_flag value = 1 days = 60 }
-		every_country = {
-			limit = {
-				OR = {
-					AND = {
-						is_subject_of = ENG
-						tag = CAN
-					}
-					AND = {
-						is_subject_of = ENG
-						tag = SAF
-					}
-					AND = {
-						is_subject_of = ENG
-						tag = RAJ
-					}
-					AND = {
-						is_subject_of = ENG
-						tag = AST
-					}
-					AND = {
-						is_subject_of = ENG
-						tag = NZL
-					}
-				}
-			}
-			add_opinion_modifier = { target = ROOT modifier = ENG_imperial_conference_opinion }
-			custom_effect_tooltip = mtg_britain.82_tt
-		}
-	}
-
-	# Ok
-	option = {
-		name = mtg_britain.82.b
-		trigger = {
-			NOT = { tag = ENG }
-		}
-		effect_tooltip = { add_opinion_modifier = { target = FROM modifier = ENG_imperial_conference_opinion } }
-	}
-}
-
 # Event for target saying they are in violation of the Washington Naval Treaty and ENG wants them to scuttle some ships
 country_event = {
 	id = mtg_britain.106
