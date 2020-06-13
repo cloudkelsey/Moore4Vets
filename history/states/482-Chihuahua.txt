@@ -1,36 +1,29 @@
 
 state={
-	id=476
-	name="STATE_476"
-	manpower = 1663331
+	id=482
+	name="STATE_482"
+	manpower = 520751
 	
 	state_category = rural
 
-	#resources={
-	#	oil=8
-	#}
-	
 	history={
-		owner = COL
 		#owner = MEX
+		owner = COL
 		buildings = {
 			infrastructure = 3
-			air_base = 2
-			10889 = {
-				naval_base = 2
-			}
 		}
 		add_core_of = MEX
+
 		victory_points = {
-			10889 1
+			8097 10
 		}
 		victory_points = {
-			2021 3
+			10830 10
 		}
 	}
 
 	provinces={
-		2021 8236 10773 10889 12712 
+		2037 4898 7935 8097 10809 10830 10916 12745 12827 12850 12897 
 	}
 	
 }

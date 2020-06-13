@@ -11,7 +11,8 @@ state={
 	#}
 
 	history={
-		owner = MEX
+		#owner = MEX
+		owner = COL
 		buildings = {
 			infrastructure = 4
 			dockyard = 1
