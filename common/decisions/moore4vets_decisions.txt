@@ -38,30 +38,12 @@ event_firing = {
 		ai_will_do = { factor = 1000 }
 		complete_effect = { FRA = { country_event = france.21 } }
 	}
-	# compagne_armistice = {
-		# available = { FRA = { has_capitulated = yes } }
-		# fire_only_once = yes
-		# ai_will_do = { factor = 1000 }
-		# complete_effect = { FRA = { country_event = france.10 } }
-	# }
-	congo_anti_meme = { # Todo: Find out why this is happening and actually fix it instead of this ghetto fix
-		available = { GER = { controls_state = 	718 controls_state = 538 controls_state = 295 controls_state = 768 controls_state = 769 } }
-		fire_only_once = yes
-		ai_will_do = { factor = 1000 }
-		complete_effect = { FRA = { transfer_state = 718 transfer_state = 538 transfer_state = 295 transfer_state = 768 transfer_state = 769 } }
-	}
-	caledonia_anti_meme = { # Todo: Find out why this is happening and actually fix it instead of this ghetto fix (I have no clue on this one lmao)
-		available = { GER = { controls_state = 635 } }
-		fire_only_once = yes
-		ai_will_do = { factor = 1000 }
-		complete_effect = { FRA = { transfer_state = 635 } }
-	}
 	give_me_back_my_colonies = {
 		available = { FRA = { has_country_flag = FRA_reclaim_colonies_window } }
 		#available = { FRA = { has_capitulated = yes } }
-		fire_only_once = yes
+		fire_only_once = no # Activates up to 5 (4?) times because I'm unsure of the timing the state transfer happens
 		ai_will_do = { factor = 1 }
-		complete_effect = { every_state = { limit = { NOT = { is_on_continent = europe } is_controlled_by = GER } FRA = { transfer_state = PREV } } }
+		complete_effect = { FRA = { set_capital = 272 } every_state = { limit = { NOT = { is_on_continent = europe } is_controlled_by = GER } FRA = { transfer_state = PREV } } }
 	}
 	################################# FRANCE #################################
 	
