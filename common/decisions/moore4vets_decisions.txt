@@ -271,8 +271,8 @@ automatic_air_controller_lendlease = {
 	}
 	canada_lend_lease = {
 		allowed = { OR = { original_tag = ENG original_tag = FRA original_tag = AST original_tag = SAF original_tag = RAJ original_tag = NZL } }
-		available = { date < 1939.3.1 CAN = { OR = { has_war = yes is_subject_of = ROOT } } }
-		visible = { NOT = { has_country_flag = is_lend_leasing_canada } }
+		available = { CAN = { OR = { has_war = yes is_subject_of = ROOT } } }
+		visible = { date < 1939.3.1 NOT = { has_country_flag = is_lend_leasing_canada } }
 		complete_effect = { set_country_flag = is_lend_leasing_canada activate_mission = canada_lend_lease_mission }
 	}
 	canada_lend_lease_USA = { # Would look shitty combined into the above decision so aesthetics > efficiency
@@ -288,8 +288,7 @@ automatic_air_controller_lendlease = {
 	}
 	manchu_lend_lease = {
 		allowed = { OR = { original_tag = JAP original_tag = SIA } }
-		available = { date < 1940.11.1 }
-		visible = { NOT = { has_country_flag = is_lend_leasing_manchu } }
+		visible = { date < 1940.11.1 NOT = { has_country_flag = is_lend_leasing_manchu } }
 		complete_effect = { set_country_flag = is_lend_leasing_manchu activate_mission = manchu_lend_lease_mission }
 	}
 	manchu_stop_lend_lease = {
@@ -301,43 +300,46 @@ automatic_air_controller_lendlease = {
 	hungary_lend_lease_mission = {
 		days_mission_timeout = 30
 		activation = { always = no }
-		#available = { NOT = { has_country_flag = is_lend_leasing_hungary } }
+		available = { NOT = { has_country_flag = is_lend_leasing_hungary } }
 		timeout_effect = {
 			hidden_effect = {
 				send_equipment = { equipment = fighter_equipment amount = 99999 target = HUN }
+				send_equipment = { equipment = heavy_fighter_equipment amount = 99999 target = HUN }
 				send_equipment = { equipment = tac_bomber_equipment amount = 99999 target = HUN }
 				send_equipment = { equipment = CAS_equipment amount = 99999 target = HUN }
 				send_equipment = { equipment = nav_bomber_equipment amount = 99999 target = HUN }
-				if = { limit = { has_country_flag = is_lend_leasing_hungary } activate_mission = hungary_lend_lease_mission }
+				activate_mission = hungary_lend_lease_mission
 			}
 		}
 	}
 	canada_lend_lease_mission = {
 		days_mission_timeout = 30
 		activation = { always = no }
-		#available = { NOT = { has_country_flag = is_lend_leasing_canada } }
+		available = { OR = { date > 1939.3.1 NOT = { has_country_flag = is_lend_leasing_canada } } }
 		timeout_effect = {
 			hidden_effect = {
 				send_equipment = { equipment = fighter_equipment amount = 99999 target = CAN }
+				send_equipment = { equipment = heavy_fighter_equipment amount = 99999 target = CAN }
 				send_equipment = { equipment = tac_bomber_equipment amount = 99999 target = CAN }
 				send_equipment = { equipment = CAS_equipment amount = 99999 target = CAN }
 				send_equipment = { equipment = nav_bomber_equipment amount = 99999 target = CAN }
-				if = { limit = { has_country_flag = is_lend_leasing_canada } activate_mission = canada_lend_lease_mission }
+				activate_mission = canada_lend_lease_mission
 			}
 		}
 	}
 	manchu_lend_lease_mission = {
 		days_mission_timeout = 30
 		activation = { always = no }
-		#available = { NOT = { has_country_flag = is_lend_leasing_manchu } }
+		available = { OR = { date > 1940.11.1 NOT = { has_country_flag = is_lend_leasing_manchu } } }
 		timeout_effect = {
 			hidden_effect = {
 				send_equipment = { equipment = cv_fighter_equipment amount = 99999 target = MAN } # Don't think this will cause issues with reinforcing carrier air groups?
 				send_equipment = { equipment = fighter_equipment amount = 99999 target = MAN }
+				send_equipment = { equipment = heavy_fighter_equipment amount = 99999 target = MAN }
 				send_equipment = { equipment = tac_bomber_equipment amount = 99999 target = MAN }
 				send_equipment = { equipment = CAS_equipment amount = 99999 target = MAN }
 				send_equipment = { equipment = nav_bomber_equipment amount = 99999 target = MAN }
-				if = { limit = { has_country_flag = is_lend_leasing_manchu } activate_mission = manchu_lend_lease_mission }
+				activate_mission = manchu_lend_lease_mission
 			}
 		}
 	}
