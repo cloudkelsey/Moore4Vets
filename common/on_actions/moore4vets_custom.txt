@@ -9,7 +9,13 @@ on_actions = {
 				add_opinion_modifier = { target = SPR modifier = sanctions_relations } 
 				add_opinion_modifier = { target = SPR modifier = embargo }
 				add_opinion_modifier = { target = SPR modifier = sanctions_relations }
-				#COL = { add_opinion_modifier = { target = SPR modifier = huge_decrease } }
+			}
+			
+			every_country = {
+				limit = { is_ai = no }
+				if = { limit = { NOT = { original_tag = FRA } } country_event = moore4vets.10 }
+				country_event = moore4vets.11
+				country_event = moore4vets.12
 			}
 			
 			#EVENT FIRING
@@ -30,10 +36,9 @@ on_actions = {
 	on_declare_war = {
 		effect = {
 			if = {
-				limit = { is_ai = no NOT = { FROM = { OR = { original_tag = ETH original_tag = SPR original_tag = CHI original_tag = FIN original_tag = POL } } } }
+				limit = { is_ai = no NOT = { FROM = { OR = { original_tag = ETH original_tag = SPR original_tag = CHI original_tag = FIN original_tag = POL is_ai = no } } } }
 				activate_mission = three_month_war_warning_mission
 			}
-			
 		}
 	}
 	

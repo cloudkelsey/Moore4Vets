@@ -14,14 +14,15 @@ set_research_slots = 3
 add_ideas = {
 	extensive_conscription
 	no_faction_joining
+	sisu
 }
 
 add_manpower = 100000
-				add_equipment_to_stockpile = {
-					type = infantry_equipment
-					amount = 52500
-					producer = FIN
-				}
+add_equipment_to_stockpile = {
+	type = infantry_equipment
+	amount = 52500
+	producer = FIN
+}
 
 set_technology = {
 	infantry_weapons = 1
@@ -31,13 +32,6 @@ set_technology = {
 	tech_support = 1		
 	tech_recon = 1
 	tech_engineers = 1
-}
-if = {
-	limit = { not = { has_dlc = "Man the Guns" } }
-	set_technology = {
-		early_submarine = 1
-		early_heavy_cruiser = 1
-	}
 }
 if = {
 	limit = { has_dlc = "Man the Guns" }
@@ -59,64 +53,6 @@ add_ideas = {
 	limited_conscription
 }
 
-1939.1.1 = {
-	add_political_power = 1198
-	
-	#generic focuses
-	complete_national_focus = army_effort
-	complete_national_focus = equipment_effort
-	complete_national_focus = motorization_effort
-	complete_national_focus = aviation_effort
-	complete_national_focus = naval_effort
-	complete_national_focus = flexible_navy
-	complete_national_focus = industrial_effort
-	complete_national_focus = construction_effort
-	complete_national_focus = production_effort
-	
-	oob = "FIN_1939"
-	set_technology = {
-		early_fighter = 1
-		early_bomber = 1
-		CAS1 = 1		
-		interwar_artillery = 1
-		interwar_antitank = 1
-		infantry_weapons2 = 1
-		support_weapons = 1
-		support_weapons2 = 1
-
-		#doctrines
-		#Air
-		force_rotation = 1
-		fighter_baiting = 1
-
-		grand_battle_plan = 1
-		trench_warfare = 1
-		fleet_in_being = 1
-		battlefleet_concentration = 1
-		submarine_operations = 1
-
-		#electronics
-		electronic_mechanical_engineering = 1
-		radio = 1
-		radio_detection = 1
-		mechanical_computing = 1
-		computing_machine = 1
-
-		#industry
-		basic_machine_tools = 1
-		improved_machine_tools = 1
-		advanced_machine_tools = 1
-		synth_oil_experiments = 1
-		fuel_silos = 1
-		construction1 = 1
-		construction2 = 1
-		construction3 = 1
-		dispersed_industry = 1
-		dispersed_industry2 = 1
-		dispersed_industry3 = 1
-	}
-}
-
 set_politics = {
 	ruling_party = neutrality
 	last_election = "1933.7.1"
@@ -130,14 +66,6 @@ set_popularities = {
 	neutrality = 79
 }
 
-1939.1.1 = {
-	set_politics = {
-		ruling_party = neutrality
-		last_election = "1939.7.1"
-		election_frequency = 36
-		elections_allowed = yes
-	}
-}
 create_country_leader = {
 	name = "Risto Heikki Ryti"
 	desc = "POLITICS_RISTO_HEIKKI_RYT_DESC"
@@ -182,12 +110,6 @@ create_country_leader = {
 	}
 }
 
-
-
-add_ideas = {
-	sisu
-}
-
 create_field_marshal = {
 	name = "Carl Gustaf Emil Mannerheim"
 	picture = "portrait_fin_carl_mannerheim.dds"
@@ -223,11 +145,6 @@ create_corps_commander = {
 }
 
 ### VARIANTS ###
-# 1936 Start #
-if = {
-	limit = { not = { has_dlc = "Man the Guns" } }
-	### Ship Variants ###
-}
 if = {
 	limit = { has_dlc = "Man the Guns" }
 	# Submarines #
