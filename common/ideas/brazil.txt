@@ -54,24 +54,6 @@ ideas = {
 			
 			traits = { military_theorist }
 		}
-
-		BRA_eduardo_gomes = {
-			ledger = air
-					
-			picture = generic_political_advisor_south_america_1
-				
-			allowed = {
-				original_tag = BRA
-			}
-			
-			research_bonus = {
-				naval_doctrine = 0.1
-				air_doctrine = 0.1
-				land_doctrine = 0.1
-			}
-			
-			traits = { air_warfare_theorist }
-		}
 	}
 
 	high_command = {

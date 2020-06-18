@@ -2037,25 +2037,6 @@ ideas = {
 	}
 	
 	theorist = {	
-	
-		bernard_montgomery = {
-			ledger = army
-			
-			allowed = {
-				original_tag = ENG
-			}
-
-			available = {
-			}
-			
-			cost = 250
-			
-			research_bonus = {
-				cat_grand_battle_plan = 0.15
-			}
-			
-			traits = { grand_battle_plan_expert }
-		}
 		
 		harold_alexander = {
 			ledger = army
@@ -2074,86 +2055,6 @@ ideas = {
 			}
 			
 			traits = { military_theorist }
-
-			ai_will_do = {
-				factor = 2
-				modifier = {
-					has_idea_with_trait = industrial_concern
-					has_idea_with_trait = silent_workhorse
-					factor = 10
-				}
-			}
-		}
-		
-		james_somerville = {
-			ledger = navy
-			
-			allowed = {
-				original_tag = ENG
-			}
-
-			available = {
-			}
-			
-			cost = 250
-			
-			research_bonus = {
-				cat_fleet_in_being = 0.15
-			}
-			
-			traits = { grand_fleet_proponent }
-		}
-		
-		tom_phillips = {
-			ledger = navy
-			
-			allowed = {
-				original_tag = ENG
-			}
-			
-
-			
-			research_bonus = {
-				naval_doctrine = 0.1
-				air_doctrine = 0.1
-				land_doctrine = 0.1
-			}
-			
-			traits = { naval_theorist }
-		}
-		
-		hugh_dowding = {
-			ledger = air
-			
-			allowed = {
-				original_tag = ENG
-			}
-			
-
-			
-			research_bonus = {
-				naval_doctrine = 0.1
-				air_doctrine = 0.1
-				land_doctrine = 0.1
-			}
-			
-			traits = { air_warfare_theorist }
-		}
-		
-		arthur_harris = {
-			ledger = air
-			
-			allowed = {
-				original_tag = ENG
-			}
-			
-			cost = 250
-			
-			research_bonus = {
-				cat_strategic_destruction = 0.15
-			}
-			
-			traits = { victory_through_airpower }
 		}
 		
 		james_chadwick = {
@@ -2185,74 +2086,6 @@ ideas = {
 			
 			traits = { rocket_scientist }
 		}
-
-		ENG_jfc_fuller = {
-			ledger = army
-			
-			picture = generic_army_europe_1
-
-			available = {
-				has_government = fascism
-			}
-			
-			allowed = {
-				original_tag = ENG
-				has_dlc = "Man the Guns"
-			}
-
-			research_bonus = {
-				land_doctrine = 0.10
-			}
-			
-			traits = { blitzkrieg_theorist }
-
-			ai_will_do = {
-				factor = 1
-			}
-		}
-
-		# Crap communist ministers, intentionally without loc so they are 'randomized'
-
-		ENG_random_communist_minister_14 = {
-			ledger = air
-
-			picture = generic_army_europe_5
-
-			visible = {
-				has_country_flag = ENG_trade_unions_demand_minister_appointment_14
-			}
-			
-			allowed = {
-				original_tag = ENG
-			}
-
-			research_bonus = {
-				rocketry = 0.05
-			}
-			
-			traits = { little_rocket_man }
-		}
-		ENG_random_communist_minister_15 = {
-			ledger = army
-
-			picture = generic_army_europe_6
-
-			visible = {
-				has_country_flag = ENG_trade_unions_demand_minister_appointment_15
-			}
-			
-			allowed = {
-				original_tag = ENG
-			}
-
-			research_bonus = {
-				nuclear = 0.05
-			}
-			
-			traits = { nuclear_enthusiast }
-		}
 	}
-
-
 }
 

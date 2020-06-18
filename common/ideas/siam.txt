@@ -239,8 +239,6 @@ ideas = {
 			}
 		}
 	}
-	
-
 
 	theorist = {
 		SIA_manphya_khanphialong = {
@@ -260,45 +258,5 @@ ideas = {
 			
 			traits = { military_theorist }
 		}
-		
-		SIA_sawat_phutianands = { 
-			ledger = navy
-
-			picture = generic_navy_asia_3
-			
-			allowed = {
-				original_tag = SIA
-			}
-			
-			research_bonus = {
-				naval_doctrine = 0.1
-				air_doctrine = 0.1
-				land_doctrine = 0.1
-			}
-			
-			traits = { naval_theorist }
-		}
-
-		SIA_phra_silpasakrakorn = {
-			ledger = air
-
-			picture = generic_air_asia_3
-			
-			allowed = {
-				original_tag = SIA
-			}
-			
-			research_bonus = {
-				naval_doctrine = 0.1
-				air_doctrine = 0.1
-				land_doctrine = 0.1
-			}
-			
-			traits = { air_warfare_theorist }
-		}
-
 	}
-
-
-
 }

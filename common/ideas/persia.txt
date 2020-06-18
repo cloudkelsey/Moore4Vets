@@ -106,36 +106,6 @@ ideas = {
 	}
 
 	navy_chief = {
-
-		PER_ahmad_khan_nakhjaavan = {
-
-			picture = generic_navy_arab_1
-			
-			allowed = {
-				original_tag = PER
-			}
-					
-			traits = { navy_chief_decisive_battle_2 }
-			
-			ai_will_do = {
-				factor = 1
-			}
-		}
-
-		PER_reza_mizani = {
-
-			picture = generic_navy_arab_3
-			
-			allowed = {
-				original_tag = PER
-			}
-					
-			traits = { navy_chief_maneuver_2 }
-			
-			ai_will_do = {
-				factor = 1
-			}
-		}
 	}
 
 	high_command = {
@@ -224,42 +194,5 @@ ideas = {
 			
 			traits = { military_theorist }
 		}
-		
-		PER_hossein_afkhami = {
-			ledger = navy
-
-			picture = generic_navy_arab_1
-			
-			allowed = {
-				original_tag = PER
-			}
-			
-			research_bonus = {
-				naval_doctrine = 0.1
-				air_doctrine = 0.1
-				land_doctrine = 0.1
-			}
-			
-			traits = { naval_theorist }
-		}	
-
-		PER_ali_akbar_deiva = {
-			ledger = air
-
-			picture = generic_air_arab_2
-			
-			allowed = {
-				original_tag = PER
-			}
-			
-			research_bonus = {
-				naval_doctrine = 0.1
-				air_doctrine = 0.1
-				land_doctrine = 0.1
-			}
-			
-			traits = { air_warfare_theorist }
-		}
-
 	}
 }

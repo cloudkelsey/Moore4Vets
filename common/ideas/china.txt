@@ -988,104 +988,9 @@ ideas = {
 	}
 
 	air_chief = {
-		
-		
-		#Communist
-		#Fang Zeyi
-		#army_aviation_doctrine
-
-
-		#Clique
-
-		CHI_wang_shuming = {
-			
-			picture = generic_air_asia_1
-			
-			allowed = {
-				original_tag = CHI
-			}
-			
-
-			
-			traits = { air_chief_ground_support_2 }
-			
-			ai_will_do = {
-				factor = 0.5
-			}
-		}
-
-		#Nationalist
-
-		CHI_zhou_zhirou = {
-
-			picture = generic_air_asia_2
-			
-			allowed = {
-				original_tag = CHI
-			}
-			
-
-			
-			traits = { air_chief_old_guard }
-			
-			ai_will_do = {
-				factor = 0.5
-			}
-		}
 	}
 	
 	navy_chief = {
-		
-		#Communist
-
-		CHI_xiao_jinguang = {
-			
-			picture = generic_navy_asia_1
-
-			allowed = {
-				original_tag = CHI
-			}
-					
-			traits = { navy_chief_commerce_raiding_2 }
-			
-			ai_will_do = {
-				factor = 1
-			}
-		}
-
-		#Clique
-
-		CHI_bai_chongxi = {
-			
-			picture = generic_navy_asia_2
-
-			allowed = {
-				original_tag = CHI
-			}
-					
-			traits = { navy_chief_reform_2 }
-			
-			ai_will_do = {
-				factor = 0.2
-			}
-		}
-
-		#Nationalist
-
-		CHI_chen_shaokuan = {
-
-			picture = generic_navy_asia_3
-			
-			allowed = {
-				original_tag = CHI
-			}
-					
-			traits = { navy_chief_decisive_battle_2 }
-			
-			ai_will_do = {
-				factor = 0.2
-			}
-		}
 	}
 
 
@@ -1135,39 +1040,6 @@ ideas = {
 			
 			traits = { military_theorist }
 		}
-		
-		CHI_fang_zeyi = { 
-			ledger = air
-
-			picture = generic_air_asia_2
-			
-			allowed = {
-				original_tag = CHI
-			}
-			
-			research_bonus = {
-				air_doctrine = 0.10
-			}
-			
-			traits = { air_warfare_theorist }
-		}
-
-		CHI_huang_shen = {
-			ledger = navy
-
-			picture = generic_navy_asia_2
-			
-			allowed = {
-				original_tag = CHI
-			}
-			
-			research_bonus = {
-				naval_doctrine = 0.10
-			}
-			
-			traits = { naval_theorist }
-		}
-
 	}
 
 

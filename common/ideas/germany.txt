@@ -1604,60 +1604,7 @@ ideas = {
 				land_doctrine = 0.1
 			}
 			
-			
 			traits = { blitzkrieg_theorist }
-		}
-		
-		manstein = {
-			ledger = army
-
-			
-			allowed = {
-				original_tag = GER
-			}
-			
-			cost = 250
-			
-			research_bonus = {
-				cat_mobile_warfare = 0.15
-			}
-			
-
-			traits = { mobile_warfare_expert }
-		}
-		
-		wolfram_von_richthofen = {
-			ledger = air
-
-			
-			allowed = {
-				original_tag = GER
-			}
-			
-			cost = 250
-			
-			research_bonus = {
-				cat_battlefield_support = 0.15
-			}
-			
-			traits = { close_air_support_proponent }
-		}
-		
-		walther_wever = {
-			ledger = air
-
-			
-			allowed = {
-				original_tag = GER
-			}
-			
-			research_bonus = {
-				naval_doctrine = 0.1
-				air_doctrine = 0.1
-				land_doctrine = 0.1
-			}
-			
-			traits = { air_warfare_theorist }
 		}
 		
 		ernst_udet = {
@@ -1675,40 +1622,6 @@ ideas = {
 			}
 			
 			traits = { dive_bomber }
-		}
-		
-		alfred_saalwachter = {
-			ledger = navy
-
-			
-			allowed = {
-				original_tag = GER
-			}
-			
-			cost = 250
-			
-			research_bonus = {
-				cat_trade_interdiction = 0.20
-			}
-			
-			traits = { submarine_specialist }
-		}
-		
-		otto_ciliax = {
-			ledger = navy
-
-			
-			allowed = {
-				original_tag = GER
-			}
-			
-			research_bonus = {
-				naval_doctrine = 0.1
-				air_doctrine = 0.1
-				land_doctrine = 0.1
-			}
-			
-			traits = { naval_theorist }
 		}
 	}	
 		

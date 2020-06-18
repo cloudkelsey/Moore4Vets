@@ -357,41 +357,6 @@ ideas = {
 	}
 
 	navy_chief = {
-		
-
-		HUN_francois_deak = {
-			
-			picture = generic_navy_europe_1
-			
-			allowed = {
-				original_tag = HUN
-			}
-			
-
-			
-			traits = { navy_chief_reform_2 }
-			
-			ai_will_do = {
-				factor = 1
-			}
-		}
-
-		HUN_reszo_kastner = {
-			
-			picture = generic_navy_europe_2
-			
-			allowed = {
-				original_tag = HUN
-			}
-			
-
-			
-			traits = { navy_chief_maneuver_2 }
-			
-			ai_will_do = {
-				factor = 1
-			}
-		}
 	}
 
 	high_command = {
@@ -484,25 +449,6 @@ ideas = {
 			
 			traits = { military_theorist }
 		}
-		
-		HUN_gyorgy_jendrassik = {
-			ledger = air
-
-			picture = generic_air_europe_2
-			
-			allowed = {
-				original_tag = HUN
-			}
-			
-			research_bonus = {
-				naval_doctrine = 0.1
-				air_doctrine = 0.1
-				land_doctrine = 0.1
-			}
-			
-			traits = { air_warfare_theorist }
-		}
-
 	}	
 	
 	aircraft_manufacturer = {

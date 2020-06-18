@@ -671,8 +671,6 @@
 		completion_reward = {
 			custom_effect_tooltip = available_military_high_command
 			show_ideas_tooltip = konstantin_rokossovsky 
-			custom_effect_tooltip = available_theorist
-			show_ideas_tooltip = georgy_zhukov
 			# REVISIT Might want to add more
 		}
 	}

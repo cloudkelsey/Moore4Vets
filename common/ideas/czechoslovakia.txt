@@ -634,76 +634,10 @@ ideas = {
 	}
 
 	air_chief = {
-		
-		
-		CZE_karel_janousek = {
-			
-			picture = generic_air_europe_3
-			
-			allowed = {
-				original_tag = CZE
-			}
-			
-
-			
-			traits = { air_chief_safety_2 }
-			
-			ai_will_do = {
-				factor = 1
-			}
-		}
-
-		CZE_jaroslav_fajfr = {
-			
-			picture = generic_air_europe_2
-			
-			allowed = {
-				original_tag = CZE
-			}
-			
-			traits = { air_chief_ground_support_2 }
-			
-			ai_will_do = {
-				factor = 1
-			}
-		}
 	}
 
 
 	navy_chief = {
-		
-		
-		CZE_antonin_hasal = {
-			
-			picture = generic_navy_europe_3
-			
-			allowed = {
-				original_tag = CZE
-			}
-			
-
-			
-			traits = { navy_chief_maneuver_2 }
-			
-			ai_will_do = {
-				factor = 1
-			}
-		}
-
-		CZE_klement_gottwald = {
-			
-			picture = generic_navy_europe_2
-			
-			allowed = {
-				original_tag = CZE
-			}
-			
-			traits = { navy_naval_air_defense_2 }
-			
-			ai_will_do = {
-				factor = 1
-			}
-		}
 	}
 
 
@@ -787,21 +721,6 @@ ideas = {
 			
 			traits = { military_theorist }
 		}
-		
-		CZE_alois_vicherek = {
-			ledger = air
-		
-			allowed = {
-				original_tag = CZE
-			}
-			
-			research_bonus = {
-				air_doctrine = 0.10
-			}
-			
-			traits = { air_warfare_theorist }
-		}
-		
 	}
 
 	

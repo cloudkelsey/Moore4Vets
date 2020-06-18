@@ -1511,22 +1511,6 @@ ideas = {
 	
 	theorist = {
 		
-		tomoyuki_yamashita = {
-			ledger = army
-						
-			allowed = {
-				original_tag = JAP
-			}
-			
-			cost = 250
-						
-			research_bonus = {
-				cat_grand_battle_plan = 0.15
-			}
-			
-			traits = { grand_battle_plan_expert }
-		}
-		
 		hisaichi_terauchi = {
 			ledger = army
 						
@@ -1541,70 +1525,6 @@ ideas = {
 			}
 			
 			traits = { military_theorist }
-		}
-		
-		isoroku_yamamoto = {
-			ledger = navy
-						
-			allowed = {
-				original_tag = JAP
-			}
-			
-			cost = 250
-						
-			research_bonus = {
-				cat_base_strike = 0.15
-			}
-			
-			traits = { naval_aviation_pioneer }
-		}
-		
-		minoru_genda = {
-			ledger = navy
-						
-			allowed = {
-				original_tag = JAP
-			}
-						
-			research_bonus = {
-				naval_doctrine = 0.1
-				air_doctrine = 0.1
-				land_doctrine = 0.1
-			}
-			
-			traits = { naval_theorist }
-		}
-		
-		yoshitoshi_tokugawa = {
-			ledger = air
-						
-			allowed = {
-				original_tag = JAP
-			}
-			
-			cost = 250
-			
-			research_bonus = {
-				cat_operational_integrity = 0.15
-			}
-			
-			traits = { assault_avaition }
-		}
-		
-		hino_kumazo = {
-			ledger = air
-						
-			allowed = {
-				original_tag = JAP
-			}	
-			
-			research_bonus = {
-				naval_doctrine = 0.1
-				air_doctrine = 0.1
-				land_doctrine = 0.1
-			}
-			
-			traits = { air_warfare_theorist }
 		}
 		
 		yoshio_nishina = {
