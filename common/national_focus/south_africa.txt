@@ -533,7 +533,7 @@
 	focus = {
 		id = SAF_south_african_railways
 		icon = GFX_goal_generic_construct_infrastructure
-		x = 7
+		x = 6
 		y = 0
 
 		cost = 10
@@ -945,12 +945,44 @@
 	}
 
 	focus = {
+		id = SAF_fund_the_university_of_south_africa
+		icon = GFX_focus_research
+		prerequisite = { focus = SAF_pretoria_arms focus = SAF_expand_the_rand_mines }
+		x = 0
+		y = 5
+		relative_position_id = SAF_south_african_railways
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 45
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+        search_filters = { FOCUS_FILTER_RESEARCH }
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+
+	focus = {
 		id = SAF_establish_the_atomics_energy_board
 		icon = GFX_focus_wonderweapons
-		prerequisite = { focus = SAF_pretoria_arms focus = SAF_expand_the_rand_mines }
-		x = -1
-		y = 1
-		relative_position_id = SAF_expand_the_rand_mines
+		prerequisite = { focus = SAF_fund_the_university_of_south_africa }
+		x = 0
+		y = 6
+		relative_position_id = SAF_south_african_railways
 
 		cost = 10
 
@@ -981,6 +1013,73 @@
 		}
 	}
 
+	focus = {
+		id = SAF_the_cape_defense_institute
+		icon = GFX_focus_research
+		prerequisite = { focus = SAF_establish_the_atomics_energy_board }
+		x = -1
+		y = 7
+		relative_position_id = SAF_south_african_railways
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+			num_of_factories > 25
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+        search_filters = { FOCUS_FILTER_RESEARCH }
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+
+	focus = {
+		id = SAF_defense_collaboration_initiative
+		icon = GFX_goal_generic_scientific_exchange
+		prerequisite = { focus = SAF_establish_the_atomics_energy_board }
+		x = 1
+		y = 7
+		relative_position_id = SAF_south_african_railways
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 25
+		}
+
+		available = {
+			has_war = yes
+			is_in_faction = yes
+			num_of_factories > 50
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+        search_filters = { FOCUS_FILTER_RESEARCH }
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+
+
 	############################
 	####### ARMY SECTION #######
 	############################
@@ -988,7 +1087,7 @@
 	focus = {
 		id = SAF_special_service_battalion
 		icon = GFX_goal_generic_army_doctrines
-		x = 11
+		x = 10
 		y = 0
 
 		cost = 10
@@ -1387,7 +1486,7 @@
 	focus = {
 		id = SAF_commit_to_the_five_year_plan
 		icon = GFX_goal_generic_build_airforce
-		x = 15
+		x = 14
 		y = 0	
 
 		cost = 10
@@ -1692,7 +1791,7 @@
 	focus = {
 		id = SAF_seaward_defence_force
 		icon = GFX_goal_generic_navy_doctrines_tactics
-		x = 19
+		x = 18
 		y = 0		
 
 		cost = 5
@@ -2106,6 +2205,8 @@
 	
 	focus = {
 		id = uk_south_africa_focus
+		#prerequisite = { focus = uk_commonwealth_focus }
+		#prerequisite = { focus = ENG_imperial_conference }
 		available = {
 			any_country = {
 				original_tag = SAF
@@ -2141,8 +2242,9 @@
 			}
 		}
 		icon = GFX_goal_generic_construct_civ_factory
-		x = 5
+		x = 4
 		y = 0
+		#relative_position_id = uk_commonwealth_focus
 		cost = 10
 
 		available_if_capitulated = yes
@@ -2261,36 +2363,4 @@
 			}
 		}
 	}
-	
-	focus = {
-		id = SAF_fund_the_university_of_south_africa
-		icon = GFX_focus_research
-		prerequisite = { focus = uk_south_africa_focus }
-		x = 0
-		y = 2
-		relative_position_id = uk_south_africa_focus
-
-		cost = 10
-
-		ai_will_do = {
-			factor = 45
-		}
-
-		available = {
-
-		}
-		
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-        search_filters = { FOCUS_FILTER_RESEARCH }
-
-		completion_reward = {
-			add_research_slot = 1
-		}
-	}
-}
+}		

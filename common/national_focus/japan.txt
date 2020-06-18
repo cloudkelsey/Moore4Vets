@@ -1233,7 +1233,6 @@
 			every_country = {
 				limit = { OR = { original_tag = USA is_in_faction_with = ENG } }
 				JAP = { declare_war_on = { target = PREV type = annex_everything } }
-				MAN = { declare_war_on = { target = PREV type = annex_everything } } # Don't like doing this cause of popup spam but saves hassle if *someone* forgets to call Manchu
 			}
 		}
 	}
