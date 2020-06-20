@@ -1,11 +1,5 @@
 event_firing = {
 	################################# GERMANY #################################
-	give_eastern_poland = {
-		available = { POL = { has_war_with = GER has_capitulated = yes } }
-		fire_only_once = yes
-		ai_will_do = { factor = 1000 }
-		complete_effect = { GER = { country_event = germany.14 } }
-	}
 	mefo_bills_payments_anti_meme = {
 		available = { GER = { has_country_flag = mefo_bills_removed_through_war has_war = no } }
 		ai_will_do = { factor = 1000 }
@@ -14,12 +8,6 @@ event_firing = {
 	################################# GERMANY #################################
 	
 	################################# ITALY #################################
-	kill_ethiopia = {
-		available = { ETH = { exists = yes has_war_with = ITA } date > 1936.7.15 }
-		fire_only_once = yes
-		ai_will_do = { factor = 1000 }
-		complete_effect = { ITA = { country_event = moore4vets.2 } }
-	}
 	################################# ITALY #################################
 	
 	################################# FRANCE #################################
@@ -73,25 +61,13 @@ event_firing = {
 	################################# JAPAN #################################
 	
 	################################# UK #################################
-	get_rid_of_chamberlain = {
-		available = { ENG = { has_war = yes } POL = { has_capitulated = yes } }
-		fire_only_once = yes
-		ai_will_do = { factor = 1000 }
-		complete_effect = { ENG = { country_event = britain.9 } }
-	}
-	give_shadow_scheme_factories = {
-		available = { ENG = { has_completed_focus = shadow_scheme_focus has_war = yes } }
-		fire_only_once = yes
-		ai_will_do = { factor = 1000 }
-		complete_effect = { ENG = { country_event = britain.24 } }
-	}
 	################################# UK #################################
 	
 	################################# USA #################################
 	remove_usa_faction_idea = {
 		available = { 
 			OR = {
-				USA = { has_war_with = JAP }
+				#USA = { has_war_with = JAP }
 				ENG = {
 					OR = {
 						NOT = { controls_province = 3501 }
@@ -113,23 +89,11 @@ event_firing = {
 		}
 		fire_only_once = yes
 		ai_will_do = { factor = 1000 }
-		complete_effect = { USA = { remove_ideas = { no_faction_joining } country_event = moore4vets_news.2 } }
+		complete_effect = { country_event = moore4vets_news.2 }
 	}
 	################################# USA #################################
 	
 	################################# SPAIN #################################
-	get_down_mr_president = {
-		available = { date > 1936.4.20 SPR = { NOT = { has_global_flag = spanish_civil_war } } }
-		fire_only_once = yes
-		ai_will_do = { factor = 1000 }
-		complete_effect = { SPR = { country_event = lar_spain.90 } }
-	}
-	core_spain_after_war = {
-		available = { SPR = { has_global_flag = scw_over } }
-		fire_only_once = yes
-		ai_will_do = { factor = 1000 }
-		complete_effect = { SPR = { country_event = moore4vets.4 } }
-	}
 	spain_clear_flag_if_no_volunteers = {
 		available = {
 			SPR = {
@@ -147,27 +111,9 @@ event_firing = {
 	################################# SPAIN #################################
 	
 	################################# POLAND #################################
-	join_the_allies_please = {
-		available = { POL = { has_war = yes } }
-		fire_only_once = yes
-		ai_will_do = { factor = 1000 }
-		complete_effect = { ENG = { add_to_faction = POL } }
-	}
 	################################# POLAND #################################
 	
 	################################# INDIA #################################
-	warn_india_about_famine = {
-		available = { RAJ = { has_war = yes } }
-		fire_only_once = yes
-		ai_will_do = { factor = 1000 }
-		complete_effect = { RAJ = { news_event = moore4vets_news.4 } }
-	}
-	what_are_you_communist = {
-		available = { date > 1940.2.1 RAJ = { has_idea = RAJ_risk_of_famine } } # Want to do this earlier but Germany late declaring could fuck them
-		fire_only_once = yes
-		ai_will_do = { factor = 1000 }
-		complete_effect = { RAJ = { country_event = tfv_raj.21 } }
-	}
 	################################# INDIA #################################
 	
 	################################# BENELUX #################################
@@ -368,7 +314,7 @@ GER_spanish_civil_war_AI_control = {
 acquire_islands = {
 	uk_acquire_azores = {
 		ai_will_do = { factor = 10 }
-		allowed = { tag = ENG }
+		allowed = { original_tag = ENG }
 		available = { date > 1940.6.1 }
 		visible = { always = yes }
 		fire_only_once = yes
@@ -379,103 +325,51 @@ acquire_islands = {
 
 SPR_civil_war_offensives = {
 	begin_ultimate_offensive = {
-		ai_will_do = { factor = 1000 modifier = { factor = 0 has_country_flag = SPR_dont_attack } }
+		ai_will_do = { factor = 1000 }
 		available = {
-			tag = SPR
 			OR = {
 				surrender_progress > 0.075
-				AND = {
-					JAP = { has_war = yes }
-					NOT = { controls_state = 41 }
-				}
+				# AND = {
+					# JAP = { has_war = yes }
+					# NOT = { controls_state = 41 }
+				# }
 				NOT = { has_idea = SPA_death_before_surrender }
 			}
 		}
 		visible = { has_war = yes tag = SPR is_ai = yes NOT = { has_idea = spain_ultimate_offensive } }
-		#fire_only_once = yes
 		complete_effect = { add_timed_idea = { idea = spain_ultimate_offensive days = 10 } add_equipment_to_stockpile = { type = infantry_equipment_0 amount = 1000 producer = SPR } } 
 	}
 }
 
 ger_annexation = {
-
 	annex_hungary = {
 		cost = 5	
-		allowed = {
-			tag = GER
-		}
-		available = { date > 1939.1.1 }
-		visible = {
-			HUN = { is_ai = yes }
-			country_exists = HUN
-		}
-		complete_effect = {
-			GER = {
-				annex_country = { target = HUN transfer_troops = yes }
-				add_ideas = annex_hungary_idea
-			}
-		}
+		available = { date > 1940.1.1 }
+		visible = { HUN = { is_ai = yes } country_exists = HUN }
+		complete_effect = { GER = { annex_country = { target = HUN } add_ideas = annex_hungary_idea } }
 	}
 
 	annex_romania = {
 		cost = 5	
-		allowed = {
-			tag = GER
-		}
-		available = { date > 1939.1.1 }
-		visible = {
-			ROM = { is_ai = yes }
-			country_exists = ROM
-		}
-		complete_effect = {
-			GER = {
-				annex_country = { target = ROM transfer_troops = yes }
-				add_ideas = annex_romania_idea
-			}
-		}
+		available = { date > 1940.1.1 }
+		visible = { ROM = { is_ai = yes } country_exists = ROM }
+		complete_effect = { GER = { annex_country = { target = ROM } add_ideas = annex_romania_idea } }
 	}
 
 	annex_bulgaria = {
 		cost = 5
-		allowed = {
-			tag = GER
-		}
-		available = { date > 1939.1.1 }
-		visible = {
-			BUL = { is_ai = yes }
-			country_exists = BUL
-		}
-		complete_effect = {
-			GER = {
-				add_state_core = 48
-				add_state_core = 211
-				add_state_core = 212
-				annex_country = { target = BUL transfer_troops = yes }
-				add_ideas = annex_bulgaria_idea
-			}
-		}
+		available = { date > 1940.1.1 }
+		visible = { BUL = { is_ai = yes } country_exists = BUL }
+		complete_effect = { GER = { annex_country = { target = BUL } add_ideas = annex_bulgaria_idea } }
 	}
 }
 
 ast_annexation = {
 	annex_new_zealand = {
 		cost = 5
-		visible = {
-			tag = AST
-			NZL = { is_ai = yes }
-			country_exists = NZL
-			date > 1939.1.1
-		}
-
-		complete_effect = {
-			AST = {
-				annex_country = { target = NZL transfer_troops = yes }
-				add_state_core = 284 	#North Island
-				add_state_core = 723 	#South Island
-				add_state_core = 726 	#Somoa
-				add_ideas = annex_new_zealand_idea
-			}
-		}
+		available = { date > 1940.1.1 }
+		visible = { NZL = { is_ai = yes } country_exists = NZL }
+		complete_effect = { AST = { annex_country = { target = NZL } add_ideas = annex_new_zealand_idea } }
 	}
 }
 
@@ -597,20 +491,10 @@ uk_annexation = {
 jap_annexation = {
 	JAP_annex_siam = {	
 		cost = 5
-		available = { date > 1939.1.1 }
-		visible = {
-			SIA = { is_ai = yes }
-			country_exists = SIA
-			is_in_faction_with = SIA
-		}
+		available = { date > 1940.1.1 }
+		visible = { SIA = { is_ai = yes } country_exists = SIA }
 		fire_only_once = yes
-		complete_effect = {
-			JAP = {
-				add_state_core = 289
-				add_state_core = 724
-				annex_country = { target = SIA transfer_troops = yes }
-			}
-		}
+		complete_effect = { JAP = { annex_country = { target = SIA } } }
 	}
 }
 
@@ -638,62 +522,6 @@ give_division_templates = {
 					infantry = { x = 0 y = 3 }
 				}
 			}
-			
-			if = {
-				limit = { has_tech = tech_engineers }
-				division_template = {
-					name = "20w engi"
-					regiments = {
-						infantry = { x = 0 y = 0 } infantry = { x = 1 y = 0 } infantry = { x = 2 y = 0 }
-						infantry = { x = 0 y = 1 } infantry = { x = 1 y = 1 } infantry = { x = 2 y = 1 }
-						infantry = { x = 0 y = 2 } infantry = { x = 1 y = 2 } infantry = { x = 2 y = 2 }
-						infantry = { x = 0 y = 3 }
-					}
-					support = { engineer = { x = 0 y = 0 } }
-				}
-				
-				if = {
-					limit = { has_tech = gw_artillery }
-					division_template = {
-						name = "20w engi arty"
-						regiments = {
-							infantry = { x = 0 y = 0 } infantry = { x = 1 y = 0 } infantry = { x = 2 y = 0 }
-							infantry = { x = 0 y = 1 } infantry = { x = 1 y = 1 } infantry = { x = 2 y = 1 }
-							infantry = { x = 0 y = 2 } infantry = { x = 1 y = 2 } infantry = { x = 2 y = 2 }
-							infantry = { x = 0 y = 3 }
-						}
-						support = { engineer = { x = 0 y = 0 } artillery = { x = 0 y = 1 } }
-					}
-				}
-				
-				if = {
-					limit = { has_tech = interwar_antiair }
-					division_template = {
-						name = "20w engi AA"
-						regiments = {
-							infantry = { x = 0 y = 0 } infantry = { x = 1 y = 0 } infantry = { x = 2 y = 0 }
-							infantry = { x = 0 y = 1 } infantry = { x = 1 y = 1 } infantry = { x = 2 y = 1 }
-							infantry = { x = 0 y = 2 } infantry = { x = 1 y = 2 } infantry = { x = 2 y = 2 }
-							infantry = { x = 0 y = 3 }
-						}
-						support = { engineer = { x = 0 y = 0 } anti_air = { x = 0 y = 1 } }
-					}
-				}
-			}
-			
-			if = {
-				limit = { has_tech = interwar_antiair }
-				division_template = {
-					name = "20w AA"
-					regiments = {
-						infantry = { x = 0 y = 0 } infantry = { x = 1 y = 0 } infantry = { x = 2 y = 0 }
-						infantry = { x = 0 y = 1 } infantry = { x = 1 y = 1 } infantry = { x = 2 y = 1 }
-						infantry = { x = 0 y = 2 } infantry = { x = 1 y = 2 } infantry = { x = 2 y = 2 }
-						infantry = { x = 0 y = 3 }
-					}
-					support = { anti_air = { x = 0 y = 0 } }
-				}
-			}
 		}
 	}
 	give_40_infantry = {
@@ -711,66 +539,6 @@ give_division_templates = {
 					infantry = { x = 0 y = 4 } infantry = { x = 1 y = 4 } infantry = { x = 2 y = 4 } infantry = { x = 3 y = 4 }
 				}
 			}
-			
-			if = {
-				limit = { has_tech = tech_engineers }
-				division_template = {
-					name = "40w engi"
-					regiments = {
-						infantry = { x = 0 y = 0 } infantry = { x = 1 y = 0 } infantry = { x = 2 y = 0 } infantry = { x = 3 y = 0 }
-						infantry = { x = 0 y = 1 } infantry = { x = 1 y = 1 } infantry = { x = 2 y = 1 } infantry = { x = 3 y = 1 }
-						infantry = { x = 0 y = 2 } infantry = { x = 1 y = 2 } infantry = { x = 2 y = 2 } infantry = { x = 3 y = 2 }
-						infantry = { x = 0 y = 3 } infantry = { x = 1 y = 3 } infantry = { x = 2 y = 3 } infantry = { x = 3 y = 3 }
-						infantry = { x = 0 y = 4 } infantry = { x = 1 y = 4 } infantry = { x = 2 y = 4 } infantry = { x = 3 y = 4 }
-					}
-					support = { engineer = { x = 0 y = 0 } }
-				}
-				
-				if = {
-					limit = { has_tech = gw_artillery }
-					division_template = {
-						name = "40w engi arty"
-						regiments = {
-							infantry = { x = 0 y = 0 } infantry = { x = 1 y = 0 } infantry = { x = 2 y = 0 } infantry = { x = 3 y = 0 }
-							infantry = { x = 0 y = 1 } infantry = { x = 1 y = 1 } infantry = { x = 2 y = 1 } infantry = { x = 3 y = 1 }
-							infantry = { x = 0 y = 2 } infantry = { x = 1 y = 2 } infantry = { x = 2 y = 2 } infantry = { x = 3 y = 2 }
-							infantry = { x = 0 y = 3 } infantry = { x = 1 y = 3 } infantry = { x = 2 y = 3 } infantry = { x = 3 y = 3 }
-							infantry = { x = 0 y = 4 } infantry = { x = 1 y = 4 } infantry = { x = 2 y = 4 } infantry = { x = 3 y = 4 }
-						}
-						support = { engineer = { x = 0 y = 0 } artillery = { x = 0 y = 1 } }
-					}
-				}
-				
-				if = {
-					limit = { has_tech = interwar_antiair }
-					division_template = {
-						name = "40w engi AA"
-						regiments = {
-							infantry = { x = 0 y = 0 } infantry = { x = 1 y = 0 } infantry = { x = 2 y = 0 } infantry = { x = 3 y = 0 }
-							infantry = { x = 0 y = 1 } infantry = { x = 1 y = 1 } infantry = { x = 2 y = 1 } infantry = { x = 3 y = 1 }
-							infantry = { x = 0 y = 2 } infantry = { x = 1 y = 2 } infantry = { x = 2 y = 2 } infantry = { x = 3 y = 2 }
-							infantry = { x = 0 y = 3 } infantry = { x = 1 y = 3 } infantry = { x = 2 y = 3 } infantry = { x = 3 y = 3 }
-							infantry = { x = 0 y = 4 } infantry = { x = 1 y = 4 } infantry = { x = 2 y = 4 } infantry = { x = 3 y = 4 }
-						}
-						support = { engineer = { x = 0 y = 0 } anti_air = { x = 0 y = 1 } }
-					}
-				}
-			}
-			
-			if = {
-				limit = { has_tech = interwar_antiair }
-				division_template = {
-					name = "40w AA"
-					regiments = {
-						infantry = { x = 0 y = 0 } infantry = { x = 1 y = 0 } infantry = { x = 2 y = 0 } infantry = { x = 3 y = 0 }
-						infantry = { x = 0 y = 1 } infantry = { x = 1 y = 1 } infantry = { x = 2 y = 1 } infantry = { x = 3 y = 1 }
-						infantry = { x = 0 y = 2 } infantry = { x = 1 y = 2 } infantry = { x = 2 y = 2 } infantry = { x = 3 y = 2 }
-						infantry = { x = 0 y = 3 } infantry = { x = 1 y = 3 } infantry = { x = 2 y = 3 } infantry = { x = 3 y = 3 }
-						infantry = { x = 0 y = 4 } infantry = { x = 1 y = 4 } infantry = { x = 2 y = 4 } infantry = { x = 3 y = 4 }
-					}
-					support = { anti_air = { x = 0 y = 0 } }
-				}
-			}
 		}
 	}
 	give_20_infantry_arty = {
@@ -784,58 +552,6 @@ give_division_templates = {
 					infantry = { x = 0 y = 0 } infantry = { x = 1 y = 0 } infantry = { x = 2 y = 0 }
 					infantry = { x = 0 y = 1 } infantry = { x = 1 y = 1 } infantry = { x = 2 y = 1 }
 					infantry = { x = 0 y = 2 } artillery_brigade = { x = 1 y = 2 } artillery_brigade = { x = 2 y = 2 }
-				}
-			}
-			
-			if = {
-				limit = { has_tech = tech_engineers }
-				division_template = {
-					name = "20art engi"
-					regiments = {
-						infantry = { x = 0 y = 0 } infantry = { x = 1 y = 0 } infantry = { x = 2 y = 0 }
-						infantry = { x = 0 y = 1 } infantry = { x = 1 y = 1 } infantry = { x = 2 y = 1 }
-						infantry = { x = 0 y = 2 } artillery_brigade = { x = 1 y = 2 } artillery_brigade = { x = 2 y = 2 }
-					}
-					support = { engineer = { x = 0 y = 0 } }
-				}
-				
-				if = {
-					limit = { has_tech = gw_artillery }
-					division_template = {
-						name = "20art engi arty"
-						regiments = {
-							infantry = { x = 0 y = 0 } infantry = { x = 1 y = 0 } infantry = { x = 2 y = 0 }
-							infantry = { x = 0 y = 1 } infantry = { x = 1 y = 1 } infantry = { x = 2 y = 1 }
-							infantry = { x = 0 y = 2 } artillery_brigade = { x = 1 y = 2 } artillery_brigade = { x = 2 y = 2 }
-						}
-						support = { engineer = { x = 0 y = 0 } artillery = { x = 0 y = 1 } }
-					}
-				}
-				
-				if = {
-					limit = { has_tech = interwar_antiair }
-					division_template = {
-						name = "20art engi AA"
-						regiments = {
-							infantry = { x = 0 y = 0 } infantry = { x = 1 y = 0 } infantry = { x = 2 y = 0 }
-							infantry = { x = 0 y = 1 } infantry = { x = 1 y = 1 } infantry = { x = 2 y = 1 }
-							infantry = { x = 0 y = 2 } artillery_brigade = { x = 1 y = 2 } artillery_brigade = { x = 2 y = 2 }
-						}
-						support = { engineer = { x = 0 y = 0 } anti_air = { x = 0 y = 1 } }
-					}
-				}
-			}
-			
-			if = {
-				limit = { has_tech = interwar_antiair }
-				division_template = {
-					name = "20art AA"
-					regiments = {
-						infantry = { x = 0 y = 0 } infantry = { x = 1 y = 0 } infantry = { x = 2 y = 0 }
-						infantry = { x = 0 y = 1 } infantry = { x = 1 y = 1 } infantry = { x = 2 y = 1 }
-						infantry = { x = 0 y = 2 } artillery_brigade = { x = 1 y = 2 } artillery_brigade = { x = 2 y = 2 }
-					}
-					support = { anti_air = { x = 0 y = 0 } }
 				}
 			}
 		}
@@ -855,84 +571,6 @@ give_division_templates = {
 					infantry = { x = 0 y = 4 } infantry = { x = 1 y = 4 }
 				}
 			}
-			
-			if = {
-				limit = { has_tech = tech_engineers }
-				division_template = {
-					name = "40art engi"
-					regiments = {
-						infantry = { x = 0 y = 0 } infantry = { x = 1 y = 0 } infantry = { x = 2 y = 0 } artillery_brigade = { x = 3 y = 0 }
-						infantry = { x = 0 y = 1 } infantry = { x = 1 y = 1 } infantry = { x = 2 y = 1 } artillery_brigade = { x = 3 y = 1 }
-						infantry = { x = 0 y = 2 } infantry = { x = 1 y = 2 } infantry = { x = 2 y = 2 } artillery_brigade = { x = 3 y = 2 }
-						infantry = { x = 0 y = 3 } infantry = { x = 1 y = 3 } infantry = { x = 2 y = 3 } artillery_brigade = { x = 3 y = 3 }
-						infantry = { x = 0 y = 4 } infantry = { x = 1 y = 4 }
-					}
-					support = { engineer = { x = 0 y = 0 } }
-				}
-				
-				if = {
-					limit = { has_tech = gw_artillery }
-					division_template = {
-						name = "40art engi arty"
-						regiments = {
-							infantry = { x = 0 y = 0 } infantry = { x = 1 y = 0 } infantry = { x = 2 y = 0 } artillery_brigade = { x = 3 y = 0 }
-							infantry = { x = 0 y = 1 } infantry = { x = 1 y = 1 } infantry = { x = 2 y = 1 } artillery_brigade = { x = 3 y = 1 }
-							infantry = { x = 0 y = 2 } infantry = { x = 1 y = 2 } infantry = { x = 2 y = 2 } artillery_brigade = { x = 3 y = 2 }
-							infantry = { x = 0 y = 3 } infantry = { x = 1 y = 3 } infantry = { x = 2 y = 3 } artillery_brigade = { x = 3 y = 3 }
-							infantry = { x = 0 y = 4 } infantry = { x = 1 y = 4 }
-						}
-						support = { engineer = { x = 0 y = 0 } artillery = { x = 0 y = 1 } }
-					}
-				}
-				
-				if = {
-					limit = { has_tech = interwar_antiair }
-					division_template = {
-						name = "40art engi AA"
-						regiments = {
-							infantry = { x = 0 y = 0 } infantry = { x = 1 y = 0 } infantry = { x = 2 y = 0 } artillery_brigade = { x = 3 y = 0 }
-							infantry = { x = 0 y = 1 } infantry = { x = 1 y = 1 } infantry = { x = 2 y = 1 } artillery_brigade = { x = 3 y = 1 }
-							infantry = { x = 0 y = 2 } infantry = { x = 1 y = 2 } infantry = { x = 2 y = 2 } artillery_brigade = { x = 3 y = 2 }
-							infantry = { x = 0 y = 3 } infantry = { x = 1 y = 3 } infantry = { x = 2 y = 3 } artillery_brigade = { x = 3 y = 3 }
-							infantry = { x = 0 y = 4 } infantry = { x = 1 y = 4 }
-						}
-						support = { engineer = { x = 0 y = 0 } anti_air = { x = 0 y = 1 } }
-					}
-				}
-			}
-			
-			if = {
-				limit = { has_tech = interwar_antiair }
-				division_template = {
-					name = "40art AA"
-					regiments = {
-						infantry = { x = 0 y = 0 } infantry = { x = 1 y = 0 } infantry = { x = 2 y = 0 } artillery_brigade = { x = 3 y = 0 }
-						infantry = { x = 0 y = 1 } infantry = { x = 1 y = 1 } infantry = { x = 2 y = 1 } artillery_brigade = { x = 3 y = 1 }
-						infantry = { x = 0 y = 2 } infantry = { x = 1 y = 2 } infantry = { x = 2 y = 2 } artillery_brigade = { x = 3 y = 2 }
-						infantry = { x = 0 y = 3 } infantry = { x = 1 y = 3 } infantry = { x = 2 y = 3 } artillery_brigade = { x = 3 y = 3 }
-						infantry = { x = 0 y = 4 } infantry = { x = 1 y = 4 }
-					}
-					support = { anti_air = { x = 0 y = 0 } }
-				}
-			}
-		}
-	}
-	give_light_tank_templates = {
-		available = { has_tech = gwtank has_tech = motorised_infantry }
-		ai_will_do = { factor = 100 }
-		fire_only_once = yes
-		complete_effect = {
-			division_template = {
-				name = "Generic Light Tank pure"
-				priority = 2
-				regiments = {
-					light_armor = { x = 0 y = 0 } light_armor = { x = 1 y = 0 } light_armor = { x = 2 y = 0 } motorized = { x = 3 y = 0 } motorized = { x = 4 y = 0 }
-					light_armor = { x = 0 y = 1 } light_armor = { x = 1 y = 1 } light_armor = { x = 2 y = 1 } motorized = { x = 3 y = 1 } motorized = { x = 4 y = 1 }
-					light_armor = { x = 0 y = 2 } light_armor = { x = 1 y = 2 } light_armor = { x = 2 y = 2 } motorized = { x = 3 y = 2 } motorized = { x = 4 y = 2 }
-					light_armor = { x = 0 y = 3 } light_armor = { x = 1 y = 3 } 							  motorized = { x = 3 y = 3 }
-					light_armor = { x = 0 y = 4 } light_armor = { x = 1 y = 4 }
-				}
-			}
 		}
 	}
 	give_medium_tank_templates = {
@@ -940,15 +578,32 @@ give_division_templates = {
 		ai_will_do = { factor = 100 }
 		fire_only_once = yes
 		complete_effect = {
-			division_template = {
-				name = "Generic Medium Tank pure"
-				priority = 2
-				regiments = {
-					medium_armor = { x = 0 y = 0 } medium_armor = { x = 1 y = 0 } medium_armor = { x = 2 y = 0 } motorized = { x = 3 y = 0 } motorized = { x = 4 y = 0 }
-					medium_armor = { x = 0 y = 1 } medium_armor = { x = 1 y = 1 } medium_armor = { x = 2 y = 1 } motorized = { x = 3 y = 1 } motorized = { x = 4 y = 1 }
-					medium_armor = { x = 0 y = 2 } medium_armor = { x = 1 y = 2 } medium_armor = { x = 2 y = 2 } motorized = { x = 3 y = 2 } motorized = { x = 4 y = 2 }
-					medium_armor = { x = 0 y = 3 } medium_armor = { x = 1 y = 3 } 							  motorized = { x = 3 y = 3 }
-					medium_armor = { x = 0 y = 4 } medium_armor = { x = 1 y = 4 }
+			if = {
+				limit = { has_tech = tech_engineers }
+				division_template = {
+					name = "Generic Medium Tank"
+					priority = 2
+					regiments = {
+						medium_armor = { x = 0 y = 0 } medium_armor = { x = 1 y = 0 } medium_armor = { x = 2 y = 0 } motorized = { x = 3 y = 0 } motorized = { x = 4 y = 0 }
+						medium_armor = { x = 0 y = 1 } medium_armor = { x = 1 y = 1 } medium_armor = { x = 2 y = 1 } motorized = { x = 3 y = 1 } motorized = { x = 4 y = 1 }
+						medium_armor = { x = 0 y = 2 } medium_armor = { x = 1 y = 2 } medium_armor = { x = 2 y = 2 } motorized = { x = 3 y = 2 } motorized = { x = 4 y = 2 }
+						medium_armor = { x = 0 y = 3 } medium_armor = { x = 1 y = 3 } 							     motorized = { x = 3 y = 3 }
+						medium_armor = { x = 0 y = 4 } medium_armor = { x = 1 y = 4 }
+					}
+					support = { engineer = { x = 0 y = 0 } }
+				}
+			}
+			else = {
+				division_template = {
+					name = "Generic Medium Tank"
+					priority = 2
+					regiments = {
+						medium_armor = { x = 0 y = 0 } medium_armor = { x = 1 y = 0 } medium_armor = { x = 2 y = 0 } motorized = { x = 3 y = 0 } motorized = { x = 4 y = 0 }
+						medium_armor = { x = 0 y = 1 } medium_armor = { x = 1 y = 1 } medium_armor = { x = 2 y = 1 } motorized = { x = 3 y = 1 } motorized = { x = 4 y = 1 }
+						medium_armor = { x = 0 y = 2 } medium_armor = { x = 1 y = 2 } medium_armor = { x = 2 y = 2 } motorized = { x = 3 y = 2 } motorized = { x = 4 y = 2 }
+						medium_armor = { x = 0 y = 3 } medium_armor = { x = 1 y = 3 } 							     motorized = { x = 3 y = 3 }
+						medium_armor = { x = 0 y = 4 } medium_armor = { x = 1 y = 4 }
+					}
 				}
 			}
 		}
@@ -958,28 +613,60 @@ give_division_templates = {
 		ai_will_do = { factor = 100 }
 		fire_only_once = yes
 		complete_effect = {
-			division_template = {
-				name = "Generic Heavy Tank pure (mot)"
-				priority = 2
-				regiments = {
-					heavy_armor = { x = 0 y = 0 } heavy_armor = { x = 1 y = 0 } heavy_armor = { x = 2 y = 0 } motorized = { x = 3 y = 0 } motorized = { x = 4 y = 0 }
-					heavy_armor = { x = 0 y = 1 } heavy_armor = { x = 1 y = 1 } heavy_armor = { x = 2 y = 1 } motorized = { x = 3 y = 1 } motorized = { x = 4 y = 1 }
-					heavy_armor = { x = 0 y = 2 } heavy_armor = { x = 1 y = 2 } heavy_armor = { x = 2 y = 2 } motorized = { x = 3 y = 2 } motorized = { x = 4 y = 2 }
-					heavy_armor = { x = 0 y = 3 } heavy_armor = { x = 1 y = 3 } 							  motorized = { x = 3 y = 3 }
-					heavy_armor = { x = 0 y = 4 } heavy_armor = { x = 1 y = 4 }
-				}
-			}
 			if = {
-				limit = { has_tech = mechanised_infantry }
+				limit = { has_tech = tech_engineers }
 				division_template = {
-					name = "Generic Heavy Tank pure (mech)"
+					name = "Generic Heavy Tank (mot)"
 					priority = 2
 					regiments = {
-						heavy_armor = { x = 0 y = 0 } heavy_armor = { x = 1 y = 0 } heavy_armor = { x = 2 y = 0 } mechanized = { x = 3 y = 0 } mechanized = { x = 4 y = 0 }
-						heavy_armor = { x = 0 y = 1 } heavy_armor = { x = 1 y = 1 } heavy_armor = { x = 2 y = 1 } mechanized = { x = 3 y = 1 } mechanized = { x = 4 y = 1 }
-						heavy_armor = { x = 0 y = 2 } heavy_armor = { x = 1 y = 2 } heavy_armor = { x = 2 y = 2 } mechanized = { x = 3 y = 2 } mechanized = { x = 4 y = 2 }
-						heavy_armor = { x = 0 y = 3 } heavy_armor = { x = 1 y = 3 } 							  mechanized = { x = 3 y = 3 }
+						heavy_armor = { x = 0 y = 0 } heavy_armor = { x = 1 y = 0 } heavy_armor = { x = 2 y = 0 } motorized = { x = 3 y = 0 } motorized = { x = 4 y = 0 }
+						heavy_armor = { x = 0 y = 1 } heavy_armor = { x = 1 y = 1 } heavy_armor = { x = 2 y = 1 } motorized = { x = 3 y = 1 } motorized = { x = 4 y = 1 }
+						heavy_armor = { x = 0 y = 2 } heavy_armor = { x = 1 y = 2 } heavy_armor = { x = 2 y = 2 } motorized = { x = 3 y = 2 } motorized = { x = 4 y = 2 }
+						heavy_armor = { x = 0 y = 3 } heavy_armor = { x = 1 y = 3 } 							  motorized = { x = 3 y = 3 }
 						heavy_armor = { x = 0 y = 4 } heavy_armor = { x = 1 y = 4 }
+					}
+					support = { engineer = { x = 0 y = 0 } }
+				}
+				if = {
+					limit = { has_tech = mechanised_infantry }
+					division_template = {
+						name = "Generic Heavy Tank (mech)"
+						priority = 2
+						regiments = {
+							heavy_armor = { x = 0 y = 0 } heavy_armor = { x = 1 y = 0 } heavy_armor = { x = 2 y = 0 } mechanized = { x = 3 y = 0 } mechanized = { x = 4 y = 0 }
+							heavy_armor = { x = 0 y = 1 } heavy_armor = { x = 1 y = 1 } heavy_armor = { x = 2 y = 1 } mechanized = { x = 3 y = 1 } mechanized = { x = 4 y = 1 }
+							heavy_armor = { x = 0 y = 2 } heavy_armor = { x = 1 y = 2 } heavy_armor = { x = 2 y = 2 } mechanized = { x = 3 y = 2 } mechanized = { x = 4 y = 2 }
+							heavy_armor = { x = 0 y = 3 } heavy_armor = { x = 1 y = 3 } 							  mechanized = { x = 3 y = 3 }
+							heavy_armor = { x = 0 y = 4 } heavy_armor = { x = 1 y = 4 }
+						}
+						support = { engineer = { x = 0 y = 0 } }
+					}
+				}
+			}
+			else = {
+				division_template = {
+					name = "Generic Heavy Tank pure (mot)"
+					priority = 2
+					regiments = {
+						heavy_armor = { x = 0 y = 0 } heavy_armor = { x = 1 y = 0 } heavy_armor = { x = 2 y = 0 } motorized = { x = 3 y = 0 } motorized = { x = 4 y = 0 }
+						heavy_armor = { x = 0 y = 1 } heavy_armor = { x = 1 y = 1 } heavy_armor = { x = 2 y = 1 } motorized = { x = 3 y = 1 } motorized = { x = 4 y = 1 }
+						heavy_armor = { x = 0 y = 2 } heavy_armor = { x = 1 y = 2 } heavy_armor = { x = 2 y = 2 } motorized = { x = 3 y = 2 } motorized = { x = 4 y = 2 }
+						heavy_armor = { x = 0 y = 3 } heavy_armor = { x = 1 y = 3 } 							  motorized = { x = 3 y = 3 }
+						heavy_armor = { x = 0 y = 4 } heavy_armor = { x = 1 y = 4 }
+					}
+				}
+				if = {
+					limit = { has_tech = mechanised_infantry }
+					division_template = {
+						name = "Generic Heavy Tank pure (mech)"
+						priority = 2
+						regiments = {
+							heavy_armor = { x = 0 y = 0 } heavy_armor = { x = 1 y = 0 } heavy_armor = { x = 2 y = 0 } mechanized = { x = 3 y = 0 } mechanized = { x = 4 y = 0 }
+							heavy_armor = { x = 0 y = 1 } heavy_armor = { x = 1 y = 1 } heavy_armor = { x = 2 y = 1 } mechanized = { x = 3 y = 1 } mechanized = { x = 4 y = 1 }
+							heavy_armor = { x = 0 y = 2 } heavy_armor = { x = 1 y = 2 } heavy_armor = { x = 2 y = 2 } mechanized = { x = 3 y = 2 } mechanized = { x = 4 y = 2 }
+							heavy_armor = { x = 0 y = 3 } heavy_armor = { x = 1 y = 3 } 							  mechanized = { x = 3 y = 3 }
+							heavy_armor = { x = 0 y = 4 } heavy_armor = { x = 1 y = 4 }
+						}
 					}
 				}
 			}

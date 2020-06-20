@@ -82,12 +82,13 @@ country_event = {
 country_event = {
 	id = tfv_raj.21
 	title = tfv_raj.21.t
-	desc = tfv_raj.21.desc	#
+	desc = tfv_raj.21.desc
 	picture = GFX_report_event_indian_famine
 	
 	is_triggered_only = yes
-
 	fire_only_once = yes
+	
+	trigger = { has_idea = RAJ_risk_of_famine }
 
 	immediate = {
 		hidden_effect = {

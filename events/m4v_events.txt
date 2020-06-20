@@ -20,6 +20,8 @@ news_event = { # USA gets neutrality removed
 	
 	fire_only_once = yes
 	is_triggered_only = yes
+	
+	immediate = { remove_ideas = { no_faction_joining } }
 
 	option = { name = moore4vets_news.2.option }
 }
@@ -71,20 +73,27 @@ country_event = { #this event will be fired at the start of the game, and will b
 	hidden = yes
 
 	option = {
+		# https://www.calculatorsoup.com/calculators/time/date-difference-calculator.php (1/1/1936 -> date) - 1
 		ENG = {
-			country_event = { id = britain.16 days = 18 } 			# king dies 19/1/1936
-			country_event = { id = mtg_britain.1 days = 150 } 		# abdication crisis 1/6/1936
-			country_event = { id = britain.22 days = 511 } 			# stanley baldwin retires 28/5/1937
+			country_event = { id = britain.16 days = 17 } 			# king dies 19/1/1936
+			country_event = { id = mtg_britain.1 days = 151 } 		# abdication crisis 1/6/1936
+			country_event = { id = britain.22 days = 512 } 			# stanley baldwin retires 28/5/1937
 			country_event = { id = moore4vets.8 days = 734 }
 		}
+		
+		ITA = {
+			country_event = { id = moore4vets.2 days = 195 } 		# Kill Ethiopia 15/7/1936
+			country_event = { id = moore4vets.8 days = 734 }
+		}
+		
+		RAJ = { country_event = { id = tfv_raj.21 days = 1491 } }
 		
 		ROM = { country_event = moore4vets.5 }
 		
 		GER = { country_event = { id = moore4vets.8 days = 734 } }
-		ITA = { country_event = { id = moore4vets.8 days = 734 } }
 		FRA = { country_event = { id = moore4vets.8 days = 734 } }
 		
-		SPR = { add_ideas = no_building_a_navy } # Can't add through the history file
+		SPR = { country_event = { id = lar_spain.90 days = 109 } }
 
 		country_event = moore4vets.3
 	}

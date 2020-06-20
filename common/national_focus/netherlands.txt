@@ -33,8 +33,6 @@ focus_tree = {
 	focus = {
 		id = HOL_obtain_foreign_colonial_investments
 		available = {
-			NOT = { has_war_with = USA }
-			NOT = { has_war_with = ENG }
 			any_country = {
 				OR = {
 					original_tag = HOL
@@ -45,7 +43,6 @@ focus_tree = {
 				has_full_control_of_state = 334
 			}
 			has_full_control_of_state = 695
-			has_full_control_of_state = 309
 		}
 		bypass = {
 		}
