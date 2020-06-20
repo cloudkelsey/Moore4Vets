@@ -2374,7 +2374,6 @@ country_event = {
 				add_timed_idea = { idea = SPR_death_before_surrender days = 900 }
 				add_ideas = SPR_disbanded_army_1
 				set_party_name = { ideology = neutrality long_name = SPR_neutrality_anarchism_party_long name = SPR_neutrality_anarchism_party }
-				if = { limit = { is_ai = yes } add_equipment_to_stockpile = { type = infantry_equipment_0 amount = 10000 producer = SPD } }
 			}
 			set_party_name = { ideology = neutrality long_name = SPR_neutrality_military_junta_party_long name = SPR_neutrality_military_junta_party }
 			#every_unit_leader = {
@@ -2388,6 +2387,7 @@ country_event = {
 			#country_event = { id = lar_spain.6 days = 7 } # SCW notification event for the player
 			country_event = { id = lar_spain.78 days = 7 random_days = 7 } # Sanjurjo dies
 			if = { limit = { is_ai = yes } add_equipment_to_stockpile = { type = infantry_equipment_0 amount = 12500 producer = SPR } }
+			if = { limit = { SPD = { is_ai = yes } } SPD = { add_equipment_to_stockpile = { type = infantry_equipment_0 amount = 10000 producer = SPD } } }
 		}
 		hidden_effect = {
 			# Marks gui as "dirty" so the code updates the layout to properly hide the unused branches

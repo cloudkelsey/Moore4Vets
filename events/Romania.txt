@@ -4,35 +4,6 @@
 
 add_namespace = romania
 
-# Soviet Union demands Bessarabia
-country_event = {
-	id = romania.1
-	title = romania.1.t
-	desc = romania.1.d
-	picture = GFX_report_event_generic_read_write
-	
-	is_triggered_only = yes
-	timeout_days = 5
-	
-	option = { # Accept demands
-		name = romania.1.a
-		ai_chance = {
-			factor = 90
-		}
-		SOV = {
-			country_event = { days = 1 id = soviet.4 }
-		}
-		set_country_flag = bessarabia_ceded
-		if = {
-			limit = {
-				is_in_faction = no
-			}
-			country_event = romania.6
-		}
-		remove_ideas = no_faction_joining
-	}
-}
-
 # Second Vienna Award - Northern Transylvania
 country_event = {
 	id = romania.2

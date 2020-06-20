@@ -1,9 +1,3 @@
-debug_decisions = {
-	icon = generic_research
-	visible = {
-		is_debug = yes
-	}
-}
 propaganda_efforts = {
 	icon = generic_propaganda
 
@@ -179,12 +173,6 @@ category_exile_forces = {
 	picture = GFX_decision_cat_picture_government_in_exile
 	allowed = {
 		has_dlc = "Man the Guns"
-	}
-}
-category_test_decisions = {
-	priority = 110
-	visible = {
-		is_debug = yes
 	}
 }
 

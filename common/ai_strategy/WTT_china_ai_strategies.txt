@@ -1,0 +1,34 @@
+SOV_only_bother_with_volunteers_if_chi_losing = {
+	enable = {
+		tag = SOV
+		date < 1941.1.1
+		CHI = { surrender_progress < 0.4 }
+	}
+	abort = {
+		OR ={
+			date > 1941.1.1
+			CHI = { surrender_progress > 0.3 }
+		}
+	}
+	
+	ai_strategy = {
+		type = send_volunteers_desire
+		id = "YUN"
+		value = -100
+	}
+	ai_strategy = {
+		type = send_volunteers_desire
+		id = "XSM"
+		value = -100
+	}
+	ai_strategy = {
+		type = send_volunteers_desire
+		id = "SHX"
+		value = -100
+	}
+	ai_strategy = {
+		type = send_volunteers_desire
+		id = "CHI"
+		value = -100
+	}
+}

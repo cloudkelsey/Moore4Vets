@@ -1,0 +1,92 @@
+#Add to scripted triggers if more levels of hyper inflation is added
+CHI_hyper_inflation_clear_all = {
+	remove_ideas = {
+		CHI_hyper_inflation_1
+		CHI_hyper_inflation_2
+		CHI_hyper_inflation_3
+		CHI_hyper_inflation_4
+		CHI_hyper_inflation_5
+	}
+}
+
+#Important to put HIGHEST first
+CHI_hyper_inflation_level_up = {
+	# level 5 not relevant. Cannot go above.
+	custom_effect_tooltip = CHI_inflation_up_tt
+	if = {
+		limit = { has_idea = CHI_hyper_inflation_4 }
+		swap_ideas = {
+			remove_idea = CHI_hyper_inflation_4
+			add_idea = CHI_hyper_inflation_5
+		}
+	}
+	else_if = {
+		limit = { has_idea = CHI_hyper_inflation_3 }
+		swap_ideas = {
+			remove_idea = CHI_hyper_inflation_3
+			add_idea = CHI_hyper_inflation_4
+		}
+	}
+	else_if = {
+		limit = { has_idea = CHI_hyper_inflation_2 }
+		swap_ideas = {
+			remove_idea = CHI_hyper_inflation_2
+			add_idea = CHI_hyper_inflation_3
+		}
+	}
+	else_if = {
+		limit = { has_idea = CHI_hyper_inflation_1 }
+		swap_ideas = {
+			remove_idea = CHI_hyper_inflation_1
+			add_idea = CHI_hyper_inflation_2
+		}		
+	}
+	else_if = {
+		limit = { NOT = { has_idea = CHI_hyper_inflation_1 } }
+		add_ideas = CHI_hyper_inflation_1
+	}
+}
+
+#Important to put LOWEST first
+CHI_hyper_inflation_level_down = {
+custom_effect_tooltip = CHI_inflation_down_tt
+	if = {
+		limit = { has_idea = CHI_hyper_inflation_1 }
+		#Makes the tooltip clearer if player looks at the effect early in the game
+		effect_tooltip = {
+			swap_ideas = {
+				remove_idea = CHI_hyper_inflation_1
+				add_idea = CHI_hyper_inflation_none
+			}
+		}
+		hidden_effect = { remove_ideas = CHI_hyper_inflation_1 }
+	}
+	if = {
+		limit = { has_idea = CHI_hyper_inflation_2 }
+		swap_ideas = {
+			remove_idea = CHI_hyper_inflation_2
+			add_idea = CHI_hyper_inflation_1
+		}
+	}
+	if = {
+		limit = { has_idea = CHI_hyper_inflation_3 }
+		swap_ideas = {
+			remove_idea = CHI_hyper_inflation_3
+			add_idea = CHI_hyper_inflation_2
+		}
+	}
+	if = {
+		limit = { has_idea = CHI_hyper_inflation_4 }
+		swap_ideas = {
+			remove_idea = CHI_hyper_inflation_4
+			add_idea = CHI_hyper_inflation_3
+		}
+	}
+	if = {
+		limit = { has_idea = CHI_hyper_inflation_5 }
+		swap_ideas = {
+			remove_idea = CHI_hyper_inflation_5
+			add_idea = CHI_hyper_inflation_4
+		}
+	}
+}

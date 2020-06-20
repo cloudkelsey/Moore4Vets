@@ -234,7 +234,7 @@ automatic_air_controller_lendlease = {
 	}
 	manchu_lend_lease = {
 		allowed = { OR = { original_tag = JAP original_tag = SIA } }
-		visible = { date < 1940.11.1 NOT = { has_country_flag = is_lend_leasing_manchu } }
+		visible = { date < 1940.11.1 NOT = { has_country_flag = is_lend_leasing_manchu } is_in_faction_with = MAN }
 		complete_effect = { set_country_flag = is_lend_leasing_manchu activate_mission = manchu_lend_lease_mission }
 	}
 	manchu_stop_lend_lease = {

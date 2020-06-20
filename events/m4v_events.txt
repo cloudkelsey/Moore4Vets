@@ -5,7 +5,7 @@ news_event = { #Italy celebrates over Ethiopia
 	id = moore4vets_news.1
 	title = moore4vets_news.1.t
 	desc = moore4vets_news.1.d
-	#picture = GFX_report_event_german_speech
+	picture = GFX_report_event_german_speech
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -103,24 +103,20 @@ country_event = { #Italy annexes Ethiopia
 	id = moore4vets.2
 	title = moore4vets.2.t
 	desc = moore4vets.2.d
-	#picture = GFX_report_event_german_speech
 
 	fire_only_once = yes
 	is_triggered_only = yes
 	hidden = yes
 
+	trigger = { ETH = { exists = yes } }
+
 	immediate = {
-		ITA = {
-			if = {
-				limit = { ETH = { exists = yes } }
-				annex_country = { target = ETH transfer_troops = no }
-				news_event = moore4vets_news.1
-			}
-		}
+		annex_country = { target = ETH transfer_troops = no }
+		news_event = moore4vets_news.1
 		add_threat = -0.8
 	}
  
-	option = { name = moore4vets.2.option }
+	option = {}
 }
 
 country_event = { # Civ trade adjustments

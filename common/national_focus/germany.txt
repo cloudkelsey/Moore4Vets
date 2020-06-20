@@ -1557,17 +1557,8 @@ focus_tree = {
 		prerequisite = { focus = GER_army_innovation }
 		available = {
 		}
-		#cancel = { 
-		#	OR = {
-		#		has_war_with = SOV
-		#		NOT = { country_exists = SOV }
-		#	} 
-		#}
 		bypass = { 
-			OR = {
-				has_war_with = SOV
-				NOT = { country_exists = SOV }
-			}
+			has_war_with = SOV
 		}
 
 		x = 0
@@ -1579,14 +1570,16 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 		completion_reward = {
+			#effect_tooltip = { give_GER_armor_research_bonuses = yes }
+			#effect_tooltip = { SOV = { give_SOV_armor_research_bonuses = yes } }
+			#hidden_effect = { give_GER_armor_research_bonuses = yes SOV = { give_SOV_armor_research_bonuses = yes } }
+			give_GER_armor_research_bonuses = yes
+			add_opinion_modifier = { target = SOV modifier = sov_ger_treaty }
+			add_opinion_modifier = { target = SOV modifier = sov_ger_treaty_trade }
 			SOV = {
-				country_event = { id = germany.75 days = 1 }
-				custom_effect_tooltip = needs_approval
-			}
-			# Actual reward effects added in event if Soviets approve
-			effect_tooltip = {
-				# Trade influence with the USSR? Or simply let the opinion mod do the work
 				give_SOV_armor_research_bonuses = yes
+				add_opinion_modifier = { target = GER modifier = sov_ger_treaty }
+				add_opinion_modifier = { target = GER modifier = sov_ger_treaty_trade }
 			}
 		}
 	}

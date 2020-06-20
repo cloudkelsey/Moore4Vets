@@ -40,14 +40,14 @@ on_actions = {
 				limit = { is_ai = no NOT = { FROM = { OR = { original_tag = ETH original_tag = SPR original_tag = CHI original_tag = FIN original_tag = POL is_ai = no } } } }
 				activate_mission = three_month_war_warning_mission
 			}
-			if = { limit = { original_tag = JAP FROM = { original_tag = USA } } FROM = { country_event = moore4vets_news.2 } }
+			if = { limit = { original_tag = JAP FROM = { original_tag = USA } } FROM = { country_event = { id = moore4vets_news.2 days = 1 } } }
 			if = { limit = { original_tag = GER FROM = { original_tag = POL } } ENG = { add_to_faction = FROM } }
 		}
 	}
 	
 	on_capitulation = {
 		effect = {
-			if = { limit = { original_tag = POL } GER = { country_event = germany.14 } ENG = { country_event = britain.9 } }
+			if = { limit = { original_tag = POL } GER = { country_event = { id = germany.14 days = 1 } } ENG = { country_event = { id = britain.9 days = 1 } } }
 			if = { limit = { OR = { original_tag = BEL original_tag = HOL } } send_equipment = { equipment = infantry_equipment amount = 100000 target = SWE } } # Designed to stop UK and France getting like 200k guns from annexing
 		}
 	}
@@ -55,14 +55,14 @@ on_actions = {
 	on_war = {
 		effect = {
 			if = { limit = { original_tag = HUN } set_country_flag = HUN_has_had_war }
-			if = { limit = { original_tag = ENG has_completed_focus = shadow_scheme_focus } country_event = britain.24 }
-			if = { limit = { original_tag = RAJ } news_event = moore4vets_news.4 }
+			if = { limit = { original_tag = ENG has_completed_focus = shadow_scheme_focus } country_event = { id = britain.24 days = 1 } }
+			if = { limit = { original_tag = RAJ } news_event = { id = moore4vets_news.4 days = 1 } }
 		}
 	}
 	
 	on_civil_war_end = {
 		effect = {
-			if = { limit = { original_tag = SPR } country_event = moore4vets.4 }
+			if = { limit = { original_tag = SPR } country_event = { id = moore4vets.4 days = 1 } }
 		}
 	}
 }

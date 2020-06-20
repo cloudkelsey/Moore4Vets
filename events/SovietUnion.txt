@@ -167,31 +167,6 @@ country_event = {
 	}
 }
 
-# Romania surrenders Bessarabia
-country_event = {
-	id = soviet.4
-	title = soviet.4.t
-	desc = soviet.4.d
-	picture = GFX_report_event_soviet_army_greeted
-	
-	is_triggered_only = yes
-	
-	option = {
-		name = soviet.4.a
-		SOV = { 
-			transfer_state = 78
-			transfer_state = 80
-			transfer_state = 766
-		}
-		hidden_effect = {
-			SOV = {
-				country_event = { days = 1 id = news.10 }
-			}
-			news_event = { id = news.199 }
-		}
-	}
-}
-
 # Improving the Stalin Line
 country_event = {
 	id = soviet.17
