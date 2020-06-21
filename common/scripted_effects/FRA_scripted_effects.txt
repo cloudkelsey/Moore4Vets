@@ -1,0 +1,27 @@
+remove_worker_shortage_effect = {	
+	if = {
+		limit = { has_idea = FRA_worker_shortage }
+		remove_ideas = FRA_worker_shortage
+	}
+	else_if = {
+		limit = { has_idea = FRA_full_employment }
+		remove_ideas = FRA_full_employment
+	}
+}
+
+FRA_right_wing_riot_effect = {
+	if = {
+		limit = {
+			has_idea = FRA_political_violence
+		}
+		country_event = lar_france_political_violence.1
+	}
+}
+FRA_communism_riot_effect = {
+	if = {
+		limit = {
+			has_idea = FRA_political_violence
+		}
+		country_event = lar_france_political_violence.2
+	}
+}

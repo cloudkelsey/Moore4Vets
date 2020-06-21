@@ -1,1 +1,9 @@
-﻿
+﻿focus_tree = {
+	id = mexico_focus_tree
+	
+	country = {
+		factor = 0
+	}
+	
+	default = no
+}

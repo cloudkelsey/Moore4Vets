@@ -12,26 +12,6 @@ GER_mefo_bills_category = {
 	}
 }
 
-GER_case_anton_category = {
-	icon = military_operation
-
-	picture = GFX_decision_cat_picture_ger_case_anton
-
-	allowed = {
-		original_tag = GER
-	}
-
-	visible = {
-		has_government = fascism
-		any_allied_country = {
-			original_tag = FRA
-			has_government = fascism
-			is_puppet_of = ROOT
-			NOT = { has_country_flag = case_anton }
-		}
-	}
-}
-
 GER_military_buildup = {
 	icon = generic_political_actions
 	
@@ -40,14 +20,5 @@ GER_military_buildup = {
 	}
 	visible = {
 	
-	}
-}
-
-GER_aid_hun_rom_democratic_civil_war = {
-	allowed = {
-		original_tag = GER
-	}
-	visible = {
-		has_government = democratic
 	}
 }

@@ -295,7 +295,12 @@ war_time_limit = {
 	three_month_war_warning_mission = {
 		days_mission_timeout = 90
 		activation = { always = no }
-		available = { has_war = no }
+		available = {
+			OR = {
+				has_war = no
+				any_enemy_country = { is_ai = no }
+			}
+		}
 		timeout_effect = { news_event = moore4vets_news.5 }
 	}
 }
