@@ -514,7 +514,6 @@ fin_white_peace = {
 
 give_division_templates = {
 	give_20_infantry = {
-		available = { always = yes }
 		ai_will_do = { factor = 100 }
 		fire_only_once = yes
 		complete_effect = {
@@ -530,7 +529,6 @@ give_division_templates = {
 		}
 	}
 	give_40_infantry = {
-		available = { always = yes }
 		ai_will_do = { factor = 100 }
 		fire_only_once = yes
 		complete_effect = {
@@ -547,7 +545,6 @@ give_division_templates = {
 		}
 	}
 	give_20_infantry_arty = {
-		available = { always = yes }
 		ai_will_do = { factor = 100 }
 		fire_only_once = yes
 		complete_effect = {
@@ -562,7 +559,6 @@ give_division_templates = {
 		}
 	}
 	give_40_infantry_arty = {
-		available = { always = yes }
 		ai_will_do = { factor = 100 }
 		fire_only_once = yes
 		complete_effect = {
@@ -678,7 +674,6 @@ give_division_templates = {
 		}
 	}
 	give_suppression_templates = {
-		available = { always = yes }
 		ai_will_do = { factor = 100 }
 		fire_only_once = yes
 		complete_effect = {

@@ -1570,16 +1570,18 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 		completion_reward = {
-			#effect_tooltip = { give_GER_armor_research_bonuses = yes }
-			#effect_tooltip = { SOV = { give_SOV_armor_research_bonuses = yes } }
-			#hidden_effect = { give_GER_armor_research_bonuses = yes SOV = { give_SOV_armor_research_bonuses = yes } }
 			give_GER_armor_research_bonuses = yes
-			add_opinion_modifier = { target = SOV modifier = sov_ger_treaty }
-			add_opinion_modifier = { target = SOV modifier = sov_ger_treaty_trade }
+			hidden_effect = {
+				add_opinion_modifier = { target = SOV modifier = sov_ger_treaty }
+				add_opinion_modifier = { target = SOV modifier = sov_ger_treaty_trade }
+			}
 			SOV = {
+				hidden_effect = {
+					country_event = germany.75
+					add_opinion_modifier = { target = GER modifier = sov_ger_treaty }
+					add_opinion_modifier = { target = GER modifier = sov_ger_treaty_trade }
+				}
 				give_SOV_armor_research_bonuses = yes
-				add_opinion_modifier = { target = GER modifier = sov_ger_treaty }
-				add_opinion_modifier = { target = GER modifier = sov_ger_treaty_trade }
 			}
 		}
 	}

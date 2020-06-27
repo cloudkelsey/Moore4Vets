@@ -1,0 +1,26 @@
+# SWITCH STATEMENTS ARE A MYTH AND SO IS CLEAN CODE
+SOV_remove_great_purge = {
+	if = { limit = { has_idea = officers_purged    } remove_ideas = officers_purged    }
+	if = { limit = { has_idea = officers_purged_2  } remove_ideas = officers_purged_2  }
+	if = { limit = { has_idea = officers_purged_3  } remove_ideas = officers_purged_3  }
+	if = { limit = { has_idea = officers_purged_4  } remove_ideas = officers_purged_4  }
+	if = { limit = { has_idea = officers_purged_5  } remove_ideas = officers_purged_5  }
+	if = { limit = { has_idea = officers_purged_6  } remove_ideas = officers_purged_6  }
+	if = { limit = { has_idea = officers_purged_7  } remove_ideas = officers_purged_7  }
+	if = { limit = { has_idea = officers_purged_8  } remove_ideas = officers_purged_8  }
+	if = { limit = { has_idea = officers_purged_9  } remove_ideas = officers_purged_9  }
+	if = { limit = { has_idea = officers_purged_10 } remove_ideas = officers_purged_10 }
+}
+
+SOV_lower_great_purge_level = {
+	if = 	  { limit = { has_idea = officers_purged    } remove_ideas = officers_purged   add_timed_idea = { idea = officers_purged_2  days = 1315 } }
+	else_if = { limit = { has_idea = officers_purged_2  } remove_ideas = officers_purged_2 add_timed_idea = { idea = officers_purged_3  days = 1169 } }
+	else_if = { limit = { has_idea = officers_purged_3  } remove_ideas = officers_purged_3 add_timed_idea = { idea = officers_purged_4  days = 1023 } }
+	else_if = { limit = { has_idea = officers_purged_4  } remove_ideas = officers_purged_4 add_timed_idea = { idea = officers_purged_5  days = 877  } }
+	else_if = { limit = { has_idea = officers_purged_5  } remove_ideas = officers_purged_5 add_timed_idea = { idea = officers_purged_6  days = 731  } }
+	else_if = { limit = { has_idea = officers_purged_6  } remove_ideas = officers_purged_6 add_timed_idea = { idea = officers_purged_7  days = 585  } }
+	else_if = { limit = { has_idea = officers_purged_7  } remove_ideas = officers_purged_7 add_timed_idea = { idea = officers_purged_8  days = 439  } }
+	else_if = { limit = { has_idea = officers_purged_8  } remove_ideas = officers_purged_8 add_timed_idea = { idea = officers_purged_9  days = 293  } }
+	else_if = { limit = { has_idea = officers_purged_9  } remove_ideas = officers_purged_9 add_timed_idea = { idea = officers_purged_10 days = 147  } }
+	else_if = { limit = { has_idea = officers_purged_10 } remove_ideas = officers_purged_10 														  }
+}

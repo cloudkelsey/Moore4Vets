@@ -502,7 +502,8 @@ on_actions = {
 		}
 	}
 
-	on_weekly = {
+	#was on_weekly
+	on_monthly = {
 		effect = {
 			if = {
 				limit = { 
