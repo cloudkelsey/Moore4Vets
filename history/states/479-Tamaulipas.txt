@@ -13,7 +13,7 @@ state={
 	
 	history={
 		#owner = MEX
-		owner = COL
+		#owner = COL
 		buildings = {
 			infrastructure = 3
 			industrial_complex = 1

@@ -6,7 +6,7 @@ state = {
 	
 	history={
 		#owner = MEX
-		owner = COL
+		#owner = COL
 		buildings = {
 			infrastructure = 3
 			air_base = 3

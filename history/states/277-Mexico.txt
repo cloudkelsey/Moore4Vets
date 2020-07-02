@@ -12,7 +12,7 @@ state={
 	
 	history={
 		#owner = MEX
-		owner = COL
+		#owner = COL
 		buildings = {
 			infrastructure = 5
 			arms_factory = 2
