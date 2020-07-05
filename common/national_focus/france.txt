@@ -153,14 +153,24 @@
 		}
 		prerequisite = {}
 		mutually_exclusive = { }
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
 		}
-
 		available = {
-			has_war_support > 0.12
+		
+			#has_war_support > 0.12
+			#or	
+			#has_completed_focus = FRA_strengthen_government_support
+			
+				if = {
+				}
+				OR = {
+					has_completed_focus = FRA_strengthen_government_support
+					has_war_support > 0.12
+					has_war = yes
+			}
 		}
 		
 		bypass = {
@@ -210,7 +220,7 @@
 		mutually_exclusive = { focus = FRA_aggressive_focus }
 		x = -1
 		y = 1
-		cost = 10
+		cost = 5
 		prerequisite = { focus = FRA_begin_rearmament }
 		available_if_capitulated = yes
 		relative_position_id = FRA_begin_rearmament
@@ -225,16 +235,16 @@
 	focus = {
 		id = FRA_firepower_kills
 		icon = GFX_goal_generic_army_artillery
-		x = -4
+		x = 0
 		y = 1
 		offset = {
 			x = 0
 			y = 0
 		}
-		prerequisite = { focus = FRA_defensive_focus }
-		mutually_exclusive = { focus = FRA_methodical_battle }
-		relative_position_id = FRA_defensive_focus
-		cost = 10
+		prerequisite = { focus = FRA_heavy_armor_focus }
+		#mutually_exclusive = { focus = FRA_methodical_battle }
+		relative_position_id = FRA_heavy_armor_focus
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -265,10 +275,10 @@
 			x = 0
 			y = 0
 		}
-		prerequisite = { focus = FRA_defensive_focus }
-		mutually_exclusive = { focus = FRA_firepower_kills }
-		relative_position_id = FRA_defensive_focus
-		cost = 10
+		prerequisite = { focus = FRA_army_reform }
+		#mutually_exclusive = { focus = FRA_firepower_kills }
+		relative_position_id = FRA_army_reform
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -298,11 +308,11 @@
 	focus = {
 		id = FRA_fortification_focus
 		icon = GFX_goal_generic_construction2
-		prerequisite = { focus = FRA_methodical_battle }
+		prerequisite = { focus = FRA_defensive_focus }
 		x = 0
 		y = 1
-		relative_position_id = FRA_methodical_battle
-		cost = 10
+		relative_position_id = FRA_defensive_focus
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -317,7 +327,7 @@
 		x = 0
 		y = 1
 		relative_position_id = FRA_fortification_focus
-		cost = 10
+		cost = 5
 
 		available = {
 			735 = { is_controlled_by = ROOT }
@@ -340,7 +350,7 @@
 		x = 0
 		y = 1
 		relative_position_id = FRA_alpine_forts
-		cost = 10
+		cost = 5
 
 		available = {
 			18 = { is_controlled_by = ROOT }
@@ -369,7 +379,7 @@
 		x = 0
 		y = 1
 		relative_position_id = FRA_firepower_kills
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -385,7 +395,7 @@
 		x = 0
 		y = 1
 		relative_position_id = FRA_infantry_focus
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -409,11 +419,11 @@
 	focus = {
 		id = FRA_heavy_armor_focus
 		icon = GFX_goal_generic_army_tanks
-		prerequisite = { focus = FRA_artillery_focus }
-		x = 0
+		prerequisite = { focus = FRA_defensive_focus }
+		x = -4
 		y = 1
-		relative_position_id = FRA_artillery_focus
-		cost = 10
+		relative_position_id = FRA_defensive_focus
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -436,10 +446,10 @@
 			x = 0
 			y = 0
 		}
-		prerequisite = { focus = FRA_heavy_armor_focus }
+		prerequisite = { focus = FRA_artillery_focus }
 		mutually_exclusive = { }
-		relative_position_id = FRA_heavy_armor_focus
-		cost = 10
+		relative_position_id = FRA_artillery_focus
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -500,10 +510,10 @@
 			x = 0
 			y = 0
 		}
-		prerequisite = { focus = FRA_firepower_kills focus = FRA_methodical_battle }
+		prerequisite = { focus = FRA_defensive_focus }
 		mutually_exclusive = { }
-		relative_position_id = FRA_firepower_kills
-		cost = 10
+		relative_position_id = FRA_heavy_armor_focus
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -538,7 +548,7 @@
 		prerequisite = { focus = FRA_infantry_tanks }
 		mutually_exclusive = { }
 		relative_position_id = FRA_infantry_tanks
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -572,7 +582,7 @@
 		prerequisite = { focus = FRA_special_forces }
 		mutually_exclusive = { }
 		relative_position_id = FRA_infantry_tanks
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -607,7 +617,7 @@
 		mutually_exclusive = { focus = FRA_defensive_focus }
 		x = 1
 		y = 1
-		cost = 10
+		cost = 5
 		relative_position_id = FRA_begin_rearmament
 		available_if_capitulated = yes
 		prerequisite = { focus = FRA_begin_rearmament }
@@ -631,7 +641,7 @@
 		}
 		prerequisite = { focus = FRA_aggressive_focus }
 		relative_position_id = FRA_aggressive_focus
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -661,7 +671,7 @@
 		x = 0
 		y = 1
 		relative_position_id = FRA_battle_of_maneuver
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -677,7 +687,7 @@
 		x = 0
 		y = 1
 		relative_position_id = FRA_motorized_focus
-		cost = 10
+		cost = 5
 		completion_reward = {
 			army_experience = 5
 			add_tech_bonus = {
@@ -695,7 +705,7 @@
 		x = 0
 		y = 1
 		relative_position_id = FRA_mechanized_focus
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -714,14 +724,14 @@
 		id = FRA_army_reform
 		icon = GFX_goal_generic_army_doctrines
 		prerequisite = { 
-			focus = FRA_light_medium_armor 
-			focus = FRA_heavy_armor_focus 
-			focus = FRA_extend_the_maginot_line
+			focus = FRA_artillery_focus 
+			focus = FRA_fusiliers_marine 
+			focus = FRA_light_medium_armor
 		}
-		x = -1
+		x = 2
 		y = 1
 		relative_position_id = FRA_light_medium_armor
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 
