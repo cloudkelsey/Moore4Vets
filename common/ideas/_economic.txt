@@ -335,10 +335,16 @@ ideas = {
 		
 		free_trade = {
 
-			allowed = { NOT = { tag = ITA } }
-
 			available = {
-			
+			if = {
+					limit = {
+						original_tag = ITA
+					}
+					NOT {
+					country_exists = YUG
+					country_exists = GRE
+					}
+				}
 			}
 						
 			cost = 150
