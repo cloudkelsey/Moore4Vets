@@ -536,6 +536,7 @@
 
 		completion_reward = {
 			add_ideas = CAN_defence_of_canada_regulations_democratic
+			add_manpower = 50000
 		}
 	}
 
