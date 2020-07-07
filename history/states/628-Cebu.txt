@@ -8,7 +8,7 @@ state=
 	
 	history=
 	{
-		owner = USA
+		owner = PHI
 		buildings = {
 			infrastructure = 3
 			12118 = {

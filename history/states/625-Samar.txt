@@ -5,9 +5,13 @@ state=
 	manpower = 1138724
 	
 	state_category = rural
+
+	resources={
+		tungsten = 54
+	}
 	history=
 	{
-		owner = USA
+		owner = PHI
 		buildings = {
 			infrastructure = 3
 		}

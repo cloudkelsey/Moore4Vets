@@ -6,12 +6,14 @@ state= {
 	state_category = city
 	
 	resources={
-		oil=8
+		oil=68
+		aluminium=4
+		#oil=8
 		#steel=2 moved to Guerrero
 	}
 
 	history= {
-		owner = USA
+		owner = PHI
 		buildings = {
 			infrastructure = 4
 			industrial_complex = 1

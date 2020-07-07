@@ -145,10 +145,11 @@ add_ideas = {
 
 
 # DIPLOMACY
-#set_autonomy = {
-#	target = PHI
-#	autonomous_state =  autonomy_puppet
-#}
+set_autonomy = {
+	target = PHI
+	autonomous_state =  autonomy_dominion
+	freedom_level = 0.4
+}
 
 create_country_leader = {
 	name = "Franklin Delano Roosevelt"

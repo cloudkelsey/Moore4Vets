@@ -4,10 +4,14 @@ state=
 	name="STATE_624"
 	manpower = 1290672
 	state_category = town
+
+	resources={
+		tungsten = 54
+	}
 	
 	history=
 	{
-		owner = USA
+		owner = PHI
 		buildings = {
 			infrastructure = 3
 			industrial_complex = 1
