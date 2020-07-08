@@ -1694,28 +1694,28 @@ focus_tree = {
 		}
 	}
 	
-	focus = {
-		id = extra_tech_slot_2
-		icon = GFX_focus_research
-		prerequisite = { focus = extra_tech_slot }
-		available = {
-			num_of_factories > 50
-		}
-		cancel_if_invalid = no
-		continue_if_invalid = yes
-		x = 0
-		y = 1
-		relative_position_id = extra_tech_slot
-		cost = 10
+	# focus = {
+		# id = extra_tech_slot_2
+		# icon = GFX_focus_research
+		# prerequisite = { focus = extra_tech_slot }
+		# available = {
+			# num_of_factories > 50
+		# }
+		# cancel_if_invalid = no
+		# continue_if_invalid = yes
+		# x = 0
+		# y = 1
+		# relative_position_id = extra_tech_slot
+		# cost = 10
 
-		search_filters = { FOCUS_FILTER_RESEARCH } 
+		# search_filters = { FOCUS_FILTER_RESEARCH } 
 		
-		available_if_capitulated = yes
+		# available_if_capitulated = yes
 
-		completion_reward = {
-			add_research_slot = 1
-		}
-	}	
+		# completion_reward = {
+			# add_research_slot = 1
+		# }
+	# }	
 
 	focus = {
 		id = secret_weapons
@@ -2281,62 +2281,62 @@ focus_tree = {
 		}
 	}
 	
-	focus = {
-		id = technology_sharing
-		icon = GFX_goal_generic_scientific_exchange
-		prerequisite = { focus = ideological_fanaticism focus = why_we_fight }
-		available = {
-			has_war = yes
-			is_in_faction = yes
-			OR = {
-				num_of_factories > 50
-				any_other_country = {
-					is_in_faction_with = ROOT
-					num_of_factories > 50
-				}
-			}
-		}		
-		x = 2
-		y = 1
-		relative_position_id = ideological_fanaticism
-		cost = 10
+	# focus = {
+		# id = technology_sharing
+		# icon = GFX_goal_generic_scientific_exchange
+		# prerequisite = { focus = ideological_fanaticism focus = why_we_fight }
+		# available = {
+			# has_war = yes
+			# is_in_faction = yes
+			# OR = {
+				# num_of_factories > 50
+				# any_other_country = {
+					# is_in_faction_with = ROOT
+					# num_of_factories > 50
+				# }
+			# }
+		# }		
+		# x = 2
+		# y = 1
+		# relative_position_id = ideological_fanaticism
+		# cost = 10
 	
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH }
+		# search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH }
 
-		available_if_capitulated = yes
+		# available_if_capitulated = yes
 
-		completion_reward = {
-			if = {
-				limit = {
-					original_research_slots < 3
-				}
-				add_research_slot = 1
-			}
-			if = {
-				limit = {
-					original_research_slots > 2
-				}
-				add_tech_bonus = {
-					name = electronics_bonus
-					bonus = 1.0
-					uses = 1
-					category = electronics
-				}
-				add_tech_bonus = {
-					name = industrial_bonus
-					bonus = 1.0
-					uses = 1
-					category = industry
-				}	
-				add_tech_bonus = {
-					name = infantry_artillery_bonus #@#
-					bonus = 1.0
-					uses = 1
-					category = infantry_weapons
-					category = artillery
-				}				
-			}			
-		}
-	}	
+		# completion_reward = {
+			# if = {
+				# limit = {
+					# original_research_slots < 3
+				# }
+				# add_research_slot = 1
+			# }
+			# if = {
+				# limit = {
+					# original_research_slots > 2
+				# }
+				# add_tech_bonus = {
+					# name = electronics_bonus
+					# bonus = 1.0
+					# uses = 1
+					# category = electronics
+				# }
+				# add_tech_bonus = {
+					# name = industrial_bonus
+					# bonus = 1.0
+					# uses = 1
+					# category = industry
+				# }	
+				# add_tech_bonus = {
+					# name = infantry_artillery_bonus #@#
+					# bonus = 1.0
+					# uses = 1
+					# category = infantry_weapons
+					# category = artillery
+				# }				
+			# }			
+		# }
+	# }	
 
 }

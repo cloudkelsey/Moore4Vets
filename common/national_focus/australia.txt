@@ -2443,10 +2443,10 @@
 	focus = {
 		id = AST_army_inventions_directorate
 		icon = GFX_focus_research
-		prerequisite = { focus = AST_national_security_act }
-		x = -2
-		y = 2
-		relative_position_id = AST_establish_advisory_war_council
+		prerequisite = { focus = uk_australia_focus }
+		x = 0
+		y = 1
+		relative_position_id = uk_australia_focus
 
 		cost = 10
 
@@ -2722,39 +2722,39 @@
 		}
 	}
 
-	focus = {
-		id = AST_research_collaboration
-		icon = GFX_goal_generic_scientific_exchange
-		prerequisite = { focus = AST_fight_work_or_perish }
-		prerequisite = { focus = AST_australian_arms_production }
-		x = -5
-		y = 5
-		relative_position_id = AST_establish_advisory_war_council
+	# focus = {
+		# id = AST_research_collaboration
+		# icon = GFX_goal_generic_scientific_exchange
+		# prerequisite = { focus = AST_fight_work_or_perish }
+		# prerequisite = { focus = AST_australian_arms_production }
+		# x = -5
+		# y = 5
+		# relative_position_id = AST_establish_advisory_war_council
 
-		cost = 10
+		# cost = 10
 
-		ai_will_do = {
-			factor = 25
-		}
+		# ai_will_do = {
+			# factor = 25
+		# }
 
-		available = {
-			has_war = yes
-			num_of_factories > 50
-		}
+		# available = {
+			# has_war = yes
+			# num_of_factories > 50
+		# }
 
-		bypass = {
+		# bypass = {
 
-		}
+		# }
 
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		search_filters = { FOCUS_FILTER_RESEARCH }
+		# cancel_if_invalid = yes
+		# continue_if_invalid = no
+		# available_if_capitulated = no
+		# search_filters = { FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {
-			add_research_slot = 1
-		}
-	}
+		# completion_reward = {
+			# add_research_slot = 1
+		# }
+	# }
 
 	focus = {
 		id = AST_squash_the_squanderbugs
@@ -2925,38 +2925,38 @@
 		}
 	}
 
-	focus = {
-		id = AST_fund_australian_defense_research
-		icon = GFX_focus_research
-		prerequisite = { focus = AST_rationing_and_recycling }
-		prerequisite = { focus = AST_classify_aliens }
-		x = 1
-		y = 4
-		relative_position_id = AST_establish_advisory_war_council
+	# focus = {
+		# id = AST_fund_australian_defense_research
+		# icon = GFX_focus_research
+		# prerequisite = { focus = AST_rationing_and_recycling }
+		# prerequisite = { focus = AST_classify_aliens }
+		# x = 1
+		# y = 4
+		# relative_position_id = AST_establish_advisory_war_council
 
-		cost = 10
+		# cost = 10
 
-		ai_will_do = {
-			factor = 1
-		}
+		# ai_will_do = {
+			# factor = 1
+		# }
 
-		available = {
-			date > 1941.1.1
-		}
+		# available = {
+			# date > 1941.1.1
+		# }
 		
-		bypass = {
+		# bypass = {
 
-		}
+		# }
 
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		search_filters = { FOCUS_FILTER_RESEARCH }
+		# cancel_if_invalid = yes
+		# continue_if_invalid = no
+		# available_if_capitulated = no
+		# search_filters = { FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {
-			add_research_slot = 1
-		}
-	}
+		# completion_reward = {
+			# add_research_slot = 1
+		# }
+	# }
 
 	############################
 	#### GO WITH UK SECTION ####

@@ -1342,38 +1342,38 @@ focus_tree = {
 		}
 	}
 
-	focus = {
-		id = RAJ_indian_defense_research
-		icon = GFX_focus_research
-		prerequisite = { focus = RAJ_modernizing_army }
-		prerequisite = { focus = RAJ_indian_gentlemen_officers }
-		x = -1
-		y = 4
-		relative_position_id = RAJ_the_bangalore_torpedo
+	# focus = {
+		# id = RAJ_indian_defense_research
+		# icon = GFX_focus_research
+		# prerequisite = { focus = RAJ_modernizing_army }
+		# prerequisite = { focus = RAJ_indian_gentlemen_officers }
+		# x = -1
+		# y = 4
+		# relative_position_id = RAJ_the_bangalore_torpedo
 
-		cost = 10
+		# cost = 10
 
-		ai_will_do = {
-			factor = 25
-		}
+		# ai_will_do = {
+			# factor = 25
+		# }
 
-		available = {
-			num_of_factories > 50
-		}
+		# available = {
+			# num_of_factories > 50
+		# }
 
-		bypass = {
+		# bypass = {
 
-		}
+		# }
 
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
+		# cancel_if_invalid = yes
+		# continue_if_invalid = no
+		# available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_RESEARCH }
-		completion_reward = {
-			add_research_slot = 1
-		}
-	}
+		# search_filters = { FOCUS_FILTER_RESEARCH }
+		# completion_reward = {
+			# add_research_slot = 1
+		# }
+	# }
 
 
 	############################
@@ -1892,11 +1892,12 @@ focus_tree = {
 	focus = {
 		id = RAJ_indian_institute_of_science
 		icon = GFX_focus_research
-		prerequisite = { focus = RAJ_tata_steel }
-		prerequisite = { focus = RAJ_assam_oil }
+		# prerequisite = { focus = RAJ_tata_steel }
+		# prerequisite = { focus = RAJ_assam_oil }
+		prerequisite = { focus = uk_india_focus }
 		x = 0
-		y = 2
-		relative_position_id = RAJ_industrial_expansion
+		y = 1
+		relative_position_id = uk_india_focus
 
 		cost = 10
 
@@ -1927,10 +1928,10 @@ focus_tree = {
 	focus = {
 		id = RAJ_institute_of_fundamental_research
 		icon = GFX_focus_wonderweapons
-		prerequisite = { focus = RAJ_indian_institute_of_science }
+		prerequisite = { focus = RAJ_modernizing_army }
 		x = 0
-		y = 3
-		relative_position_id = RAJ_industrial_expansion
+		y = 1
+		relative_position_id = RAJ_modernizing_army
 
 		cost = 10
 
@@ -1965,46 +1966,46 @@ focus_tree = {
 		}
 	}
 
-	focus = {
-		id = RAJ_research_collaboration
-		icon = GFX_goal_generic_scientific_exchange
-		prerequisite = { focus = RAJ_institute_of_fundamental_research }
-		x = 0
-		y = 4
-		relative_position_id = RAJ_industrial_expansion
+	# focus = {
+		# id = RAJ_research_collaboration
+		# icon = GFX_goal_generic_scientific_exchange
+		# prerequisite = { focus = RAJ_institute_of_fundamental_research }
+		# x = 0
+		# y = 4
+		# relative_position_id = RAJ_industrial_expansion
 
-		cost = 10
+		# cost = 10
 
-		ai_will_do = {
-			factor = 25
-		}
+		# ai_will_do = {
+			# factor = 25
+		# }
 
-		available = {
-			has_war = yes
-			# OR = {
-				# num_of_factories > 50
-				# any_other_country = {
-					# is_in_faction_with = ROOT
-					# num_of_factories > 50
-				# }
-			# }
-		}
+		# available = {
+			# has_war = yes
+		#	OR = {
+				#num_of_factories > 50
+				#any_other_country = {
+				#	is_in_faction_with = ROOT
+				#	num_of_factories > 50
+			#	}
+			#}
+		# }
 
-		bypass = {
+		# bypass = {
 
-		}
+		# }
 
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
+		# cancel_if_invalid = yes
+		# continue_if_invalid = no
+		# available_if_capitulated = no
 
 		
 
-		search_filters = { FOCUS_FILTER_RESEARCH }
-		completion_reward = {
-			add_research_slot = 1
-		}
-	}
+		# search_filters = { FOCUS_FILTER_RESEARCH }
+		# completion_reward = {
+			# add_research_slot = 1
+		# }
+	# }
 
 
 	############################
@@ -3021,7 +3022,7 @@ focus = {
 			ENG = { has_completed_focus = ENG_imperial_conference  }
 		} 
 		icon = GFX_goal_generic_construct_civ_factory
-		x = 4
+		x = 7
 		y = 0
 		#relative_position_id = uk_commonwealth_focus
 		cost = 10

@@ -987,41 +987,41 @@
 		}
 	}
 
-	focus = {
-		id = NZL_department_of_scientific_and_industrial_research
-		icon = GFX_focus_research
-		prerequisite = { focus = NZL_bureau_of_industry }
-		x = -1
-		y = 3
-		relative_position_id = NZL_national_roads_board
+	# focus = {
+		# id = NZL_department_of_scientific_and_industrial_research
+		# icon = GFX_focus_research
+		# prerequisite = { focus = NZL_bureau_of_industry }
+		# x = -1
+		# y = 3
+		# relative_position_id = NZL_national_roads_board
 
-		cost = 10
+		# cost = 10
 
-		ai_will_do = {
-			factor = 35
-			modifier = {
-				factor = 2
-				has_completed_focus = NZL_heavy_bombers
-			}
-		}
+		# ai_will_do = {
+			# factor = 35
+			# modifier = {
+				# factor = 2
+				# has_completed_focus = NZL_heavy_bombers
+			# }
+		# }
 
-		available = {
+		# available = {
 
-		}
+		# }
 
-		bypass = {
+		# bypass = {
 
-		}
+		# }
 
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = yes
-		search_filters = { FOCUS_FILTER_RESEARCH }
+		# cancel_if_invalid = yes
+		# continue_if_invalid = no
+		# available_if_capitulated = yes
+		# search_filters = { FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {
-			add_research_slot = 1
-		}
-	}
+		# completion_reward = {
+			# add_research_slot = 1
+		# }
+	# }
 
 	focus = {
 		id = NZL_industrial_conscription
@@ -1095,7 +1095,7 @@
 		icon = GFX_goal_generic_construct_civ_factory
 		prerequisite = { focus = NZL_industrial_conscription }
 		prerequisite = { focus = NZL_domestic_arms_industry }
-		x = 2
+		x = 4
 		y = 4
 		relative_position_id = NZL_national_roads_board
 
@@ -1188,11 +1188,10 @@
 	focus = {
 		id = NZL_project_seal
 		icon = GFX_focus_wonderweapons
-		prerequisite = { focus = NZL_heavy_bombers focus = NZL_modern_fighters }
-		prerequisite = { focus = NZL_department_of_scientific_and_industrial_research }
-		x = -2
-		y = 4
-		relative_position_id = NZL_national_roads_board
+		prerequisite = { focus = NZL_think_big }
+		x = 0
+		y = 1
+		relative_position_id = NZL_think_big
 
 		cost = 10
 
@@ -1223,46 +1222,46 @@
 		}
 	}
 
-	focus = {
-		id = NZL_national_defense_institute
-		icon = GFX_focus_research
-		prerequisite = { focus = NZL_project_seal }
-		x = -2
-		y = 5
-		relative_position_id = NZL_national_roads_board
+	# focus = {
+		# id = NZL_national_defense_institute
+		# icon = GFX_focus_research
+		# prerequisite = { focus = NZL_project_seal }
+		# x = -2
+		# y = 5
+		# relative_position_id = NZL_national_roads_board
 
-		cost = 10
+		# cost = 10
 
-		ai_will_do = {
-			factor = 35
-		}
+		# ai_will_do = {
+			# factor = 35
+		# }
 
-		available = {
-			date > 1941.1.1
-		}
+		# available = {
+			# date > 1941.1.1
+		# }
 
-		bypass = {
+		# bypass = {
 
-		}
+		# }
 
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		search_filters = { FOCUS_FILTER_RESEARCH }
+		# cancel_if_invalid = yes
+		# continue_if_invalid = no
+		# available_if_capitulated = no
+		# search_filters = { FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {
-			add_research_slot = 1
-		}
-	}
+		# completion_reward = {
+			# add_research_slot = 1
+		# }
+	# }
 
 	focus = {
 		id = NZL_expand_the_university_of_auckland
 		icon = GFX_focus_research
-		prerequisite = { focus = NZL_think_big }
-		prerequisite = { focus = NZL_department_of_scientific_and_industrial_research }
+		prerequisite = { focus = uk_new_zealand_focus }
+		#prerequisite = { focus = NZL_department_of_scientific_and_industrial_research }
 		x = 0
-		y = 5
-		relative_position_id = NZL_national_roads_board
+		y = 1
+		relative_position_id = uk_new_zealand_focus
 
 		cost = 10
 
@@ -1296,7 +1295,7 @@
 	focus = {
 		id = NZL_army_reforms
 		icon = GFX_goal_generic_army_doctrines
-		x = 22
+		x = 24
 		y = 0
 
 		cost = 10
@@ -1593,39 +1592,39 @@
 		}
 	}
 
-	focus = {
-		id = NZL_research_collaboration
-		icon = GFX_goal_generic_scientific_exchange
-		prerequisite = { focus = NZL_big_bob_tank }
-		prerequisite = { focus = NZL_think_big }
-		x = -1
-		y = 5
-		relative_position_id = NZL_army_reforms
+	# focus = {
+		# id = NZL_research_collaboration
+		# icon = GFX_goal_generic_scientific_exchange
+		# prerequisite = { focus = NZL_big_bob_tank }
+		# prerequisite = { focus = NZL_think_big }
+		# x = -1
+		# y = 5
+		# relative_position_id = NZL_army_reforms
 
-		cost = 10
+		# cost = 10
 
-		ai_will_do = {
-			factor = 25
-		}
+		# ai_will_do = {
+			# factor = 25
+		# }
 
-		available = {
-			has_war = yes
-			num_of_factories > 50
-		}
+		# available = {
+			# has_war = yes
+			# num_of_factories > 50
+		# }
 
-		bypass = {
+		# bypass = {
 
-		}
+		# }
 
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = yes
-		search_filters = { FOCUS_FILTER_RESEARCH }
+		# cancel_if_invalid = yes
+		# continue_if_invalid = no
+		# available_if_capitulated = yes
+		# search_filters = { FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {
-			add_research_slot = 1
-		}
-	}
+		# completion_reward = {
+			# add_research_slot = 1
+		# }
+	# }
 
 	focus = {
 		id = NZL_big_bob_tank
@@ -2179,7 +2178,7 @@
 			}
 		}
 		icon = GFX_goal_generic_construction
-		x = 15
+		x = 21
 		y = 0
 		#relative_position_id = uk_australia_focus
 		cost = 10

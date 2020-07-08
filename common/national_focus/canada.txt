@@ -769,10 +769,10 @@
 	focus = {
 		id = CAN_fund_the_national_research_council
 		icon = GFX_focus_research
-		prerequisite = { focus = CAN_department_of_munitions_and_supply focus = CAN_national_resources_mobilization_act }
-		x = -1
-		y = 2
-		relative_position_id = CAN_defence_of_canada_regulations
+		prerequisite = { focus = uk_canada_focus }
+		x = 0
+		y = 1
+		relative_position_id = uk_canada_focus
 
 		cost = 10
 
@@ -1219,7 +1219,7 @@
 	focus = {
 		id = CAN_polymer_corporation
 		icon = GFX_goal_generic_oil_refinery
-		prerequisite = { focus = CAN_victory_aircraft_limited focus = CAN_fund_the_national_research_council }
+		prerequisite = { focus = CAN_victory_aircraft_limited }
 		x = -1
 		y = 4
 		relative_position_id = CAN_defence_of_canada_regulations
@@ -1543,39 +1543,39 @@
 		}
 	}
 
-	focus = {
-		id = CAN_defense_research_grants
-		icon = GFX_focus_research
-		prerequisite = { focus = CAN_john_inglis_and_company }
-		prerequisite = { focus = CAN_if_day }
-		x = -3
-		y = 6
-		relative_position_id = CAN_defence_of_canada_regulations
+	# focus = {
+		# id = CAN_defense_research_grants
+		# icon = GFX_focus_research
+		# prerequisite = { focus = CAN_john_inglis_and_company }
+		# prerequisite = { focus = CAN_if_day }
+		# x = -3
+		# y = 6
+		# relative_position_id = CAN_defence_of_canada_regulations
 
-		cost = 10
+		# cost = 10
 
-		ai_will_do = {
-			factor = 25
-		}
+		# ai_will_do = {
+			# factor = 25
+		# }
 
-		available = {
-			num_of_factories > 50
-			is_subject = no
-		}
+		# available = {
+			# num_of_factories > 50
+			# is_subject = no
+		# }
 		
-		bypass = {
+		# bypass = {
 
-		}
+		# }
 
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = yes
-		search_filters = { FOCUS_FILTER_RESEARCH }
+		# cancel_if_invalid = yes
+		# continue_if_invalid = no
+		# available_if_capitulated = yes
+		# search_filters = { FOCUS_FILTER_RESEARCH }
 
-		completion_reward = {
-			add_research_slot = 1
-		}
-	}
+		# completion_reward = {
+			# add_research_slot = 1
+		# }
+	# }
 
 	focus = {
 		id = CAN_uranium_mining
