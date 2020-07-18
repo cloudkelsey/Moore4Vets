@@ -1,6 +1,6 @@
 NDefines.NGame.LAG_DAYS_FOR_LOWER_SPEED = 999
 NDefines.NGame.LAG_DAYS_FOR_PAUSE = 120
-NDefines.NGame.GAME_SPEED_SECONDS = { 2.0, 0.5, 0.125, 0.03, 0.0 }
+--NDefines.NGame.GAME_SPEED_SECONDS = { 2.0, 0.5, 0.2, 0.1, 0.0 } -- vanilla speeds are 2.0, 0.5, 0.2, 0.1, 0.0
 NDefines.NGame.COMBAT_LOG_MAX_MONTHS = 24
 
 NDefines.NDiplomacy.PEACE_SCORE_PER_PASS = 100 -- unsorted
